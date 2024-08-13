@@ -125,7 +125,7 @@ const DummyContent: React.FC<DummyContentProps> = ({
                 />
                 <div className="flex w-[60%] -ml-14 space-x-8 justify-center mt-8">
                   {buttons.map((button, index) => (
-                    <div className="ml-1">
+                    <div key={index} className="ml-1">
                       <PositionAwareButton
                         key={index}
                         text={button.text}
