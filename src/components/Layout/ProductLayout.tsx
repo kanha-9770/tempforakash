@@ -197,17 +197,13 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       <h1 className="text-lg text-black font-bold pt-0 relative z-20">
                         {machine.name}
                       </h1>
-                      <div className="flex justify-center pt-4 space-x-4 mt-2">
+                      <div className="flex justify-center mt-2 space-x-2">
                         <a
                           href={`/products/${machine.name}`}
                           onClick={() => handleMouseLeave()}
-                          className="relative text-white rounded-3xl transform hover:scale-90 transition-transform duration-300 px-8 p-1 z-20"
+                          className="relative text-white bg-red-500 rounded-3xl px-8 p-1 z-20 transform hover:scale-90 transition-transform duration-300"
                         >
-                          <PositionAwareButton
-                            width="120px"
-                            height="30px"
-                            text={"Book Now"}
-                          />
+                          Book Now
                         </a>
                       </div>
                     </motion.div>
@@ -216,7 +212,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           {filteredMachines.length > totalVisible && (
             <button
               onClick={handleNext}
-              className="absolute text-black border-2 text-3xl rounded-full right-0 z-10 h-10 w-10 animated-button-right"
+              className="absolute text-black border-2 text-3xl rounded-full right-2 z-10 h-10 w-10 animated-button-right"
               style={{ top: "50%", transform: "translateY(-50%)" }}
               disabled={currentIndex + totalVisible >= filteredMachines.length}
             >
