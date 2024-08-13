@@ -283,3 +283,6 @@ body {
     rgba(0, 0, 0, 0) 100%
   );
 }
+.icon-invert {
+  mix-blend-mode: difference;
+}

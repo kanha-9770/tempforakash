@@ -138,10 +138,7 @@ const NewsFeature: React.FC = () => {
               className="absolute top-0 right-0 m-2 cursor-pointer z-20"
               onClick={() => handleOpenModal(0)}
             >
-              <FaCirclePlus
-                size={30}
-                className="text-[#483878] rounded-full bg-white "
-              />
+              <FaCirclePlus className="rounded-full text-3xl bg-black text-white icon-invert" />
             </div>
             <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
             <div className="absolute bottom-0 left-0 w-full p-5">
@@ -170,7 +167,7 @@ const NewsFeature: React.FC = () => {
                     className="absolute top-0 right-0 m-2 cursor-pointer z-20"
                     onClick={() => handleOpenModal(index + 1)}
                   >
-                    <FaCirclePlus className="text-[#483878] bg-white rounded-full text-3xl" />
+                    <FaCirclePlus className="rounded-full bg-black text-3xl text-white icon-invert" />
                   </div>
                   <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
                   <div className="absolute bottom-0 left-0 w-full p-5">

@@ -48,7 +48,7 @@ const AboutLayout = () => {
 
   return (
     <div className="flex w-[98vw] p-2 px-4 max-w-screen-2xl flex-col md:flex-row items-center justify-center rounded-xl h-full">
-      <div className="grid -ml-2 grid-cols-2 justify-start md:grid-cols-4 w-[80vw]">
+      <div className="grid -ml-2 grid-cols-2 justify-start md:grid-cols-4 w-[75vw]">
         {titlesWithImages.map((item, index) => (
           <motion.div
             key={index}
@@ -75,15 +75,15 @@ const AboutLayout = () => {
         ))}
       </div>
       <div className="ml-2 w-2 h-72 border-l border-gray-300"></div>
-      <div className="ml-4 md:w-[18vw] min-h-full flex flex-col justify-between">
+      <div className="ml-4 md:w-[20vw] min-h-full flex flex-col justify-between">
         <AnimatedContainer currentIndex={currentIndex}>
           {items.slice(currentIndex, currentIndex + 2).map((item, index) => (
             <Link key={index} href={`/${item.title}`} passHref>
               <div
-                className={`${item.color} hover:scale-80 transition-transform duration-200 flex items-center p-4 rounded-3xl mb-2`}
+                className={`${item.color} hover:scale-80 mr-2 transition-transform duration-200 flex items-center p-4 rounded-3xl mb-2`}
               >
                 <div
-                  className={`h-12 w-12 mr-2 flex justify-center items-center text-lg ${item.textcolor}`}
+                  className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
                 >
                   <item.icon />
                 </div>

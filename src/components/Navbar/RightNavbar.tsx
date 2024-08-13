@@ -70,7 +70,10 @@ const RightNavbar: React.FC = memo(() => {
     <div className={`w-full max-w-screen-2xl justify-center relative top-0 ${menuState.hoveredItem ? "rounded-t-lg" : "rounded-lg"}`}>
       <div className="flex items-center gap-2 justify-center h-14">
         <span onMouseEnter={handleMouseLeave} className="w-full h-10 z-30 hidden lg:flex items-center gap-3 text-black">
+          <div className="bg-white flex flex-row gap-3 px-2 rounded-3xl">
           <CountryLayout />
+         
+          </div>
           <SearchBarLayout
             setIsFlagOpen={(value) => setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))}
             openSearch={visibilityState.openSearch}

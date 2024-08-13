@@ -23,7 +23,7 @@ const NavLink: React.FC<NavLinkProps> = memo(
     <Link
       href="#"
       scroll={false}
-      className={`text-black ml-[2.5rem] pt-2 hover:font-bold custome-scale-90 ${
+      className={`text-black font-poppins ml-[2.5rem] pt-2 hover:font-bold custome-scale-90 ${
         activeLink === index ? "border-b-2 border-red-600" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(index)}

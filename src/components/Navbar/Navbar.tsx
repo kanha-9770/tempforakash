@@ -5,13 +5,12 @@ import { navbarItems } from "@/components/Constants/Navbar/navbarData";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/assets/Logo.png";
-import dynamic from "next/dynamic";
-const RightNavbar = dynamic(() => import("./RightNavbar"), { ssr: false });
+import RightNavbar from "./RightNavbar";
 import { Menu, MenuItem } from "./nav-menue";
 
 export default function NavbarDemo() {
   return (
-    <div className="relative max-w-screen-2xl flex items-center justify-center">
+    <div className="relative  max-w-screen-2xl flex items-center justify-center">
       <Navbar className="top-0" />
     </div>
   );
@@ -40,27 +39,27 @@ function Navbar({ className }: { className?: string }) {
         "fixed flex w-full max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
-        "transition-all duration-500 ease-in-out", 
+        "transition-all duration-500 ease-in-out", //  transition
         scrolling
           ? "bg-[#f2f2f2]/70 backdrop-blur-xl"
-          : "bg-[#f2f2f2]/70 backdrop-blur-xl"
+          : "bg-[#f2f2f2]/70 backdrop-blur-xl" // Adjust blur and background color on scroll
       )}
     >
-      <div className="w-1/5 ml-[1.4rem] flex justify-start items-center">
+      <div className="w-1/5 ml-8 flex justify-start items-center">
         <Link
           href="/"
-          className="h-6 rounded-2xl lg:ml-4 flex justify-center items-center"
+          className="h-6 rounded-2xl lg:ml-2 flex justify-center items-center"
         >
           <Image
             src={Logo}
             alt="Logo"
-            width={400}
-            height={400}
+            width={50}
+            height={50}
             className="h-[1.4rem] w-full"
           />
         </Link>
       </div>
-      <div className="w-3/5 hidden xl:flex items-center justify-center">
+      <div className="w-3/5 flex items-center justify-center">
         <Menu>
           {navbarItems.map((item) => (
             <MenuItem
@@ -75,7 +74,7 @@ function Navbar({ className }: { className?: string }) {
           ))}
         </Menu>
       </div>
-      <div className="w-1/5 hidden xl:flex mr-12 items-center justify-end">
+      <div className="w-1/5 mr-8 flex items-center justify-end">
         <RightNavbar />
       </div>
     </div>

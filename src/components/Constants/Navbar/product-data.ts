@@ -192,6 +192,75 @@ export const Machines = [
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
   {
+    name: "NS-021",
+    image: "PCM110WithPLC",
+    mimage: PCM110WithPLC,
+
+    category: "Paper Cup Machine, All Products",
+    icon: "papercup",
+    introduction:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
+    parameters:
+      "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    application:
+      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    product_description:
+      "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+    technical_specification:
+      "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
+    optional_add_ons:
+      "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    related_product:
+      "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+  },
+  {
+    name: "NS-022",
+    image: "PCM110WithPLC",
+    mimage: PCM110WithPLC,
+
+    category: "Paper Cup Machine, All Products",
+    icon: "papercup",
+    introduction:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
+    parameters:
+      "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    application:
+      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    product_description:
+      "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+    technical_specification:
+      "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
+    optional_add_ons:
+      "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    related_product:
+      "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+  },
+  {
+    name: "NS-023",
+    image: "PCM110WithPLC",
+    mimage: PCM110WithPLC,
+
+    category: "Paper Cup Machine, All Products",
+    icon: "papercup",
+    introduction:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
+    parameters:
+      "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    application:
+      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    product_description:
+      "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+    technical_specification:
+      "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
+    optional_add_ons:
+      "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    related_product:
+      "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+  },
+  {
     name: "Paper Bowl Machine 01",
     image: "paperBowlMachineImage",
     mimage: paperBowlMachineImage,

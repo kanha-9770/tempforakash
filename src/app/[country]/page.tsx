@@ -1,36 +1,48 @@
 "use client";
-import React, { useRef, useCallback } from "react";
+import React, { useRef } from "react";
 import dynamic from "next/dynamic";
 import Hero from "@/components/Home/Home";
 import NavLinksDemo from "@/components/Home/NavLinks";
 import { data } from "@/components/Constants/Navbar/about-data";
 
 const AboutUs = dynamic(() => import("@/components/Home/AboutSection"), {
-  ssr: false,
+  ssr: true,
 });
-const MarqueeSection = dynamic(
-  () => import("@/components/Home/MarqueeSection"),
-  { ssr: false }
-);
+
+const MarqueeSection = dynamic(() => import("@/components/Home/MarqueeSection"), {
+  ssr: true,
+});
+
 const KnowMore = dynamic(() => import("@/components/Home/KnowMore"), {
-  ssr: false,
+  ssr: true,
 });
+
 const HomeMachine = dynamic(() => import("@/components/Home/HomeMachine"), {
-  ssr: false,
+  ssr: true,
 });
+
 const NewsFeature = dynamic(() => import("@/components/Home/NewsFeature"), {
-  ssr: false,
+  ssr: true,
 });
-const HomeTestimonial = dynamic(
-  () => import("@/components/Home/TestimonialsSection"),
-  { ssr: false }
-);
+
+const HomeTestimonial = dynamic(() => import("@/components/Home/TestimonialsSection"), {
+  ssr: true,
+});
+
 const CanvasRevealEffectDemo = dynamic(() =>
-  import("@/components/Home/CanvasRevealEffectDemo").then((mod) => mod.default)
+  import("@/components/Home/CanvasRevealEffectDemo").then((mod) => mod.default),
+  {
+    ssr: false, // Assuming this component is heavy and not critical for SEO
+  }
 );
+
 const IotSection = dynamic(() =>
-  import("@/components/Home/IotSection").then((mod) => mod.default)
+  import("@/components/Home/IotSection").then((mod) => mod.default),
+  {
+    ssr: false, // Assuming this component is heavy and not critical for SEO
+  }
 );
+
 export default function Home() {
   const aboutUsRef = useRef<HTMLDivElement>(null);
   const infiniteCardsRef = useRef<HTMLDivElement>(null);
@@ -50,6 +62,7 @@ export default function Home() {
     { text: "News", ref: newsFeatureRef },
     { text: "Testimonials", ref: homeTestimonialRef },
   ];
+
   return (
     <main className="bg-[#f2f2f2]">
       <Hero />
@@ -61,7 +74,7 @@ export default function Home() {
             description={data.description}
             stats={data.stats}
             cards={data.cards}
-          />{" "}
+          />
         </div>
         <div id="clientele" className="mx-4 m-48" ref={infiniteCardsRef}>
           <MarqueeSection />

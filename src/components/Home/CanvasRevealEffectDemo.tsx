@@ -4,7 +4,6 @@ import { CanvasRevealEffect } from "../ui/canvas-reveal-effect";
 import { CARDS_DATA } from "../Constants/index";
 import Modal from "../ui/Modal";
 import { FaCirclePlus } from "react-icons/fa6";
-
 export default function CanvasRevealEffectDemo() {
   return (
     <div className="py-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
@@ -14,7 +13,6 @@ export default function CanvasRevealEffectDemo() {
             animationSpeed={card.animationSpeed}
             containerClassName={card.containerClassName}
             colors={card.colors}
-            // Ensure dotSize is a number, or default to 1 if undefined
             dotSize={card.dotSize ?? 1}
           />
           {index === 1 && (
@@ -25,12 +23,11 @@ export default function CanvasRevealEffectDemo() {
     </div>
   );
 }
-
 const Card = ({
   title,
   icon,
   children,
-  index
+  index,
 }: {
   title: string;
   icon: React.ReactNode;
@@ -39,15 +36,12 @@ const Card = ({
 }) => {
   const [hovered, setHovered] = React.useState(false);
   const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
-
   const handleOpenModal = (index: number) => {
     setOpenModalIndex(index);
   };
-
   const handleCloseModal = () => {
     setOpenModalIndex(null);
   };
-
   return (
     <div
       onMouseEnter={() => setHovered(true)}
@@ -58,14 +52,15 @@ const Card = ({
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
-      
       <div
         className="absolute cursor-pointer top-0 right-0 m-4 z-20"
         onClick={() => handleOpenModal(index)}
       >
-        <FaCirclePlus size={30} className="text-[#483d78] bg-white rounded-full" />
+        <FaCirclePlus
+          size={30}
+          className="text-white bg-black text-3xl rounded-full"
+        />
       </div>
-      
       <AnimatePresence>
         {hovered && (
           <motion.div
@@ -77,12 +72,11 @@ const Card = ({
           </motion.div>
         )}
       </AnimatePresence>
-
       <div className="relative z-20">
         <div className="text-center text-8xl group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full mx-auto flex items-center justify-center">
           {icon}
         </div>
-        <h2 className="dark:text-white text-5xl text-center mx-4 opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+        <h2 className="dark:text-white text-5xl text-center mx-4 opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black -mt-20 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
           {title}
         </h2>
       </div>

@@ -40,7 +40,8 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
 
     const initializeCarousel = () => {
       firstCardWidth.current =
-        (carousel.querySelector(".card") as HTMLElement)?.offsetWidth || 0;
+        (carousel.querySelector(".card") as HTMLElement)?.offsetWidth - 400 ||
+        0;
       const carouselChildren = Array.from(carousel.children);
       carouselChildren
         .slice(-cardCount)
@@ -56,8 +57,8 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
           "beforeend",
           (card as HTMLElement).outerHTML
         );
+        console.log(firstCardWidth.current);
       });
-
       carousel.classList.add("no-transition");
       carousel.scrollLeft = firstCardWidth.current * cardCount;
       carousel.classList.remove("no-transition");

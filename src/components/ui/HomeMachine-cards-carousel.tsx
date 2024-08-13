@@ -285,7 +285,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-50 overflow-auto">
+          <div className="fixed inset-0 h-screen z-[99999] overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -317,7 +317,7 @@ export const Card = ({
         className=" h-80 rounded-3xl bg-white p-2  w-48 md:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="relative p-2 h-full w-full">
-          <div className="absolute flex bg-white h-20 w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
+          <div className="absolute flex bg-white h-16 w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
             <div className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -332,11 +332,11 @@ export const Card = ({
                 ></path>
               </svg>
             </div>
-            <div className="h-20 w-16 flex items-center justify-center">
+            <div className="h-16 w-16  flex items-center justify-center">
               <BlurImage src={card.icon} alt="icon" height={100} width={100} />
             </div>
             <div className="flex items-center justify-center">
-              <div className="relative h-10 w-10 -mr-4 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
+              <div className="relative h-12 w-12 -mr-4 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
                 <div className="absolute inset-0 flex  flex-col items-center justify-center">
                   <div className="text-base font-bold text-red-500">70</div>
                   <div className="text-txs -mt-1 text-[#483d78]">PCM/MIN</div>
@@ -349,7 +349,7 @@ export const Card = ({
                 width="100%"
                 viewBox="0 0 20 20"
                 fill="none"
-                className="h-4 w-4 mt-20 mr-4"
+                className="h-4 w-4 mt-16 mr-4"
               >
                 <path
                   d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
@@ -366,7 +366,7 @@ export const Card = ({
             className="object-contain border-2 bg-[#f2f2f2]  rounded-[1.5rem] absolute z-10 inset-0"
           />
 
-          <div className="absolute left-0 right-0 bottom-0 z-40 p-4">
+          <div className="absolute -mb-2 left-0 right-0 bottom-0 z-40 p-4">
             <motion.p
               layoutId={layout ? `category-${card.category}` : undefined}
               className="text-black text-sm md:text-base font-medium font-sans text-left"

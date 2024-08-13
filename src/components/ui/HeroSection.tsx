@@ -1,13 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import {Testing} from "@/components/ui/Testing"
+import { Testing } from "@/components/ui/Testing";
 export function InfiniteMovingCardsDemo() {
   return (
     <div className="ml-14 h-screen mask-gradient rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <Testing
-        items={testimonials}
-        speed="slow"
-      />
+      <Testing items={testimonials} speed="slow" />
     </div>
   );
 }
@@ -44,7 +41,7 @@ const testimonials = [
     country: "Australia",
     quote: "Design is intelligence made visible. Creativity transforms.",
     flag: "https://flagcdn.com/at.svg",
-  }, 
+  },
   {
     src: "https://i.pinimg.com/236x/81/ac/9e/81ac9ef6456e8eccbf651fc368e83e4a.jpg",
     username: "Emily Davis",
@@ -60,7 +57,7 @@ const testimonials = [
     country: "Spain",
     quote: "Design is intelligence made visible. Creativity transforms.",
     flag: "https://flagcdn.com/es.svg",
-  }, 
+  },
   {
     src: "https://i.pinimg.com/236x/bc/61/97/bc61979451b11263cab4f49e21ffc131.jpg",
     username: "Charlotte Garcia",
@@ -76,7 +73,7 @@ const testimonials = [
     country: "Italy",
     quote: "Design is intelligence made visible. Creativity transforms.",
     flag: "https://flagcdn.com/it.svg",
-  }, 
+  },
   {
     src: "https://i.pinimg.com/736x/ff/b3/1e/ffb31e98ffb84717ead291e69a3488ee.jpg",
     username: "Amelia Martinez",
@@ -92,7 +89,7 @@ const testimonials = [
     country: "Japan",
     quote: "Design is intelligence made visible. Creativity transforms.",
     flag: "https://flagcdn.com/me.svg",
-  }, 
+  },
   {
     src: "https://i.pinimg.com/564x/d0/cb/d1/d0cbd1380c72ddf3750c896433b2dea1.jpg",
     username: "Evelyn Moore",
@@ -108,7 +105,7 @@ const testimonials = [
     country: "South Africa",
     quote: "Design is intelligence made visible. Creativity transforms.",
     flag: "https://flagcdn.com/za.svg",
-  }, 
+  },
   {
     src: "https://i.pinimg.com/564x/c1/4b/88/c14b8848983ccd7fc28850c3e2caf656.jpg",
     username: "Mia Clark",
@@ -124,5 +121,5 @@ const testimonials = [
     country: "New Zealand",
     quote: "Design is intelligence made visible. Creativity transforms.",
     flag: "https://flagcdn.com/fr.svg",
-  }, 
+  },
 ];

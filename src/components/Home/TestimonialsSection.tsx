@@ -22,7 +22,6 @@ const HomeTestimonial: React.FC = () => {
         <h4 className="mt-20 text-lg text-center font-poppins">
           See What Our Clients Are Saying About Us
         </h4>
-        {/* <VideoCarousel /> */}
         <SwipeCarousel />
       </div>
       <div className="w-2/3 relative h-full">

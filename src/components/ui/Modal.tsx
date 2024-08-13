@@ -55,7 +55,7 @@ const Modal: React.FC<ModalProps> = ({
   ];
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+    <div className="fixed inset-0 z-[99999] flex items-center justify-center">
       <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm"></div>
       <motion.div
         className="relative w-full max-w-[78rem] h-[90vh] bg-white rounded-xl p-6 transform transition-transform overflow-y-auto z-10"
@@ -84,7 +84,7 @@ const Modal: React.FC<ModalProps> = ({
               height={400}
               className="rounded-lg object-contain h-[400px]"
             />
-            <div className="flex w-[60%] -ml-14 space-x-2 justify-center mt-0">
+            <div className="flex w-[60%] -ml-14 gap-4 justify-center mt-0">
               <PositionAwareButton text={"Know Machine"} icon={true} width="180px" />
               <PositionAwareButton text={"Get a Quote"} icon={true} width="160px" />
             </div>

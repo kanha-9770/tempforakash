@@ -20,6 +20,34 @@ import {
   paperLunchBoxMachine,
   paperCupMachineImage,
 } from "../../../../public/assets";
+import {
+  CartonErectingMachine,
+  DisposablePaperCupMakingMachine,
+  DomeLidMachine,
+  FlexoPrintingMachine,
+  FolderGluing,
+  FullyAutomaticPaperBagMachine,
+  FullyAutomaticPaperCupMakingMachine,
+  LunchBoxMachine,
+  OctagonalMachine,
+  PaperContainerBowlMachine,
+  PaperCutleryMachine,
+  PaperFoodBagMakingMachine,
+  PaperGlassMachine,
+  PaperHandleCupMachine,
+  PaperLidMachine,
+  PaperPlateMachine,
+  PaperStrawMakingMachine,
+  PeCoatingMachine,
+  PopCornTubMakingMachine,
+  RectangularMachine,
+  RippleWallCupMachine,
+  RollDieCuttingMachine,
+  SaladBowlMakingMachine,
+  SleevForming,
+  ServoDrivenMachine,
+} from "../../../../public/assets/machine";
+import { BlurImage } from "@/components/ui/BlurImage";
 // Define the type for card data
 interface CardData {
   content: React.ReactNode;
@@ -81,28 +109,32 @@ const DummyContent: React.FC<DummyContentProps> = ({
 }) => {
   return (
     <>
-      <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 h-80 rounded-3xl mb-4">
+      <div className="bg-[#F5F5F7] z-[99999] dark:bg-neutral-800 p-8 md:p-14 h-80 rounded-3xl mb-4">
         <div className="fixed inset-0 flex items-center justify-center">
           <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm"></div>
-          <div className="relative w-full max-w-[78rem] h-[90vh] bg-white rounded-xl p-6 transform transition-transform overflow-y-auto z-10">
+          <div className="relative w-full max-w-[78rem] h-[90vh] bg-white rounded-xl p-6 transform transition-transform overflow-y-auto z-50">
             <Breadcrumb items={breadcrumbItems} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
               <div className="flex flex-col items-center">
-                <Image
+                <BlurImage
                   src={image}
                   alt={title}
                   width={600}
                   height={400}
-                  className="rounded-2xl object-contain h-[400px]"
+                  className="rounded-2xl object-cover h-[400px]"
                 />
-                <div className="flex w-[60%] -ml-14 space-x-2 justify-center mt-0">
+                <div className="flex w-[60%] -ml-14 space-x-8 justify-center mt-8">
                   {buttons.map((button, index) => (
-                    <PositionAwareButton
-                      key={index}
-                      text={button.text}
-                      icon={button.icon}
-                      width="170px"
-                    />
+                    <div className="ml-1">
+                      <PositionAwareButton
+                        key={index}
+                        text={button.text}
+                        icon={button.icon}
+                        width={
+                          button.text === "Know Machine" ? "180px" : "160px"
+                        }
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
@@ -135,13 +167,13 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
-        title="Paper Cup Machine"
-        description="Experience unparalleled efficiency with our Paper Cup Machine..."
+        image={ServoDrivenMachine}
+        title="Servo Driven Paper Cup Machine"
+        description="Experience unparalleled efficiency with our Servo Driven Paper Cup Machine, a marvel of engineering that integrates advanced mechanical, electronic, pneumatic, and electrical technologies. This high-precision machine is equipped with 13 servos that work in perfect sync via PLC, enabling the production of up to 180 high-quality paper cups per minute, equivalent to 3 cups per second. The machine features a two-step curling process, which ensures the rim of each cup is curled twice to provide extra rigidity and durability & High-quality sealing is guaranteed through the use of ultrasonic and hot air mechanisms, minimizing the risk of leakage, making it ideal for both hot and cold beverages"
         breadcrumbItems={[
           { label: "Home", href: "/" },
           { label: "Products", href: "/products" },
-          { label: "Paper Cup Machine", current: true },
+          { label: "Servo Driven Paper Cup Machine", current: true },
         ]}
         buttons={[
           { text: "Know Machine", icon: true },
@@ -149,33 +181,33 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
-        firstname="Paper"
-        secondname="Cup Machine"
+        firstname="Servo Driven "
+        secondname="Paper Cup Machine"
       />
     ),
     category: "cup",
-    firstname: "Paper",
-    secondname: "Cup Machine",
+    firstname: "Servo Driven",
+    secondname: "Paper Cup Machine",
     description:
       "Experience unparalleled efficiency with our Paper Cup Machine...",
-    image: paperBowlMachineImage,
-    title: "Paper Cup Machine",
+    image: ServoDrivenMachine,
+    title: "Servo Driven Machine",
     speed: 100,
     unit: "PCS/MIN",
     icon: paperbowl,
@@ -183,13 +215,13 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
-        title="Paper Bowl Machine"
-        description="Experience unparalleled efficiency with our Paper Bowl Machine..."
+        image={PaperGlassMachine}
+        title="Paper Glass Making Machine"
+        description="Paper Glass Making Machine is manufactured using latest technology and high tech equipment which are reliable as well as durable. This machine has two-layer system for movement of Paper fans which then wrapped around mother mold to form a cone shape. It is designed using Single Turn Plate Technology and Direct Bottom Technology which reduces wastage of paper and rotations during the process of bottom feeding, bottom knurling and top curling as well."
         breadcrumbItems={[
           { label: "Home", href: "/" },
           { label: "Products", href: "/products" },
-          { label: "Paper Bowl Machine", current: true },
+          { label: "Paper Glass Making Machine", current: true },
         ]}
         buttons={[
           { text: "Know Machine", icon: true },
@@ -197,33 +229,33 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Paper"
-        secondname="Bowl Machine"
+        secondname="Glass Making Machine"
       />
     ),
-    category: "bowl",
+    category: "Cup",
     firstname: "Paper",
-    secondname: "Bowl Machine",
+    secondname: "Glass Making Machine",
     description:
-      "Experience unparalleled efficiency with our Paper Bowl Machine...",
-    image: paperBagMachineImage,
-    title: "Paper Bowl Machine",
+      "Paper Glass Making Machine is manufactured using latest technology and high tech equipment which are reliable as well as durable. This machine has two-layer system for movement of Paper fans which then wrapped around mother mold to form a cone shape. It is designed using Single Turn Plate Technology and Direct Bottom Technology which reduces wastage of paper and rotations during the process of bottom feeding, bottom knurling and top curling as well.",
+    image:PaperGlassMachine,
+    title: "Glass Making Machine",
     speed: 120,
     unit: "PCS/MIN",
     icon: paperbowl,
@@ -231,13 +263,13 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
-        title="Die Cutting Machine"
+        image={DisposablePaperCupMakingMachine}
+        title="Disposable Cup Making Machine"
         description="Experience unparalleled efficiency with our Die Cutting Machine..."
         breadcrumbItems={[
           { label: "Home", href: "/" },
           { label: "Products", href: "/products" },
-          { label: "Die Cutting Machine", current: true },
+          { label: "Disposable Cup Making Machine", current: true },
         ]}
         buttons={[
           { text: "Know Machine", icon: true },
@@ -245,33 +277,33 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
-        firstname="Die"
-        secondname="Cutting Machine"
+        firstname="Disposable"
+        secondname="Cup Making Machine"
       />
     ),
-    category: "cutting",
-    firstname: "Die",
-    secondname: "Cutting Machine",
+    category: "cup",
+    firstname: "Disposable",
+    secondname: "Cup Making Machine",
     description:
-      "Experience unparalleled efficiency with our Die Cutting Machine...",
-    image: image,
-    title: "Die Cutting Machine",
+      "NS-200 Disposable Cup making Machine is manufactured using latest technology and high tech equipment which are reliable as well as durable. This is the best Disposable cup making machine which has two-layer system for movement of Paper fans which is formed by a kind of arm arrangement for cup cone tracker. Robotic Arm plays a vital role in transferring cup cone to Moulds for further process of Bottom heating, knurling and Top curling. Moreover, this machine has certain additional features like photoelectric sensors for paper feeding and cup counting.",
+    image:DisposablePaperCupMakingMachine,
+    title: "Disposable Cup Making Machine",
     speed: 150,
     unit: "PCS/MIN",
     icon: papercup,
@@ -279,13 +311,13 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
-        title="Flexo Printing Machine"
-        description="Experience unparalleled efficiency with our Flexo Printing Machine..."
+        image={ServoDrivenMachine}
+        title="High Speed Paper Cup Machine"
+        description="Leading manufacturer and supplier of paper cup machines. We offer a wide range of paper cup machines from 90 cups per min to 160 cups per min. We have paper cup machine (90 speed), Automatic paper cup making machine (110 speed), High speed paper cup machine (130 speed), Fully automatic paper cup machine (160 speed)."
         breadcrumbItems={[
           { label: "Home", href: "/" },
           { label: "Products", href: "/products" },
-          { label: "Flexo Printing Machine", current: true },
+          { label: "High Speed Paper Cup Machine", current: true },
         ]}
         buttons={[
           { text: "Know Machine", icon: true },
@@ -293,33 +325,33 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
-        firstname="Flexo"
-        secondname="Printing Machine"
+        firstname="High Speed"
+        secondname="Paper Cup Machine"
       />
     ),
-    category: "printing",
-    firstname: "Flexo",
-    secondname: "Printing Machine",
+    category: "paper",
+    firstname: "High Speed",
+    secondname: "Paper Cup Machine",
     description:
-      "Experience unparalleled efficiency with our Flexo Printing Machine...",
-    image: image,
-    title: "Flexo Printing Machine",
+      "Leading manufacturer and supplier of paper cup machines. We offer a wide range of paper cup machines from 90 cups per min to 160 cups per min. We have paper cup machine (90 speed), Automatic paper cup making machine (110 speed), High speed paper cup machine (130 speed), Fully automatic paper cup machine (160 speed).",
+    image:FullyAutomaticPaperCupMakingMachine,
+    title: "High Speed Paper Cup Machine",
     speed: 160,
     unit: "PCS/MIN",
     icon: paperbowl,
@@ -327,7 +359,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Slitting Machine"
         description="Experience unparalleled efficiency with our Slitting Machine..."
         breadcrumbItems={[
@@ -341,20 +373,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Slitting"
@@ -366,7 +398,7 @@ export const cardsData: CardData[] = [
     secondname: "Machine",
     description:
       "Experience unparalleled efficiency with our Slitting Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Slitting Machine",
     speed: 140,
     unit: "PCS/MIN",
@@ -375,7 +407,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Coating Machine"
         description="Experience unparalleled efficiency with our Coating Machine..."
         breadcrumbItems={[
@@ -389,20 +421,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Coating"
@@ -414,7 +446,7 @@ export const cardsData: CardData[] = [
     secondname: "Machine",
     description:
       "Experience unparalleled efficiency with our Coating Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Coating Machine",
     speed: 180,
     unit: "PCS/MIN",
@@ -423,7 +455,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Paper Bucket Machine"
         description="Experience unparalleled efficiency with our Paper Bucket Machine..."
         breadcrumbItems={[
@@ -437,20 +469,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Paper"
@@ -462,7 +494,7 @@ export const cardsData: CardData[] = [
     secondname: "Bucket Machine",
     description:
       "Experience unparalleled efficiency with our Paper Bucket Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Paper Bucket Machine",
     speed: 190,
     unit: "PCS/MIN",
@@ -471,7 +503,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Paper Lid Machine"
         description="Experience unparalleled efficiency with our Paper Lid Machine..."
         breadcrumbItems={[
@@ -485,20 +517,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Paper"
@@ -510,7 +542,7 @@ export const cardsData: CardData[] = [
     secondname: "Lid Machine",
     description:
       "Experience unparalleled efficiency with our Paper Lid Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Paper Lid Machine",
     speed: 110,
     unit: "PCS/MIN",
@@ -519,7 +551,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Insulated Cup Machine"
         description="Experience unparalleled efficiency with our Insulated Cup Machine..."
         breadcrumbItems={[
@@ -533,20 +565,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Insulated"
@@ -558,7 +590,7 @@ export const cardsData: CardData[] = [
     secondname: "Cup Machine",
     description:
       "Experience unparalleled efficiency with our Insulated Cup Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Insulated Cup Machine",
     speed: 130,
     unit: "PCS/MIN",
@@ -567,7 +599,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Sleeve Making Machine"
         description="Experience unparalleled efficiency with our Sleeve Making Machine..."
         breadcrumbItems={[
@@ -581,20 +613,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Sleeve"
@@ -606,7 +638,7 @@ export const cardsData: CardData[] = [
     secondname: "Making Machine",
     description:
       "Experience unparalleled efficiency with our Sleeve Making Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Sleeve Making Machine",
     speed: 125,
     unit: "PCS/MIN",
@@ -615,7 +647,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Corrugation Machine"
         description="Experience unparalleled efficiency with our Corrugation Machine..."
         breadcrumbItems={[
@@ -629,20 +661,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Corrugation"
@@ -654,7 +686,7 @@ export const cardsData: CardData[] = [
     secondname: "Machine",
     description:
       "Experience unparalleled efficiency with our Corrugation Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Corrugation Machine",
     speed: 135,
     unit: "PCS/MIN",
@@ -663,7 +695,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Paper Handle Cup Machine"
         description="Experience unparalleled efficiency with our Paper Handle Cup Machine..."
         breadcrumbItems={[
@@ -677,20 +709,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Paper Handle"
@@ -702,7 +734,7 @@ export const cardsData: CardData[] = [
     secondname: "Cup Machine",
     description:
       "Experience unparalleled efficiency with our Paper Handle Cup Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Paper Handle Cup Machine",
     speed: 145,
     unit: "PCS/MIN",
@@ -711,7 +743,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Paper Bag Machine"
         description="Experience unparalleled efficiency with our Paper Bag Machine..."
         breadcrumbItems={[
@@ -725,20 +757,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Paper"
@@ -750,7 +782,7 @@ export const cardsData: CardData[] = [
     secondname: "Bag Machine",
     description:
       "Experience unparalleled efficiency with our Paper Bag Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Paper Bag Machine",
     speed: 150,
     unit: "PCS/MIN",
@@ -759,7 +791,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Paper Straw Machine"
         description="Experience unparalleled efficiency with our Paper Straw Machine..."
         breadcrumbItems={[
@@ -773,20 +805,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Paper"
@@ -798,7 +830,7 @@ export const cardsData: CardData[] = [
     secondname: "Straw Machine",
     description:
       "Experience unparalleled efficiency with our Paper Straw Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Paper Straw Machine",
     speed: 160,
     unit: "PCS/MIN",
@@ -807,7 +839,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Paper Cutlery Machine"
         description="Experience unparalleled efficiency with our Paper Cutlery Machine..."
         breadcrumbItems={[
@@ -821,20 +853,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Paper"
@@ -846,7 +878,7 @@ export const cardsData: CardData[] = [
     secondname: "Cutlery Machine",
     description:
       "Experience unparalleled efficiency with our Paper Cutlery Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Paper Cutlery Machine",
     speed: 165,
     unit: "PCS/MIN",
@@ -855,7 +887,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Plastic Lid Machine"
         description="Experience unparalleled efficiency with our Plastic Lid Machine..."
         breadcrumbItems={[
@@ -869,20 +901,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Plastic"
@@ -894,7 +926,7 @@ export const cardsData: CardData[] = [
     secondname: "Lid Machine",
     description:
       "Experience unparalleled efficiency with our Plastic Lid Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Plastic Lid Machine",
     speed: 170,
     unit: "PCS/MIN",
@@ -903,7 +935,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Paper Forming Machine"
         description="Experience unparalleled efficiency with our Paper Forming Machine..."
         breadcrumbItems={[
@@ -917,20 +949,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Paper"
@@ -942,7 +974,7 @@ export const cardsData: CardData[] = [
     secondname: "Forming Machine",
     description:
       "Experience unparalleled efficiency with our Paper Forming Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Paper Forming Machine",
     speed: 175,
     unit: "PCS/MIN",
@@ -951,7 +983,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Lunch Box Machine"
         description="Experience unparalleled efficiency with our Lunch Box Machine..."
         breadcrumbItems={[
@@ -965,20 +997,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Lunch"
@@ -990,7 +1022,7 @@ export const cardsData: CardData[] = [
     secondname: "Box Machine",
     description:
       "Experience unparalleled efficiency with our Lunch Box Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Lunch Box Machine",
     speed: 180,
     unit: "PCS/MIN",
@@ -999,7 +1031,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Paper Plate Machine"
         description="Experience unparalleled efficiency with our Paper Plate Machine..."
         breadcrumbItems={[
@@ -1013,20 +1045,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Paper"
@@ -1038,7 +1070,7 @@ export const cardsData: CardData[] = [
     secondname: "Plate Machine",
     description:
       "Experience unparalleled efficiency with our Paper Plate Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Paper Plate Machine",
     speed: 185,
     unit: "PCS/MIN",
@@ -1047,7 +1079,7 @@ export const cardsData: CardData[] = [
   {
     content: (
       <DummyContent
-        image={image}
+        image={ServoDrivenMachine}
         title="Carton Erecting Machine"
         description="Experience unparalleled efficiency with our Carton Erecting Machine..."
         breadcrumbItems={[
@@ -1061,20 +1093,20 @@ export const cardsData: CardData[] = [
         ]}
         items={[
           {
-            className: "text-blue-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "High-Speed Synchronized Servos",
           },
           {
-            className: "text-green-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Advanced Sealing Technology",
           },
           {
-            className: "text-yellow-500 text-3xl",
+            className: "text-gray-400 text-3xl",
             text: "Two-Step Curling Process",
           },
           {
-            className: "text-red-500 text-3xl",
-            text: "Comprehensive Control System with PLC + HMI",
+            className: "text-gray-400 text-3xl",
+            text: "Comprehensive Control System ",
           },
         ]}
         firstname="Carton"
@@ -1086,7 +1118,7 @@ export const cardsData: CardData[] = [
     secondname: "Erecting Machine",
     description:
       "Experience unparalleled efficiency with our Carton Erecting Machine...",
-    image: image,
+    image:ServoDrivenMachine,
     title: "Carton Erecting Machine",
     speed: 200,
     unit: "PCS/MIN",

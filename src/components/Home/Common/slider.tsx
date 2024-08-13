@@ -5,10 +5,18 @@ import { IoClose } from "react-icons/io5"; // Import close icon
 import "../Styles/slider.css";
 
 const videos: { src: string; youtubeLink: string }[] = [
-  { src: "/video/bg.mp4", youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0" },
-  { src: "/video/Homebg.mp4", youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0" },
-  { src: "/video/iotvideo.mp4", youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0" },
-  // Add more video and link pairs as needed
+  {
+    src: "/video/bg.mp4",
+    youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0",
+  },
+  {
+    src: "/video/Homebg.mp4",
+    youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0",
+  },
+  {
+    src: "/video/iotvideo.mp4",
+    youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0",
+  },
 ];
 
 const ONE_SECOND = 1000;
@@ -90,10 +98,10 @@ export const SwipeCarousel: React.FC = () => {
               muted
               className="w-full h-full object-cover rounded-xl"
             />
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+            <div className="absolute bottom-4 right-0 transform -translate-x-1/2">
               <BsBoxArrowUpRight
                 onClick={() => openModal(video.youtubeLink)}
-                className="text-white text-3xl cursor-pointer transition-transform transform hover:scale-110"
+                className="text-white font-bold text-3xl cursor-pointer transition-transform transform hover:scale-110"
               />
             </div>
           </motion.div>
@@ -105,7 +113,10 @@ export const SwipeCarousel: React.FC = () => {
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[9995]">
           <div className="bg-white rounded-xl overflow-hidden max-w-3xl w-full relative">
-            <button onClick={closeModal} className="absolute top-3 z-50 right-3 text-black p-2">
+            <button
+              onClick={closeModal}
+              className="absolute top-0 z-50 right-0 bg-white p-1 rounded-full text-black"
+            >
               <IoClose size={24} />
             </button>
             <div className="relative w-full pt-[56.25%]">

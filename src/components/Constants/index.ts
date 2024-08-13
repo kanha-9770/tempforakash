@@ -55,11 +55,11 @@ export interface Item {
 
 export const item: Item[] = [
   {
-    src:paperbowl,
+    src:"https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
     alt: "Cups",
     name: "Paper Bowl",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
@@ -75,7 +75,7 @@ export const item: Item[] = [
     alt: "Item 3",
     name: "Paper Bag",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
@@ -83,7 +83,7 @@ export const item: Item[] = [
     alt: "Item 2",
     name: "Paper Spoon",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for be",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for be",
     bgpic: paperBagMachineImage,
   },
   {
@@ -91,7 +91,7 @@ export const item: Item[] = [
     alt: "Cups",
     name: "Paper lid",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
@@ -99,7 +99,7 @@ export const item: Item[] = [
     alt: "Item 5",
     name: "Paper Cup",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
@@ -107,7 +107,7 @@ export const item: Item[] = [
     alt: "Item 6",
     name: "Paper Straw",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
     bgpic: paperBagMachineImage,
   },
   {
@@ -115,7 +115,7 @@ export const item: Item[] = [
     alt: "Item 4",
     name: "Paper Cutlry",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for be",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for be",
     bgpic: paperBagMachineImage,
   },
   {
@@ -123,7 +123,7 @@ export const item: Item[] = [
     alt: "Cups",
     name: "Paper Bag",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
@@ -131,7 +131,7 @@ export const item: Item[] = [
     alt: "Item 3",
     name: "Paper Bowl",
     description:
-      "Description for Paper bag Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to p",
+      "Description for Paper bag Paper cups are disposable containers made from the paper and often lined with pplatic or wax to p",
     bgpic: paperBagMachineImage,
   },
   {
@@ -139,7 +139,7 @@ export const item: Item[] = [
     alt: "Item 5",
     name: "Paper Bag",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
@@ -147,7 +147,7 @@ export const item: Item[] = [
     alt: "Item 4",
     name: "Paper Spoon",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for beper bag",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for beper bag",
     bgpic: paperBagMachineImage,
   },
   {
@@ -155,7 +155,7 @@ export const item: Item[] = [
     alt: "Item 3",
     name: "Paper Bag",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
     bgpic: paperBagMachineImage,
   },
   {
@@ -163,7 +163,7 @@ export const item: Item[] = [
     alt: "Item 2",
     name: "Paper Cup",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
@@ -171,7 +171,7 @@ export const item: Item[] = [
     alt: "Cups",
     name: "Paper Bowl",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
     bgpic: paperBagMachineImage,
   },
   {
@@ -179,7 +179,7 @@ export const item: Item[] = [
     alt: "Item 2",
     name: "Paper Cup",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
@@ -187,7 +187,7 @@ export const item: Item[] = [
     alt: "Item 3",
     name: "Paper Plate",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
     bgpic: paperBagMachineImage,
   },
   {
@@ -195,7 +195,7 @@ export const item: Item[] = [
     alt: "Cups",
     name: "Paper Bag",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
     bgpic: paperBagMachineImage,
   },
   {
@@ -203,7 +203,7 @@ export const item: Item[] = [
     alt: "Item 3",
     name: "Paper Cup",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
     bgpic: paperBagMachineImage,
   },
   {
@@ -211,7 +211,7 @@ export const item: Item[] = [
     alt: "Item 4",
     name: "Paper Spoon",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
@@ -219,7 +219,7 @@ export const item: Item[] = [
     alt: "Cups",
     name: "Paper Bag",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
     bgpic: paperBagMachineImage,
   },
   {
@@ -227,7 +227,7 @@ export const item: Item[] = [
     alt: "Item 2",
     name: "Paper Glass",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.",
     bgpic: paperBagMachineImage,
   },
   {
@@ -235,7 +235,7 @@ export const item: Item[] = [
     alt: "Item 3",
     name: "Paper Bag",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
     bgpic: paperBagMachineImage,
   },
   {
@@ -243,7 +243,7 @@ export const item: Item[] = [
     alt: "Item 4",
     name: "Paper Spoon",
     description:
-      "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
+      "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
 ];

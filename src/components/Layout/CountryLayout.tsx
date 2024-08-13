@@ -545,7 +545,8 @@ const CountryLayout: React.FC = () => {
             />
           </div>
           <p className="font-montserrat ml-1 text-black text-16">
-            {selectedCountry.code.toUpperCase()}
+            {selectedCountry.code.charAt(0).toUpperCase() +
+              selectedCountry.code.slice(1).toLowerCase()}
           </p>
         </button>
       </div>

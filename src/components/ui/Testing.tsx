@@ -137,7 +137,7 @@ export const Testing = ({
                     <p className="text-center text-4xl">❝</p>
                     <p className="text-gray-700 text-center text-base mb-2">{el.quote}</p>
                   </div>
-                  <div className="flex text-base flex-row justify-start items-center">
+                  <div className="flex text-base pb-1 flex-row justify-start items-center">
                      <div className="h-10 w-1 bg-[#483d78]"></div>
                     <div className="flex ml-2 flex-col">
                       <h3 className="text-sm ">{el.username}</h3>
