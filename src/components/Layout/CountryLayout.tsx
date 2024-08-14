@@ -278,7 +278,7 @@ const CountryLayout: React.FC = () => {
   });
 
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname() || "";
 
   const countries: Country[] = [
     {
@@ -496,23 +496,26 @@ const CountryLayout: React.FC = () => {
 
   useEffect(() => {
     if (pathname) {
-      const countryCode = pathname.split("/")[1].toUpperCase();
-      const countryData = lookup.byIso(countryCode);
+      // Check if pathname is not null
+      const countryCode = pathname.split("/")[1]?.toUpperCase();
+      if (countryCode) {
+        const countryData = lookup.byIso(countryCode);
 
-      if (countryData) {
-        setSelectedCountry({
-          name: countryData.country,
-          language: "Unknown",
-          flag: `https://flagcdn.com/${countryCode.toLowerCase()}.svg`,
-          code: countryCode.toLowerCase(),
-        });
-      } else {
-        setSelectedCountry({
-          name: "Unknown Country",
-          language: "Unknown",
-          flag: `https://flagcdn.com/${countryCode.toLowerCase()}.svg`,
-          code: countryCode.toLowerCase(),
-        });
+        if (countryData) {
+          setSelectedCountry({
+            name: countryData.country,
+            language: "Unknown",
+            flag: `https://flagcdn.com/${countryCode.toLowerCase()}.svg`,
+            code: countryCode.toLowerCase(),
+          });
+        } else {
+          setSelectedCountry({
+            name: "Unknown Country",
+            language: "Unknown",
+            flag: `https://flagcdn.com/${countryCode.toLowerCase()}.svg`,
+            code: countryCode.toLowerCase(),
+          });
+        }
       }
     }
   }, [pathname]);
@@ -521,7 +524,8 @@ const CountryLayout: React.FC = () => {
     setSelectedCountry(country);
     setIsFlagOpen(false);
     setSearchTerm("");
-    router.push(`/${country.code}`);
+    const currentPath = pathname.split("/").slice(2).join("/");
+    router.push(`/${country.code}/${currentPath}`);
   };
 
   return (

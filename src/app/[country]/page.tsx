@@ -9,9 +9,12 @@ const AboutUs = dynamic(() => import("@/components/Home/AboutSection"), {
   ssr: true,
 });
 
-const MarqueeSection = dynamic(() => import("@/components/Home/MarqueeSection"), {
-  ssr: true,
-});
+const MarqueeSection = dynamic(
+  () => import("@/components/Home/MarqueeSection"),
+  {
+    ssr: true,
+  }
+);
 
 const KnowMore = dynamic(() => import("@/components/Home/KnowMore"), {
   ssr: true,
@@ -25,19 +28,25 @@ const NewsFeature = dynamic(() => import("@/components/Home/NewsFeature"), {
   ssr: true,
 });
 
-const HomeTestimonial = dynamic(() => import("@/components/Home/TestimonialsSection"), {
-  ssr: true,
-});
+const HomeTestimonial = dynamic(
+  () => import("@/components/Home/TestimonialsSection"),
+  {
+    ssr: true,
+  }
+);
 
-const CanvasRevealEffectDemo = dynamic(() =>
-  import("@/components/Home/CanvasRevealEffectDemo").then((mod) => mod.default),
+const CanvasRevealEffectDemo = dynamic(
+  () =>
+    import("@/components/Home/CanvasRevealEffectDemo").then(
+      (mod) => mod.default
+    ),
   {
     ssr: false, // Assuming this component is heavy and not critical for SEO
   }
 );
 
-const IotSection = dynamic(() =>
-  import("@/components/Home/IotSection").then((mod) => mod.default),
+const IotSection = dynamic(
+  () => import("@/components/Home/IotSection").then((mod) => mod.default),
   {
     ssr: false, // Assuming this component is heavy and not critical for SEO
   }
@@ -106,6 +115,7 @@ export default function Home() {
           <div className="relative mx-8 z-20">
             <HomeTestimonial />
           </div>
+          
         </div>
       </div>
     </main>

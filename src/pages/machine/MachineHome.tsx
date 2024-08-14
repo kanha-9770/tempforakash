@@ -1,57 +1,76 @@
-import React from 'react';
-import Head from 'next/head';
-import Image from 'next/image';
+"use client";
 
-const Machine = () => {
+import React from "react";
+import Image, { StaticImageData } from "next/image";
+import "./machine.css";
+
+interface MachineProps {
+  product_heading: string;
+  name: string;
+  application: string;
+  mimage: StaticImageData;
+}
+
+const Machine: React.FC<MachineProps> = ({
+  product_heading,
+  name,
+  application,
+  mimage,
+}) => {
   return (
-    <div className="min-h-screen bg-white  flex flex-col">
-      <Head>
-        <title>Food Packaging Machines</title>
-        <meta name="description" content="Food Packaging Machines" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <header className="flex justify-between items-center px-4 py-2 border-b">
-        <nav>
-          <ul className="flex space-x-4">
-            {['Machines', 'About Us', 'News', 'Brands', 'Clientele', 'Testimonials'].map((item) => (
-              <li key={item} className="text-gray-600 hover:text-gray-900 cursor-pointer">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
-      <main className="flex-1 flex flex-col items-center justify-center px-4">
-        <h1 className="text-5xl font-bold text-gray-800">
-          Food Packaging Machines
-        </h1>
-        <h2 className="text-5xl font-bold text-red-500 mt-2">
-          Flexo Printing
-        </h2>
-        <p className="text-lg text-gray-600 mt-4">
-          Flexo Printing Machine, with 200 mtr per sec.<br />
-          4 Color Machines, designed for paper rolls.
-        </p>
-        <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-          Book Now
-        </button>
-        <div className="mt-8 relative w-full h-96">
-          <Image src="/path/to/your/machine-image.png" fill  alt="Machine Image" />
+    <div className="h-screen  flex items-center justify-start mx-10 bg-gray-50">
+      <div className="font-montserrat w-[80%]">
+        <div className="flex flex-col w-full h-full">
+          <div className="flex flex-row items-start">
+            <div className="w-[60%] flex flex-col">
+              <h1 className="text-6xl mb-2">Food Packaging Machines</h1>
+              <h2 className="text-6xl font-bold italic mt-2" style={{ color: "#483D73" }}>
+                Flexo <span className="text-red-500">Printing</span>
+              </h2>
+              <p className="text-lg mt-4">{application}</p>
+              <button
+                className="mt-5 px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800"
+                style={{ backgroundColor: "#483D73" }}
+              >
+                Book Now
+              </button>
+            </div>
+            <div className="w-[40%] flex justify-end relative">
+              <div className="w-full h-96 bg-white mt-20 flex justify-end items-end">
+                <Image
+                  src={mimage}
+                  height={800}
+                  width={400}
+                  alt="Flexo Printing Machine"
+                  className="h-full w-auto"
+                />
+              </div>
+              <svg
+                className="connector-svg absolute"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+                style={{ top: "50%", left: "-10%", transform: "translateY(-50%)" }}
+              >
+                <path
+                  id="connector-path"
+                  d="M10,10 L30,30 L80,30 L100,50"
+                  fill="transparent"
+                  stroke="#374C68"
+                  strokeWidth="2"
+                />
+                <circle
+                  cx="100"
+                  cy="50"
+                  r="4"
+                  fill="black"
+                  stroke="#374C68"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
-        <div className="mt-8">
-        </div>
-      </main>
-      <footer className="flex flex-col items-center py-4 border-t">
-        <p className="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Food Packaging Machines. All rights reserved.
-        </p>
-      </footer>
-      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 space-y-4">
-        {['phone', 'whatsapp', 'email', 'chat'].map((icon) => (
-          <button key={icon} className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300">
-            <Image src={`/icons/${icon}.svg`} width={24} height={24} alt={icon} />
-          </button>
-        ))}
       </div>
     </div>
   );

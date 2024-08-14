@@ -1,0 +1,68 @@
+.product-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .product-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product-btn.active::after,
+  .product-btn:hover::after {
+    background-color: #483d73;
+  }
+  
+  .product-btn.active {
+    font-weight: bold;
+  }
+  .product-btn:hover,
+  .product-btn.active {
+    color: #483d73; /* Change text color on hover and active */
+  }
+  
+  .connector-svg {
+    position: absolute;
+    top: 32%;
+    left: 26%;
+    pointer-events: none;
+  }
+  
+  .connector-path {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: drawLine 3s forwards;
+  }
+  
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  .custom-subtitle {
+    color: #483D73;
+  }
+  
+  .custom-button {
+    background-color: #483D73;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .connector-svg {
+    position: absolute;
+  }
