@@ -10,26 +10,23 @@ interface BreadcrumbProps {
   items: BreadcrumbItem[];
 }
 
-const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
+const BreadcrumbProduct: React.FC<BreadcrumbProps> = ({ items }) => {
   return (
     <nav className="flex" aria-label="Breadcrumb">
-      <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+      <ol className="inline-flex items-center font-poppins space-x-1 md:space-x-2 rtl:space-x-reverse">
         {items.map((item, index) => (
           <li key={index} className="inline-flex items-center">
             {item.href ? (
               <a
                 href={item.href}
-                className={`inline-flex items-center text-xs sm:text-lg font-medium ${
+                className={`inline-flex items-center md:text-3xl font-black ${
                   item.current
                     ? "text-gray-500"
-                    : "text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+                    : "text-gray-700 hover:text-[#483d78] dark:text-gray-400 dark:hover:text-white"
                 }`}
               >
                 {index === 0 ? (
-                  <>
-                    
-                    {item.label}
-                  </>
+                  <>{item.label}</>
                 ) : (
                   <>
                     {" > "}
@@ -39,8 +36,8 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
               </a>
             ) : (
               <span
-                className={`inline-flex items-center text-xs sm:text-lg font-medium ${
-                  item.current ? "text-gray-500" : "text-gray-700"
+                className={`inline-flex items-center font-poppins font-medium md:text-3xl ${
+                  item.current ? "text-red-500" : "text-red-500"
                 }`}
               >
                 {index !== 0 && " > "}
@@ -54,4 +51,4 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   );
 };
 
-export default Breadcrumb;
+export default BreadcrumbProduct;

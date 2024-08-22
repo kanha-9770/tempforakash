@@ -23,9 +23,9 @@ const SignupFormDemo = () => {
 
   return (
     <motion.div
-      className="flex justify-end max-w-full mx-auto rounded-none md:rounded-xl p-4 md:p-8 shadow-input bg-white dark:bg-black"
+      className="flex justify-end max-w-full mx-auto rounded-none md:rounded-xl p-4 md:p-8  shadow-input  bg-white dark:bg-black"
       initial={{ y: "-100%", height: 0, opacity: 0 }}
-      animate={{ y: 0, height: "35rem", opacity: 1 }}
+      animate={{ y: 0, height: "33rem", opacity: 1 }}
       exit={{ y: "-100%", height: 0, opacity: 0 }}
       transition={transition}
     >
@@ -64,8 +64,6 @@ const SignupFormDemo = () => {
             Submit &rarr;
             <BottomGradient />
           </button>
-
-         
         </form>
       </div>
     </motion.div>

@@ -70,7 +70,11 @@ export const Machines = [
   {
     name: "NS-015",
     image: "PCM110WithPLC",
+
     mimage: PCM110WithPLC,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cup Machine, All Products",
     icon: "papercup",
     introduction:
@@ -89,6 +93,9 @@ export const Machines = [
     name: "NS-016",
     image: "PCM110WithPLC",
     mimage: PCM110WithPLC,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cup Machine, All Products",
     icon: "papercup",
     introduction:
@@ -108,6 +115,9 @@ export const Machines = [
     name: "NS-017",
     image: "PCM110WithPLC",
     mimage: PCM110WithPLC,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cup Machine, All Products",
     icon: "papercup",
     introduction:
@@ -127,6 +137,9 @@ export const Machines = [
     name: "NS-018",
     image: "PCM110WithPLC",
     mimage: PCM110WithPLC,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cup Machine, All Products",
     icon: "papercup",
     introduction:
@@ -134,14 +147,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -150,6 +163,9 @@ export const Machines = [
     image: "PCM110WithPLC",
     mimage: PCM110WithPLC,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cup Machine, All Products",
     icon: "papercup",
     introduction:
@@ -157,14 +173,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -173,6 +189,9 @@ export const Machines = [
     image: "PCM110WithPLC",
     mimage: PCM110WithPLC,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cup Machine, All Products",
     icon: "papercup",
     introduction:
@@ -180,14 +199,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -196,6 +215,9 @@ export const Machines = [
     image: "PCM110WithPLC",
     mimage: PCM110WithPLC,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cup Machine, All Products",
     icon: "papercup",
     introduction:
@@ -203,14 +225,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -219,6 +241,9 @@ export const Machines = [
     image: "PCM110WithPLC",
     mimage: PCM110WithPLC,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cup Machine, All Products",
     icon: "papercup",
     introduction:
@@ -226,14 +251,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -242,6 +267,9 @@ export const Machines = [
     image: "PCM110WithPLC",
     mimage: PCM110WithPLC,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cup Machine, All Products",
     icon: "papercup",
     introduction:
@@ -249,14 +277,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -264,6 +292,9 @@ export const Machines = [
     name: "Paper Bowl Machine 01",
     image: "paperBowlMachineImage",
     mimage: paperBowlMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Bowl Machine, All Products",
     icon: "paperbowl",
     introduction:
@@ -283,6 +314,9 @@ export const Machines = [
     name: "Paper Bowl Machine 02",
     image: "paperBowlMachineImage",
     mimage: paperBowlMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Bowl Machine, mimage: paperBowlMachineImage,All Products",
     icon: "paperbowl",
     introduction:
@@ -290,14 +324,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -305,6 +339,9 @@ export const Machines = [
     name: "Paper Bowl Machine 03",
     image: "paperBowlMachineImage",
     mimage: paperBowlMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Bowl Machine, mimage: paperBowlMachineImage,All Products",
     icon: "paperbowl",
     introduction:
@@ -312,14 +349,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -327,6 +364,9 @@ export const Machines = [
     name: "Paper Bowl Machine 04",
     image: "paperBowlMachineImage",
     mimage: paperBowlMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Bowl Machine, mimage: paperBowlMachineImage,All Products",
     icon: "paperbowl",
     introduction:
@@ -334,14 +374,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -350,6 +390,9 @@ export const Machines = [
     image: "paperPlateMachineImage",
     mimage: paperPlateMachineImage,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Plate Machine, All Products",
     icon: "paperplate2",
     introduction:
@@ -357,14 +400,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -373,6 +416,9 @@ export const Machines = [
     image: "paperPlateMachineImage",
     mimage: paperPlateMachineImage,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Plate Machine, All Products",
     icon: "paperplate2",
     introduction:
@@ -380,14 +426,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -396,6 +442,9 @@ export const Machines = [
     image: "paperPlateMachineImage",
     mimage: paperPlateMachineImage,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Plate Machine, All Products",
     icon: "paperplate2",
     introduction:
@@ -403,14 +452,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -419,6 +468,9 @@ export const Machines = [
     image: "paperPlateMachineImage",
     mimage: paperPlateMachineImage,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Plate Machine, All Products",
     icon: "paperplate2",
     introduction:
@@ -426,14 +478,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -441,6 +493,9 @@ export const Machines = [
     name: "Paper Flexo Machine",
     image: "paperFlexoMachineImage",
     mimage: paperFlexoMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Flexo Machine, All Products",
     icon: "paperlid",
     introduction:
@@ -449,7 +504,7 @@ export const Machines = [
     application:
       "Ideal for printing logos, designs, and labels on paper cups, bowls, and plates.",
     product_description:
-      "This machine features a modular design for easy customization and maintenance. It includes precision controls for accurate ink application and drying.",
+      "This paper container machine or paper bowl making machine from Nessco is designed with high level of accuracy and international standards. This machine makes paper containers and bowls for food packaging and serving. The machines runs a whole procedure of paper feeding, bowl-fan wall sealing, oil lubrication, bottom punching, heating, rolling, rimming, rounding, and discharge as well.",
     technical_specification: "Material: Aluminum alloy, Weight: 800kg",
     optional_add_ons:
       "Additional color printing units available for multi-color designs.",
@@ -460,6 +515,9 @@ export const Machines = [
     name: "Paper Flexo Machine",
     image: "paperFlexoMachineImage",
     mimage: paperFlexoMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Flexo Machine, All Products",
     icon: "paperlid",
     introduction:
@@ -467,14 +525,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
-      "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+      "This paper container machine or paper bowl making machine from Nessco is designed with high level of accuracy and international standards. This machine makes paper containers and bowls for food packaging and serving. The machines runs a whole procedure of paper feeding, bowl-fan wall sealing, oil lubrication, bottom punching, heating, rolling, rimming, rounding, and discharge as well.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -483,6 +541,9 @@ export const Machines = [
     name: "Paper Flexo Machine2",
     image: "paperFlexoMachineImage",
     mimage: paperFlexoMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Flexo Machine, All Products",
     icon: "paperlid",
     introduction:
@@ -490,14 +551,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
-      "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+      "This paper container machine or paper bowl making machine from Nessco is designed with high level of accuracy and international standards. This machine makes paper containers and bowls for food packaging and serving. The machines runs a whole procedure of paper feeding, bowl-fan wall sealing, oil lubrication, bottom punching, heating, rolling, rimming, rounding, and discharge as well.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -506,6 +567,9 @@ export const Machines = [
     image: "paperFlexoMachineImage",
     mimage: paperFlexoMachineImage,
 
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Flexo Machine, All Products",
     icon: "paperlid",
     introduction:
@@ -513,14 +577,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -528,6 +592,9 @@ export const Machines = [
     name: "Paper Bag Machine new",
     image: "fullyAutomaticBagMachineImage",
     mimage: fullyAutomaticBagMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Bag Machine, All Products",
     icon: "paperbag1",
     introduction:
@@ -547,6 +614,9 @@ export const Machines = [
     name: "Paper Bag Machine1",
     image: "fullyAutomaticBagMachineImage",
     mimage: fullyAutomaticBagMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Bag Machine, All Products",
     icon: "paperbag1",
     introduction:
@@ -554,14 +624,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -569,6 +639,9 @@ export const Machines = [
     name: "Paper Bag Machine new2",
     image: "fullyAutomaticBagMachineImage",
     mimage: fullyAutomaticBagMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Bag Machine, All Products",
     icon: "paperbag1",
     introduction:
@@ -576,14 +649,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -591,6 +664,9 @@ export const Machines = [
     name: "Paper Bag Machine new2",
     image: "fullyAutomaticBagMachineImage",
     mimage: fullyAutomaticBagMachineImage,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Bag Machine, All Products",
     icon: "paperbag1",
     introduction:
@@ -598,14 +674,14 @@ export const Machines = [
     parameters:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
     application:
-      "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+      "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     product_description:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     technical_specification:
       "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
     optional_add_ons:
       "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-    faqs: "Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+    faqs: "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
     related_product:
       "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
   },
@@ -613,6 +689,9 @@ export const Machines = [
     name: "Die Cutting Machine X1",
     image: "dieCuttingMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Die Cutting Machines, All Products",
     icon: "diecutting",
     introduction:
@@ -631,6 +710,9 @@ export const Machines = [
     name: "Flexo Printing Machine Y1",
     image: "flexoPrintingMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Printing Machines, All Products",
     icon: "flexoprinting",
     introduction:
@@ -649,6 +731,9 @@ export const Machines = [
     name: "Slitting Machine Z1",
     image: "slittingMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Slitting Machines, All Products",
     icon: "slitting",
     introduction:
@@ -667,6 +752,9 @@ export const Machines = [
     name: "Coating Machine A1",
     image: "coatingMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Coating Machines, All Products",
     icon: "coating",
     introduction:
@@ -685,6 +773,9 @@ export const Machines = [
     name: "Paper Bucket Machine B1",
     image: "paperBucketMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Bucket Machines, All Products",
     icon: "paperbucket",
     introduction:
@@ -703,6 +794,9 @@ export const Machines = [
     name: "Paper Lid Machine C1",
     image: "paperLidMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Lid Machines, All Products",
     icon: "paperlid",
     introduction:
@@ -721,6 +815,9 @@ export const Machines = [
     name: "Insulated Cup Machine D1",
     image: "insulatedCupMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Insulated Cup Machines, All Products",
     icon: "insulatedcup",
     introduction:
@@ -739,6 +836,9 @@ export const Machines = [
     name: "Sleeve Making Machine E1",
     image: "sleeveMakingMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Sleeve Making Machines, All Products",
     icon: "sleeve",
     introduction:
@@ -757,6 +857,9 @@ export const Machines = [
     name: "Corrugation Machine F1",
     image: "corrugationMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Corrugation Machines, All Products",
     icon: "corrugation",
     introduction:
@@ -775,6 +878,9 @@ export const Machines = [
     name: "Paper Handle Cup Machine G1",
     image: "paperHandleCupMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Handle Cup Machines, All Products",
     icon: "paperhandle",
     introduction:
@@ -793,6 +899,9 @@ export const Machines = [
     name: "Paper Cutlery Machine H1",
     image: "paperCutleryMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Cutlery Machines, All Products",
     icon: "cutlery",
     introduction:
@@ -811,6 +920,9 @@ export const Machines = [
     name: "Plastic Lid Machine I1",
     image: "plasticLidMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Plastic Lid Machines, All Products",
     icon: "plasticlid",
     introduction:
@@ -830,6 +942,9 @@ export const Machines = [
     name: "Paper Forming Machine J1",
     image: "paperFormingMachineImage",
     mimage: placeholder,
+    product_heading: "food packaging machine",
+    first_name: "first name",
+    second_name: "second_name",
     category: "Paper Forming Machines, All Products",
     icon: "paperforming",
     introduction:
