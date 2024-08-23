@@ -77,7 +77,7 @@ export default function Home() {
       <Hero />
       <NavLinksDemo navItems={navItems} />
       <div className="h-full">
-        <div id="aboutUs" className="mx-4 mt-32" ref={aboutUsRef}>
+        <div id="aboutUs" className="mx-4 " ref={aboutUsRef}>
           <AboutUs
             heading={data.heading}
             description={data.description}
@@ -115,7 +115,6 @@ export default function Home() {
           <div className="relative mx-8 z-20">
             <HomeTestimonial />
           </div>
-          
         </div>
       </div>
     </main>

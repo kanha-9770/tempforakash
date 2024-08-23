@@ -30,7 +30,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
   cards,
 }) => {
   return (
-    <div className="flex mt-12 md:space-y-14 h-screen max-w-screen-2xl mx-auto flex-col items-center">
+    <div className="flex md:space-y-14 h-screen max-w-screen-2xl mx-auto flex-col items-center">
       <motion.div className="text-center w-full max-w-6xl">
         <h1 className="text-2xl text-[#483d78]">
           About <span className="text-red-500 font-extrabold">US</span>
@@ -108,10 +108,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
                   }`}
                 />
                 <div className="absolute bottom-0 left-0 p-4 flex items-center justify-between w-full">
-                  <a
-                    href={card.link}
-                    className="text-white text-base"
-                  >
+                  <a href={card.link} className="text-white text-base">
                     {card.title}
                   </a>
                   <BsBoxArrowUpRight className="text-2xl text-white font-extrabold text-bold" />

@@ -10,6 +10,9 @@ import { Machines } from "@/components/Constants/Navbar/product-data";
 import Machine from "@/pages/machine/MachineHome";
 import ProductDescription from "@/components/Products/ProductDescription";
 import CupFormactionProcess from "@/components/Products/CupFormactionProcess";
+import { TechnicalSpecifications } from "@/components/Products/TechnicalSpecification";
+import MachineCard from "@/components/Products/MachineCard";
+import FaqSection from "@/components/Products/FaqSection";
 
 export default function Home() {
   const params = useParams();
@@ -54,24 +57,27 @@ export default function Home() {
         second_name={machine.second_name}
         description={machine.product_description}
       />
-      <NavLinksDemo navItems={navLinks}/>
+      <NavLinksDemo navItems={navLinks} />
       <div className="h-full">
         <div className="mx-10 mt-32" ref={productDescriptionRef}>
           <ProductDescription />
         </div>
         <div className="mx-10 mt-32" ref={processRef}>
-          <CupFormactionProcess/>
+          <CupFormactionProcess />
         </div>
         <div className="mx-6 mt-32" ref={applicationsRef}>
-          <KnowMore />
+          {/* <KnowMore /> */}
         </div>
-        
+
         <div className="mx-6 mt-32" ref={technicalSpecificationsRef}>
-          <NewsFeature />
+          <TechnicalSpecifications />
         </div>
 
         <div className="mx-6 mt-32" ref={faqsRef}>
-          <HomeTestimonial />
+          <FaqSection />
+        </div>
+        <div className="mx-6 mt-32" ref={relatedProductsRef}>
+          <MachineCard />
         </div>
       </div>
     </main>

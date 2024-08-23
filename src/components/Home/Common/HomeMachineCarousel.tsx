@@ -9,16 +9,7 @@ import { FaCircleNotch } from "react-icons/fa";
 import {
   papercup,
   paperbowl,
-  paperlid,
-  paperBowlMachineImage,
-  paperBagMachineImage,
-  paperPlateMachineImage,
-  paperFlexoMachineImage,
-  fullyAutomaticBagMachineImage,
-  PCM110WithPLC,
-  paperStrawMachine,
-  paperLunchBoxMachine,
-  paperCupMachineImage,
+ 
 } from "../../../../public/assets";
 import {
   CartonErectingMachine,

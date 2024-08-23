@@ -241,10 +241,15 @@ const Home: React.FC = () => {
               )}
             </div>
           ) : (
-            <div className="absolute inset-0 flex items-center rounded-3xl justify-center bg-cover bg-center" style={{ backgroundImage: "url('https://i.pinimg.com/564x/30/b8/be/30b8beaf12dee7ac4ea578c48926f78b.jpg')" }}>
-            <div className="">
+            <div
+              className="absolute inset-0 flex items-center rounded-3xl justify-center bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url('https://i.pinimg.com/564x/30/b8/be/30b8beaf12dee7ac4ea578c48926f78b.jpg')",
+              }}
+            >
+              <div className=""></div>
             </div>
-          </div>
           )}
         </motion.div>
       </div>
