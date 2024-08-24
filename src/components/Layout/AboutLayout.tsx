@@ -47,7 +47,7 @@ const AboutLayout = () => {
   }, [handleWheel]);
 
   return (
-    <div className="flex w-[98vw] p-2 px-4 max-w-screen-2xl flex-col md:flex-row items-center justify-center rounded-xl h-full">
+    <div className="flex w-[98vw] p-2 px-4 pb-6 max-w-screen-2xl flex-col md:flex-row items-center justify-center rounded-xl h-full">
       <div className="grid -ml-2 grid-cols-2 justify-start md:grid-cols-4 w-[75vw]">
         {titlesWithImages.map((item, index) => (
           <motion.div
@@ -58,10 +58,10 @@ const AboutLayout = () => {
             className="flex flex-col justify-start items-center mt-4"
           >
             <Link href={`/${item.title}`} passHref>
-              <BlurImage
+              <Image
                 src={item.image}
                 alt={item.title}
-                className="bg-gray-600 rounded-2xl cursor-pointer w-56 h-56 object-cover transform hover:scale-80 transition-transform duration-200"
+                className="rounded-2xl cursor-pointer w-56 h-56 object-cover transform hover:scale-80 transition-transform duration-200"
                 width={240}
                 height={240}
                 priority={index < 4} // Prioritize the first few images

@@ -117,14 +117,14 @@ const NewsFeature: React.FC = () => {
   };
 
   return (
-    <div className="p-4 h-screen relative">
+    <div className="p-4 px-8 h-screen relative">
       <div className="text-center">
         <h1 className="text-3xl font-montserrat">
           <span className="text-[#483d73]">Featured</span>
           <span className="text-red-600"> News</span>
         </h1>
       </div>
-      <div className="flex mt-4 h-full">
+      <div className="flex gap-2 mt-4 h-full">
         <div className="relative w-[36%] ml-2">
           <div className="relative group h-[83vh]">
             <Image
@@ -151,8 +151,8 @@ const NewsFeature: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="w-[64%] flex flex-col">
-          <div className="flex ml-6 h-[62%] space-x-6">
+        <div className="w-[64%]  flex flex-col">
+          <div className="flex ml-6 gap-2 h-[62%] space-x-6">
             {newscardcontent.slice(1, 3).map((content, index) => (
               <div key={index + 1} className="relative flex-1">
                 <div className="relative group h-full">

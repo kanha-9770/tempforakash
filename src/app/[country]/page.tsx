@@ -73,11 +73,11 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-[#f2f2f2]">
+    <main className="bg-[#f2f2f2] ">
       <Hero />
       <NavLinksDemo navItems={navItems} />
       <div className="h-full">
-        <div id="aboutUs" className="mx-4 " ref={aboutUsRef}>
+        <div id="aboutUs" className="mx-4 mt-16" ref={aboutUsRef}>
           <AboutUs
             heading={data.heading}
             description={data.description}
@@ -85,30 +85,30 @@ export default function Home() {
             cards={data.cards}
           />
         </div>
-        <div id="clientele" className="mx-4 m-48" ref={infiniteCardsRef}>
+        <div id="clientele" className="mx-4 mt-16" ref={infiniteCardsRef}>
           <MarqueeSection />
         </div>
-        <div id="knowMore" className="mx-4" ref={knowMoreRef}>
+        <div id="knowMore" className="mx-4 mt-16" ref={knowMoreRef}>
           <KnowMore />
         </div>
-        <div id="machines" className="mt-32" ref={homeMachineRef}>
+        <div id="machines" className="mx-4 mt-16" ref={homeMachineRef}>
           <HomeMachine />
         </div>
-        <div id="iot" className="mx-6 mt-32" ref={iotRef}>
+        <div id="iot" className="mx-6 mt-16" ref={iotRef}>
           <h4 className="text-xl text-center lg:text-2xl font-poppins lg:leading-tight text-black dark:text-white">
             IoT <span className="text-red-500 font-bold">System</span>
           </h4>
           <IotSection />
         </div>
-        <div id="news" className="mx-4 mt-32" ref={newsFeatureRef}>
+        <div id="news" className="mx-4 mt-16" ref={newsFeatureRef}>
           <NewsFeature />
         </div>
-        <div id="knowMachine" className="mx-4 mt-32" ref={knowMachineRef}>
+        <div id="knowMachine" className="mx-4 mt-16" ref={knowMachineRef}>
           <CanvasRevealEffectDemo />
         </div>
         <div
           id="testimonials"
-          className="relative mt-20 bg-gradient-to-l via-purple-200 to-transparent h-screen overflow-hidden"
+          className="relative mt-16 bg-gradient-to-l via-purple-200 to-transparent h-screen overflow-hidden"
           ref={homeTestimonialRef}
         >
           <div className="absolute"></div>

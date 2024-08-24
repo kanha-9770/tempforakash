@@ -462,27 +462,56 @@ const CountryLayout: React.FC = () => {
       code: "za",
     },
   ];
+;
 
+  // Filter countries by search term
   const filteredCountries = countries.filter(
     (country) =>
       country.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       country.language.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Function to handle flag dropdown visibility
   const handleFlagOpen = () => {
     setIsFlagOpen(!isFlagOpen);
   };
 
-  const handleShowMore = () => {
-    setVisibleCount((prevCount) => prevCount + 9);
+  // Function to handle country selection
+  const handleCountrySelect = (country: Country) => {
+    setSelectedCountry(country);
+    setIsFlagOpen(false);
+    setSearchTerm("");
+
+    // Extract the current path without the country code
+    const currentPath = pathname.split("/").slice(2).join("/") || "contact"; // Default to "contact" if no path
+
+    // Update the route to include the new country code
+    router.push(`/${country.code}/${currentPath}`);
   };
 
+  // Automatically update the country based on URL
+  useEffect(() => {
+    if (pathname) {
+      const countryCode = pathname.split("/")[1]?.toLowerCase();
+      if (countryCode) {
+        const countryData = lookup.byIso(countryCode.toUpperCase());
+
+        if (countryData) {
+          setSelectedCountry({
+            name: countryData.country,
+            language: "Unknown", // Customize language as needed
+            flag: `https://flagcdn.com/${countryCode}.svg`,
+            code: countryCode,
+          });
+        }
+      }
+    }
+  }, [pathname]);
+
+  // Close flag dropdown when clicking outside
   const countryRef = useRef<HTMLDivElement | null>(null);
   const handleClickOutside = (event: MouseEvent) => {
-    if (
-      countryRef.current &&
-      !countryRef.current.contains(event.target as Node)
-    ) {
+    if (countryRef.current && !countryRef.current.contains(event.target as Node)) {
       setIsFlagOpen(false);
     }
   };
@@ -494,39 +523,11 @@ const CountryLayout: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (pathname) {
-      // Check if pathname is not null
-      const countryCode = pathname.split("/")[1]?.toUpperCase();
-      if (countryCode) {
-        const countryData = lookup.byIso(countryCode);
-
-        if (countryData) {
-          setSelectedCountry({
-            name: countryData.country,
-            language: "Unknown",
-            flag: `https://flagcdn.com/${countryCode.toLowerCase()}.svg`,
-            code: countryCode.toLowerCase(),
-          });
-        } else {
-          setSelectedCountry({
-            name: "Unknown Country",
-            language: "Unknown",
-            flag: `https://flagcdn.com/${countryCode.toLowerCase()}.svg`,
-            code: countryCode.toLowerCase(),
-          });
-        }
-      }
-    }
-  }, [pathname]);
-
-  const handleCountrySelect = (country: Country) => {
-    setSelectedCountry(country);
-    setIsFlagOpen(false);
-    setSearchTerm("");
-    const currentPath = pathname.split("/").slice(2).join("/");
-    router.push(`/${country.code}/${currentPath}`);
+  const handleShowMore = () => {
+    setVisibleCount((prevCount) => prevCount + 9);
   };
+
+
 
   return (
     <div ref={countryRef} className="relative inline-block text-left">
@@ -534,7 +535,6 @@ const CountryLayout: React.FC = () => {
         <button
           type="button"
           className="inline-flex items-center h-8 w-full rounded-md text-sm font-medium text-gray-700 focus:outline-none"
-          id="menu-button"
           aria-expanded={isFlagOpen}
           aria-haspopup="true"
           onClick={handleFlagOpen}
@@ -549,17 +549,14 @@ const CountryLayout: React.FC = () => {
             />
           </div>
           <p className="font-montserrat ml-1 text-black text-16">
-            {selectedCountry.code.charAt(0).toUpperCase() +
-              selectedCountry.code.slice(1).toLowerCase()}
+            {selectedCountry.code.toUpperCase()}
           </p>
         </button>
       </div>
       {isFlagOpen && (
         <div
           className="absolute right-[-10.5rem] mt-2 w-64 bg-white rounded-2xl shadow-lg border border-gray-300 ring-1 ring-black ring-opacity-5"
-          role="menu"
           aria-orientation="vertical"
-          aria-labelledby="menu-button"
         >
           <div className="relative p-4">
             <div className="absolute inset-y-0 right-6 flex items-center pointer-events-none">
@@ -573,25 +570,18 @@ const CountryLayout: React.FC = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <div
-            className="max-h-60 grid grid-cols-2 overflow-y-auto scrollbar-custom"
-            role="none"
-          >
+          <div className="max-h-60 grid grid-cols-2 overflow-y-auto scrollbar-custom">
             {filteredCountries.slice(0, visibleCount).map((country, index) => (
               <button
                 key={index}
-                className="w-full text-left px-4 py-0 text-sm text-gray-700 hover:bg-gray-100 flex items-center border-r border-gray-300"
-                role="menuitem"
+                className="w-full text-left px-4 py-0 text-sm text-gray-700 hover:bg-gray-100 flex items-center"
                 onClick={() => handleCountrySelect(country)}
               >
                 {country.language}
               </button>
             ))}
             {visibleCount < filteredCountries.length && (
-              <p
-                className="text-red-500 cursor-pointer pl-4 p-2 flex"
-                onClick={handleShowMore}
-              >
+              <p className="text-red-500 cursor-pointer pl-4 p-2" onClick={handleShowMore}>
                 more...
               </p>
             )}

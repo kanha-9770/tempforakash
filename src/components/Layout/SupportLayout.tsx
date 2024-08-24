@@ -40,8 +40,7 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
 
     const initializeCarousel = () => {
       firstCardWidth.current =
-        (carousel.querySelector(".card") as HTMLElement)?.offsetWidth - 400 ||
-        0;
+        (carousel.querySelector(".card") as HTMLElement)?.offsetWidth || 0;
       const carouselChildren = Array.from(carousel.children);
       carouselChildren
         .slice(-cardCount)
@@ -57,8 +56,8 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
           "beforeend",
           (card as HTMLElement).outerHTML
         );
-        console.log(firstCardWidth.current);
       });
+
       carousel.classList.add("no-transition");
       carousel.scrollLeft = firstCardWidth.current * cardCount;
       carousel.classList.remove("no-transition");
@@ -145,101 +144,88 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`wrapper rounded-lg w-[98vw]  max-w-screen-2xl mx-auto relative  ${
-        type === "Resources" ? "h-[60vh]" : "h-[45vh]"
-      } `}
+      className="wrapper rounded-lg bg-white w-[98vw] max-w-screen-2xl mx-auto relative h-full flex items-center justify-center p-14"
     >
-      <div
-        className={`h-full w-full ${
-          type === "Resources" ? "-mt-14" : ""
-        } flex items-center justify-center`}
+      <button
+        onClick={() => handleArrowClick("left")}
+        className="absolute z-10 left-0 p-0 text-4xl ml-2 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
       >
-        <button
-          onClick={() => handleArrowClick("left")}
-          className="absolute z-10 left-0 p-0 text-4xl ml-2 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
-        >
-          <span className="relative z-30 custom-scale">
-            <MdKeyboardArrowLeft />
-          </span>
-        </button>
-        <ul
-          className={`mask-gradient-support carousel ${
-            type === "Resources" ? "h-[60vh]" : " h-[45vh]"
-          }`}
-          ref={carouselRef}
-        >
-          {supporItem.map((card, index) => (
-            <li
-              className="ml-4 flex flex-col h-full items-center justify-center"
-              key={`original-${index}`}
+        <span className="relative z-10">
+          <MdKeyboardArrowLeft />
+        </span>
+      </button>
+      <ul className="carousel" ref={carouselRef}>
+        {supporItem.map((card, index) => (
+          <li
+            className="ml-4 flex flex-col items-center justify-center"
+            key={`original-${index}`}
+          >
+            <div
+              style={backgroundImageStyle}
+              className="card relative"
+              draggable
+              onDragStart={handleDragStart}
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
             >
-              <div
-                style={backgroundImageStyle}
-                className="card relative  custom-scale-80 "
-                draggable
-                onDragStart={handleDragStart}
-                onDragOver={handleDragOver}
-                onDrop={handleDrop}
-              >
-                {type === "Resources" && (
-                  <MdPlayCircleOutline className="absolute top-2 right-2 text-[#483d78] text-3xl" />
-                )}
-                <Image
-                  className="img"
-                  src={card.image}
-                  alt={card.title}
-                  width={IMAGE_WIDTH}
-                  height={IMAGE_HEIGHT}
-                  draggable="false"
-                />
-              </div>
-              <span className="font-montserrat custom-scale-90 text-black mt-4 font-medium hover:text-[#483d78] hover:font-bold text-16">
-                {card.title}
-              </span>
-            </li>
-          ))}
-          {supporItem.map((card, index) => (
-            <li
-              className="ml-4 flex flex-col items-center justify-center"
-              key={`clone-start-${index}`}
+              {type === "Resources" && (
+                <MdPlayCircleOutline className="absolute top-2 right-2 text-[#483d78] text-3xl" />
+              )}
+              <Image
+                className="img"
+                src={card.image}
+                alt={card.title}
+                width={IMAGE_WIDTH}
+                height={IMAGE_HEIGHT}
+                draggable="false"
+              />
+            </div>
+            <span className="font-montserrat mt-4 text-black font-medium hover:text-[#483d78] hover:font-bold text-16">
+              {card.title}
+            </span>
+          </li>
+        ))}
+        {supporItem.map((card, index) => (
+          <li
+            className="ml-4 flex flex-col items-center justify-center"
+            key={`clone-start-${index}`}
+          >
+            <div
+              style={backgroundImageStyle}
+              className="card relative"
+              draggable
+              onDragStart={handleDragStart}
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
             >
-              <div
-                style={backgroundImageStyle}
-                className="card relative custom-scale-80"
-                draggable
-                onDragStart={handleDragStart}
-                onDragOver={handleDragOver}
-                onDrop={handleDrop}
-              >
-                {type === "Resources" && (
-                  <MdPlayCircleOutline className="absolute top-2 right-2 text-[#483d78] text-3xl" />
-                )}
-                <Image
-                  className="img"
-                  src={card.image.src}
-                  alt={card.title}
-                  width={IMAGE_WIDTH}
-                  height={IMAGE_HEIGHT}
-                  draggable="false"
-                />
-              </div>
-              <span className="font-montserrat custom-scale-90 text-black mt-4 font-medium hover:text-[#483d78] hover:font-bold text-16">
-                {card.title}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <button
-          onClick={() => handleArrowClick("right")}
-          className="absolute right-0 z-30 p-0 text-4xl mr-2 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
-        >
-          <span className="relative z-30">
-            <MdKeyboardArrowRight />
-          </span>
-        </button>
-      </div>
+              {type === "Resources" && (
+                <MdPlayCircleOutline className="absolute top-2 right-2 text-[#483d78] text-3xl" />
+              )}
+              <Image
+                className="img"
+                src={card.image.src}
+                alt={card.title}
+                width={IMAGE_WIDTH}
+                height={IMAGE_HEIGHT}
+                draggable="false"
+              />
+            </div>
+            <span className="font-montserrat text-black mt-4 font-medium hover:text-[#483d78] hover:font-bold text-16">
+              {card.title}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <button
+        onClick={() => handleArrowClick("right")}
+        className="absolute right-0 z-10 p-0 text-4xl mr-2 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
+      >
+        <span className="relative z-10">
+          <MdKeyboardArrowRight />
+        </span>
+      </button>
       {type === "Resources" && (
-        <div className="absolute bottom-6 mt-0 z-30 right-20  transition-all">
+        <div className="absolute bottom-2 mt-19  z-30 right-20  transition-all">
           <PositionAwareButton
             text={"Explore All Resources"}
             width="240px"

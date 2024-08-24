@@ -59,29 +59,10 @@ const SearchBarLayout: FC<SearchBarLayoutProps> = ({
         </div>
       )}
       {openSearch && (
-        <div className="absolute -ml-[48.4rem] mr-28 max-w-screen-2xl flex justify-start items-start  top-10 w-[98vw] mx-auto">
+        <div className="absolute -ml-[47rem] mr-28 max-w-screen-2xl flex justify-start items-start  top-10 w-[98vw] mx-auto">
           <div className="bg-white w-full h-[60vh] p-4 rounded-xl shadow-lg">
             <form className="flex justify-start w-1/2 items-center mx-auto space-x-1">
-              <button
-                id="dropdown-button"
-                data-dropdown-toggle="dropdown"
-                className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 font-montserrat text-sm font-medium text-black bg-gray-100 rounded-l-lg hover:bg-gray-200 focus:ring-1 focus:outline-none focus:ring-gray-100"
-                type="button"
-              >
-                All categories
-                <svg
-                  className="w-2.5 h-2.5 ml-2.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 10 6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                >
-                  <path d="M1 1l4 4 4-4" />
-                </svg>
-              </button>
+              
               <div className="relative w-full border-gray-300">
                 <input
                   type="search"

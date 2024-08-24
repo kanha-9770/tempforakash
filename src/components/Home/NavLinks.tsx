@@ -21,9 +21,9 @@ const NavLink: React.FC<NavLinkProps> = memo(
     handleClick,
   }) => (
     <Link
-      href="#"
+      href={`#${text}`}
       scroll={false}
-      className={`text-black font-poppins ml-[2.5rem] pt-2 hover:font-bold custome-scale-90 ${
+      className={`text-black font-poppins ml-[2.5rem] pt-1  ${
         activeLink === index ? "border-b-2 border-red-600" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(index)}
@@ -56,7 +56,11 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   }, []);
 
   const handleClick = (ref: React.RefObject<HTMLDivElement>) => () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
+    const offsetTop = ref.current?.offsetTop || 0;
+    window.scrollTo({
+      top: offsetTop - 98, // Adjust the offset value to achieve top-14
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -99,7 +103,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   useEffect(() => {
     const handleScroll = () => {
       const navTop = navRef.current?.getBoundingClientRect().top || 0;
-      
+
       // Check if the nav is sticky (top of viewport)
       if (navTop <= 14) {
         setScrolling(true);
@@ -116,7 +120,9 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
     <div
       ref={navRef}
       className={`sticky top-14 z-30 transition-all duration-300 ${
-        scrolling ? "bg-[#f2f2f2]/70 backdrop-blur-xl" : "bg-[#f2f2f2]/70 backdrop-blur-xl"
+        scrolling
+          ? "bg-[#f2f2f2]/70 backdrop-blur-xl"
+          : "bg-[#f2f2f2]/70 backdrop-blur-xl"
       }`}
     >
       <nav className="left-0 mb-[4rem] -mt-10 flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">

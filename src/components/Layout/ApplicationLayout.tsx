@@ -26,8 +26,8 @@ const Application: React.FC<{
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.05,
-        duration: 0.2,
+        delay: i * 0.01,
+        duration: 0.1,
         ease: "easeInOut",
       },
     }),
@@ -94,14 +94,14 @@ const ApplicationPage: React.FC = () => {
   };
 
   return (
-    <div className="rounded-3xl w-[98vw] h-[84vh] flex justify-center items-start max-w-screen-2xl">
+    <div className="rounded-3xl w-[98vw] h-full flex justify-center items-start max-w-screen-2xl">
       <div className="overflow-hidden relative">
         <div className="flex">
           <div className="w-[75%] pt-4">
             <Application onHover={handleHover} items={item} />
           </div>
-          <div className="relative ml-2 flex items-center">
-            <div className="border-l h-5/6 absolute transform -translate-x-1/3"></div>
+          <div className="relative ml-2 p-4 pb-8 flex items-center">
+          <div className="ml-2 w-2 h-full  border-l border-gray-300"></div>
           </div>
           <motion.div
             className="w-[35%] ml-3 mt-24 relative"

@@ -124,7 +124,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-[98vw] max-w-screen-2xl z-30 md:h-[78vh] p-0 rounded-xl flex flex-col items-center justify-center font-medium"
+      className="w-[98vw] py-4 max-w-screen-2xl z-30 h-full pb-8 rounded-xl flex  items-start justify-center font-medium"
     >
       <div className="w-full  flex flex-col md:flex-row rounded-lg overflow-hidden">
         <div className="flex  justify-center items-center w-full md:w-[72%] relative">
@@ -139,7 +139,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
 
-          <div className="flex flex-wrap pb-8 justify-start items-start overflow-hidden w-full">
+          <div className="flex flex-wrap  justify-start items-start overflow-hidden w-full">
             {filteredMachines.length <= totalVisible
               ? filteredMachines.map((machine, index) => (
                   <motion.div
@@ -220,52 +220,54 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
         </div>
-        <div className="w-full mt-0 md:w-[28%] h-[78vh] flex justify-center items-center border-l overflow-y-hidden border-gray-300 relative">
-          <div className="space-y-5">
+        <div className="w-[28%] h-[28rem] flex flex-col ">
+          <div className="w-full  h-[28rem] flex justify-center items-center border-l overflow-y-hidden border-gray-300 relative">
             {sidebarIndex > 0 && (
               <button
                 onClick={handleSidebarPrev}
-                className="absolute top-12 left-1/2 text-4xl transform p-0 text-black"
+                className="absolute top-0 left-1/2 text-4xl transform p-0 text-black"
               >
                 <MdKeyboardArrowUp />
               </button>
             )}
-            {SidebarLinks.slice(sidebarIndex, sidebarIndex + 8).map(
-              (link, index) => (
-                <motion.div
-                  key={link.name}
-                  custom={index}
-                  initial="hidden"
-                  animate="visible"
-                  variants={sidebarVariants}
-                  onMouseEnter={() => {
-                    setHoveredCategory(link.name);
-                    setCurrentIndex(0);
-                  }}
-                  className={`flex items-center space-x-4 text-lg transition-colors duration-300 cursor-pointer ${
-                    hoveredCategory === link.name
-                      ? "font-montserrat text-[#483d78] font-bold"
-                      : "font-montserrat text-black"
-                  }`}
-                >
-                  <div className="flex items-center justify-center cursor-pointer">
-                    <BlurImage
-                      className="rounded-full h-6 w-6 transform hover:scale-105 transition-transform duration-200 object-cover"
-                      src={link.icon}
-                      alt={link.name}
-                      width={24}
-                      height={24}
-                      loading="lazy"
-                    />
-                  </div>
-                  <p>{link.name}</p>
-                </motion.div>
-              )
-            )}
+            <div className="space-y-5 ">
+              {SidebarLinks.slice(sidebarIndex, sidebarIndex + 8).map(
+                (link, index) => (
+                  <motion.div
+                    key={link.name}
+                    custom={index}
+                    initial="hidden"
+                    animate="visible"
+                    variants={sidebarVariants}
+                    onMouseEnter={() => {
+                      setHoveredCategory(link.name);
+                      setCurrentIndex(0);
+                    }}
+                    className={`flex items-center space-x-4 text-lg transition-colors duration-300 cursor-pointer ${
+                      hoveredCategory === link.name
+                        ? "font-montserrat text-[#483d78] font-bold"
+                        : "font-montserrat text-black"
+                    }`}
+                  >
+                    <div className="flex items-center justify-center cursor-pointer">
+                      <BlurImage
+                        className="rounded-full h-6 w-6 transform hover:scale-105 transition-transform duration-200 object-cover"
+                        src={link.icon}
+                        alt={link.name}
+                        width={24}
+                        height={24}
+                        loading="lazy"
+                      />
+                    </div>
+                    <p>{link.name}</p>
+                  </motion.div>
+                )
+              )}
+            </div>
             {sidebarIndex + 8 < SidebarLinks.length && (
               <button
                 onClick={handleSidebarNext}
-                className="absolute bottom-6 left-1/2 text-4xl text-black"
+                className="absolute bottom-0 left-1/2 text-4xl text-black"
               >
                 <MdKeyboardArrowDown />
               </button>

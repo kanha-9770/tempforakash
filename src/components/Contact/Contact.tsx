@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter, usePathname } from "next/navigation";
 import { SignupFormDemo } from "./SignupFormDemo";
+import Link from "next/link";
 
 interface ContactFormProps {
   isContactFormVisible: boolean;
@@ -21,6 +23,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   setProfileOpen,
 }) => {
   const contactRef = useRef<HTMLDivElement>(null);
+  const router = useRouter(); // Initialize useRouter
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -38,12 +41,21 @@ const ContactForm: React.FC<ContactFormProps> = ({
     };
   }, []);
 
-  const toggleContactForm = () => {
-    setContactFormVisible(!isContactFormVisible);
+  const handleMouseEnter = () => {
+    setContactFormVisible(true);
     setIsFlagOpen(false);
     setOpenSearch(false);
     setProfileOpen(false);
+    const pathname = usePathname() || "";
+    const countryCode = pathname.split("/")[1]?.toLowerCase();
+
+    // Get country code from pathname or default to 'in'
+    const contactUrl = `/${countryCode}/contact`;
+
+    // Navigate to the contact page with the correct URL
+    router.push(contactUrl);
   };
+
   const transition = {
     type: "spring",
     mass: 0.5,
@@ -52,15 +64,16 @@ const ContactForm: React.FC<ContactFormProps> = ({
     restDelta: 0.001,
     restSpeed: 0.001,
   };
-  
+
   return (
     <div>
       <button
         type="button"
         className="cursor-pointer font-poppins text-16 font-thin rounded-full px-2 text-white bg-[#483d78]"
-        onClick={toggleContactForm}
+        onMouseEnter={handleMouseEnter} // Open on hover
+        onFocus={handleMouseEnter} // Open on focus for accessibility
       >
-        Contact
+        <Link href={"/contact"}>Contact</Link>
       </button>
       <AnimatePresence>
         {isContactFormVisible && (
