@@ -462,8 +462,6 @@ const CountryLayout: React.FC = () => {
       code: "za",
     },
   ];
-;
-
   // Filter countries by search term
   const filteredCountries = countries.filter(
     (country) =>
@@ -483,7 +481,7 @@ const CountryLayout: React.FC = () => {
     setSearchTerm("");
 
     // Extract the current path without the country code
-    const currentPath = pathname.split("/").slice(2).join("/") || "contact"; // Default to "contact" if no path
+    const currentPath = pathname.split("/").slice(2).join("/") || ""; // Default to "contact" if no path
 
     // Update the route to include the new country code
     router.push(`/${country.code}/${currentPath}`);
@@ -511,7 +509,10 @@ const CountryLayout: React.FC = () => {
   // Close flag dropdown when clicking outside
   const countryRef = useRef<HTMLDivElement | null>(null);
   const handleClickOutside = (event: MouseEvent) => {
-    if (countryRef.current && !countryRef.current.contains(event.target as Node)) {
+    if (
+      countryRef.current &&
+      !countryRef.current.contains(event.target as Node)
+    ) {
       setIsFlagOpen(false);
     }
   };
@@ -526,8 +527,6 @@ const CountryLayout: React.FC = () => {
   const handleShowMore = () => {
     setVisibleCount((prevCount) => prevCount + 9);
   };
-
-
 
   return (
     <div ref={countryRef} className="relative inline-block text-left">
@@ -574,14 +573,17 @@ const CountryLayout: React.FC = () => {
             {filteredCountries.slice(0, visibleCount).map((country, index) => (
               <button
                 key={index}
-                className="w-full text-left px-4 py-0 text-sm text-gray-700 hover:bg-gray-100 flex items-center"
+                className="w-full text-left px-4 py-0 text-sm text-gray-700 flex items-center"
                 onClick={() => handleCountrySelect(country)}
               >
-                {country.language}
+                <p className="px-1 w-24 hover:bg-gray-200 hover:rounded-3xl "> {country.language}</p>
               </button>
             ))}
             {visibleCount < filteredCountries.length && (
-              <p className="text-red-500 cursor-pointer pl-4 p-2" onClick={handleShowMore}>
+              <p
+                className="text-red-500 cursor-pointer pl-4 p-2"
+                onClick={handleShowMore}
+              >
                 more...
               </p>
             )}

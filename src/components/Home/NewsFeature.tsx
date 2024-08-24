@@ -104,6 +104,7 @@ import { FaCirclePlus } from "react-icons/fa6";
 import { newscardcontent } from "../Constants";
 import Modal from "../ui/Modal";
 import FeatureCaraousel from "./Common/FeatureCaraousel";
+import { FeatureSlider } from "./Common/FeatureSlider";
 
 const NewsFeature: React.FC = () => {
   const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
@@ -182,9 +183,9 @@ const NewsFeature: React.FC = () => {
               </div>
             ))}
           </div>
-          <div className="flex-grow pt-4 flex">
+          <div className="flex-grow  pt-2 flex">
             <div className="w-full ml-6">
-              <FeatureCaraousel type="newsFeature" />
+              <FeatureSlider/>
             </div>
           </div>
         </div>

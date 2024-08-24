@@ -1,14 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback, memo } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import Link from "next/link";
-import Image from "next/image";
 import CountryLayout from "../Layout/CountryLayout";
 import SearchBarLayout from "../Layout/SearchBarLayout";
 import AccountLayout from "../Layout/AccountLayout";
 import ProfileLayout from "../Layout/ProfileLayout";
 import ContactForm from "../Contact/Contact";
-import Logo from "../../../public/assets/Logo.png";
 import { VscAccount } from "react-icons/vsc";
 
 const RightNavbar: React.FC = memo(() => {
@@ -49,7 +45,10 @@ const RightNavbar: React.FC = memo(() => {
   }, []);
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
-    if (accountRef.current && !accountRef.current.contains(event.target as Node)) {
+    if (
+      accountRef.current &&
+      !accountRef.current.contains(event.target as Node)
+    ) {
       setVisibilityState((prev) => ({ ...prev, accountOpen: false }));
     }
   }, []);
@@ -62,49 +61,90 @@ const RightNavbar: React.FC = memo(() => {
   }, [handleClickOutside]);
 
   useEffect(() => {
-    const { isFlagOpen, openSearch, profileOpen, accountOpen } = visibilityState;
+    const { isFlagOpen, openSearch, profileOpen, accountOpen } =
+      visibilityState;
     setIsVisible(!(isFlagOpen || openSearch || profileOpen || accountOpen));
   }, [visibilityState]);
 
   return (
-    <div className={`w-full max-w-screen-2xl justify-center relative top-0 ${menuState.hoveredItem ? "rounded-t-lg" : "rounded-lg"}`}>
+    <div
+      className={`w-full max-w-screen-2xl justify-center relative top-0 ${
+        menuState.hoveredItem ? "rounded-t-lg" : "rounded-lg"
+      }`}
+    >
       <div className="flex items-center gap-2 justify-center h-14">
-        <span onMouseEnter={handleMouseLeave} className="w-full h-10 z-30 hidden lg:flex items-center gap-3 text-black">
+        <span
+          onMouseEnter={handleMouseLeave}
+          className="w-full h-10 z-30 hidden lg:flex items-center gap-3 text-black"
+        >
           <div className="bg-white flex flex-row gap-3 px-2 rounded-3xl">
-          <CountryLayout />
-         
+            <CountryLayout />
           </div>
           <SearchBarLayout
-            setIsFlagOpen={(value) => setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))}
+            setIsFlagOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
+            }
             openSearch={visibilityState.openSearch}
-            setOpenSearch={(value) => setVisibilityState((prev) => ({ ...prev, openSearch: value }))}
-            setProfileOpen={(value) => setVisibilityState((prev) => ({ ...prev, profileOpen: value }))}
-            setAccountOpen={(value) => setVisibilityState((prev) => ({ ...prev, accountOpen: value }))}
+            setOpenSearch={(value) =>
+              setVisibilityState((prev) => ({ ...prev, openSearch: value }))
+            }
+            setProfileOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
+            }
+            setAccountOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
+            }
           />
           <ProfileLayout
             profileOpen={visibilityState.profileOpen}
-            setIsFlagOpen={(value) => setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))}
-            setOpenSearch={(value) => setVisibilityState((prev) => ({ ...prev, openSearch: value }))}
-            setProfileOpen={(value) => setVisibilityState((prev) => ({ ...prev, profileOpen: value }))}
-            setAccountOpen={(value) => setVisibilityState((prev) => ({ ...prev, accountOpen: value }))}
+            setIsFlagOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
+            }
+            setOpenSearch={(value) =>
+              setVisibilityState((prev) => ({ ...prev, openSearch: value }))
+            }
+            setProfileOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
+            }
+            setAccountOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
+            }
           />
           <div className="relative">
-            <VscAccount onClick={handleAccount} className="text-18 cursor-pointer" />
+            <VscAccount
+              onClick={handleAccount}
+              className="text-18 cursor-pointer"
+            />
             {visibilityState.accountOpen && (
               <div ref={accountRef}>
-                <AccountLayout />
+                <AccountLayout/>
               </div>
             )}
           </div>
-          <ContactForm
-            isContactFormVisible={visibilityState.isContactFormVisible}
-            setContactFormVisible={(value) => setVisibilityState((prev) => ({ ...prev, isContactFormVisible: value }))}
-            isVisible={isVisible}
-            setIsFlagOpen={(value) => setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))}
-            setOpenSearch={(value) => setVisibilityState((prev) => ({ ...prev, openSearch: value }))}
-            setProfileOpen={(value) => setVisibilityState((prev) => ({ ...prev, profileOpen: value }))}
-            setAccountOpen={(value) => setVisibilityState((prev) => ({ ...prev, accountOpen: value }))}
-          />
+          <div className="ml-auto mr-10">
+            <ContactForm
+              isContactFormVisible={visibilityState.isContactFormVisible}
+              setContactFormVisible={(value) =>
+                setVisibilityState((prev) => ({
+                  ...prev,
+                  isContactFormVisible: value,
+                }))
+              }
+              isVisible={isVisible}
+              setIsFlagOpen={(value) =>
+                setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
+              }
+              setOpenSearch={(value) =>
+                setVisibilityState((prev) => ({ ...prev, openSearch: value }))
+              }
+              setProfileOpen={(value) =>
+                setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
+              }
+              setAccountOpen={(value) =>
+                setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
+              }
+            />
+          </div>
         </span>
       </div>
     </div>

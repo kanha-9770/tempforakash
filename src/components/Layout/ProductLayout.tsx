@@ -11,7 +11,6 @@ import {
   MdKeyboardArrowDown,
   MdKeyboardArrowUp,
 } from "react-icons/md";
-import PositionAwareButton from "../ui/PositionAwareButton";
 import { BlurImage } from "../ui/BlurImage";
 import { motion } from "framer-motion";
 
@@ -131,7 +130,9 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           {filteredMachines.length > totalVisible && (
             <button
               onClick={handlePrev}
-              className="absolute left-2 z-30 p-0 text-4xl border-2 rounded-full overflow-hidden bg-white text-black transition-all hover:text-white hover:bg-black"
+              className={`absolute text-black left-2 z-30 p-0 text-4xl border-2 rounded-full overflow-hidden transition-all ${
+                currentIndex === 0 ? "opacity-20" : "opacity-100"
+              }`}
               style={{ top: "50%", transform: "translateY(-50%)" }}
               disabled={currentIndex === 0}
             >
@@ -212,7 +213,11 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           {filteredMachines.length > totalVisible && (
             <button
               onClick={handleNext}
-              className="absolute text-black border-2 text-3xl rounded-full right-2 z-10 h-10 w-10 animated-button-right"
+              className={`absolute text-black border-2 text-3xl rounded-full right-2 z-10 h-10 w-10 animated-button-right ${
+                currentIndex + totalVisible >= filteredMachines.length
+                  ? "opacity-20"
+                  : "opacity-100"
+              }`}
               style={{ top: "50%", transform: "translateY(-50%)" }}
               disabled={currentIndex + totalVisible >= filteredMachines.length}
             >

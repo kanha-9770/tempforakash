@@ -39,13 +39,13 @@ function Navbar({ className }: { className?: string }) {
         "fixed flex w-full max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
-        "transition-all duration-500 ease-in-out", //  transition
+        "transition-all  duration-500 ease-in-out", //  transition
         scrolling
           ? "bg-[#f2f2f2]/70 backdrop-blur-xl"
           : "bg-[#f2f2f2]/70 backdrop-blur-xl" // Adjust blur and background color on scroll
       )}
     >
-      <div className="w-1/5 ml-8 flex justify-start items-center">
+      <div className="w-[15%] ml-8 flex justify-start items-center">
         <Link
           href="/"
           className="h-6 rounded-2xl lg:ml-2 flex justify-center items-center"
@@ -53,13 +53,13 @@ function Navbar({ className }: { className?: string }) {
           <Image
             src={Logo}
             alt="Logo"
-            width={50}
-            height={50}
+            width={500}
+            height={500}
             className="h-[1.4rem] w-full"
           />
         </Link>
       </div>
-      <div className="w-3/5 flex items-center justify-center">
+      <div className="w-[65%] flex items-center justify-center">
         <Menu>
           {navbarItems.map((item) => (
             <MenuItem
@@ -74,7 +74,7 @@ function Navbar({ className }: { className?: string }) {
           ))}
         </Menu>
       </div>
-      <div className="w-1/5 mr-8 flex items-center justify-end">
+      <div className="w-[23%] mr-2 flex items-center justify-end">
         <RightNavbar />
       </div>
     </div>

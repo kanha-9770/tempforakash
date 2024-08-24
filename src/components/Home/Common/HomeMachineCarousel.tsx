@@ -12,30 +12,12 @@ import {
  
 } from "../../../../public/assets";
 import {
-  CartonErectingMachine,
   DisposablePaperCupMakingMachine,
-  DomeLidMachine,
-  FlexoPrintingMachine,
-  FolderGluing,
-  FullyAutomaticPaperBagMachine,
+ 
   FullyAutomaticPaperCupMakingMachine,
-  LunchBoxMachine,
-  OctagonalMachine,
-  PaperContainerBowlMachine,
-  PaperCutleryMachine,
-  PaperFoodBagMakingMachine,
+  
   PaperGlassMachine,
-  PaperHandleCupMachine,
-  PaperLidMachine,
-  PaperPlateMachine,
-  PaperStrawMakingMachine,
-  PeCoatingMachine,
-  PopCornTubMakingMachine,
-  RectangularMachine,
-  RippleWallCupMachine,
-  RollDieCuttingMachine,
-  SaladBowlMakingMachine,
-  SleevForming,
+  
   ServoDrivenMachine,
 } from "../../../../public/assets/machine";
 import { BlurImage } from "@/components/ui/BlurImage";

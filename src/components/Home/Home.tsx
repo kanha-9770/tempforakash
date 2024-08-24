@@ -196,8 +196,8 @@ const Home: React.FC = () => {
   };
 
   const { scrollY } = useScroll();
-  const videoTransform = useTransform(scrollY, [0, 300], ["0%", "-25%"]); // Video moves to the left
-  const svgTransform = useTransform(scrollY, [0, 100], ["0%", "25%"]); // SVG moves to the right
+  const videoTransform = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
+  const svgTransform = useTransform(scrollY, [0, 100], ["0%", "25%"]);
   const videoWidth = useTransform(scrollY, [0, 300], ["100%", "150%"]);
 
   return (
@@ -209,7 +209,12 @@ const Home: React.FC = () => {
           style={{ width: videoWidth, x: videoTransform, originX: 0.5 }}
         >
           {isVideoLoaded ? (
-            <div className="relative w-full h-full">
+            <motion.div
+              className="relative w-full h-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
               <video
                 ref={videoRef}
                 id="background-video"
@@ -239,27 +244,29 @@ const Home: React.FC = () => {
                   </button>
                 </div>
               )}
-            </div>
+            </motion.div>
           ) : (
-            <div
-              className="absolute inset-0 flex items-center rounded-3xl justify-center bg-cover bg-center"
+            <motion.div
+              className="inset-0 absolute flex items-center rounded-3xl justify-center bg-cover bg-center"
               style={{
-                backgroundImage:
-                  "url('https://i.pinimg.com/564x/30/b8/be/30b8beaf12dee7ac4ea578c48926f78b.jpg')",
+                backgroundImage: "url('video/home.webp')",
               }}
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <div className=""></div>
-            </div>
+              <div className="absolute inset-0 bg-black opacity-30 rounded-3xl"></div>
+            </motion.div>
           )}
         </motion.div>
       </div>
 
       <div className="absolute top-[45%] left-28 text-7xl text-white font-alexBrush">
-        <p className="text-2xl mx-4 md:text-2xl lg:text-5xl font-poppins font-thin">
+        <p className=" mx-4 md:text-2xl lg:text-[3.3rem] font-poppins font-thin">
           FOOD PACKING MACHINES
         </p>
         <div className="ml-4">
-          <span className="text-8xl text-[#f2f2f2] font-alexBrush">
+          <span className="text-[6.5rem] leading-[9rem] text-[#f2f2f2] font-thin font-alexBrush">
             Manufacturing
           </span>
         </div>
@@ -268,7 +275,7 @@ const Home: React.FC = () => {
       <div className="absolute w-[30rem] h-[10rem] rounded-tl-[4rem] right-0 bg-[#f2f2f2] bottom-5 text-3xl font-poppins text-white text-center">
         <motion.div
           className="-mt-6 flex mr-10 justify-end"
-          style={{ x: svgTransform }} // SVG moves to the right
+          style={{ x: svgTransform }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

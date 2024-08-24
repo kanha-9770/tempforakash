@@ -81,13 +81,13 @@ const ProfileLayout: React.FC<ProfileLayoutProps> = ({
       {profileOpen && (
         <div className="absolute top-10 right-[-5rem] h-auto w-80 bg-white text-black p-2 rounded-2xl shadow-lg font-montserrat text-16 font-thin z-10">
           <div className="grid grid-cols-3 p-4 rounded-2xl font-montserrat bg-[#f4f4f4] justify-center items-center text-16 font-thin gap-4">
-            <div className="flex rounded-lg flex-col justify-center items-center p-4 h-18 w-18 bg-[#fff9f5]">
+            <div className="flex rounded-lg flex-col justify-center items-center p-4 h-18 w-16 bg-[#fff9f5]">
               <ImLab className="w-10 h-10 object-contain rounded-full" />
             </div>
             {[...Array(8)].map((_, index) => (
               <div
                 key={index}
-                className="rounded-lg flex flex-col justify-center items-center p-4 h-18 w-18 bg-[#f9f4f0]"
+                className="rounded-lg flex flex-col justify-center items-center p-4 h-18 w-16 bg-[#f9f4f0]"
               >
                 <Image
                   src="https://i.pinimg.com/564x/17/f4/e0/17f4e08a32dd227581ed630d3051081c.jpg"

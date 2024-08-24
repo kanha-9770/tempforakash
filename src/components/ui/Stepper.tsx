@@ -45,7 +45,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
               onClick={() => handleClick(index)}
             >
               <motion.div
-                initial={{ scale: 0.9 }}
+                initial={{ scale: 1 }}
                 animate={{ scale: index === activeStep ? 1.2 : 1 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className={`relative h-8 w-8 flex items-center justify-center text-2xl ${
@@ -62,12 +62,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
             </motion.div>
             {index < steps.length - 1 && (
               <div className="flex items-center">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: activeStep > index ? "2rem" : "1rem" }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="h-1 border-t-2"
-                ></motion.div>
+                <div className="h-1 border-t-2 w-10"></div>
               </div>
             )}
           </React.Fragment>

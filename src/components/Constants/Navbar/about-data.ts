@@ -90,8 +90,8 @@ import {
     heading: "Leading the Way in Food Packaging Machine Manufacturing",
     description: `At Nessco India, we specialize in manufacturing advanced food packaging machines that set industry standards for quality and innovation. Our state-of-the-art technology ensures efficient and sustainable solutions, meeting the diverse needs of our global clientele. With over 40 years of expertise, we are dedicated to pioneering eco-friendly practices in packaging. Trust us to lead the way in transforming packaging solutions for a greener future.`,
     stats: {
-      machinesSold: "30000+",
-      readyStockMachines: "3000+",
+      machinesSold:30000,
+      readyStockMachines: 3000,
     },
     cards: [
       {
