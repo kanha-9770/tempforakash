@@ -78,7 +78,11 @@ export default function Home() {
       <Hero />
       <NavLinksDemo navItems={navItems} />
       <div className="h-full">
-        <div id="aboutUs" className="mx-4 mt-32" ref={aboutUsRef}>
+        <div className="mx-4 mt-8">
+        <AppleCardsCarouselDemo />
+        </div>
+        <div id="aboutUs" className="mx-4 mt-16" ref={aboutUsRef}>
+
           <AboutUs
             heading={data.heading}
             description={data.description}
@@ -117,7 +121,6 @@ export default function Home() {
             <HomeTestimonial />
           </div>
         </div>
-        <AppleCardsCarouselDemo />
       </div>
     </main>
   );

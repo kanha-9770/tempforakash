@@ -159,7 +159,6 @@ const Home: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Check if the browser is Safari
     const ua = navigator.userAgent.toLowerCase();
     setIsSafari(ua.includes("safari") && !ua.includes("chrome"));
 
@@ -261,20 +260,20 @@ const Home: React.FC = () => {
         </motion.div>
       </div>
 
-      <div className="absolute top-[45%] left-28 text-7xl text-white font-alexBrush">
-        <p className=" mx-4 md:text-2xl lg:text-[3.3rem] font-poppins font-thin">
+      <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white font-alexBrush px-4">
+        <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-poppins font-thin">
           FOOD PACKING MACHINES
         </p>
-        <div className="ml-4">
-          <span className="text-[6.5rem] leading-[9rem] text-[#f2f2f2] font-thin font-alexBrush">
+        <div className="mt-2">
+          <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none text-[#f2f2f2] font-thin font-alexBrush">
             Manufacturing
           </span>
         </div>
       </div>
 
-      <div className="absolute w-[30rem] h-[10rem] rounded-tl-[4rem] right-0 bg-[#f2f2f2] bottom-5 text-3xl font-poppins text-white text-center">
+      <div className="absolute w-[90%] sm:w-[30rem] h-[10rem] rounded-tl-[4rem] right-0 bg-[#f2f2f2] bottom-5 text-xl sm:text-3xl font-poppins text-white text-center">
         <motion.div
-          className="-mt-6 flex mr-10 justify-end"
+          className="flex justify-end pr-10 -mt-6"
           style={{ x: svgTransform }}
         >
           <svg
@@ -282,7 +281,7 @@ const Home: React.FC = () => {
             width="100%"
             viewBox="0 0 20 20"
             fill="none"
-            className="flex right-1/2 h-6 w-10"
+            className="h-6 w-10"
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
@@ -305,13 +304,13 @@ const Home: React.FC = () => {
             text={"Get a Quote"}
           />
         </div>
-        <div className="">
+        <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="100%"
             viewBox="0 0 20 20"
             fill="none"
-            className="-ml-8 mt-[0rem] h-6 w-10"
+            className="h-6 w-10 -ml-8"
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
@@ -322,7 +321,7 @@ const Home: React.FC = () => {
         </div>
       </div>
       <ContactIcons />
-      <div className="font-bold z-[9999] mr-8 text-5xl fixed rounded-full border-2 border-white p-2 mb-4 bottom-0 right-0 bg-[#4d3d78] bg-opacity-50 backdrop-blur-sm transform hover:scale-110 transition duration-300">
+      <div className="font-bold z-[9999] mr-8 text-4xl sm:text-5xl fixed rounded-full border-2 border-white p-2 mb-4 bottom-0 right-0 bg-[#4d3d78] bg-opacity-50 backdrop-blur-sm transform hover:scale-110 transition duration-300">
         <IoChatboxEllipsesOutline />
       </div>
     </div>

@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IconArrowNarrowLeft, IconArrowNarrowRight } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps, StaticImageData } from "next/image";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 interface CarouselProps {
@@ -71,11 +71,11 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         </div>
       </div>
       <div
-        className="flex w-[80%] overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+        className="flex w-[80%]  overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
         ref={carouselRef}
         onScroll={checkScrollability}
       >
-        <div className="flex flex-row justify-start gap-4 pl-4 max-w-7xl mx-auto">
+        <div className="flex  flex-row justify-start gap-4 pl-4 max-w-7xl mx-auto">
           {items.map((item, index) => (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -101,21 +101,28 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 };
 
 interface CardProps {
-  src: string;
+  src: string | StaticImageData;
   title: string;
   category: string;
+  date?: string;
 }
 
-export const Card = ({ src, title, category }: CardProps) => {
+export const Card = ({ src, title, category, date }: CardProps) => {
   return (
-    <motion.div className="rounded-3xl bg-white shadow-lg dark:bg-neutral-900 h-32 w-48 md:h-[8rem] md:w-72 overflow-hidden flex items-center space-x-4 p-4">
-      <div className="relative flex-shrink-0 h-20 w-20 rounded-lg overflow-hidden">
-        <Image src={src} alt={title} layout="fill" className="object-cover" />
+    <motion.div className="rounded-3xl bg-white shadow-lg dark:bg-neutral-900 h-36 w-56 md:h-[9.5rem] md:w-96 overflow-hidden flex items-center space-x-4 p-4">
+      <div className="relative flex-shrink-0 h-28 w-28 rounded-2xl overflow-hidden">
+        <Image
+          src={src}
+          alt={title}
+          height={200}
+          width={200}
+          className="object-cover"
+        />
       </div>
-      <div className="flex flex-col justify-center">
-        <h3 className="text-black text-lg font-semibold">{title}</h3>
-        <p className="text-gray-600 text-sm">{category}</p>
-        {/* <p className="text-gray-500 text-xs mt-1">{date}</p> */}
+      <div className="flex flex-col font-poppins h-28">
+        <h3 className="text-black text-2xl font-bold">{title}</h3>
+        <p className="text-gray-600 font-semibold  text-18">{category}</p>
+        <p className="text-gray-500 font-semibold text-lg mt-1">{date}</p>
       </div>
     </motion.div>
   );

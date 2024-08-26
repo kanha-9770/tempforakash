@@ -36,7 +36,7 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed flex w-full max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
+        "fixed md:flex w-full hidden max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
         "transition-all  duration-500 ease-in-out", //  transition

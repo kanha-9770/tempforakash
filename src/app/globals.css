@@ -286,3 +286,21 @@ body {
 .icon-invert {
   mix-blend-mode: difference;
 }
+.mask-gradient-left {
+  position: absolute; /* Ensure the mask covers the container */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%; /* Adjust width based on how far you want the gradient to extend */
+  z-index: 20;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
