@@ -65,12 +65,12 @@ const AboutUs: React.FC<AboutUsProps> = ({
   }, [stats]);
 
   return (
-    <div className="flex mt-12 md:space-y-14 h-screen max-w-screen-2xl mx-auto flex-col items-center">
-      <div className="text-center w-full max-w-6xl px-4">
+    <div className="flex mt-12 h-screen max-w-screen-2xl mx-auto flex-col items-center  md:px-6 lg:px-8">
+      <div className="text-center w-full max-w-6xl">
         <h1 className="text-2xl text-[#483d78]">
           About <span className="text-red-500 font-extrabold">US</span>
         </h1>
-        <h1 className="text-4xl font-poppins px-4 md:px-56 py-3">
+        <h1 className="text-lg lg:text-4xl w-full font-poppins lg:px-56 py-3">
           {heading.split(" ").map((word, index) =>
             word === "Machine" ? (
               <span key={index} className="text-[#483d78] cursor-pointer">
@@ -81,8 +81,8 @@ const AboutUs: React.FC<AboutUsProps> = ({
             )
           )}
         </h1>
-        <div className="flex flex-col md:flex-row justify-between items-center w-full">
-          <div className="text-justify mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center w-full mt-4">
+          <div className="text-center mb-4 md:mb-0">
             <h2
               ref={machinesSoldRef}
               className="text-3xl font-extrabold text-[#483d73]"
@@ -91,13 +91,13 @@ const AboutUs: React.FC<AboutUsProps> = ({
             </h2>
             <p className="text-base font-poppins">Machines Sold</p>
           </div>
-          <p className="font-poppins text-base mx-4 py-4 text-center w-full md:w-[60%] leading-6">
+          <p className="font-poppins text-sm lg:text-base md:px-6 py-4 text-center w-full md:w-[60%] leading-6">
             {description}
           </p>
           <div className="text-center mt-4 md:mt-0">
             <h2
               ref={readyStockMachinesRef}
-              className="text-3xl font-extrabold text-[#483d73] -mt-3"
+              className="text-3xl font-extrabold text-[#483d73]"
             >
               0
             </h2>
@@ -106,30 +106,18 @@ const AboutUs: React.FC<AboutUsProps> = ({
         </div>
         <Link
           href="/products"
-          className="text-[#483d73] font-poppins text-base mt-0 inline-flex items-center underline-offset-3 underline"
+          className="text-[#483d73] font-poppins text-base mt-4 inline-flex items-center "
         >
           Read more
-          <svg
-            width="22"
-            height="12"
-            viewBox="0 0 22 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="ml-2"
-          >
-            <path
-              d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z"
-              fill="black"
-            />
-          </svg>
+          
         </Link>
       </div>
 
-      <div className="flex flex-col md:flex-row w-full items-end gap-4 px-6">
+      <div className="flex flex-col md:flex-row w-full items-end gap-4 mt-8">
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`relative w-full md:w-1/3 p-0 group flex flex-col items-center ${
+            className={`relative w-full md:w-1/3 group flex flex-col items-center ${
               index === 1 ? "z-10 md:w-[40%]" : ""
             }`}
           >
@@ -151,7 +139,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
                 <div className="absolute bottom-0 left-0 p-4 flex justify-between items-end w-full">
                   <a
                     href={card.link}
-                    className="text-white  flex items-end text-base"
+                    className="text-white flex items-end text-base"
                   >
                     <AnimatedText text={`${card.title}`} />
                   </a>

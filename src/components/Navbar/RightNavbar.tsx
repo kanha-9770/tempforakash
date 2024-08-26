@@ -68,16 +68,16 @@ const RightNavbar: React.FC = memo(() => {
 
   return (
     <div
-      className={`w-full max-w-screen-2xl justify-center relative top-0 ${
+      className={`w-full  max-w-screen-2xl  justify-end lg:justify-center relative top-0 ${
         menuState.hoveredItem ? "rounded-t-lg" : "rounded-lg"
       }`}
     >
-      <div className="flex items-center gap-2 justify-center h-14">
+      <div className="flex items-center gap-2 justify-end lg:justify-center h-14">
         <span
           onMouseEnter={handleMouseLeave}
           className="w-full h-10 z-30 hidden lg:flex items-center gap-3 text-black"
         >
-          <div className="bg-white flex flex-row gap-3 px-2 rounded-3xl">
+          <div className="bg-white  flex-row gap-3 px-2 rounded-3xl">
             <CountryLayout />
           </div>
           <SearchBarLayout
@@ -117,7 +117,7 @@ const RightNavbar: React.FC = memo(() => {
             />
             {visibilityState.accountOpen && (
               <div ref={accountRef}>
-                <AccountLayout/>
+                <AccountLayout />
               </div>
             )}
           </div>
@@ -146,6 +146,40 @@ const RightNavbar: React.FC = memo(() => {
             />
           </div>
         </span>
+        <div className="flex justify-end lg:hidden items-center">
+          <ProfileLayout
+            profileOpen={visibilityState.profileOpen}
+            setIsFlagOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
+            }
+            setOpenSearch={(value) =>
+              setVisibilityState((prev) => ({ ...prev, openSearch: value }))
+            }
+            setProfileOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
+            }
+            setAccountOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
+            }
+          />
+          <button className="ml-4">
+            {/* Replace with your hamburger icon */}
+            <svg
+              className="w-6 h-6 text-black"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   );

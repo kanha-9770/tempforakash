@@ -155,13 +155,26 @@ const Home: React.FC = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
   const [isSafari, setIsSafari] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    // Check if the browser is Safari
     const ua = navigator.userAgent.toLowerCase();
     setIsSafari(ua.includes("safari") && !ua.includes("chrome"));
 
+    // Check for larger screens on the client-side
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    setIsLargeScreen(mediaQuery.matches);
+
+    const handleResize = () => setIsLargeScreen(mediaQuery.matches);
+    mediaQuery.addEventListener('change', handleResize);
+
+    return () => mediaQuery.removeEventListener('change', handleResize);
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -195,29 +208,32 @@ const Home: React.FC = () => {
   };
 
   const { scrollY } = useScroll();
-  const videoTransform = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
-  const svgTransform = useTransform(scrollY, [0, 100], ["0%", "25%"]);
-  const videoWidth = useTransform(scrollY, [0, 300], ["100%", "150%"]);
+
+// Always call the hook
+const defaultVideoTransform = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
+const defaultVideoWidth = useTransform(scrollY, [0, 300], ["100%", "150%"]);
+const defaultSvgTransform = useTransform(scrollY, [0, 100], ["0%", "25%"]);
+
+// Conditionally apply the transform based on the screen size
+const videoTransform = isLargeScreen ? defaultVideoTransform : "0%";
+const videoWidth = isLargeScreen ? defaultVideoWidth : "100%";
+const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
+
 
   return (
-    <div className="relative h-screen max-w-screen-2xl flex flex-col items-center overflow-hidden min-h-screen w-full">
+    <div className="relative h-auto lg:h-screen lg:bg-[#f2f2f2] lg:p-0 max-w-screen-2xl flex flex-col items-center overflow-hidden lg:min-h-screen w-full">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
         <motion.div
-          className="md:mt-[3rem] h-[calc(100vh-150px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-xl"
+          className="md:mt-[3rem] w-full h-[calc(100vh-210px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-2xl"
           ref={containerRef}
           style={{ width: videoWidth, x: videoTransform, originX: 0.5 }}
         >
           {isVideoLoaded ? (
-            <motion.div
-              className="relative w-full h-full"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-            >
+            <div className="relative w-full h-full">
               <video
                 ref={videoRef}
                 id="background-video"
-                className="w-full h-full object-cover rounded-3xl"
+                className="w-full h-full object-cover rounded-2xl lg:rounded-3xl"
                 autoPlay={!isSafari}
                 loop
                 muted
@@ -228,7 +244,7 @@ const Home: React.FC = () => {
                 <source src="video/bg.webm" type="video/webm" />
                 <source src="video/bg.ogv" type="video/ogg" />
               </video>
-              <div className="absolute inset-0 bg-black bg-opacity-30 rounded-3xl"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl lg:rounded-3xl"></div>
               {isSafari && (
                 <div className="absolute top-4 right-4 z-[9999]">
                   <button
@@ -243,45 +259,55 @@ const Home: React.FC = () => {
                   </button>
                 </div>
               )}
-            </motion.div>
+            </div>
           ) : (
-            <motion.div
-              className="inset-0 absolute flex items-center rounded-3xl justify-center bg-cover bg-center"
-              style={{
-                backgroundImage: "url('video/home.webp')",
-              }}
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="absolute inset-0 bg-black opacity-30 rounded-3xl"></div>
-            </motion.div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="loader"></div>
+            </div>
           )}
         </motion.div>
       </div>
 
-      <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white font-alexBrush px-4">
-        <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-poppins font-thin">
+      <div className="absolute h-full w-[80%] lg:w-full top-[30%] left-8 lg:top-[45%] lg:left-28 flex-col text-7xl text-white font-alexBrush">
+        <p className="text-3xl text-center lg:text-justify mx-4 md:text-2xl lg:text-5xl font-poppins font-thin">
           FOOD PACKING MACHINES
         </p>
-        <div className="mt-2">
-          <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none text-[#f2f2f2] font-thin font-alexBrush">
+        <div className="ml-4">
+          <span className="text-5xl lg:text-8xl text-[#f2f2f2] font-alexBrush">
             Manufacturing
           </span>
         </div>
+        <div className="w-full font-poppins mt-40 lg:hidden bottom-0 z-30 items-end flex justify-center">
+          <PositionAwareButton
+            margin="0.2rem"
+            borderWidth="1px"
+            iconSize="30px"
+            icon
+            textColor="black"
+            iconColor="black"
+            height="50px"
+            padding="5px"
+            width="200px"
+            bgColor="white"
+            fontSize="22px"
+            borderRadius="100px"
+            borderColor="white"
+            text={"Get a Quote"}
+          />
+        </div>
       </div>
 
-      <div className="absolute w-[90%] sm:w-[30rem] h-[10rem] rounded-tl-[4rem] right-0 bg-[#f2f2f2] bottom-5 text-xl sm:text-3xl font-poppins text-white text-center">
+      <div className="absolute hidden md:flex flex-col w-[30rem] h-[10rem] rounded-tl-[4rem] right-0 bg-[#f2f2f2] bottom-5 text-3xl font-poppins text-white text-center">
         <motion.div
-          className="flex justify-end pr-10 -mt-6"
-          style={{ x: svgTransform }}
+          className="-mt-6 flex mr-10 justify-end"
+          style={{ x: svgTransform }} // SVG moves to the right
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="100%"
             viewBox="0 0 20 20"
             fill="none"
-            className="h-6 w-10"
+            className="flex right-1/2 h-6 w-10"
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
@@ -304,13 +330,13 @@ const Home: React.FC = () => {
             text={"Get a Quote"}
           />
         </div>
-        <div>
+        <div className="">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="100%"
             viewBox="0 0 20 20"
             fill="none"
-            className="h-6 w-10 -ml-8"
+            className="-ml-8 mt-[0rem] h-6 w-10"
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
@@ -321,7 +347,7 @@ const Home: React.FC = () => {
         </div>
       </div>
       <ContactIcons />
-      <div className="font-bold z-[9999] mr-8 text-4xl sm:text-5xl fixed rounded-full border-2 border-white p-2 mb-4 bottom-0 right-0 bg-[#4d3d78] bg-opacity-50 backdrop-blur-sm transform hover:scale-110 transition duration-300">
+      <div className="font-bold z-[9999] mr-8 text-5xl fixed rounded-full border-2 border-white p-2 mb-4 bottom-0 right-0 bg-[#4d3d78] bg-opacity-50 backdrop-blur-sm transform hover:scale-110 transition duration-300">
         <IoChatboxEllipsesOutline />
       </div>
     </div>

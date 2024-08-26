@@ -1,6 +1,7 @@
 "use client";
 import React, { memo, useCallback, useRef, useState, useEffect } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NavLinkProps {
   text: string;
@@ -21,9 +22,9 @@ const NavLink: React.FC<NavLinkProps> = memo(
     handleClick,
   }) => (
     <Link
-      href={`#${text}`}
+      href="#"
       scroll={false}
-      className={`text-black font-poppins pt-1 transition-all duration-300 ${
+      className={`text-black text-sm lg:ml-[2.5rem] pt-2 hover:font-bold ${
         activeLink === index ? "border-b-2 border-red-600" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(index)}
@@ -44,6 +45,7 @@ interface NavLinksDemoProps {
 const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   const [activeLink, setActiveLink] = useState<number>(-1);
   const [scrolling, setScrolling] = useState(false);
+  const [menuExpanded, setMenuExpanded] = useState(false);
 
   const navRef = useRef<HTMLDivElement | null>(null);
 
@@ -56,11 +58,8 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   }, []);
 
   const handleClick = (ref: React.RefObject<HTMLDivElement>) => () => {
-    const offsetTop = ref.current?.offsetTop || 0;
-    window.scrollTo({
-      top: offsetTop - 98, // Adjust the offset value to achieve top-14
-      behavior: "smooth",
-    });
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+    setMenuExpanded(false); // Collapse the menu on any section click
   };
 
   useEffect(() => {
@@ -103,8 +102,6 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   useEffect(() => {
     const handleScroll = () => {
       const navTop = navRef.current?.getBoundingClientRect().top || 0;
-
-      // Check if the nav is sticky (top of viewport)
       if (navTop <= 14) {
         setScrolling(true);
       } else {
@@ -116,16 +113,61 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleMenu = () => {
+    setMenuExpanded((prev) => !prev);
+  };
+
   return (
     <div
       ref={navRef}
       className={`sticky top-14 z-30 transition-all duration-300 ${
         scrolling
-          ? "bg-[#f2f2f2]/70 backdrop-blur-xl"
-          : "bg-[#f2f2f2]/70 backdrop-blur-xl"
+          ? " lg:bg-[#f2f2f2]/70 backdrop-blur-xl"
+          : " lg:bg-[#f2f2f2]/70 backdrop-blur-xl"
       }`}
     >
-      <nav className="flex flex-wrap items-center justify-start space-x-2 px-4 py-3 sm:space-x-6 sm:px-8">
+      <div className="flex justify-between items-center px-4 py-2 lg:hidden">
+        <button onClick={toggleMenu} className="text-black text-sm font-bold">
+          {menuExpanded ? "Overview ▲" : "Overview ▼"}
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {menuExpanded && (
+          <motion.div
+            initial={{ y: "0", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "0", opacity: 0 }}
+            transition={{ duration: 0, ease: "easeInOut" }}
+            className="fixed inset-0 z-[99999] bg-white rouded-2xl flex flex-col items-start h-screen w-full px-6 py-8 lg:hidden"
+          >
+            <nav className="w-full">
+              <button
+                onClick={toggleMenu}
+                className="text-black text-sm font-bold mb-4"
+              >
+                Overview ▲
+              </button>
+              <ul>
+                {navItems.map((item, index) => (
+                  <li key={index} className="mb-4">
+                    <NavLink
+                      text={item.text}
+                      index={index}
+                      activeLink={activeLink}
+                      handleMouseEnter={handleMouseEnter}
+                      handleMouseLeave={handleMouseLeave}
+                      handleClick={handleClick(item.ref)}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <nav className="hidden lg:flex left-0 mb-[4rem] mt-0 sm:-mt-10 flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
         {navItems.map((item, index) => (
           <NavLink
             key={index}

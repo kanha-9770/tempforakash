@@ -10,7 +10,7 @@ import { Menu, MenuItem } from "./nav-menue";
 
 export default function NavbarDemo() {
   return (
-    <div className="relative h-20 md:h-0   max-w-screen-2xl flex items-center justify-center">
+    <div className="relative h-16 lg:h-auto  mt-1 lg:mt-0  max-w-screen-2xl flex items-center justify-center">
       <Navbar className="top-0" />
     </div>
   );
@@ -36,16 +36,16 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed md:flex hidden w-full  max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
+        "fixed flex w-full mt-1 lg:mt-0  max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
         "transition-all  duration-500 ease-in-out", //  transition
         scrolling
-          ? "bg-[#f2f2f2]/70 backdrop-blur-xl"
-          : "bg-[#f2f2f2]/70 backdrop-blur-xl" // Adjust blur and background color on scroll
+          ? "lg:bg-[#f2f2f2]/70 bg-white rounded-bl-xl lg:rounded-none backdrop-blur-xl"
+          : "lg:bg-[#f2f2f2]/70 bg-white rounded-br-xl lg:rounded-none backdrop-blur-xl" // Adjust blur and background color on scroll
       )}
     >
-      <div className="w-[15%] ml-8 flex justify-start items-center">
+      <div className="w-1/2 lg:w-[15%]  lg:ml-8 flex justify-start items-center">
         <Link
           href="/"
           className="h-6 rounded-2xl lg:ml-2 flex justify-center items-center"
@@ -59,7 +59,7 @@ function Navbar({ className }: { className?: string }) {
           />
         </Link>
       </div>
-      <div className="w-[65%] flex items-center justify-center">
+      <div className="w-[65%] hidden lg:flex items-center justify-center">
         <Menu>
           {navbarItems.map((item) => (
             <MenuItem
@@ -74,7 +74,7 @@ function Navbar({ className }: { className?: string }) {
           ))}
         </Menu>
       </div>
-      <div className="w-[23%] mr-2 flex items-center justify-end">
+      <div className="w-1/2 lg:w-[23%] mr-2  items-center justify-end">
         <RightNavbar />
       </div>
     </div>

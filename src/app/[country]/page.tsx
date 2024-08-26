@@ -74,11 +74,11 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-[#f2f2f2]">
+    <main className="bg-[#f2f2f2] mx-2 lg:mx-0">
       <Hero />
       <NavLinksDemo navItems={navItems} />
       <div className="h-full">
-        <div className="mx-4 mt-8">
+        <div className="lg:mx-4 mt-8">
         <AppleCardsCarouselDemo />
         </div>
         <div id="aboutUs" className="mx-4 mt-16" ref={aboutUsRef}>
@@ -90,16 +90,16 @@ export default function Home() {
             cards={data.cards}
           />
         </div>
-        {/* <div id="clientele" className="mx-4 mt-32" ref={infiniteCardsRef}>
+        <div id="clientele" className="ml-2 lg:mx-4 mt-[45rem] lg:mt-32" ref={infiniteCardsRef}>
           <MarqueeSection />
         </div>
-        <div id="knowMore" className="mx-4 mt-32" ref={knowMoreRef}>
+        <div id="knowMore" className="mx-1 lg:mx-4 mt-32" ref={knowMoreRef}>
           <KnowMore />
         </div>
-        <div id="machines" className="mx-4 mt-32" ref={homeMachineRef}>
+        <div id="machines" className="lg:mx-4 mt-32" ref={homeMachineRef}>
           <HomeMachine />
         </div>
-        <div id="iot" className="mx-6 mt-32" ref={iotRef}>
+        {/* <div id="iot" className="mx-6 mt-32" ref={iotRef}>
           <h4 className="text-xl text-center lg:text-2xl font-poppins lg:leading-tight text-black dark:text-white">
             IoT <span className="text-red-500 font-bold">System</span>
           </h4>
@@ -110,8 +110,8 @@ export default function Home() {
         </div>
         <div id="knowMachine" className="mx-4 mt-32" ref={knowMachineRef}>
           <CanvasRevealEffectDemo />
-        </div>
-        <div
+        </div> */}
+        {/* <div
           id="testimonials"
           className="relative mt-32 bg-gradient-to-l via-purple-200 to-transparent h-screen overflow-hidden"
           ref={homeTestimonialRef}

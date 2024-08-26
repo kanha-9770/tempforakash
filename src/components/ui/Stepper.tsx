@@ -56,13 +56,13 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
               >
                 {step.icon}
               </motion.div>
-              <span className="text-xs mt-2 font-montserrat text-center w-24">
+              <span className="text-xs mt-2 font-poppins text-center w-10">
                 {step.name}
               </span>
             </motion.div>
             {index < steps.length - 1 && (
               <div className="flex items-center">
-                <div className="h-1 border-t-2 w-10"></div>
+                <div className="h-1 border-t-2 w-4 lg:w-10"></div>
               </div>
             )}
           </React.Fragment>

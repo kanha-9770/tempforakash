@@ -24,7 +24,7 @@ const HomeMachine: React.FC = () => {
   return (
     <div className="h-full mt-14 ">
       <Stepper onStepChange={setActiveStep} />
-      <div className="h-[90%] mx-2 px-4">
+      <div className="h-[90%] lg:mx-2 px-1 lg:px-4">
         <HomeMachineCarousel filteredCardsData={filteredCardsData} />
       </div>
     </div>

@@ -2,8 +2,8 @@
 
 import Image, { StaticImageData } from "next/image";
 import styles from "../Styles/style.module.css";
-import { useTransform, motion, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useTransform, motion } from "framer-motion";
+import { useRef, useState } from "react";
 import { FaIndustry } from "react-icons/fa";
 import Link from "next/link";
 import AnimatedText from "@/components/ui/AnimatedText";
@@ -37,13 +37,23 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
   targetScale,
 }) => {
   const container = useRef<HTMLDivElement>(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: container,
-  //   offset: ["start end", "start start"],
-  // });
-  //  to scale image on scroll
-  // const imageScale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
+  
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  const toggleDescription = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const renderDescription = () => {
+    const lines = description.split("\n");
+
+    if (lines.length <= 4 || isExpanded) {
+      return description;
+    }
+
+    return lines.slice(0, 4).join("\n") + "...";
+  };
 
   return (
     <div ref={container} className={`${styles.KnowMoreCardContainer} -mt-[5rem]`}>
@@ -69,26 +79,41 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
                   {expertiseExperience}
                 </div>
                 <div className="text-white font-bold font-poppins">
-                  <AnimatedText text={`${expertiseAbout}`}/>
+                  <AnimatedText text={`${expertiseAbout}`} />
                 </div>
               </div>
             </div>
-            <h2 className="text-center text-xl font-semibold text-white font-poppins">
+            <h2 className="text-center -mt-12 text-base lg:text-xl font-semibold text-white font-poppins">
               {title}
             </h2>
-            <p className=" mt-6 text-base text-white text-center font-poppins">
-              {description}
+            <p className="text-sm mt-2 lg:text-base text-white text-center font-poppins">
+              {renderDescription()}
             </p>
-            <span className="w-full mt-4  flex flex-row justify-center items-center">
+            {!isExpanded && description.split("\n").length > 4 && (
+              <button
+                className="text-base text-white font-poppins font-bold text-center mt-2"
+                onClick={toggleDescription}
+              >
+                More
+              </button>
+            )}
+            {isExpanded && (
+              <button
+                className="text-base text-white font-poppins font-bold text-center mt-2"
+                onClick={toggleDescription}
+              >
+                Less
+              </button>
+            )}
+            <span className="w-full flex flex-row justify-center items-center">
               <Link
-                className="text-base text-white font-poppins text-center"
+                className="text-base text-white font-poppins font-bold text-center"
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 See more
               </Link>
-             
             </span>
           </div>
           <motion.div className={styles.imageContainer}>
