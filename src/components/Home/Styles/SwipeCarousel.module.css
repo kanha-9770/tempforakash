@@ -42,7 +42,7 @@
   
   .indicators {
     position: absolute;
-    margin-top: 10px;
+    margin-top:5px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

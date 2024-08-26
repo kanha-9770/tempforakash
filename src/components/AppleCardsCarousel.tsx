@@ -43,7 +43,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   };
 
   return (
-    <div className="relative items-center flex flex-row w-full">
+    <div className="relative items-center flex flex-col lg:flex-row w-full">
       <div className="flex flex-col items-center h-[8rem]  w-[30%] gap-2 ">
         <div className="h-1/2 items-center">
           <h1 className="text-3xl font-semibold text-red-500 text-center ">
@@ -71,7 +71,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         </div>
       </div>
       <div
-        className="flex w-[80%]  overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+        className="flex w-full lg:w-[80%]   overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
         ref={carouselRef}
         onScroll={checkScrollability}
       >

@@ -74,7 +74,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-[#f2f2f2] ">
+    <main className="bg-[#f2f2f2]">
       <Hero />
       <NavLinksDemo navItems={navItems} />
       <div className="h-full">
@@ -90,7 +90,7 @@ export default function Home() {
             cards={data.cards}
           />
         </div>
-        <div id="clientele" className="mx-4 mt-32" ref={infiniteCardsRef}>
+        {/* <div id="clientele" className="mx-4 mt-32" ref={infiniteCardsRef}>
           <MarqueeSection />
         </div>
         <div id="knowMore" className="mx-4 mt-32" ref={knowMoreRef}>
@@ -120,7 +120,7 @@ export default function Home() {
           <div className="relative mx-8 z-20">
             <HomeTestimonial />
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );

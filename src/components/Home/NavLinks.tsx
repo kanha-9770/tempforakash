@@ -23,7 +23,7 @@ const NavLink: React.FC<NavLinkProps> = memo(
     <Link
       href={`#${text}`}
       scroll={false}
-      className={`text-black font-poppins ml-[2.5rem] pt-1  ${
+      className={`text-black font-poppins pt-1 transition-all duration-300 ${
         activeLink === index ? "border-b-2 border-red-600" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(index)}
@@ -125,7 +125,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
           : "bg-[#f2f2f2]/70 backdrop-blur-xl"
       }`}
     >
-      <nav className="left-0 mb-[4rem] -mt-10 flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
+      <nav className="flex flex-wrap items-center justify-start space-x-2 px-4 py-3 sm:space-x-6 sm:px-8">
         {navItems.map((item, index) => (
           <NavLink
             key={index}

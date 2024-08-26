@@ -66,11 +66,11 @@ const AboutUs: React.FC<AboutUsProps> = ({
 
   return (
     <div className="flex mt-12 md:space-y-14 h-screen max-w-screen-2xl mx-auto flex-col items-center">
-      <div className="text-center w-full max-w-6xl">
+      <div className="text-center w-full max-w-6xl px-4">
         <h1 className="text-2xl text-[#483d78]">
           About <span className="text-red-500 font-extrabold">US</span>
         </h1>
-        <h1 className="text-4xl font-poppins px-56 py-3">
+        <h1 className="text-4xl font-poppins px-4 md:px-56 py-3">
           {heading.split(" ").map((word, index) =>
             word === "Machine" ? (
               <span key={index} className="text-[#483d78] cursor-pointer">
@@ -81,8 +81,8 @@ const AboutUs: React.FC<AboutUsProps> = ({
             )
           )}
         </h1>
-        <div className="flex justify-between items-center w-full">
-          <div className="text-justify">
+        <div className="flex flex-col md:flex-row justify-between items-center w-full">
+          <div className="text-justify mb-4 md:mb-0">
             <h2
               ref={machinesSoldRef}
               className="text-3xl font-extrabold text-[#483d73]"
@@ -91,10 +91,10 @@ const AboutUs: React.FC<AboutUsProps> = ({
             </h2>
             <p className="text-base font-poppins">Machines Sold</p>
           </div>
-          <p className="font-poppins text-base ml-12 py-4 text-center ml-18 w-[60%] leading-6">
+          <p className="font-poppins text-base mx-4 py-4 text-center w-full md:w-[60%] leading-6">
             {description}
           </p>
-          <div className="text-center">
+          <div className="text-center mt-4 md:mt-0">
             <h2
               ref={readyStockMachinesRef}
               className="text-3xl font-extrabold text-[#483d73] -mt-3"
@@ -106,7 +106,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
         </div>
         <Link
           href="/products"
-          className="text-[#483d73] font-poppins text-base mt-0 mr-18 inline-flex items-center underline-offset-3 underline"
+          className="text-[#483d73] font-poppins text-base mt-0 inline-flex items-center underline-offset-3 underline"
         >
           Read more
           <svg
@@ -125,7 +125,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
         </Link>
       </div>
 
-      <div className="flex w-full items-end gap-4 px-6">
+      <div className="flex flex-col md:flex-row w-full items-end gap-4 px-6">
         {cards.map((card, index) => (
           <div
             key={index}
@@ -145,7 +145,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
                   width={600}
                   height={250}
                   className={`w-full rounded-3xl border-2 object-cover ${
-                    index === 1 ? "h-[15rem] w-1/3" : "h-52"
+                    index === 1 ? "h-[15rem] lg:w-full w-full md:w-1/3" : "h-52"
                   }`}
                 />
                 <div className="absolute bottom-0 left-0 p-4 flex justify-between items-end w-full">
