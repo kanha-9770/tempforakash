@@ -8,6 +8,7 @@ import Logo from "../../../public/assets/Logo.png";
 import RightNavbar from "./RightNavbar";
 import ProfileLayout from "../Layout/ProfileLayout";
 import { Menu, MenuItem } from "./nav-menue";
+import { BiMinus } from "react-icons/bi";
 
 export default function NavbarDemo() {
   return (
@@ -22,6 +23,7 @@ function Navbar({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [expandedItem, setExpandedItem] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,16 +46,20 @@ function Navbar({ className }: { className?: string }) {
     setActive(active === item ? null : item);
   };
 
+  const expandItem = (item: string) => {
+    setExpandedItem(expandedItem === item ? null : item);
+  };
+
   return (
     <div
       className={cn(
         "fixed flex w-full lg:mt-0 max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
-        "transition-all duration-500 ease-in-out", // transition
+        "transition-all duration-500 ease-in-out",
         scrolling
           ? "lg:bg-[#f2f2f2]/70 bg-white rounded-bl-xl lg:rounded-none backdrop-blur-xl"
-          : "lg:bg-[#f2f2f2]/70 bg-white rounded-br-xl lg:rounded-none backdrop-blur-xl" // Adjust blur and background color on scroll
+          : "lg:bg-[#f2f2f2]/70 bg-white rounded-br-xl lg:rounded-none backdrop-blur-xl"
       )}
     >
       <div className="w-1/2 lg:w-[15%] lg:ml-8 flex justify-start items-center">
@@ -89,8 +95,7 @@ function Navbar({ className }: { className?: string }) {
       </div>
 
       {/* Mobile Menu Toggle Button */}
-      <div className="w-1/2 lg:w-[23%] flex justify-end items-center lg:hidden">
-        {/* Profile Layout in Mobile View */}
+      <div className="w-1/2 lg:w-[23%] flex justify-end mr-4 items-center lg:hidden">
         <ProfileLayout
           profileOpen={profileOpen}
           setIsFlagOpen={() => {}}
@@ -100,7 +105,7 @@ function Navbar({ className }: { className?: string }) {
         />
 
         <button
-          className="ml-4 text-gray-700 focus:outline-none"
+          className="ml-2 text-gray-700 focus:outline-none"
           onClick={toggleMenu}
         >
           <svg
@@ -136,23 +141,36 @@ function Navbar({ className }: { className?: string }) {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-lg z-50 p-4">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white px-8 shadow-lg z-50 p-4">
           {navbarItems.map((item) => (
             <div key={item.name}>
               <div
                 className="flex justify-between items-center py-3 border-b"
-                onClick={() => toggleItem(item.name)}
+                onClick={() => expandItem(item.name)}
               >
                 <span className="text-lg font-medium text-black">
                   {item.name}
                 </span>
                 <span className="text-gray-500">
-                  {active === item.name ? "-" : "+"}
+                  {expandedItem === item.name ? "-" : "+"}
                 </span>
               </div>
-              {active === item.name && (
-                <div className="py-2 text-sm text-gray-700">
-                  {item.component}
+              {expandedItem === item.name && (
+                <div className="absolute  h-screen inset-0 bg-white z-50 flex flex-col">
+                  <div className="flex border-b-2 justify-between items-center">
+                    <span className="text-lg pl-2 font-medium text-black">
+                      {item.name}
+                    </span>
+                    <button
+                      className="text-gray-700 p-4"
+                      onClick={() => expandItem(item.name)}
+                    >
+                      <BiMinus className="text-2xl"/>
+                    </button>
+                  </div>
+                  <div className="py-4 p-2 flex-grow">
+                    <div className="text-sm text-gray-700">{item.component}</div>
+                  </div>
                 </div>
               )}
             </div>

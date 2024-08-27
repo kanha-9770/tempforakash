@@ -92,48 +92,147 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       value={{ onCardClose: handleCardClose, currentIndex }}
     >
       {items.length <= 10 ? (
-        <div className="relative w-full">
+        <>
           <div
-            className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+            className=" grid grid-rows-2  w-full overflow-x-scroll overscroll-x-auto py-4 md:py-4 scroll-smooth [scrollbar-width:none]"
             ref={carouselRef}
             onScroll={checkScrollability}
-          >
+          ></div>
+
+          {items.length > 5 ? (
             <div
-              className={cn(
-                "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
-              )}
-            ></div>
-            <div
-              className={cn(
-                "grid grid-cols-5  gap-4 pl-4",
-                "max-w-7xl mx-auto"
-              )}
+              className="grid grid-rows-2 w-full overflow-x-scroll overscroll-x-auto py-4 md:py-4 scroll-smooth [scrollbar-width:none]"
+              ref={carouselRef}
+              onScroll={checkScrollability}
             >
-              {items.slice(0, 10).map((item, index) => (
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 20,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.5,
-                      delay: 0.2 * index,
-                      ease: "easeOut",
-                      once: true,
-                    },
-                  }}
-                  key={"card" + index}
-                  className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
+              <div className="relative mt-12 w-full">
+                <div
+                  className={cn(
+                    "absolute right-0  z-10 h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+                  )}
+                ></div>
+
+                <div
+                  className={cn(
+                    "flex flex-row  gap-4 pl-4",
+                    "max-w-7xl mx-auto"
+                  )}
                 >
-                  {item}
-                </motion.div>
-              ))}
+                  {items
+                    .slice(
+                      0,
+                      items.length % 2 === 0
+                        ? items.length / 2
+                        : Math.ceil(items.length / 2)
+                    )
+                    .map((item, index) => (
+                      <motion.div
+                        key={"card" + index}
+                        initial={{
+                          opacity: 0,
+                          y: 20,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            duration: 0.5,
+                            delay: 0.2 * index,
+                            ease: "easeOut",
+                          },
+                        }}
+                        className="last:pr-[5%] md:last:pr-[0%] rounded-3xl"
+                      >
+                        {item}
+                      </motion.div>
+                    ))}
+                </div>
+              </div>
+              <div className="relative w-full">
+                <div
+                  className={cn(
+                    "absolute right-0  z-20 h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+                  )}
+                ></div>
+
+                <div
+                  className={cn(
+                    "flex flex-row mt-4  gap-4 pl-4",
+                    "max-w-7xl mx-auto"
+                  )}
+                >
+                  {items
+                    .slice(items.length / 2, items.length - 1)
+                    .map((item, index) => (
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          y: 20,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                          transition: {
+                            duration: 0.5,
+                            delay: 0.2 * index,
+                            ease: "easeOut",
+                            once: true,
+                          },
+                        }}
+                        key={"card" + index}
+                        className="last:pr-[5%] md:last:pr-[0%]  rounded-3xl"
+                      >
+                        {item}
+                      </motion.div>
+                    ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          ) : (
+            <div
+              className="flex w-full overflow-x-scroll overscroll-x-auto py-4 md:py-4 scroll-smooth [scrollbar-width:none]"
+              ref={carouselRef}
+              onScroll={checkScrollability}
+            >
+              <div className="relative mt-12 w-full">
+                <div
+                  className={cn(
+                    "absolute right-0  z-10 h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+                  )}
+                ></div>
+
+                <div
+                  className={cn(
+                    "flex flex-row  gap-4 pl-4",
+                    "max-w-7xl mx-auto"
+                  )}
+                >
+                  {items.slice(0, items.length).map((item, index) => (
+                    <motion.div
+                      key={"card" + index}
+                      initial={{
+                        opacity: 0,
+                        y: 20,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 0.5,
+                          delay: 0.2 * index,
+                          ease: "easeOut",
+                        },
+                      }}
+                      className="last:pr-[5%] md:last:pr-[0%] rounded-3xl"
+                    >
+                      {item}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </>
       ) : (
         <>
           <div
@@ -285,12 +384,12 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-[99999] overflow-auto">
+          <div className="fixed  inset-0 h-screen z-[99999] overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="bg-black/80 backdrop-blur-lg h-full w-full fixed inset-0"
+              className="bg-black/80  backdrop-blur-lg h-full w-full fixed inset-0"
             />
             <motion.div
               initial={{ opacity: 0 }}
@@ -314,7 +413,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className=" h-80 rounded-3xl bg-white p-2  w-48 md:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className=" h-52 rounded-3xl bg-white p-2  w-48 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="relative p-2 h-full w-full">
           <div className="absolute flex bg-white h-16 w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">

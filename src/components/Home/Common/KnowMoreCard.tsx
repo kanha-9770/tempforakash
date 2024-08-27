@@ -89,7 +89,7 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
             <p className="text-sm mt-2 lg:text-base text-white text-center font-poppins">
               {renderDescription()}
             </p>
-            {!isExpanded && description.split("\n").length > 4 && (
+            {!isExpanded && description.split("\n").length >= 2 && (
               <button
                 className="text-base text-white font-poppins font-bold text-center mt-2"
                 onClick={toggleDescription}

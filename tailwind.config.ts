@@ -46,6 +46,7 @@ const config: Config = {
         18: "18px",
         16: "16px",
         14: "14px",
+        8:"0.65rem"
       },
       screens: {
         "1122px": { max: "1122px" },

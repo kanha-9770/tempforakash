@@ -5,6 +5,7 @@ import Hero from "@/components/Home/Home";
 import NavLinksDemo from "@/components/Home/NavLinks";
 import { data } from "@/components/Constants/Navbar/about-data";
 import { AppleCardsCarouselDemo } from "@/components/AppleCardsCarouselDemo";
+import ContactIcons from "@/components/Contact/ContactIcon";
 
 const AboutUs = dynamic(() => import("@/components/Home/AboutSection"), {
   ssr: true,
@@ -74,15 +75,17 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-[#f2f2f2] mx-2 lg:mx-0">
-      <Hero />
+    <main className="bg-[#f2f2f2]  ">
+      <div className="mx-2 mt-[4.5rem] lg:mt-4 lg:mx-0">
+        <Hero />
+      </div>
+      <ContactIcons/>
       <NavLinksDemo navItems={navItems} />
       <div className="h-full">
         <div className="lg:mx-4 mt-8">
-        <AppleCardsCarouselDemo />
+          <AppleCardsCarouselDemo />
         </div>
         <div id="aboutUs" className="mx-4 mt-16" ref={aboutUsRef}>
-
           <AboutUs
             heading={data.heading}
             description={data.description}
@@ -90,7 +93,11 @@ export default function Home() {
             cards={data.cards}
           />
         </div>
-        <div id="clientele" className="ml-2 lg:mx-4 mt-[45rem] lg:mt-32" ref={infiniteCardsRef}>
+        <div
+          id="clientele"
+          className="ml-2 lg:mx-4 mt-[45rem] lg:mt-32"
+          ref={infiniteCardsRef}
+        >
           <MarqueeSection />
         </div>
         <div id="knowMore" className="mx-1 lg:mx-4 mt-32" ref={knowMoreRef}>
@@ -104,8 +111,8 @@ export default function Home() {
             IoT <span className="text-red-500 font-bold">System</span>
           </h4>
           <IotSection />
-        </div>
-        <div id="news" className="mx-4 mt-32" ref={newsFeatureRef}>
+        </div> */}
+        {/* <div id="news" className="mx-4 mt-32" ref={newsFeatureRef}>
           <NewsFeature />
         </div>
         <div id="knowMachine" className="mx-4 mt-32" ref={knowMachineRef}>

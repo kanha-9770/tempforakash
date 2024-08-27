@@ -225,7 +225,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
         </div>
-        <div className="w-[28%] h-[28rem] flex flex-col ">
+        <div className="w-full lg:w-[28%] h-auto lg:h-[28rem] flex flex-col ">
           <div className="w-full  h-[28rem] flex justify-center items-center border-l overflow-y-hidden border-gray-300 relative">
             {sidebarIndex > 0 && (
               <button

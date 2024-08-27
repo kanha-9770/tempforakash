@@ -126,7 +126,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
           : " lg:bg-[#f2f2f2]/70 backdrop-blur-xl"
       }`}
     >
-      <div className="flex justify-between items-center px-4 py-2 lg:hidden">
+      <div className="flex justify-between items-center px-2 py-2 lg:hidden">
         <button onClick={toggleMenu} className="text-black text-sm font-bold">
           {menuExpanded ? "Overview ▲" : "Overview ▼"}
         </button>
@@ -139,7 +139,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "0", opacity: 0 }}
             transition={{ duration: 0, ease: "easeInOut" }}
-            className="fixed inset-0 z-[99999] bg-white rouded-2xl flex flex-col items-start h-screen w-full px-6 py-8 lg:hidden"
+            className="fixed inset-0 z-[99999] bg-white rouded-3xl flex flex-col items-start h-[45vh] w-full px-6 py-8 lg:hidden"
           >
             <nav className="w-full">
               <button

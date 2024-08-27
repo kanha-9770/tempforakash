@@ -366,7 +366,7 @@ export const cardsData: CardData[] = [
         secondname="Machine"
       />
     ),
-    category: "slitting",
+    category: "bowl",
     firstname: "Slitting",
     secondname: "Machine",
     description:

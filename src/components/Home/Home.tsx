@@ -169,9 +169,9 @@ const Home: React.FC = () => {
     setIsLargeScreen(mediaQuery.matches);
 
     const handleResize = () => setIsLargeScreen(mediaQuery.matches);
-    mediaQuery.addEventListener('change', handleResize);
+    mediaQuery.addEventListener("change", handleResize);
 
-    return () => mediaQuery.removeEventListener('change', handleResize);
+    return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
 
   useEffect(() => {
@@ -209,22 +209,21 @@ const Home: React.FC = () => {
 
   const { scrollY } = useScroll();
 
-// Always call the hook
-const defaultVideoTransform = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
-const defaultVideoWidth = useTransform(scrollY, [0, 300], ["100%", "150%"]);
-const defaultSvgTransform = useTransform(scrollY, [0, 100], ["0%", "25%"]);
+  // Always call the hook
+  const defaultVideoTransform = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
+  const defaultVideoWidth = useTransform(scrollY, [0, 300], ["100%", "150%"]);
+  const defaultSvgTransform = useTransform(scrollY, [0, 100], ["0%", "25%"]);
 
-// Conditionally apply the transform based on the screen size
-const videoTransform = isLargeScreen ? defaultVideoTransform : "0%";
-const videoWidth = isLargeScreen ? defaultVideoWidth : "100%";
-const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
-
+  // Conditionally apply the transform based on the screen size
+  const videoTransform = isLargeScreen ? defaultVideoTransform : "0%";
+  const videoWidth = isLargeScreen ? defaultVideoWidth : "100%";
+  const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
 
   return (
-    <div className="relative h-auto lg:h-screen lg:bg-[#f2f2f2] lg:p-0 max-w-screen-2xl flex flex-col items-center overflow-hidden lg:min-h-screen w-full">
+    <div className="relative h-auto lg:h-screen lg:bg-[#f2f2f2] lg:p-0  max-w-screen-2xl flex flex-col items-center overflow-hidden lg:min-h-screen w-full">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
         <motion.div
-          className="md:mt-[3rem] w-full h-[calc(100vh-210px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-2xl"
+          className="md:mt-[3rem] w-full h-[calc(100vh-210px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-3xl"
           ref={containerRef}
           style={{ width: videoWidth, x: videoTransform, originX: 0.5 }}
         >
@@ -233,7 +232,7 @@ const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
               <video
                 ref={videoRef}
                 id="background-video"
-                className="w-full h-full object-cover rounded-2xl lg:rounded-3xl"
+                className="w-full h-full object-cover rounded-3xl lg:rounded-3xl"
                 autoPlay={!isSafari}
                 loop
                 muted
@@ -277,7 +276,7 @@ const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
             Manufacturing
           </span>
         </div>
-        <div className="w-full font-poppins mt-40 lg:hidden bottom-0 z-30 items-end flex justify-center">
+        <div className="absoute bottom-0 w-full font-poppins  lg:hidden  z-30 items-end flex justify-center">
           <PositionAwareButton
             margin="0.2rem"
             borderWidth="1px"
@@ -345,10 +344,6 @@ const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
             ></path>
           </svg>
         </div>
-      </div>
-      <ContactIcons />
-      <div className="font-bold z-[9999] mr-8 text-5xl fixed rounded-full border-2 border-white p-2 mb-4 bottom-0 right-0 bg-[#4d3d78] bg-opacity-50 backdrop-blur-sm transform hover:scale-110 transition duration-300">
-        <IoChatboxEllipsesOutline />
       </div>
     </div>
   );
