@@ -76,9 +76,9 @@ export const MenuItem = ({
       ref={ref}
       className="z-10 cursor-pointer px-3 font-montserrat py-2 text-white  md:py-1 md:text-base "
     >
-      <Link href={`${item}`} className="text-black font-poppins text-16">
+      <p  className="text-black font-poppins text-16">
         {item}
-      </Link>
+      </p>
       {active === item && (
         <motion.div className="absolute top-[calc(100%_-_1.0rem)] left-3 pt-4">
           <motion.div
