@@ -58,15 +58,52 @@ function Navbar({ className }: { className?: string }) {
         className,
         "transition-all duration-500 ease-in-out",
         scrolling
-          ? "lg:bg-[#f2f2f2]/70 bg-white rounded-bl-xl lg:rounded-none backdrop-blur-xl"
-          : "lg:bg-[#f2f2f2]/70 bg-white rounded-br-xl lg:rounded-none backdrop-blur-xl"
+          ? "lg:bg-[#f2f2f2]/70 bg-red-500  lg:rounded-none backdrop-blur-xl"
+          : "lg:bg-[#f2f2f2]/70 bg-red-500  lg:rounded-none backdrop-blur-xl"
       )}
     >
-      <div className="w-1/2 lg:w-[15%] lg:ml-8 flex justify-start items-center">
-        <Link
-          href="/"
-          className="h-6 rounded-2xl lg:ml-2 flex justify-center items-center"
-        >
+      {/* Desktop Menu */}
+      <div className="hidden lg:flex w-full">
+        <div className="w-[15%] lg:ml-8 flex justify-start items-center">
+          <Link
+            href="/"
+            className="h-6 rounded-2xl lg:ml-2 flex justify-center items-center"
+          >
+            <Image
+              src={Logo}
+              alt="Logo"
+              width={500}
+              height={500}
+              className="h-[1.4rem] w-full"
+            />
+          </Link>
+        </div>
+
+        <div className="w-[65%] flex items-center justify-center">
+          <Menu>
+            {navbarItems.map((item) => (
+              <MenuItem
+                key={item.name}
+                setActive={setActive}
+                active={active}
+                item={item.name}
+                setPosition={() => {}}
+              >
+                {item.component}
+              </MenuItem>
+            ))}
+          </Menu>
+        </div>
+
+        <div className="w-[23%] flex mr-2 items-center justify-end">
+          <RightNavbar />
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className="mx-2 w-full bg-white">
+      <div className="lg:hidden w-full flex justify-between items-center p-4">
+        <Link href="/" className="h-6 flex items-center">
           <Image
             src={Logo}
             alt="Logo"
@@ -75,34 +112,6 @@ function Navbar({ className }: { className?: string }) {
             className="h-[1.4rem] w-full"
           />
         </Link>
-      </div>
-
-      {/* Desktop Menu */}
-      <div className="w-[65%] hidden lg:flex items-center justify-center">
-        <Menu>
-          {navbarItems.map((item) => (
-            <MenuItem
-              key={item.name}
-              setActive={setActive}
-              active={active}
-              item={item.name}
-              setPosition={() => {}}
-            >
-              {item.component}
-            </MenuItem>
-          ))}
-        </Menu>
-      </div>
-
-      {/* Mobile Menu Toggle Button */}
-      <div className="w-1/2 lg:w-[23%] flex justify-end mr-4 items-center lg:hidden">
-        <ProfileLayout
-          profileOpen={profileOpen}
-          setIsFlagOpen={() => {}}
-          setOpenSearch={() => {}}
-          setProfileOpen={setProfileOpen}
-          setAccountOpen={() => {}}
-        />
 
         <button
           className="ml-2 text-gray-700 focus:outline-none"
@@ -134,54 +143,52 @@ function Navbar({ className }: { className?: string }) {
         </button>
       </div>
 
-      {/* Desktop Right Navbar */}
-      <div className="w-1/2 lg:w-[23%] hidden lg:flex mr-2 items-center justify-end">
-        <RightNavbar />
-      </div>
-
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white px-8 shadow-lg z-50 p-4">
-          {navbarItems.map((item) => (
-            <div key={item.name}>
-              <div
-                className="flex justify-between items-center py-3 border-b"
-                onClick={() => expandItem(item.name)}
-              >
-                <span className="text-lg font-medium text-black">
-                  {item.name}
-                </span>
-                <span className="text-gray-500">
-                  {expandedItem === item.name ? "-" : "+"}
-                </span>
-              </div>
-              {expandedItem === item.name && (
-                <div className="absolute  h-screen inset-0 bg-white z-50 flex flex-col">
-                  <div className="flex border-b-2 justify-between items-center">
-                    <span className="text-lg pl-2 font-medium text-black">
-                      {item.name}
-                    </span>
-                    <button
-                      className="text-gray-700 p-4"
-                      onClick={() => expandItem(item.name)}
-                    >
-                      <BiMinus className="text-2xl"/>
-                    </button>
-                  </div>
-                  <div className="py-4 p-2 flex-grow">
-                    <div className="text-sm text-gray-700">{item.component}</div>
-                  </div>
+        <div className="lg:hidden absolute top-full left-0 w-full bg-blue-200 shadow-lg z-[99999] p-4">
+          <div className="flex flex-col space-y-4">
+            {navbarItems.map((item) => (
+              <div key={item.name}>
+                <div
+                  className="flex justify-between items-center py-3 border-b"
+                  onClick={() => expandItem(item.name)}
+                >
+                  <span className="text-lg font-medium text-black">
+                    {item.name}
+                  </span>
+                  <span className="text-gray-500">
+                    {expandedItem === item.name ? "-" : "+"}
+                  </span>
                 </div>
-              )}
-            </div>
-          ))}
+                {expandedItem === item.name && (
+                  <div className="absolute h-screen inset-0 bg-white z-50 flex flex-col">
+                    <div className="flex border-b-2 justify-between items-center">
+                      <span className="text-lg pl-2 font-medium text-black">
+                        {item.name}
+                      </span>
+                      <button
+                        className="text-gray-700 p-4"
+                        onClick={() => expandItem(item.name)}
+                      >
+                        <BiMinus className="text-2xl" />
+                      </button>
+                    </div>
+                    <div className="py-4 p-2 flex-grow">
+                      <div className="text-sm text-gray-700">
+                        {item.component}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
 
-          {/* Mobile Right Navbar */}
           <div className="mt-4">
             <RightNavbar />
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
