@@ -322,7 +322,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           <div className="absolute w-full h-full flex flex-col">
             <div className="w-full flex justify-start items-start  overflow-y-hidden relative">
               
-              <div className="space-y-4  pb-32 h-full stopscrollProduct w-full">
+              <div className="space-y-4  pb-32 h-full stopscrollProduct overflow-y-auto w-full">
                 {SidebarLinks.slice(sidebarIndex,SidebarLinks.length).map(
                   (link, index) => (
                     <motion.div
@@ -332,7 +332,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       animate="visible"
                       variants={sidebarVariants}
                       onClick={() => handleCategoryClick(link.name, link.name)}
-                      className={`flex items-center border-b-2 pb-[0.7rem] justify-between  text-lg transition-colors duration-300 cursor-pointer font-poppins text-[#483d78] font-semimedium`}
+                      className={`flex items-center border-b-[1px] pb-[0.7rem] justify-between  text-lg transition-colors duration-300 cursor-pointer font-poppins text-[#483d78] font-semimedium`}
                     >
                       <div
                         className="flex flex-row space-x-3"
@@ -359,7 +359,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
 
                       {expandedItem === link.name && (
                         <div className="absolute -mt-2 inset-0 h-full w-full bg-white z-50 flex flex-col overflow-hidden">
-                          <div className="flex border-b-2 justify-between items-center p-2">
+                          <div className="flex border-b-[1px] justify-between items-center p-2">
                             <span className="text-lg font-medium text-black">
                               {link.name}
                             </span>

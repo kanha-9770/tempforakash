@@ -77,18 +77,9 @@ const AboutLayout = () => {
       </div>
       <div className="hidden lg:flex ml-2 w-2 h-72 border-l border-gray-300"></div>
       <div className="w-full lg:w-[20vw] h-32 lg:h-auto  flex flex-col justify-between mt-4 lg:mt-0">
-        <div className="flex lg:hidden w-full bg-gray-800 justify-center">
-          {currentIndex > 0 && (
-            <button
-              onClick={scrollUp}
-              className="absolute text-3xl text-black  lg:top-0  rounded-full"
-            >
-              <IoIosArrowUp />
-            </button>
-          )}
-        </div>
+       
         <AnimatedContainer currentIndex={currentIndex}>
-          {items.slice(currentIndex, currentIndex + 2).map((item, index) => (
+          {items.slice(currentIndex, currentIndex + 4).map((item, index) => (
             <Link key={index} href={`/${item.title}`} passHref>
               <div
                 className={`${item.color} hidden lg:flex border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
@@ -108,7 +99,7 @@ const AboutLayout = () => {
                 </div>
               </div>
               <div
-                className={`flex lg:hidden border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200  items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
+                className={`flex lg:hidden border-t-[1px] lg:border-none lg:hover:scale-80 transition-transform duration-200  items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
               >
                 <div
                   className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
@@ -127,16 +118,7 @@ const AboutLayout = () => {
               </div>
             </Link>
           ))}
-          <div className="bottom-4 flex lg:hidden w-full justify-center text-3xl">
-            {currentIndex < items.length - 2 && (
-              <button
-                onClick={scrollDown}
-                className="absolute text-3xl bg-transparent text-black flex justify-center items-center rounded-full"
-              >
-                <IoIosArrowDown />
-              </button>
-            )}
-          </div>
+          
         </AnimatedContainer>
         <div className="hidden lg:flex w-full bg-gray-800 justify-center">
           {currentIndex > 0 && (

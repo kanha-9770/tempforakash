@@ -31,7 +31,7 @@ const config: Config = {
     extend: {
       scale: {
         "100": "2.0",
-        "90": "1.2", // 90% of the original size
+        "90": "1.2", 
         "80": "1.05",
       },
       fontWeight: {
