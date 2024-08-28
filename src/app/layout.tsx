@@ -4,6 +4,10 @@ import "./globals.css";
 import "@fontsource/montserrat";
 import NavbarDemo from "@/components/Navbar/Navbar";
 import "@fontsource/alex-brush";
+import "@fontsource/poppins"; // Defaults to weight 400
+import "@fontsource/poppins/400.css"; // Specify weight
+import "@fontsource/poppins/500.css"; // Specify weight
+import "@fontsource/poppins/600.css"; // Specify weight
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Nessco India",

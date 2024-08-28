@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -136,6 +136,7 @@ html {
 html::-webkit-scrollbar {
   display: none;
 }
+
 .scroller {
   --animation-duration: 20s;
   --animation-direction: forwards;
@@ -313,4 +314,17 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+/* product layout of navbar scrollabar hide */
+.stopscrollProduct{
+  /* Ensure scrollable content */
+  overflow-y: scroll;
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.stopscrollProduct::-webkit-scrollbar {
+  display: none;
 }

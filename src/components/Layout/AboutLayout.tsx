@@ -5,6 +5,7 @@ import Image from "next/image";
 import { items, titlesWithImages } from "../Constants/Navbar/about-data";
 import { motion } from "framer-motion";
 import AnimatedContainer from "@/hooks/AnimatedContainer";
+import { IoIosArrowForward } from "react-icons/io";
 
 const IoIosArrowDown = dynamic(() =>
   import("react-icons/io").then((mod) => mod.IoIosArrowDown)
@@ -61,13 +62,13 @@ const AboutLayout = () => {
               <Image
                 src={item.image}
                 alt={item.title}
-                className="rounded-2xl cursor-pointer w-44 h-32  lg:w-56 lg:h-56 object-cover transform hover:scale-80 transition-transform duration-200"
+                className="rounded-2xl cursor-pointer w-44 h-32  lg:w-56 lg:h-56 object-cover transform lg:hover:scale-80 transition-transform duration-200"
                 width={224}
                 height={224}
                 priority={index < 4}
                 loading={index < 4 ? "eager" : "lazy"}
               />
-              <p className="mt-2 flex items-center justify-center space-x-2 text-center font-poppins text-black hover:text-[#483d78] hover:font-bold text-xs sm:text-sm md:text-base transform hover:scale-80 transition-transform duration-300">
+              <p className="mt-2 flex items-center justify-center space-x-2 text-center font-poppins text-black hover:text-[#483d78] hover:font-bold text-xs sm:text-sm md:text-base transform lg:hover:scale-80 transition-transform duration-300">
                 <span>{item.title}</span>
               </p>
             </Link>
@@ -75,12 +76,12 @@ const AboutLayout = () => {
         ))}
       </div>
       <div className="hidden lg:flex ml-2 w-2 h-72 border-l border-gray-300"></div>
-      <div className="w-full lg:w-[20vw] h-36 flex flex-col justify-between mt-4 lg:mt-0">
+      <div className="w-full lg:w-[20vw] h-32 lg:h-auto  flex flex-col justify-between mt-4 lg:mt-0">
         <div className="flex lg:hidden w-full bg-gray-800 justify-center">
           {currentIndex > 0 && (
             <button
               onClick={scrollUp}
-              className="absolute text-2xl text-black  lg:top-0  p-2 rounded-full"
+              className="absolute text-3xl text-black  lg:top-0  rounded-full"
             >
               <IoIosArrowUp />
             </button>
@@ -90,7 +91,7 @@ const AboutLayout = () => {
           {items.slice(currentIndex, currentIndex + 2).map((item, index) => (
             <Link key={index} href={`/${item.title}`} passHref>
               <div
-                className={`${item.color} hidden lg:flex border-t-2 lg:border-none hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
+                className={`${item.color} hidden lg:flex border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
               >
                 <div
                   className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
@@ -107,20 +108,21 @@ const AboutLayout = () => {
                 </div>
               </div>
               <div
-                className={`flex lg:hidden border-t-2 lg:border-none hover:scale-80 transition-transform duration-200  items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
+                className={`flex lg:hidden border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200  items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
               >
                 <div
                   className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
                 >
                   <item.icon />
                 </div>
-                <div>
+                <div className="flex flex-row w-full justify-between">
                   <h3 className="text-sm  sm:text-md text-black font-bold mb-0">
                     {item.title}
                   </h3>
                   <p className="text-xs hidden lg:flex text-black line-clamp-3">
                     {item.description}
                   </p>
+                  <IoIosArrowForward className="text-2xl"/>
                 </div>
               </div>
             </Link>
@@ -129,7 +131,7 @@ const AboutLayout = () => {
             {currentIndex < items.length - 2 && (
               <button
                 onClick={scrollDown}
-                className="absolute bg-transparent text-2xl text-black flex justify-center items-center rounded-full"
+                className="absolute text-3xl bg-transparent text-black flex justify-center items-center rounded-full"
               >
                 <IoIosArrowDown />
               </button>
@@ -140,7 +142,7 @@ const AboutLayout = () => {
           {currentIndex > 0 && (
             <button
               onClick={scrollUp}
-              className="absolute text-2xl text-black lg:top-0 top-[55%] p-2 rounded-full"
+              className="absolute text-2xl text-black lg:top-0 top-[55%] rounded-full"
             >
               <IoIosArrowUp />
             </button>

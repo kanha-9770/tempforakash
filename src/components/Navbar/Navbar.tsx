@@ -12,8 +12,8 @@ import { BiMinus } from "react-icons/bi";
 
 export default function NavbarDemo() {
   return (
-    <div className="relative bg-white lg:h-auto lg:mt-0 max-w-screen-2xl flex items-center justify-between lg:justify-center">
-      <Navbar className="top-0 h-16" />
+    <div className="relative  bg-white lg:h-auto lg:mt-0 max-w-screen-2xl flex items-center justify-between lg:justify-center">
+      <Navbar className="top-0 " />
     </div>
   );
 }
@@ -53,13 +53,13 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed flex w-full lg:mt-0 max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
+        "fixed flex w-full font-poppins lg:mt-0 max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
         "transition-all duration-500 ease-in-out",
         scrolling
-          ? "lg:bg-[#f2f2f2]/70 bg-red-500  lg:rounded-none backdrop-blur-xl"
-          : "lg:bg-[#f2f2f2]/70 bg-red-500  lg:rounded-none backdrop-blur-xl"
+          ? "bg-[#f2f2f2]/70  lg:rounded-none backdrop-blur-xl"
+          : "bg-[#f2f2f2]/70 lg:rounded-none backdrop-blur-xl"
       )}
     >
       {/* Desktop Menu */}
@@ -101,8 +101,8 @@ function Navbar({ className }: { className?: string }) {
       </div>
 
       {/* Mobile Menu */}
-      <div className="mx-2 w-full bg-white">
-      <div className="lg:hidden w-full flex justify-between items-center p-4">
+      <div className=" lg:hidden border-b-2 flex w-full bg-white">
+      <div className="lg:hidden w-full flex justify-between items-center -ml-2 p-4">
         <Link href="/" className="h-6 flex items-center">
           <Image
             src={Logo}
@@ -144,25 +144,25 @@ function Navbar({ className }: { className?: string }) {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-blue-200 shadow-lg z-[99999] p-4">
-          <div className="flex flex-col space-y-4">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-lg z-[99999] p-4">
+          <div className="flex flex-col space-y-3">
             {navbarItems.map((item) => (
               <div key={item.name}>
                 <div
-                  className="flex justify-between items-center py-3 border-b"
+                  className="flex -mt-3 justify-between items-center py-2 border-b"
                   onClick={() => expandItem(item.name)}
                 >
-                  <span className="text-lg font-medium text-black">
+                  <span className="text-lg font-semimedium text-black">
                     {item.name}
                   </span>
-                  <span className="text-gray-500">
+                  <span className="text-gray-500 pr-2 text-2xl">
                     {expandedItem === item.name ? "-" : "+"}
                   </span>
                 </div>
                 {expandedItem === item.name && (
                   <div className="absolute h-screen inset-0 bg-white z-50 flex flex-col">
                     <div className="flex border-b-2 justify-between items-center">
-                      <span className="text-lg pl-2 font-medium text-black">
+                      <span className="text-lg pl-4  font-medium text-black">
                         {item.name}
                       </span>
                       <button
