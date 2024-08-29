@@ -157,35 +157,43 @@ const SupportGrid: React.FC<SupportGridProps> = ({
             </div>
           ))}
         </div>
-        <div className="flex lg:hidden flex-col  w-full mt-4">
-          <p className="text-black pl-4 text-lg font-poppins font-medium">
-            Give us a Call:
-          </p>
-          <div className="flex justify-around p-10 items-center border-b-2 h-32 flex-row pt-6">
-            <p
-              className="text-black flex flex-row items-center gap-2 text-center"
-              style={{
-                backgroundImage: "url('https://i.pinimg.com/236x/76/c8/c0/76c8c0172ba662b6fb6d0c095c1158fe.jpg')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <FaPhone/>
-              {supportMobile.mobileFirst}
-            </p>
-            <div className="w-1 h-24  border-l-2"></div>
-            <p
-              className="text-black text-center"
-              style={{
-                backgroundImage: "url('https://i.pinimg.com/236x/76/c8/c0/76c8c0172ba662b6fb6d0c095c1158fe.jpg')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              {supportMobile.mobileSecond}
-            </p>
-          </div>
-        </div>
+        <div className="flex lg:hidden flex-col w-full mt-4">
+  <p className="text-black pl-4 text-lg font-poppins font-medium">
+    Give us a Call:
+  </p>
+  <div className="flex justify-between items-center border-b-2 h-28 flex-row pt-6">
+    <p
+      className="text-black text-lg flex flex-row gap-2 items-center"
+      style={{
+        backgroundImage:
+          "url('https://i.pinimg.com/236x/76/c8/c0/76c8c0172ba662b6fb6d0c095c1158fe.jpg')",
+        backgroundSize: "contain", // Adjust this value as needed
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        padding: '5px 10px', // Adjust padding as needed
+      }}
+    >
+      <FaPhone />
+      {supportMobile.mobileFirst}
+    </p>
+    <div className="w-1 h-20 border-l-2"></div>
+    <p
+      className="text-black text-lg flex flex-row gap-2 items-center"
+      style={{
+        backgroundImage:
+          "url('https://i.pinimg.com/236x/76/c8/c0/76c8c0172ba662b6fb6d0c095c1158fe.jpg')",
+        backgroundSize: "contain", // Adjust this value as needed
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        padding: '5px 10px', // Adjust padding as needed
+      }}
+    >
+      <FaPhone />
+      {supportMobile.mobileSecond}
+    </p>
+  </div>
+</div>
+
       </div>
     </div>
   );

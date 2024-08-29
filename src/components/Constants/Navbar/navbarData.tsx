@@ -7,6 +7,7 @@ import { supporItem, supportMobile } from "./support-data";
 import { DataBankItem } from "./resources-data";
 import SupportGrid from "@/components/Layout/Support";
 import { StaticImageData } from "next/image";
+import ResourceGrid from "@/components/Layout/ResourceLayout";
 
 export interface NavbarItem {
   name: string;
@@ -39,16 +40,12 @@ export const navbarItems: NavbarItem[] = [
   },
   {
     name: "Support",
-    component: <SupportGrid supporItem={supporItem} supportMobile={supportMobile} />,
+    component: (
+      <SupportGrid supporItem={supporItem} supportMobile={supportMobile} />
+    ),
   },
   {
     name: "Resources",
-    component: (
-      <SupportLayout
-        setHoveredItem={() => {}}
-        supporItem={DataBankItem}
-        type="Resources"
-      />
-    ),
+    component: <ResourceGrid supporItem={DataBankItem} supportMobile={supportMobile} />,
   },
 ];

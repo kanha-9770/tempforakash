@@ -78,7 +78,7 @@ const Application: React.FC<{
       ? [arr.slice(0, size), ...chunkItems(arr.slice(size), size)]
       : [];
 
-  const paginatedItems = chunkItems(items, 9); // Chunk the items into groups of 9
+  const paginatedItems = chunkItems(items, 9); 
 
   // const paginatedItems = items.slice(
   //   currentPage * ITEMS_PER_PAGE,

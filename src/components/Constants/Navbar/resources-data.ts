@@ -10,6 +10,8 @@
     paperStrawMachine,
     BookServiceImage,
     paperLunchBoxMachine,
+    paperbowl,
+    papercup,
   } from "../../../../public/assets";
 
   import { StaticImageData } from "next/image";
@@ -37,10 +39,10 @@
   };
   
   export const DataBankItem = [
-    { title: "Paper Cup Machine", image: paperBagMachineImage },
-    { title: "Paper Bowl Machine", image: paperBowlMachineImage },
-    { title: "Paper Straw Machine", image: paperPlateMachineImage },
-    { title: "Paper Bucket Machine", image: paperStrawMachine },
-    { title: "Additional Item 4", image: BookServiceImage },
-    { title: "Additional Item 5", image: BookServiceImage },
+    { title: "Paper Cup Machine", image: paperBagMachineImage,bgPic:paperbowl },
+    { title: "Paper Bowl Machine", image: paperBowlMachineImage,bgPic:papercup },
+    { title: "Paper Straw Machine", image: paperPlateMachineImage,bgPic:paperbowl },
+    { title: "Paper Bucket Machine", image: paperStrawMachine ,bgPic:papercup},
+    { title: "Additional Item 4", image: BookServiceImage,bgPic:paperbowl },
+    { title: "Additional Item 5", image: BookServiceImage ,bgPic:papercup},
   ];

@@ -108,11 +108,11 @@ const Cursor = ({
         width: position.width,
         opacity: position.opacity,
       }}
-      // transition={{
-      //   type: "spring",
-      //   stiffness: 1000, 
-      //   damping: 50, // Lower damping for less resistance
-      // }}
+      transition={{
+        type: "spring",
+        stiffness: 1000, 
+        damping: 50, // Lower damping for less resistance
+      }}
       className="absolute z-0 h-6 rounded-full bg-[#eaeaea] md:h-6 mt-[0.25rem]"
     />
   );
