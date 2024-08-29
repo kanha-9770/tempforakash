@@ -1,17 +1,17 @@
-// src/components/Constants/Navbar/navbarData.ts
 import AboutLayout from "../../Layout/AboutLayout";
 import SupportLayout from "../../Layout/SupportLayout";
 import ProductLayout from "../../Layout/ProductLayout";
 import ApplicationPage from "../../Layout/ApplicationLayout";
 import SolutionLayout from "../../Layout/Solution";
-import { supporItem } from "./support-data";
+import { supporItem, supportMobile } from "./support-data";
 import { DataBankItem } from "./resources-data";
+import SupportGrid from "@/components/Layout/Support";
+import { StaticImageData } from "next/image";
 
 export interface NavbarItem {
   name: string;
   component: React.ReactNode;
   type?: string;
-  supporItem?: any;
 }
 
 export const navbarItems: NavbarItem[] = [
@@ -39,13 +39,7 @@ export const navbarItems: NavbarItem[] = [
   },
   {
     name: "Support",
-    component: (
-      <SupportLayout
-        setHoveredItem={() => {}}
-        supporItem={supporItem}
-        type={""}
-      />
-    ),
+    component: <SupportGrid supporItem={supporItem} supportMobile={supportMobile} />,
   },
   {
     name: "Resources",
@@ -57,5 +51,4 @@ export const navbarItems: NavbarItem[] = [
       />
     ),
   },
-  
 ];

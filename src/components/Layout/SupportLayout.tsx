@@ -180,7 +180,7 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
                 draggable="false"
               />
             </div>
-            <span className="font-montserrat mt-4 text-black font-medium hover:text-[#483d78] hover:font-bold text-16">
+            <span className="font-poppins mt-4 text-black font-medium hover:text-[#483d78] hover:font-bold text-16">
               {card.title}
             </span>
           </li>
@@ -210,7 +210,7 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
                 draggable="false"
               />
             </div>
-            <span className="font-montserrat text-black mt-4 font-medium hover:text-[#483d78] hover:font-bold text-16">
+            <span className="font-poppins text-black mt-4 font-medium hover:text-[#483d78] hover:font-bold text-16">
               {card.title}
             </span>
           </li>

@@ -39,11 +39,16 @@ export const supporItem = [
   { title: "Genuine Parts", image: BookServiceImage },
   { title: "User Guide", image: BookServiceImage },
   { title: "Machine Warranty", image: BookServiceImage },
-  { title: "Additional Item 1", image: BookServiceImage },
-  { title: "Additional Item 2", image: BookServiceImage },
-  { title: "Additional Item 3", image: BookServiceImage },
-  { title: "Additional Item 4", image: BookServiceImage },
-  { title: "Additional Item 5", image: BookServiceImage },
-  { title: "Additional Item 6", image: BookServiceImage },
-  { title: "Additional Item 7", image: BookServiceImage },
+  // { title: "Additional Item 1", image: BookServiceImage },
+  // { title: "Additional Item 2", image: BookServiceImage },
+  // { title: "Additional Item 3", image: BookServiceImage },
+  // { title: "Additional Item 4", image: BookServiceImage },
+  // { title: "Additional Item 5", image: BookServiceImage },
+  // { title: "Additional Item 6", image: BookServiceImage },
+  // { title: "Additional Item 7", image: BookServiceImage },
 ];
+// support-data.ts
+export const supportMobile = {
+  mobileFirst: "123-456-7890",
+  mobileSecond: "098-765-4321",
+};

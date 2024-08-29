@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { item, Item } from "../Constants/index";
 import styles from "./application.module.css";
 import PositionAwareButton from "../ui/PositionAwareButton";
 import { motion } from "framer-motion";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import the icons
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { IoIosArrowForward } from "react-icons/io";
+
 const ITEMS_PER_PAGE = 9;
 
 const Application: React.FC<{
@@ -31,11 +35,55 @@ const Application: React.FC<{
       setCurrentPage(currentPage - 1);
     }
   };
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const paginatedItems = items.slice(
-    currentPage * ITEMS_PER_PAGE,
-    (currentPage + 1) * ITEMS_PER_PAGE
-  );
+  useEffect(() => {
+    if (carouselRef.current) {
+      checkScrollability();
+    }
+  }, []);
+
+  const checkScrollability = () => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+    }
+  };
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: -carouselRef.current.clientWidth,
+        behavior: "smooth",
+      });
+      checkScrollability();
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: carouselRef.current.clientWidth,
+        behavior: "smooth",
+      });
+      checkScrollability();
+    }
+  };
+
+  const chunkItems = (arr: Item[], size: number): Item[][] =>
+    arr.length
+      ? [arr.slice(0, size), ...chunkItems(arr.slice(size), size)]
+      : [];
+
+  const paginatedItems = chunkItems(items, 9); // Chunk the items into groups of 9
+
+  // const paginatedItems = items.slice(
+  //   currentPage * ITEMS_PER_PAGE,
+  //   (currentPage + 1) * ITEMS_PER_PAGE
+  // );
   const imageVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: (i: number) => ({
@@ -51,7 +99,7 @@ const Application: React.FC<{
 
   return (
     <>
-      <div className="hidden lg:grid grid-cols-3 lg:grid-cols-6 pt-2 gap-4 lg:p-6 rounded">
+      <div className="hidden lg:grid grid-cols-3  mx-auto max-w-screen-2xl lg:grid-cols-6 pt-2 gap-4 lg:p-6 rounded">
         {/* desktop view */}
         {items.map((item, index) => (
           <motion.div
@@ -93,59 +141,121 @@ const Application: React.FC<{
       </div>
       {/* mobile view */}
 
-      <div className="lg:hidden -ml-1 flex w-full  flex-col ">
-        <div className="grid grid-cols-3  gap-4  rounded">
-          {paginatedItems.map((item, index) => (
+      {/* Mobile view */}
+      <div className="relative p-1 h-screen  flex lg:hidden flex-col items-center">
+        <div
+          className="w-full h-[50%] py-2 overflow-x-scroll scroll-smooth [scrollbar-width:none]"
+          ref={carouselRef}
+          onScroll={checkScrollability}
+        >
+          <div className="flex flex-row gap-2">
+            {paginatedItems.map((group, groupIndex) => (
+              <motion.div
+                key={`slide-${groupIndex}`}
+                className="min-w-full grid grid-cols-3 grid-rows-3 gap-2"
+              >
+                {group.map(
+                  (
+                    item: {
+                      name:
+                        | string
+                        | number
+                        | bigint
+                        | boolean
+                        | React.ReactElement<
+                            any,
+                            string | React.JSXElementConstructor<any>
+                          >
+                        | Iterable<React.ReactNode>
+                        | Promise<React.AwaitedReactNode>
+                        | null
+                        | undefined;
+                      src: string | StaticImport;
+                      alt: string;
+                    },
+                    itemIndex: number
+                  ) => (
+                    <motion.div
+                      key={`item-${itemIndex}`}
+                      className="h-28 w-28 border-2 rounded-xl p-2 bg-white "
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 0.5,
+                          delay: 0.1 * itemIndex,
+                          ease: "easeOut",
+                        },
+                      }}
+                    >
+                      <a className="relative bg-white border-[1px] p-1 rounded-md h-16 w-24 block">
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          height={400}
+                          width={400}
+                          className="object-cover w-full h-full transition-transform duration-300 ease-in-out rounded-md"
+                        />
+                      </a>
+                      <p className="w-full text-black font-semimedium text-sm text-center mt-2">
+                        {item.name}
+                      </p>
+                    </motion.div>
+                  )
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <div className="flex h-[5%] justify-center w-full ">
+          <button
+            className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
+            onClick={scrollLeft}
+            disabled={!canScrollLeft}
+          >
+            <FaArrowLeft className="text-xl text-gray-500" />
+          </button>
+          <button
+            className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
+            onClick={scrollRight}
+            disabled={!canScrollRight}
+          >
+            <FaArrowRight className="text-xl text-gray-500" />
+          </button>
+        </div>
+        <div className="w-full font-poppins font-semimedium overflow-y-auto h-[45%]">
+          {items.map((item, index) => (
             <motion.div
               key={index}
-              className="relative h-28 w-28 border-2 rounded-3xl p-2"
+              className="relative "
               custom={index}
               initial="hidden"
               animate="visible"
-              variants={{
-                hidden: { opacity: 0, scale: 0.8 },
-                visible: { opacity: 1, scale: 1 },
-              }}
+              variants={imageVariants}
             >
               <a
-                href={`/application/${item.name
-                  .toLowerCase()
-                  .replace(/ /g, "-")}`}
-                className="relative bg-slate-400 rounded-md h-20 w-24 block"
+                // href={`/application/${item.name
+                //   .toLowerCase()
+                //   .replace(/ /g, "-")}`}
+                className="flex border-t-[1px] justify-between p-4 flex-row"
               >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  height={400}
-                  width={400}
-                  className={`object-cover w-full h-full transition-transform duration-300 ease-in-out rounded-md ${
-                    hoveredIndex === index ? "transform translate-y-[-20%]" : ""
-                  }`}
-                />
+                <div className="flex flex-row space-x-3">
+                  <div className="h-full w-6 flex items-center">
+                    
+                    <Image
+                      className="h-6 w-6"
+                      src={item.bgpic}
+                      alt={item.name}
+                    />
+                  </div>
+                  <p className="text-base">{item.name}</p>
+                </div>
+
+                <IoIosArrowForward className="text-2xl" />
               </a>
-              <p className=" w-full text-black text-sm text-center">
-                {item.name}
-              </p>
             </motion.div>
           ))}
-        </div>
-
-        {/* Pagination Controls */}
-        <div className="flex justify-between w-full max-w-md mt-4">
-          <button
-            onClick={handlePreviousPage}
-            className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
-            disabled={currentPage === 0}
-          >
-            Previous
-          </button>
-          <button
-            onClick={handleNextPage}
-            className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
-            disabled={(currentPage + 1) * ITEMS_PER_PAGE >= items.length}
-          >
-            Next
-          </button>
         </div>
       </div>
     </>
@@ -173,7 +283,7 @@ const ApplicationPage: React.FC = () => {
 
   return (
     <>
-      <div className="lg:flex rounded-3xl w-full lg:w-[98vw] h-full hidden justify-start lg:justify-center items-start lg:max-w-screen-2xl">
+      <div className="lg:flex rounded-3xl mx-auto max-w-screen-2xl w-full lg:w-[100vw] h-full hidden justify-start lg:justify-center items-start lg:max-w-screen-2xl">
         {/* desktop view */}
         <div className="overflow-hidden relative">
           <div className="flex">
@@ -181,7 +291,7 @@ const ApplicationPage: React.FC = () => {
               <Application onHover={handleHover} items={item} />
             </div>
             <div className="hidden lg:flex relative ml-2 p-4 pb-8  items-center">
-              <div className="ml-2 hidden w-2 h-full  border-l border-gray-300"></div>
+              <div className="ml-2 hidden lg:flex w-2 h-full  border-l border-gray-300"></div>
             </div>
             <motion.div
               className="hidden lg:flex w-[35%] ml-3 mt-24 relative"
@@ -194,10 +304,10 @@ const ApplicationPage: React.FC = () => {
                 style={{ backgroundImage: `url(${hoveredItem.bgpic.src})` }}
               ></div>
               <div className="relative z-10 p-4 -mt-14">
-                <h2 className="text-6xl font-montserrat font-extrabold text-[#483d73]">
+                <h2 className="text-6xl font-poppins font-extrabold text-[#483d73]">
                   {hoveredItem.name.split(" ")[0]}{" "}
                 </h2>
-                <h3 className="text-6xl text-red-500 font-montserrat font-extrabold">
+                <h3 className="text-6xl text-red-500 font-poppins font-extrabold">
                   {hoveredItem.name.split(" ")[1]}
                 </h3>
                 <p className="text-base mt-8 mr-4 text-justify text-[#483d73]">
@@ -218,7 +328,7 @@ const ApplicationPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full lg:hidden">
+      <div className="flex w-screen lg:hidden">
         <Application onHover={handleHover} items={item} />
       </div>
     </>

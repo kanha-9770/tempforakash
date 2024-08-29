@@ -220,7 +220,7 @@ const Home: React.FC = () => {
   const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
 
   return (
-    <div className="relative h-auto lg:h-screen lg:bg-[#f2f2f2] lg:p-0  max-w-screen-2xl flex flex-col items-center overflow-hidden lg:min-h-screen w-full">
+    <div className="relative h-auto lg:h-screen lg:bg-[#f2f2f2] lg:p-0  flex flex-col items-center overflow-hidden lg:min-h-screen w-full">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
         <motion.div
           className="md:mt-[3rem] w-full h-[calc(100vh-210px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-3xl"

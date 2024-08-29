@@ -155,7 +155,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-full lg:w-[98vw] lg:py-4 max-w-screen-2xl z-30 h-full lg:pb-8 rounded-xl flex  items-start justify-center font-medium"
+      className="w-full bg-white lg:w-screen lg:py-4  z-30 h-full lg:pb-8 flex max-w-screen-2xl mx-auto  items-start justify-center font-medium"
     >
       {/* desktop view condition */}
       <div className="w-full hidden lg:flex flex-col lg:flex-row rounded-lg overflow-hidden">

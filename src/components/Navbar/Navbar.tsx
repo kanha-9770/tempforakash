@@ -12,7 +12,7 @@ import { BiMinus } from "react-icons/bi";
 
 export default function NavbarDemo() {
   return (
-    <div className="relative  bg-white lg:h-auto lg:mt-0 max-w-screen-2xl flex items-center justify-between lg:justify-center">
+    <div className="relative  bg-[#f2f2f2] lg:h-auto lg:mt-0  flex items-center justify-between lg:justify-center">
       <Navbar className="top-0 " />
     </div>
   );
@@ -53,17 +53,17 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed flex w-full font-poppins lg:mt-0 max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
+        "fixed flex w-full font-poppins lg:mt-0  items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
         "transition-all duration-500 ease-in-out",
         scrolling
-          ? "bg-[#f2f2f2]/70  lg:rounded-none backdrop-blur-xl"
-          : "bg-[#f2f2f2]/70 lg:rounded-none backdrop-blur-xl"
+          ? "bg-white"
+          : "bg-white lg:rounded-none backdrop-blur-xl"
       )}
     >
       {/* Desktop Menu */}
-      <div className="hidden lg:flex w-full">
+      <div className="hidden bg-white lg:flex w-full">
         <div className="w-[15%] lg:ml-8 flex justify-start items-center">
           <Link
             href="/"
@@ -172,7 +172,7 @@ function Navbar({ className }: { className?: string }) {
                         <BiMinus className="text-2xl" />
                       </button>
                     </div>
-                    <div className="py-4 p-2 flex-grow">
+                    <div className="py-4 flex-grow">
                       <div className="text-sm text-gray-700">
                         {item.component}
                       </div>
