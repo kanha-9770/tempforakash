@@ -53,7 +53,7 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed flex w-full font-poppins lg:mt-0  items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
+        "fixed flex w-full font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
         "transition-all duration-500 ease-in-out",
@@ -101,7 +101,7 @@ function Navbar({ className }: { className?: string }) {
       </div>
 
       {/* Mobile Menu */}
-      <div className=" lg:hidden border-b-2 flex w-full bg-white">
+      <div className=" lg:hidden  border-b-2 flex w-full bg-white">
       <div className="lg:hidden w-full flex justify-between items-center -ml-2 p-4">
         <Link href="/" className="h-6 flex items-center">
           <Image
@@ -144,7 +144,7 @@ function Navbar({ className }: { className?: string }) {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-lg z-[99999] p-4">
+        <div className="lg:hidden pb-14  absolute top-full left-0 w-full bg-white shadow-lg z-[99999] p-4">
           <div className="flex flex-col space-y-3">
             {navbarItems.map((item) => (
               <div key={item.name}>
@@ -183,7 +183,7 @@ function Navbar({ className }: { className?: string }) {
             ))}
           </div>
 
-          <div className="mt-4">
+          <div className="mt-[2.3rem]">
             <RightNavbar />
           </div>
         </div>

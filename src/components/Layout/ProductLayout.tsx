@@ -321,9 +321,8 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           {/* Sidebar section */}
           <div className="absolute w-full h-full flex flex-col">
             <div className="w-full flex justify-start items-start  overflow-y-hidden relative">
-              
               <div className="space-y-4  pb-32 h-full stopscrollProduct overflow-y-auto w-full">
-                {SidebarLinks.slice(sidebarIndex,SidebarLinks.length).map(
+                {SidebarLinks.slice(sidebarIndex, SidebarLinks.length).map(
                   (link, index) => (
                     <motion.div
                       key={link.name}
@@ -468,7 +467,6 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                   )
                 )}
               </div>
-            
             </div>
           </div>
         </div>

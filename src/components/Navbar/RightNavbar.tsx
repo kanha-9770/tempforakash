@@ -6,6 +6,8 @@ import AccountLayout from "../Layout/AccountLayout";
 import ProfileLayout from "../Layout/ProfileLayout";
 import ContactForm from "../Contact/Contact";
 import { VscAccount } from "react-icons/vsc";
+import { TfiSearch } from "react-icons/tfi";
+import { IoClose } from "react-icons/io5";
 
 const RightNavbar: React.FC = memo(() => {
   const [menuState, setMenuState] = useState({
@@ -65,6 +67,23 @@ const RightNavbar: React.FC = memo(() => {
       visibilityState;
     setIsVisible(!(isFlagOpen || openSearch || profileOpen || accountOpen));
   }, [visibilityState]);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleClearSearch = () => {
+    setSearchValue("");
+  };
 
   return (
     <div
@@ -146,39 +165,41 @@ const RightNavbar: React.FC = memo(() => {
             />
           </div>
         </span>
-        <div className="flex justify-end lg:hidden items-center">
-          <ProfileLayout
-            profileOpen={visibilityState.profileOpen}
-            setIsFlagOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
-            }
-            setOpenSearch={(value) =>
-              setVisibilityState((prev) => ({ ...prev, openSearch: value }))
-            }
-            setProfileOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
-            }
-            setAccountOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
-            }
-          />
-          <button className="ml-4">
-            {/* Replace with your hamburger icon */}
-            <svg
-              className="w-6 h-6 text-black"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
-          </button>
+        <div className="relative flex flex-col  w-full  lg:hidden items-center">
+          <div className="relative max-w-screen-2xl flex w-full mx-auto">
+            <div className="bg-white justify-center items-center w-full rounded-xl">
+              <form className="flex justify-start  mx-auto space-x-1">
+                <div className="relative w-full border-gray-300">
+                  <input
+                    type="text"
+                    id="search-dropdown"
+                    value={searchValue}
+                    onChange={handleInputChange}
+                    className="block p-[0.6rem] w-full z-20 text-sm bg-gray-100 rounded-3xl border-slate-100 font-montserrat pr-10 focus:outline-none focus:ring-2 focus:ring-transparent"
+                    placeholder="Search Product Name..."
+                    required
+                  />
+                  {searchValue ? (
+                    <IoClose
+                      onClick={handleClearSearch}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer text-18"
+                    />
+                  ) : (
+                    <TfiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer text-18" />
+                  )}
+                </div>
+              </form>
+            </div>
+          </div>
+          <div className="relative w-full py-1 mt-1  border-t-[1px]">
+            <CountryLayout />
+          </div>
+          <div className="relative justify-center items-center w-full border-t-[1px] border-b-[1px]">
+            <VscAccount
+              onClick={handleAccount}
+              className="text-xl my-2 cursor-pointer"
+            />
+          </div>
         </div>
       </div>
     </div>

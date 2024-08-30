@@ -194,7 +194,7 @@
 //               className="h-full w-full object-cover"
 //             />
 //           </div>
-//           <p className="font-montserrat text-16">
+//           <p className="font-poppins text-16">
 //             {selectedCountry.name.slice(0, 2)}
 //           </p>
 //         </button>
@@ -212,7 +212,7 @@
 //             </div>
 //             <input
 //               type="text"
-//               className="w-full font-montserrat text-14 px-2 py-1 pl-2 border rounded-full focus:outline-none focus:ring"
+//               className="w-full font-poppins text-14 px-2 py-1 pl-2 border rounded-full focus:outline-none focus:ring"
 //               placeholder="Country or Language..."
 //               value={searchTerm}
 //               onChange={(e) => setSearchTerm(e.target.value)}
@@ -497,7 +497,7 @@ const CountryLayout: React.FC = () => {
         if (countryData) {
           setSelectedCountry({
             name: countryData.country,
-            language: "Unknown", // Customize language as needed
+            language: selectedCountry.language, // Customize language as needed
             flag: `https://flagcdn.com/${countryCode}.svg`,
             code: countryCode,
           });
@@ -547,9 +547,17 @@ const CountryLayout: React.FC = () => {
               className="h-full w-full object-cover"
             />
           </div>
-          <p className="font-montserrat ml-1 text-black text-16">
-            {selectedCountry.code.toUpperCase()}
-          </p>
+          <div className="flex ml-2 flex-col space-y-0">
+            <p className="font-poppins text-black hidden lg:flex text-16 m-0 p-0 leading-tight">
+              {selectedCountry.code.toUpperCase()}
+            </p>
+            <p className="flex lg:hidden font-poppins text-black text-xs m-0 p-0 leading-tight">
+              {selectedCountry.name}
+            </p>
+            <p className="flex lg:hidden font-poppins text-black text-8 m-0 p-0 leading-tight">
+              {selectedCountry.language}
+            </p>
+          </div>
         </button>
       </div>
       {isFlagOpen && (
@@ -563,7 +571,7 @@ const CountryLayout: React.FC = () => {
             </div>
             <input
               type="text"
-              className="w-full font-montserrat text-14 px-2 py-1 pl-2 border rounded-full focus:outline-none focus:ring"
+              className="w-full font-poppins text-14 px-2 py-1 pl-2 border rounded-full focus:outline-none focus:ring"
               placeholder="Country or Language..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -576,7 +584,10 @@ const CountryLayout: React.FC = () => {
                 className="w-full text-left px-4 py-0 text-sm text-gray-700 flex items-center"
                 onClick={() => handleCountrySelect(country)}
               >
-                <p className="px-1 w-24 hover:bg-gray-200 hover:rounded-3xl "> {country.language}</p>
+                <p className="px-1 w-24 hover:bg-gray-200 hover:rounded-3xl ">
+                  {" "}
+                  {country.language}
+                </p>
               </button>
             ))}
             {visibleCount < filteredCountries.length && (

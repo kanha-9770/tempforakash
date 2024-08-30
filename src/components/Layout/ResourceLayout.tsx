@@ -10,23 +10,19 @@ import PositionAwareButton from "../ui/PositionAwareButton";
 import Link from "next/link";
 
 type SupportItem = {
-  title: string;
-  image: StaticImageData;
-  bgPick:StaticImageData;
-};
-type supportMobile = {
-  mobileFirst: string;
-  mobileSecond: string;
-};
+    title: string;
+    image: StaticImageData;
+    bgPic: StaticImageData; // Corrected property name
+  };
+  
+
 interface ResourceGridProps {
   supporItem: SupportItem[];
-  supportMobile: supportMobile;
 }
 const ITEMS_PER_PAGE = 4;
 
 const ResourceGrid: React.FC<ResourceGridProps> = ({
   supporItem,
-  supportMobile,
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -201,26 +197,22 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
           </div>
         </div>
         {/* bottom arrow and items */}
-        {/* <div className="h-[5%] justify-center w-full">
-          {supporItem.length >= 4 && (
-            <button
-              className="h-12 w-16 rounded-full hidden lg:flex items-center justify-center disabled:opacity-50"
-              onClick={scrollLeft}
-              disabled={!canScrollLeft}
-            >
-              <IoIosArrowBack className="text-2xl text-gray-500" />
-            </button>
-          )}
-          {supporItem.length >= 4 && (
-            <button
-              className="h-12 w-16 hidden rounded-full lg:flex items-center justify-center disabled:opacity-50"
-              onClick={scrollRight}
-              disabled={!canScrollRight}
-            >
-              <IoIosArrowForward className="text-2xl text-gray-500" />
-            </button>
-          )}
-        </div> */}
+        <div className="flex h-[5%] justify-center w-full ">
+          <button
+            className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
+            onClick={scrollLeft}
+            disabled={!canScrollLeft}
+          >
+            <FaArrowLeft className="text-xl text-gray-500" />
+          </button>
+          <button
+            className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
+            onClick={scrollRight}
+            disabled={!canScrollRight}
+          >
+            <FaArrowRight className="text-xl text-gray-500" />
+          </button>
+        </div>
         <div className="h-[50%] w-full">
           <div className="h-full pb-40 overflow-y-auto w-full">
             {supporItem.map((item, index) => (
@@ -234,7 +226,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
                     
                     <Image
                       className="h-6 w-6"
-                      src={item.bgPick}
+                      src={item.bgPic}
                       alt={item.title}
                     />
                   </div>

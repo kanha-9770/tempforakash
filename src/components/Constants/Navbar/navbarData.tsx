@@ -46,6 +46,6 @@ export const navbarItems: NavbarItem[] = [
   },
   {
     name: "Resources",
-    component: <ResourceGrid supporItem={DataBankItem} supportMobile={supportMobile} />,
+    component: <ResourceGrid supporItem={DataBankItem} />,
   },
 ];
