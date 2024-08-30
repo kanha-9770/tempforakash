@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { navbarItems } from "@/components/Constants/Navbar/navbarData";
 import Image from "next/image";
@@ -9,6 +9,11 @@ import RightNavbar from "./RightNavbar";
 import ProfileLayout from "../Layout/ProfileLayout";
 import { Menu, MenuItem } from "./nav-menue";
 import { BiMinus } from "react-icons/bi";
+import { HiMiniMinusCircle } from "react-icons/hi2";
+import CountryLayout from "../Layout/CountryLayout";
+import { VscAccount } from "react-icons/vsc";
+import { TfiSearch } from "react-icons/tfi";
+import { IoClose } from "react-icons/io5";
 
 export default function NavbarDemo() {
   return (
@@ -49,6 +54,27 @@ function Navbar({ className }: { className?: string }) {
   const expandItem = (item: string) => {
     setExpandedItem(expandedItem === item ? null : item);
   };
+  // for mobile bottom i.e right navbar
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleClearSearch = () => {
+    setSearchValue("");
+  };
+  const [expandedSearch, setExpandedSearch] = useState(false);
+  const [expandedCountry, setExpandedCountry] = useState(false);
+  const [expandedAccount, setExpandedAccount] = useState(false);
+
+  // Function to handle expansion
+  const handleExpand = (item: string) => {
+    // Close other expanded items when one is opened
+    setExpandedSearch(item === "search");
+    setExpandedCountry(item === "country");
+    setExpandedAccount(item === "account");
+  };
 
   return (
     <div
@@ -57,9 +83,7 @@ function Navbar({ className }: { className?: string }) {
         "translate-y-0",
         className,
         "transition-all duration-500 ease-in-out",
-        scrolling
-          ? "bg-white"
-          : "bg-white lg:rounded-none backdrop-blur-xl"
+        scrolling ? "bg-white shadow-2xl" : "bg-white lg:shadow-2xl lg:rounded-none backdrop-blur-xl"
       )}
     >
       {/* Desktop Menu */}
@@ -101,93 +125,126 @@ function Navbar({ className }: { className?: string }) {
       </div>
 
       {/* Mobile Menu */}
-      <div className=" lg:hidden  border-b-2 flex w-full bg-white">
-      <div className="lg:hidden w-full flex justify-between items-center -ml-2 p-4">
-        <Link href="/" className="h-6 flex items-center">
-          <Image
-            src={Logo}
-            alt="Logo"
-            width={500}
-            height={500}
-            className="h-[1.4rem] w-full"
-          />
-        </Link>
+      <div className=" lg:hidden  border-b-2 flex w-full ">
+        <div className="lg:hidden w-full flex justify-between items-center -ml-2 p-4">
+          <Link href="/" className="h-6 flex items-center">
+            <Image
+              src={Logo}
+              alt="Logo"
+              width={500}
+              height={500}
+              className="h-[1.4rem] w-full"
+            />
+          </Link>
 
-        <button
-          className="ml-2 text-gray-700 focus:outline-none"
-          onClick={toggleMenu}
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            className="ml-2 text-gray-700 focus:outline-none"
+            onClick={toggleMenu}
           >
-            {isOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-      </div>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
 
-      {isOpen && (
-        <div className="lg:hidden pb-14  absolute top-full left-0 w-full bg-white shadow-lg z-[99999] p-4">
-          <div className="flex flex-col space-y-3">
-            {navbarItems.map((item) => (
-              <div key={item.name}>
-                <div
-                  className="flex -mt-3 justify-between items-center py-2 border-b"
-                  onClick={() => expandItem(item.name)}
-                >
-                  <span className="text-lg font-semimedium text-black">
-                    {item.name}
-                  </span>
-                  <span className="text-gray-500 pr-2 text-2xl">
-                    {expandedItem === item.name ? "-" : "+"}
-                  </span>
-                </div>
-                {expandedItem === item.name && (
-                  <div className="absolute h-screen inset-0 bg-white z-50 flex flex-col">
-                    <div className="flex border-b-2 justify-between items-center">
-                      <span className="text-lg pl-4  font-medium text-black">
-                        {item.name}
-                      </span>
-                      <button
-                        className="text-gray-700 p-4"
-                        onClick={() => expandItem(item.name)}
-                      >
-                        <BiMinus className="text-2xl" />
-                      </button>
-                    </div>
-                    <div className="py-4 flex-grow">
-                      <div className="text-sm text-gray-700">
-                        {item.component}
+        {isOpen && (
+          <div className="lg:hidden absolute top-full left-0 w-full bg-gray-300/90 backdrop-blur-[80px] h-screen  shadow-lg z-[99999]">
+            <div className="flex bg-white h-2/3 p-4 flex-col space-y-3">
+              {navbarItems.map((item) => (
+                <div key={item.name}>
+                  <div
+                    className="flex -mt-3 justify-between items-center py-2 border-b"
+                    onClick={() => expandItem(item.name)}
+                  >
+                    <span className="text-lg font-semimedium text-black">
+                      {item.name}
+                    </span>
+                    <span className="text-gray-500 pr-2 text-2xl">
+                      {expandedItem === item.name ? "-" : "+"}
+                    </span>
+                  </div>
+                  {expandedItem === item.name && (
+                    <div className="absolute h-screen inset-0 bg-white z-50 flex flex-col">
+                      <div className="flex border-b-2 bg-[#f2f2f2] justify-between items-center">
+                        <span className="text-lg pl-4  text-[#483d73] font-semibold ">
+                          {item.name}
+                        </span>
+                        <button
+                          className=" invert-0 p-4"
+                          onClick={() => expandItem(item.name)}
+                        >
+                          <HiMiniMinusCircle className="text-2xl" />
+                        </button>
+                      </div>
+                      <div className="py-4 flex-grow">
+                        <div className="text-sm text-gray-700">
+                          {item.component}
+                        </div>
                       </div>
                     </div>
+                  )}
+                </div>
+              ))}
+              <div className="w-full">
+                <div className="relative -mt-3 h-full flex flex-col w-full  lg:hidden">
+                  <div className="relative max-w-screen-2xl p-1 flex w-full mx-auto">
+                    <div className="justify-center items-center w-full rounded-xl">
+                      <form className="flex justify-start  ">
+                        <div className="relative w-full border-gray-300">
+                          <input
+                            type="text"
+                            id="search-dropdown"
+                            value={searchValue}
+                            onChange={handleInputChange}
+                            className="block p-[0.6rem] w-full z-20 text-sm bg-gray-100 rounded-3xl border-slate-100 font-montserrat pr-10 focus:outline-none focus:ring-2 focus:ring-transparent"
+                            placeholder="Search Product Name..."
+                            required
+                          />
+                          {searchValue ? (
+                            <IoClose
+                              onClick={handleClearSearch}
+                              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer text-18"
+                            />
+                          ) : (
+                            <TfiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer text-18" />
+                          )}
+                        </div>
+                      </form>
+                    </div>
                   </div>
-                )}
+                  <div className="flex felx-row justify-between items-center gap-2 border-t-[1px] border-b-[1px]  w-full p-2">
+                    <div className="relative ">
+                      <CountryLayout />
+                    </div>
+                    <div className="relative ">
+                      <VscAccount className="text-xl cursor-pointer" />
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
-
-          <div className="mt-[2.3rem]">
-            <RightNavbar />
-          </div>
-        </div>
-      )}
+        )}
       </div>
     </div>
   );

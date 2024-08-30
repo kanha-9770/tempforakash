@@ -384,7 +384,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed  inset-0 h-screen z-[99999] overflow-auto">
+          <div className="fixed -mr-4 inset-0 h-screen z-[99999] overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -413,10 +413,10 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className=" h-52 rounded-3xl bg-white p-2  w-48 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className=" h-48 rounded-3xl bg-white p-2  w-40 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="relative p-2 h-full w-full">
-          <div className="absolute flex bg-white h-16 w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
+          <div className="absolute flex bg-white h-16 w-24 lg:w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
             <div className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -431,14 +431,14 @@ export const Card = ({
                 ></path>
               </svg>
             </div>
-            <div className="h-16 w-16  flex items-center justify-center">
+            <div className="h-16 w-16 lg:h-20 lg:w-20  flex items-center justify-center">
               <BlurImage src={card.icon} alt="icon" height={100} width={100} />
             </div>
             <div className="flex items-center justify-center">
-              <div className="relative h-12 w-12 -mr-4 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
+              <div className="relative h-8 w-8 lg:h-12 lg:w-12 -mr-4 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
                 <div className="absolute inset-0 flex  flex-col items-center justify-center">
-                  <div className="text-base font-bold text-red-500">70</div>
-                  <div className="text-txs -mt-1 text-[#483d78]">PCM/MIN</div>
+                  <div className="text-5 lg:text-base font-bold text-red-500">70</div>
+                  <div className="text-5  lg:-mt-1 text-[#483d78]">PCM/MIN</div>
                 </div>
               </div>
             </div>

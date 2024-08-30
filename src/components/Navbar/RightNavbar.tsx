@@ -165,10 +165,10 @@ const RightNavbar: React.FC = memo(() => {
             />
           </div>
         </span>
-        <div className="relative flex flex-col  w-full  lg:hidden items-center">
-          <div className="relative max-w-screen-2xl flex w-full mx-auto">
-            <div className="bg-white justify-center items-center w-full rounded-xl">
-              <form className="flex justify-start  mx-auto space-x-1">
+        <div className="relative -mt-6 h-full flex flex-col w-full  lg:hidden">
+          <div className="relative max-w-screen-2xl p-1 flex w-full mx-auto">
+            <div className="justify-center items-center w-full rounded-xl">
+              <form className="flex justify-start  ">
                 <div className="relative w-full border-gray-300">
                   <input
                     type="text"
@@ -191,16 +191,19 @@ const RightNavbar: React.FC = memo(() => {
               </form>
             </div>
           </div>
-          <div className="relative w-full py-1 mt-1  border-t-[1px]">
-            <CountryLayout />
-          </div>
-          <div className="relative justify-center items-center w-full border-t-[1px] border-b-[1px]">
-            <VscAccount
-              onClick={handleAccount}
-              className="text-xl my-2 cursor-pointer"
-            />
+          <div className="flex felx-row items-center gap-2 border-t-[1px] border-b-[1px] justify-end w-full p-2">
+            <div className="relative ">
+              <CountryLayout />
+            </div>
+            <div className="relative ">
+              <VscAccount
+                onClick={handleAccount}
+                className="text-xl cursor-pointer"
+              />
+            </div>
           </div>
         </div>
+        {/* mobile view ends here */}
       </div>
     </div>
   );

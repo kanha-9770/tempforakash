@@ -93,6 +93,7 @@ export default function Home() {
             cards={data.cards}
           />
         </div>
+        
         <div
           id="clientele"
           className="ml-2 lg:mx-4 mt-[45rem] lg:mt-32"
@@ -114,11 +115,11 @@ export default function Home() {
         </div> */}
         {/* <div id="news" className="mx-4 mt-32" ref={newsFeatureRef}>
           <NewsFeature />
-        </div>
+        </div> */}
         <div id="knowMachine" className="mx-4 mt-32" ref={knowMachineRef}>
           <CanvasRevealEffectDemo />
-        </div> */}
-        {/* <div
+        </div>
+        <div
           id="testimonials"
           className="relative mt-32 bg-gradient-to-l via-purple-200 to-transparent h-screen overflow-hidden"
           ref={homeTestimonialRef}
@@ -127,7 +128,7 @@ export default function Home() {
           <div className="relative mx-8 z-20">
             <HomeTestimonial />
           </div>
-        </div> */}
+        </div>
       </div>
     </main>
   );

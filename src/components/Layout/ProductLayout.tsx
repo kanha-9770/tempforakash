@@ -316,67 +316,73 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
       </div>
       {/* Mobile View */}
       <div className="absolute w-full h-screen p-2 -mt-2 flex lg:hidden flex-col rounded-lg overflow-hidden">
-        {/* Main content area */}
         <div className="flex flex-col h-full w-full relative">
-          {/* Sidebar section */}
           <div className="absolute w-full h-full flex flex-col">
-            <div className="w-full flex justify-start items-start  overflow-y-hidden relative">
-              <div className="space-y-4  pb-32 h-full stopscrollProduct overflow-y-auto w-full">
+            <div className="w-full flex justify-start items-start overflow-y-hidden relative">
+              <div className="space-y-4 pb-32 h-full stopscrollProduct overflow-y-auto w-full">
                 {SidebarLinks.slice(sidebarIndex, SidebarLinks.length).map(
                   (link, index) => (
                     <motion.div
                       key={link.name}
-                      custom={index}
-                      initial="hidden"
-                      animate="visible"
-                      variants={sidebarVariants}
+                      initial={{
+                        height: expandedItem === link.name ? "auto" : "3rem",
+                      }}
+                      animate={{
+                        height: expandedItem === link.name ? "auto" : "3rem",
+                      }}
+                      transition={{ duration: 0 }}
                       onClick={() => handleCategoryClick(link.name, link.name)}
-                      className={`flex items-center border-b-[1px] pb-[0.7rem] justify-between  text-lg transition-colors duration-300 cursor-pointer font-poppins text-[#483d78] font-semimedium`}
+                      className="flex flex-col border-b-[1px]  justify-between text-lg transition-colors duration-300 cursor-pointer font-poppins text-[#483d78] font-semimedium overflow-hidden"
                     >
                       <div
-                        className="flex flex-row space-x-3"
                         onClick={() => expandItem(link.name)}
+                        className="flex items-center justify-between"
                       >
-                        <div className="flex items-center justify-center cursor-pointer">
-                          <BlurImage
-                            className="rounded-full h-6 w-6 transform  ml-1 transition-transform duration-200 object-cover"
-                            src={link.icon}
-                            alt={link.name}
-                            width={24}
-                            height={24}
-                            loading="lazy"
-                          />
+                        <div className="flex flex-row space-x-3 cursor-pointer">
+                          <div className="flex items-center justify-center">
+                            <BlurImage
+                              className="rounded-full h-6 w-6  ml-1  duration-200 object-cover"
+                              src={link.icon}
+                              alt={link.name}
+                              width={24}
+                              height={24}
+                              loading="lazy"
+                            />
+                          </div>
+                          <p
+                            className={`${
+                              expandedItem === link.name
+                                ? "text-[#483d73]"
+                                : "text-gray-500 "
+                            }`}
+                          >
+                            {link.name}
+                          </p>
                         </div>
-                        <p>{link.name}</p>
+                        <span
+                          className={`text-gray-500 ${
+                            expandedItem === link.name ? "" : ""
+                          } pr-[0.7rem] text-2xl`}
+                        >
+                          {expandedItem === link.name ? "-" : "+"}
+                        </span>
                       </div>
-                      <span
-                        onClick={() => expandItem(link.name)}
-                        className="text-gray-500  pr-[0.7rem] text-2xl"
-                      >
-                        {expandedItem === link.name ? "-" : "+"}
-                      </span>
 
                       {expandedItem === link.name && (
-                        <div className="absolute -mt-2 inset-0 h-full w-full bg-white z-50 flex flex-col overflow-hidden">
-                          <div className="flex border-b-[1px] justify-between items-center p-2">
-                            <span className="text-lg font-medium text-black">
-                              {link.name}
-                            </span>
-                            <button
-                              className="text-gray-700 "
-                              onClick={() => expandItem(link.name)}
-                            >
-                              <BiMinus className="text-2xl" />
-                            </button>
-                          </div>
-                          <div className="py-4 px-2 flex-grow overflow-y-auto">
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.3 }}
+                          className="inset-0 w-full bg-white h-full z-50 flex flex-col overflow-hidden"
+                        >
+                          <div className="py-4 px-2 h-full flex-grow overflow-y-auto">
                             <div className="text-sm text-gray-700">
-                              <div className="grid grid-cols-2 gap-4 w-full">
+                              <div className=" grid h-[22rem] border-t-[1px] grid-cols-2 py-4 gap-4 w-full">
                                 {filteredMachines.length <= totalVisible - 2
                                   ? filteredMachines.map((machine, index) => (
                                       <motion.div
                                         key={`${machine.name}-${index}`}
-                                        className="text-center rounded-3xl border-2 p-2"
+                                        className="text-center h-40 rounded-2xl border-2 p-2"
                                         custom={index}
                                         initial="hidden"
                                         animate="visible"
@@ -386,11 +392,11 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                                         <Image
                                           src={machine.image}
                                           alt={machine.name}
-                                          className="object-contain transform  transition-transform duration-200 rounded-3xl h-32 w-full"
+                                          className="object-contain transform transition-transform duration-200 rounded-xl h-24 bg-white border-[1px] w-full"
                                           width={200}
                                           height={150}
                                         />
-                                        <h3 className="text-sm text-black mt-2 font-bold">
+                                        <h3 className="text-sm text-black mt-2 w-full font-bold">
                                           {machine.name}
                                         </h3>
                                       </motion.div>
@@ -403,7 +409,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                                       .map((machine, index) => (
                                         <motion.div
                                           key={`${machine.name}-${index}`}
-                                          className="text-center rounded-3xl p-2 border-2"
+                                          className="text-center h-40 rounded-xl p-2 border-2"
                                           custom={index}
                                           initial="hidden"
                                           animate="visible"
@@ -415,53 +421,52 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                                           <BlurImage
                                             src={machine.image}
                                             alt={machine.name}
-                                            className="object-contain transform  transition-transform duration-200 rounded-3xl h-32 w-full"
+                                            className="object-contain transform transition-transform duration-200 border-[1px] rounded-xl h-24 w-full"
                                             width={200}
                                             height={150}
                                             loading="lazy"
                                           />
-                                          <h1 className="text-sm text-black font-bold pt-0">
+                                          <h1 className="text-sm text-black font-bold mt-2">
                                             {machine.name}
                                           </h1>
                                         </motion.div>
                                       ))}
                               </div>
-                            </div>
-                            {/* arrows */}
-                            <div className="absolute w-full space-x-4 top-[60%] flex z-30 h-[5%] justify-center items-center bottom-0">
-                              {filteredMachines.length > totalVisible - 2 && (
-                                <button
-                                  onClick={mobilehandlePrev}
-                                  className={`text-black text-3xl transition-all ${
-                                    currentIndex === 0
-                                      ? "opacity-20"
-                                      : "opacity-100"
-                                  }`}
-                                  disabled={currentIndex === 0}
-                                >
-                                  <FaArrowLeftLong />
-                                </button>
-                              )}
-                              {filteredMachines.length > totalVisible - 2 && (
-                                <button
-                                  onClick={mobilehandleNext}
-                                  className={`text-black z-30 text-3xl transition-all ${
-                                    currentIndex + totalVisible >=
-                                    filteredMachines.length
-                                      ? "opacity-20"
-                                      : "opacity-100"
-                                  }`}
-                                  disabled={
-                                    currentIndex + (totalVisible - 2) >=
-                                    filteredMachines.length
-                                  }
-                                >
-                                  <FaArrowRightLong />
-                                </button>
-                              )}
+                              <div className="relative w-full space-x-4 flex z-30 h-[5%] justify-center items-center">
+                                {filteredMachines.length > totalVisible - 2 && (
+                                  <button
+                                    onClick={mobilehandlePrev}
+                                    className={`text-black text-3xl transition-all ${
+                                      currentIndex === 0
+                                        ? "opacity-20"
+                                        : "opacity-100"
+                                    }`}
+                                    disabled={currentIndex === 0}
+                                  >
+                                    <FaArrowLeftLong />
+                                  </button>
+                                )}
+                                {filteredMachines.length > totalVisible - 2 && (
+                                  <button
+                                    onClick={mobilehandleNext}
+                                    className={`text-black z-30 text-3xl transition-all ${
+                                      currentIndex + (totalVisible - 2) >=
+                                      filteredMachines.length
+                                        ? "opacity-20"
+                                        : "opacity-100"
+                                    }`}
+                                    disabled={
+                                      currentIndex + (totalVisible - 2) >=
+                                      filteredMachines.length
+                                    }
+                                  >
+                                    <FaArrowRightLong />
+                                  </button>
+                                )}
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        </motion.div>
                       )}
                     </motion.div>
                   )

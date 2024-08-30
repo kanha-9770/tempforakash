@@ -1043,11 +1043,6 @@ export const SidebarLinks = [
     icon: paperbag1,
   },
   {
-    name: "Plastic Lid Machine",
-    link: "/Plastic Lid Machine",
-    icon: paperbag1,
-  },
-  {
     name: "Paper Bucket Machine",
     link: "/Paper Bucket Machine",
     icon: paperbag1,
@@ -1063,7 +1058,24 @@ export const SidebarLinks = [
     link: "/Rectangular Flat Bottom Bowl Machine",
     icon: paperbag1,
   },
- 
+
+  {
+    name: "Carton Erecting Machine",
+    link: "/Carton Erecting Machine",
+    icon: paperbag1,
+  },
+  {
+    name: "Paper Bucket Machine",
+    link: "/Paper Bucket Machine",
+    icon: paperbag1,
+  },
+
+  {
+    name: "Rectangular Flat Bottom Bowl Machine",
+    link: "/Rectangular Flat Bottom Bowl Machine",
+    icon: paperbag1,
+  },
+
   {
     name: "Carton Erecting Machine",
     link: "/Carton Erecting Machine",
@@ -1085,32 +1097,5 @@ export const SidebarLinks = [
     link: "/Rectangular Flat Bottom Bowl Machine",
     icon: paperbag1,
   },
- 
-  {
-    name: "Carton Erecting Machine",
-    link: "/Carton Erecting Machine",
-    icon: paperbag1,
-  },
-  {
-    name: "Paper Bucket Machine",
-    link: "/Paper Bucket Machine",
-    icon: paperbag1,
-  },
-  {
-    name: "Paper Lid Machine",
-    link: "/Paper Lid Machine",
-    icon: paperbag1,
-  },
 
-  {
-    name: "Rectangular Flat Bottom Bowl Machine",
-    link: "/Rectangular Flat Bottom Bowl Machine",
-    icon: paperbag1,
-  },
- 
-  {
-    name: "akash",
-    link: "/Carton Erecting Machine",
-    icon: paperbag1,
-  },
 ];

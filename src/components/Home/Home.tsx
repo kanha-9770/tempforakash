@@ -261,7 +261,7 @@ const Home: React.FC = () => {
             </div>
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="loader"></div>
+              <div className=""></div>
             </div>
           )}
         </motion.div>

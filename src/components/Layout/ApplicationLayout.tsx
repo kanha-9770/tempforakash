@@ -78,7 +78,8 @@ const Application: React.FC<{
       ? [arr.slice(0, size), ...chunkItems(arr.slice(size), size)]
       : [];
 
-  const paginatedItems = chunkItems(items, 9); 
+  const paginatedItems = chunkItems(items, 9);
+  console.log(paginatedItems);
 
   // const paginatedItems = items.slice(
   //   currentPage * ITEMS_PER_PAGE,
@@ -224,7 +225,7 @@ const Application: React.FC<{
             <FaArrowRight className="text-xl text-gray-500" />
           </button>
         </div>
-        <div className="w-full font-poppins font-semimedium overflow-y-auto h-[45%]">
+        {/* <div className="w-full font-poppins font-semimedium overflow-y-auto h-[45%]">
           {items.map((item, index) => (
             <motion.div
               key={index}
@@ -256,7 +257,7 @@ const Application: React.FC<{
               </a>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </>
   );

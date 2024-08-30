@@ -10,20 +10,21 @@ import PositionAwareButton from "../ui/PositionAwareButton";
 import Link from "next/link";
 
 type SupportItem = {
-    title: string;
-    image: StaticImageData;
-    bgPic: StaticImageData; // Corrected property name
-  };
-  
-
+  title: string;
+  image: StaticImageData;
+  bgPic: StaticImageData; // Corrected property name
+};
+type ResourcesMobile = {
+  title: string;
+  bgPic: StaticImageData; // Corrected property name
+};
 interface ResourceGridProps {
   supporItem: SupportItem[];
+  ResourcesMobile:ResourcesMobile[];
 }
 const ITEMS_PER_PAGE = 4;
 
-const ResourceGrid: React.FC<ResourceGridProps> = ({
-  supporItem,
-}) => {
+const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -197,41 +198,42 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
           </div>
         </div>
         {/* bottom arrow and items */}
-        <div className="flex h-[5%] justify-center w-full ">
-          <button
-            className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}
-          >
-            <FaArrowLeft className="text-xl text-gray-500" />
-          </button>
-          <button
-            className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
-            onClick={scrollRight}
-            disabled={!canScrollRight}
-          >
-            <FaArrowRight className="text-xl text-gray-500" />
-          </button>
-        </div>
+        {shouldShowArrows && (
+          <div className="flex h-[5%] justify-center  w-full ">
+            <button
+              className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
+              onClick={scrollLeft}
+              disabled={!canScrollLeft}
+            >
+              <FaArrowLeft className="text-xl text-gray-500" />
+            </button>
+            <button
+              className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
+              onClick={scrollRight}
+              disabled={!canScrollRight}
+            >
+              <FaArrowRight className="text-xl text-gray-500" />
+            </button>
+          </div>
+        )}
         <div className="h-[50%] w-full">
           <div className="h-full pb-40 overflow-y-auto w-full">
-            {supporItem.map((item, index) => (
+            {ResourcesMobile.map((item, index) => (
               <div key={index} className="flex flex-col space-y-4">
                 <Link
                   href={""}
                   className="flex felx-row justify-between items-center border-t-[1px]  p-4"
                 >
-                   <div className="flex flex-row space-x-3">
-                  <div className="h-full w-6 flex items-center">
-                    
-                    <Image
-                      className="h-6 w-6"
-                      src={item.bgPic}
-                      alt={item.title}
-                    />
+                  <div className="flex flex-row space-x-3">
+                    <div className="h-full w-6 flex items-center">
+                      <Image
+                        className="h-6 w-6"
+                        src={item.bgPic}
+                        alt={item.title}
+                      />
+                    </div>
+                    <p className="text-base">{item.title}</p>
                   </div>
-                  <p className="text-base">{item.title}</p>
-                </div>
                   <IoIosArrowForward className="text-2xl" />
                 </Link>
               </div>
