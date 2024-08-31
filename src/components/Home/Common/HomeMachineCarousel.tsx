@@ -82,7 +82,7 @@ const DummyContent: React.FC<DummyContentProps> = ({
 }) => {
   return (
     <>
-      <div className="bg-[#F5F5F7] z-[99999] dark:bg-neutral-800 p-8 md:p-14 h-80 rounded-3xl mb-4">
+      <div className="bg-[#F5F5F7] z-[99999] dark:bg-neutral-800 p-8  md:p-14 h-80 rounded-3xl mb-4">
         <div className="fixed inset-0 flex items-center justify-center">
           <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm"></div>
           <div className="relative w-full max-w-[78rem] h-[90vh] bg-white rounded-xl p-6 transform transition-transform overflow-y-auto z-50">
@@ -94,9 +94,9 @@ const DummyContent: React.FC<DummyContentProps> = ({
                   alt={title}
                   width={600}
                   height={400}
-                  className="rounded-2xl object-cover h-[400px]"
+                  className="rounded-2xl object-fill lg:object-cover h-[400px]"
                 />
-                <div className="flex w-[60%] -ml-14 space-x-8 justify-center mt-8">
+                <div className="flex w-[60%] lg:-ml-14 space-x-2 lg:space-x-8 justify-center mt-8">
                   {buttons.map((button, index) => (
                     <div key={index} className="ml-1">
                       <PositionAwareButton

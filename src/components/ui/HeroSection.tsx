@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Testing } from "@/components/ui/Testing";
 export function InfiniteMovingCardsDemo() {
   return (
-    <div className="ml-14 h-screen mask-gradient rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="ml-0 lg:ml-14 h-screen mask-gradient rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <Testing items={testimonials} speed="slow" />
     </div>
   );

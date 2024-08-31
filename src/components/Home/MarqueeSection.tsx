@@ -30,7 +30,7 @@ const partnerBrands = [
 
 export default function MarqueeSection() {
   return (
-    <div className="h-auto lg:ml-6 flex flex-col relative overflow-hidden  pt-0">
+    <div className="h-auto lg:ml-6 flex flex-col relative  overflow-hidden  pt-0">
       <motion.div className="flex flex-col lg:flex-row">
         <div className="flex w-[10%] lg:w-[15%] flex-col">
           <div className="text-sm lg:text-xl mt-8 font-poppins whitespace-nowrap">
