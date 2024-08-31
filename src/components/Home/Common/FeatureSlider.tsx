@@ -5,19 +5,22 @@ import Image from "next/image";
 
 const items = [
   {
-    imageSrc: "https://i.pinimg.com/236x/0c/e0/b8/0ce0b89fedfee2c35378bb573500be31.jpg", // Replace with your image path
+    imageSrc:
+      "https://i.pinimg.com/236x/0c/e0/b8/0ce0b89fedfee2c35378bb573500be31.jpg", // Replace with your image path
     title: "Flat Bottom - Rectangular Bowl Machine Launched",
     description:
       "Like a paper cup, a sustainable relationship balances strength and flexibility, built to weather life's challenges without losing its shape.",
   },
   {
-    imageSrc: "https://i.pinimg.com/236x/0c/e0/b8/0ce0b89fedfee2c35378bb573500be31.jpg", // Replace with your image path
+    imageSrc:
+      "https://i.pinimg.com/236x/0c/e0/b8/0ce0b89fedfee2c35378bb573500be31.jpg", // Replace with your image path
     title: "Advanced Paper Cup Machine Unveiled",
     description:
       "Introducing the next generation of paper cup machines, designed for precision, speed, and eco-friendly production.",
   },
   {
-    imageSrc: "https://i.pinimg.com/236x/0c/e0/b8/0ce0b89fedfee2c35378bb573500be31.jpg", // Replace with your image path
+    imageSrc:
+      "https://i.pinimg.com/236x/0c/e0/b8/0ce0b89fedfee2c35378bb573500be31.jpg", // Replace with your image path
     title: "High-Speed Cup Forming Machine Released",
     description:
       "Experience unmatched efficiency with our latest high-speed cup forming machine, engineered for maximum output with minimal waste.",
@@ -78,6 +81,8 @@ export const FeatureSlider: React.FC = () => {
             className={styles.card}
           >
             <Image
+              height={100}
+              width={100}
               src={item.imageSrc}
               alt={item.title}
               className={styles.image}

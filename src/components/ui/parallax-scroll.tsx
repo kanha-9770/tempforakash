@@ -98,7 +98,9 @@ export const ParallaxScroll: React.FC<ParallaxScrollProps> = ({
                 alt={el.username}
               />
               <div className="flex justify-end mr-2 mt-0">
-                <img
+                <Image
+                  height={200}
+                  width={200}
                   src={el.flag}
                   alt={`${el.country} flag`}
                   className="w-8 h-8"
