@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useRef } from "react";
 import KnowMore from "@/components/Home/KnowMore";
 import HomeMachine from "@/components/Home/HomeMachine";
@@ -16,16 +17,13 @@ import FaqSection from "@/components/Products/FaqSection";
 
 export default function Home() {
   const params = useParams();
+
+  // Always define hooks at the top level
   const machinename =
     typeof params?.id === "string" ? decodeURIComponent(params.id) : "";
-  if (!machinename) {
-    return notFound();
-  }
   const machine = Machines.find((m) => m.name === machinename);
 
-  if (!machine) {
-    return notFound();
-  }
+  // Define all refs at the top level of the component
   const overviewRef = useRef<HTMLDivElement>(null);
   const productDescriptionRef = useRef<HTMLDivElement>(null);
   const applicationsRef = useRef<HTMLDivElement>(null);
@@ -34,6 +32,11 @@ export default function Home() {
   const optionalAddOnsRef = useRef<HTMLDivElement>(null);
   const faqsRef = useRef<HTMLDivElement>(null);
   const relatedProductsRef = useRef<HTMLDivElement>(null);
+
+  // Conditionally check after defining all hooks
+  if (!machinename || !machine) {
+    return notFound();
+  }
 
   const navLinks = [
     { text: "Overview", ref: overviewRef },

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import styles from "../Styles/FeatureSlider.module.css";
+import Image from "next/image";
 
 const items = [
   {
@@ -76,7 +77,7 @@ export const FeatureSlider: React.FC = () => {
             transition={SPRING_OPTIONS}
             className={styles.card}
           >
-            <img
+            <Image
               src={item.imageSrc}
               alt={item.title}
               className={styles.image}

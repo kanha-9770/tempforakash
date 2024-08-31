@@ -127,7 +127,9 @@ export const Testing = ({
                         alt={el.username}
                       />
                       <div className="flex justify-end">
-                        <img
+                        <Image
+                          height={100}
+                          width={100}
                           src={el.flag}
                           alt={`${el.country} flag`}
                           className="w-8 h-8"
@@ -135,10 +137,12 @@ export const Testing = ({
                       </div>
                     </div>
                     <p className="text-center text-4xl">❝</p>
-                    <p className="text-gray-700 text-center text-base mb-2">{el.quote}</p>
+                    <p className="text-gray-700 text-center text-base mb-2">
+                      {el.quote}
+                    </p>
                   </div>
                   <div className="flex text-base pb-1 flex-row justify-start items-center">
-                     <div className="h-10 w-1 bg-[#483d78]"></div>
+                    <div className="h-10 w-1 bg-[#483d78]"></div>
                     <div className="flex ml-2 flex-col">
                       <h3 className="text-sm ">{el.username}</h3>
                       <p className="text-sm text-gray-500">{el.profile}</p>

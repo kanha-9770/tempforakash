@@ -5,7 +5,7 @@ import "@fontsource/montserrat";
 import NavbarDemo from "@/components/Navbar/Navbar";
 import "@fontsource/alex-brush";
 import "@fontsource/poppins"; // Defaults to weight 400
-import "@fontsource/poppins/400.css"; // Specify weight
+import "@fontsource/poppins/200.css"; // Specify weight
 import "@fontsource/poppins/500.css"; // Specify weight
 import "@fontsource/poppins/600.css"; // Specify weight
 const inter = Inter({ subsets: ["latin"] });
@@ -21,10 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
-          rel="stylesheet"
-        />
+       
       </head>
       <body className={inter.className}>
         <NavbarDemo />

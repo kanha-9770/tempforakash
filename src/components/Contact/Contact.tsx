@@ -39,21 +39,17 @@ const ContactForm: React.FC<ContactFormProps> = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  });
 
   const handleMouseEnter = () => {
     setContactFormVisible(true);
     setIsFlagOpen(false);
     setOpenSearch(false);
     setProfileOpen(false);
-    const pathname = usePathname() || "";
-    const countryCode = pathname.split("/")[1]?.toLowerCase();
-
+   
     // Get country code from pathname or default to 'in'
-    const contactUrl = `/${countryCode}/contact`;
 
     // Navigate to the contact page with the correct URL
-    router.push(contactUrl);
   };
 
   const transition = {
