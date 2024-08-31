@@ -228,41 +228,29 @@ const Home: React.FC = () => {
           ref={containerRef}
           style={{ width: videoWidth, x: videoTransform, originX: 0.5 }}
         >
-          {isVideoLoaded ? (
-            <div className="relative w-full h-full">
-              <Image
-                className="w-full h-full object-cover rounded-3xl lg:rounded-3xl"
-                src={homeimg}
-                alt={"home"}
-              />
+          <div className="relative w-full h-full">
+            <Image
+              className="w-full h-full object-cover rounded-3xl lg:rounded-3xl"
+              src={homeimg}
+              alt={"home"}
+            />
 
-              <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl lg:rounded-3xl"></div>
-              {isSafari && (
-                <div className="absolute top-4 right-4 z-[9999]">
-                  <button
-                    onClick={handlePlayPause}
-                    className="text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition"
-                  >
-                    {isPlaying ? (
-                      <IoPauseSharp size={24} />
-                    ) : (
-                      <IoPlaySharp size={24} />
-                    )}
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="w-full h-[calc(100vh-210px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-3xl">
-              <div className="relative w-full h-full">
-                <Image
-                  className="w-full h-full object-cover rounded-3xl lg:rounded-3xl"
-                  src={homeimg}
-                  alt={"home"}
-                />
+            <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl lg:rounded-3xl"></div>
+            {isSafari && (
+              <div className="absolute top-4 right-4 z-[9999]">
+                <button
+                  onClick={handlePlayPause}
+                  className="text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition"
+                >
+                  {isPlaying ? (
+                    <IoPauseSharp size={24} />
+                  ) : (
+                    <IoPlaySharp size={24} />
+                  )}
+                </button>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </motion.div>
       </div>
 
