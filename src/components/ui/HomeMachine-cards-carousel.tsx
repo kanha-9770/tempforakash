@@ -384,7 +384,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed -mr-4 inset-0 h-screen z-[99999] overflow-auto">
+          <div className="fixed  inset-0  h-screen z-[99999] overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -413,10 +413,10 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className=" h-48 rounded-3xl bg-white p-2  w-40 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className=" h-48 rounded-3xl bg-white p-1 lg:p-2  w-40 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="relative p-2 h-full w-full">
-          <div className="absolute flex bg-white h-16 w-24 lg:w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
+          <div className="absolute flex bg-white h-14 lg:h-16 w-24 lg:w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
             <div className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -431,14 +431,25 @@ export const Card = ({
                 ></path>
               </svg>
             </div>
-            <div className="h-16 w-16 lg:h-20 lg:w-20  flex items-center justify-center">
-              <BlurImage src={card.icon} alt="icon" height={100} width={100} />
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="relative h-8 w-8 lg:h-12 lg:w-12 -mr-4 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
-                <div className="absolute inset-0 flex  flex-col items-center justify-center">
-                  <div className="text-5 lg:text-base font-bold text-red-500">70</div>
-                  <div className="text-5  lg:-mt-1 text-[#483d78]">PCM/MIN</div>
+            <div className="flex flex-row h-14 w-12 lg:w-20 items-center justify-center">
+              <div className="h-full w-16 lg:h-20 lg:w-20  flex items-center justify-center">
+                <BlurImage
+                  src={card.icon}
+                  alt="icon"
+                  height={100}
+                  width={100}
+                />
+              </div>
+              <div className="flex  items-center  justify-center">
+                <div className="relative h-8 w-8 lg:h-12 lg:w-12 -mr-4 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
+                  <div className="absolute inset-0 flex  flex-col items-center justify-center">
+                    <div className="text-5 lg:text-base font-bold text-red-500">
+                      70
+                    </div>
+                    <div className="text-5  lg:-mt-1 text-[#483d78]">
+                      PCM/MIN
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -448,7 +459,7 @@ export const Card = ({
                 width="100%"
                 viewBox="0 0 20 20"
                 fill="none"
-                className="h-4 w-4 mt-16 mr-4"
+                className="h-4 w-4 mt-14 lg:mt-16 mr-4"
               >
                 <path
                   d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"

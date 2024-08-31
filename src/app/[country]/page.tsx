@@ -85,7 +85,7 @@ export default function Home() {
         <div className="lg:mx-4 mt-8">
           <AppleCardsCarouselDemo />
         </div>
-        <div id="aboutUs" className="mx-4 mt-16" ref={aboutUsRef}>
+        <div id="aboutUs" className="mx-4 mt-32" ref={aboutUsRef}>
           <AboutUs
             heading={data.heading}
             description={data.description}
@@ -104,18 +104,18 @@ export default function Home() {
         <div id="knowMore" className="mx-1 lg:mx-4 mt-32" ref={knowMoreRef}>
           <KnowMore />
         </div>
-        <div id="machines" className="lg:mx-4 mt-32" ref={homeMachineRef}>
+        <div id="machines" className=" mt-32" ref={homeMachineRef}>
           <HomeMachine />
         </div>
-        {/* <div id="iot" className="mx-6 mt-32" ref={iotRef}>
+        <div id="iot" className="mx-6 lg:flex flex-col hidden mt-32" ref={iotRef}>
           <h4 className="text-xl text-center lg:text-2xl font-poppins lg:leading-tight text-black dark:text-white">
             IoT <span className="text-red-500 font-bold">System</span>
           </h4>
           <IotSection />
-        </div> */}
-        {/* <div id="news" className="mx-4 mt-32" ref={newsFeatureRef}>
+        </div>
+        <div id="news" className="mx-4 lg:flex hidden mt-32" ref={newsFeatureRef}>
           <NewsFeature />
-        </div> */}
+        </div>
         <div id="knowMachine" className="mx-4 mt-32" ref={knowMachineRef}>
           <CanvasRevealEffectDemo />
         </div>
@@ -125,7 +125,7 @@ export default function Home() {
           ref={homeTestimonialRef}
         >
           <div className="absolute"></div>
-          <div className="relative mx-8 z-20">
+          <div className="relative lg:mx-8 z-20">
             <HomeTestimonial />
           </div>
         </div>

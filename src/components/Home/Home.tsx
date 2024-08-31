@@ -150,7 +150,8 @@ import PositionAwareButton from "../ui/PositionAwareButton";
 import ContactIcons from "../Contact/ContactIcon";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { IoPlaySharp, IoPauseSharp } from "react-icons/io5";
-
+import Image from "next/image";
+import homeimg from "../../../public/video/BgHomeimg.webp";
 const Home: React.FC = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
   const [isSafari, setIsSafari] = useState<boolean>(false);
@@ -182,7 +183,7 @@ const Home: React.FC = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0 }
     );
 
     if (containerRef.current) {
@@ -223,26 +224,18 @@ const Home: React.FC = () => {
     <div className="relative h-auto lg:h-screen lg:bg-[#f2f2f2] lg:p-0  flex flex-col items-center overflow-hidden lg:min-h-screen w-full">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
         <motion.div
-          className="md:mt-[3rem] w-full h-[calc(100vh-210px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-3xl"
+          className="md:mt-[2.5rem] w-full h-[calc(100vh-210px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-3xl"
           ref={containerRef}
           style={{ width: videoWidth, x: videoTransform, originX: 0.5 }}
         >
           {isVideoLoaded ? (
             <div className="relative w-full h-full">
-              <video
-                ref={videoRef}
-                id="background-video"
+              <Image
                 className="w-full h-full object-cover rounded-3xl lg:rounded-3xl"
-                autoPlay={!isSafari}
-                loop
-                muted
-                playsInline
-                preload="metadata"
-              >
-                <source src="video/BgHome.mp4" type="video/mp4" />
-                <source src="video/bg.webm" type="video/webm" />
-                <source src="video/bg.ogv" type="video/ogg" />
-              </video>
+                src={homeimg}
+                alt={"home"}
+              />
+
               <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl lg:rounded-3xl"></div>
               {isSafari && (
                 <div className="absolute top-4 right-4 z-[9999]">
@@ -260,8 +253,14 @@ const Home: React.FC = () => {
               )}
             </div>
           ) : (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className=""></div>
+            <div className="w-full h-[calc(100vh-210px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-3xl">
+              <div className="relative w-full h-full">
+                <Image
+                  className="w-full h-full object-cover rounded-3xl lg:rounded-3xl"
+                  src={homeimg}
+                  alt={"home"}
+                />
+              </div>
             </div>
           )}
         </motion.div>
@@ -296,7 +295,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="absolute hidden md:flex flex-col w-[30rem] h-[10rem] rounded-tl-[4rem] right-0 bg-[#f2f2f2] bottom-5 text-3xl font-poppins text-white text-center">
+      <div className="absolute hidden lg:flex flex-col w-[30rem] h-[10rem] rounded-tl-[4rem] right-0 bg-[#f2f2f2] bottom-5 text-3xl font-poppins text-white text-center">
         <motion.div
           className="-mt-6 flex mr-10 justify-end"
           style={{ x: svgTransform }} // SVG moves to the right
@@ -335,7 +334,7 @@ const Home: React.FC = () => {
             width="100%"
             viewBox="0 0 20 20"
             fill="none"
-            className="-ml-8 mt-[0rem] h-6 w-10"
+            className="-ml-[2.2rem] -mt-4 h-8 w-10"
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"

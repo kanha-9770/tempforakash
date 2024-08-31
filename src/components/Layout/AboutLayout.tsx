@@ -6,6 +6,7 @@ import { items, titlesWithImages } from "../Constants/Navbar/about-data";
 import { motion } from "framer-motion";
 import AnimatedContainer from "@/hooks/AnimatedContainer";
 import { IoIosArrowForward } from "react-icons/io";
+import { useRouter, usePathname } from "next/navigation";
 
 const IoIosArrowDown = dynamic(() =>
   import("react-icons/io").then((mod) => mod.IoIosArrowDown)
@@ -18,6 +19,9 @@ const Link = dynamic(() => import("next/link"), { ssr: false });
 const AboutLayout = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const router = useRouter();
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
 
   const scrollDown = useCallback(() => {
     setCurrentIndex((prev) => (prev < items.length - 2 ? prev + 1 : prev));
@@ -58,7 +62,7 @@ const AboutLayout = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="border-2 p-2 rounded-3xl lg:rounded-none lg:p-0 lg:border-none flex flex-col justify-start items-center lg:mt-4"
           >
-            <Link href={`/${item.title}`} passHref>
+            <a href={`/${countryCode}/${item.title}`}>
               <Image
                 src={item.image}
                 alt={item.title}
@@ -71,7 +75,7 @@ const AboutLayout = () => {
               <p className="mt-2 flex items-center justify-center space-x-2 text-center font-poppins text-black hover:text-[#483d78] hover:font-bold text-xs sm:text-sm md:text-base transform lg:hover:scale-80 transition-transform duration-300">
                 <span>{item.title}</span>
               </p>
-            </Link>
+            </a>
           </motion.div>
         ))}
       </div>
@@ -81,7 +85,7 @@ const AboutLayout = () => {
        
        <AnimatedContainer currentIndex={currentIndex}>
          {items.slice(currentIndex, currentIndex + 2).map((item, index) => (
-           <Link key={index} href={`/${item.title}`} passHref>
+           <a key={index} href={`/${countryCode}/${item.title}`}>
              <div
                className={`${item.color} hidden lg:flex border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
              >
@@ -117,7 +121,7 @@ const AboutLayout = () => {
                  <IoIosArrowForward className="text-2xl"/>
                </div>
              </div>
-           </Link>
+           </a>
          ))}
          
        </AnimatedContainer>
@@ -125,7 +129,7 @@ const AboutLayout = () => {
          {currentIndex > 0 && (
            <button
              onClick={scrollUp}
-             className="absolute text-2xl text-black lg:top-0 top-[55%] rounded-full"
+             className="absolute text-2xl text-black lg:top-[10%] top-[55%] rounded-full"
            >
              <IoIosArrowUp />
            </button>

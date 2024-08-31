@@ -24,7 +24,7 @@ const NavLink: React.FC<NavLinkProps> = memo(
     <Link
       href="#"
       scroll={false}
-      className={`text-black text-sm lg:ml-[2.5rem] pt-2 hover:font-bold ${
+      className={`text-black text-sm md:ml-[2.5rem] pt-2 hover:font-bold ${
         activeLink === index ? "border-b-2 border-red-600" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(index)}
@@ -58,7 +58,15 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   }, []);
 
   const handleClick = (ref: React.RefObject<HTMLDivElement>) => () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
+    const yOffset = -100; // Adjust this value to your desired offset
+    const element = ref.current;
+
+    if (element) {
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+
     setMenuExpanded(false); // Collapse the menu on any section click
   };
 
@@ -99,19 +107,19 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
     };
   }, [navItems]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const navTop = navRef.current?.getBoundingClientRect().top || 0;
-      if (navTop <= 14) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const navTop = navRef.current?.getBoundingClientRect().top || 0;
+  //     if (navTop <= 140) {
+  //       setScrolling(true);
+  //     } else {
+  //       setScrolling(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const toggleMenu = () => {
     setMenuExpanded((prev) => !prev);
@@ -122,11 +130,11 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
       ref={navRef}
       className={`sticky top-14 z-30 transition-all duration-300 ${
         scrolling
-          ? " lg:bg-[#f2f2f2]/70 backdrop-blur-xl"
-          : " lg:bg-[#f2f2f2]/70 backdrop-blur-xl"
+          ? "bg-white py-2 backdrop-blur-none"
+          : "bg-white backdrop-blur-none"
       }`}
     >
-      <div className="flex justify-between items-center px-2 py-2 lg:hidden">
+      <div className="flex justify-between items-center px-2 py-2 md:hidden">
         <button onClick={toggleMenu} className="text-black text-sm font-bold">
           {menuExpanded ? "Overview ▲" : "Overview ▼"}
         </button>
@@ -139,7 +147,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "0", opacity: 0 }}
             transition={{ duration: 0, ease: "easeInOut" }}
-            className="fixed inset-0 z-[99999] bg-white rouded-3xl flex flex-col items-start h-[45vh] w-full px-6 py-8 lg:hidden"
+            className="fixed inset-0 z-[99999] bg-white rouded-3xl flex flex-col items-start h-[45vh] w-full px-6 py-8 md:hidden"
           >
             <nav className="w-full">
               <button
@@ -167,7 +175,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
         )}
       </AnimatePresence>
 
-      <nav className="hidden lg:flex left-0 mb-[4rem] mt-0 sm:-mt-10 flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
+      <nav className="hidden bg-white md:flex left-0 mb-[4rem] mt-0 md:-mt-10 flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
         {navItems.map((item, index) => (
           <NavLink
             key={index}

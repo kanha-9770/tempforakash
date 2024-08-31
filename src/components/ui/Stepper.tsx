@@ -63,18 +63,16 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
   };
 
   return (
-    <div className="sticky bg-[#f2f2f2]/80 backdrop-blur-xl top-14 left-0 w-full z-30">
-      <div className="relative flex items-center justify-center w-full py-2 mx-auto">
+    <div className="sticky bg-[#f2f2f2]/80  backdrop-blur-xl top-14 left-0 w-full z-30">
+      <div className="relative flex items-center justify-center w-full h-20 max-w-screen-2xl mx-auto lg:h-24 ">
         <div
-          className="relative flex items-center justify-start overflow-x-scroll scrollbar-hide w-full px-8"
+          className="relative flex items-center justify-start overflow-x-scroll scrollbar-hide w-full "
           ref={stepperRef}
           onScroll={checkScrollability}
         >
           {steps.map((step, index) => (
             <React.Fragment key={index}>
               <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
                 className={`flex flex-col items-center relative cursor-pointer ${
                   index === activeStep ? "text-black" : "text-gray-500"
                 }`}
@@ -82,12 +80,12 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
               >
                 <motion.div
                   initial={{ scale: 1 }}
-                  animate={{ scale: index === activeStep ? 1.2 : 1 }}
+                  animate={{ scale: index === activeStep ? 1: 1 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className={`relative h-8 w-8 flex items-center justify-center text-2xl ${
+                  className={`relative h-8 w-8 flex items-center justify-center text-xl ${
                     index === activeStep
-                      ? "bg-blue-100 rounded-full p-2 shadow-lg"
-                      : "p-2"
+                      ? "bg-blue-100 rounded-full shadow-lg"
+                      : "p-0"
                   }`}
                 >
                   {step.icon}
