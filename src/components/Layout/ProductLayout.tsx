@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { BiMinus } from "react-icons/bi";
+import { useRouter, usePathname } from "next/navigation";
 
 interface ProductLayoutProps {
   setHoveredItem: (item: string | null) => void;
@@ -152,10 +153,13 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   const expandItem = (item: string) => {
     setExpandedItem(expandedItem === item ? null : item);
   };
+  const router = useRouter();
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
   return (
     <div
       ref={containerRef}
-      className="w-full bg-white lg:w-screen lg:py-4  z-30 h-full lg:pb-8 flex max-w-screen-2xl mx-auto  items-start justify-center font-medium"
+      className="w-full bg-white lg:w-screen lg:py-2  z-30 h-full lg:pb-8 flex max-w-screen-2xl mx-auto  items-start justify-center font-medium"
     >
       {/* desktop view condition */}
       <div className="w-full hidden lg:flex flex-col lg:flex-row rounded-lg overflow-hidden">
@@ -173,7 +177,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
 
-          <div className="flex flex-wrap  justify-start items-start overflow-hidden w-full">
+          <div className="flex flex-wrap h-full justify-start items-start overflow-hidden w-full">
             {filteredMachines.length <= totalVisible
               ? filteredMachines.map((machine, index) => (
                   <motion.div
@@ -186,25 +190,19 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                     onMouseEnter={() => setHoveredImageIndex(index)}
                     onMouseLeave={() => setHoveredImageIndex(null)}
                   >
-                    <Image
-                      src={machine.image}
-                      alt={machine.name}
-                      className="object-contain transform hover:scale-90 transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
-                      width={200}
-                      height={150}
-                    />
-                    <h3 className="text-lg text-black mt-2 font-bold relative z-20">
-                      {machine.name}
-                    </h3>
-                    <div className="flex justify-center mt-2 space-x-2">
-                      <a
-                        href={`/products/${machine.name}`}
-                        onClick={() => handleMouseLeave()}
-                        className="relative text-white bg-red-500 rounded-3xl px-8 p-1 z-20 transform hover:scale-90 transition-transform duration-300"
-                      >
-                        Book Now
-                      </a>
-                    </div>
+                    <a href={`/${countryCode}/products/${machine.name}`}>
+                      <Image
+                        src={machine.image}
+                        alt={machine.name}
+                        className="object-contain transform hover:scale-90 transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
+                        width={200}
+                        height={150}
+                      />
+                      <h3 className="text-lg text-black mt-2 font-bold relative z-20">
+                        {machine.name}
+                      </h3>
+                     
+                    </a>
                   </motion.div>
                 ))
               : filteredMachines
@@ -220,26 +218,19 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       onMouseEnter={() => setHoveredImageIndex(index)}
                       onMouseLeave={() => setHoveredImageIndex(null)}
                     >
-                      <BlurImage
-                        src={machine.image}
-                        alt={machine.name}
-                        className="object-contain transform hover:scale-90 transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
-                        width={200}
-                        height={150}
-                        loading="lazy"
-                      />
-                      <h1 className="text-lg text-black font-bold pt-0 relative z-20">
-                        {machine.name}
-                      </h1>
-                      <div className="flex justify-center mt-2 space-x-2">
-                        <a
-                          href={`/products/${machine.name}`}
-                          onClick={() => handleMouseLeave()}
-                          className="relative text-white bg-red-500 rounded-3xl px-8 p-1 z-20 transform hover:scale-90 transition-transform duration-300"
-                        >
-                          Book Now
-                        </a>
-                      </div>
+                      <a href={`/${countryCode}/products/${machine.name}`}>
+                        <Image
+                          src={machine.image}
+                          alt={machine.name}
+                          className="object-contain transform hover:scale-90 transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
+                          width={200}
+                          height={150}
+                        />
+                        <h3 className="text-lg text-black mt-2 font-bold relative z-20">
+                          {machine.name}
+                        </h3>
+                      
+                      </a>
                     </motion.div>
                   ))}
           </div>
@@ -259,7 +250,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           )}
         </div>
         <div className="w-full lg:w-[28%] lg:h-[28rem] flex flex-col ">
-          <div className="w-full  h-[28rem] flex justify-center items-center border-l overflow-y-hidden border-gray-300 relative">
+          <div className="w-full  h-full flex justify-center items-center border-l overflow-y-hidden border-gray-300 relative">
             {sidebarIndex > 0 && (
               <button
                 onClick={handleSidebarPrev}
@@ -268,7 +259,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                 <MdKeyboardArrowUp />
               </button>
             )}
-            <div className="space-y-5 ">
+            <div className="absolute space-y-4 h-[24rem] ">
               {SidebarLinks.slice(sidebarIndex, sidebarIndex + 8).map(
                 (link, index) => (
                   <motion.div
@@ -284,21 +275,26 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                     onClick={() => handleCategoryClick(link.name, link.name)}
                     className={`flex items-center space-x-4 text-lg transition-colors duration-300 cursor-pointer ${
                       hoveredCategory === link.name
-                        ? "font-poppins text-[#483d78] font-bold"
+                        ? "font-poppins text-[#483d78]"
                         : "font-poppins text-black"
                     }`}
                   >
-                    <div className="flex items-center justify-center cursor-pointer">
-                      <BlurImage
-                        className="rounded-full h-6 w-6 transform hover:scale-105 transition-transform duration-200 object-cover"
-                        src={link.icon}
-                        alt={link.name}
-                        width={24}
-                        height={24}
-                        loading="lazy"
-                      />
-                    </div>
-                    <p>{link.name}</p>
+                    <a
+                      className="flex w-full gap-2 flex-row"
+                      href={`${countryCode}/products/${link.name}`}
+                    >
+                      <div className="flex items-center justify-center cursor-pointer">
+                        <BlurImage
+                          className="rounded-full h-6 w-6 transform  transition-transform duration-200 object-cover"
+                          src={link.icon}
+                          alt={link.name}
+                          width={24}
+                          height={24}
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="w-60">{link.name}</p>
+                    </a>
                   </motion.div>
                 )
               )}

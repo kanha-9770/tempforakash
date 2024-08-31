@@ -81,10 +81,10 @@ import {
   ];
   
   export const titlesWithImages = [
-    { title: "Mission & Vision", image: missionImage },
-    { title: "Our Company", image: companyImage },
-    { title: "Our Strength", image: strengthImage },
-    { title: "The Pink City", image: pinkCityImage },
+    { title: "Mission&Vision", image: missionImage,link:"mission&vision" },
+    { title: "Our Company", image: companyImage,link:"ourcompany" },
+    { title: "Our Strength", image: strengthImage,link:"ourstrength" },
+    { title: "The Pink City", image: pinkCityImage,link:"pinkcity" },
   ];
   export const data = {
     heading: "Leading the Way in Food Packaging Machine Manufacturing",

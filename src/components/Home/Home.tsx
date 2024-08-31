@@ -150,6 +150,8 @@ import PositionAwareButton from "../ui/PositionAwareButton";
 import ContactIcons from "../Contact/ContactIcon";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { IoPlaySharp, IoPauseSharp } from "react-icons/io5";
+import "@fontsource/poppins/400-italic.css"; // Specify weight and style
+
 import Image from "next/image";
 import homeimg from "../../../public/video/BgHomeimg.webp";
 const Home: React.FC = () => {
@@ -230,7 +232,7 @@ const Home: React.FC = () => {
         >
           <div className="relative w-full h-full">
             <Image
-              className="w-full h-full object-cover rounded-3xl lg:rounded-3xl"
+              className="w-full h-full object-cover rounded-2xl lg:rounded-3xl"
               src={homeimg}
               alt={"home"}
             />
@@ -258,8 +260,8 @@ const Home: React.FC = () => {
         <p className="text-3xl text-center lg:text-justify mx-4 md:text-2xl lg:text-5xl font-poppins font-thin">
           FOOD PACKING MACHINES
         </p>
-        <div className="ml-4">
-          <span className="text-5xl lg:text-8xl text-[#f2f2f2] font-alexBrush">
+        <div className="ml-2">
+          <span className="text-3xl lg:text-6xl text-[#f2f2f2] font-poppins italic ">
             Manufacturing
           </span>
         </div>

@@ -1,93 +1,67 @@
+"use client";
+
+import Image from "next/image";
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { CanvasRevealEffect } from "../ui/canvas-reveal-effect";
-import { CARDS_DATA } from "../Constants/index";
-import Modal from "../ui/Modal";
-import { FaCirclePlus } from "react-icons/fa6";
-export default function CanvasRevealEffectDemo() {
-  return (
-    <div className="py-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
-      {CARDS_DATA.map((card, index) => (
-        <Card key={index} title={card.title} icon={<card.icon />} index={index}>
-          <CanvasRevealEffect
-            animationSpeed={card.animationSpeed}
-            containerClassName={card.containerClassName}
-            colors={card.colors}
-            dotSize={card.dotSize ?? 1}
-          />
-          {index === 1 && (
-            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-          )}
-        </Card>
-      ))}
-    </div>
-  );
-}
-const Card = ({
-  title,
-  icon,
-  children,
-  index,
-}: {
-  title: string;
-  icon: React.ReactNode;
-  children?: React.ReactNode;
-  index: number;
-}) => {
-  const [hovered, setHovered] = React.useState(false);
+import { GrAddCircle } from "react-icons/gr";
+import { cardContents } from "../Constants";
+import LottieAnimation from "../ui/LottieAnimation";
+import Modal from "../ui/Modal"; // Import your modal component
+
+const KnowMachine: React.FC = () => {
   const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
+
   const handleOpenModal = (index: number) => {
     setOpenModalIndex(index);
   };
+
   const handleCloseModal = () => {
     setOpenModalIndex(null);
   };
+
   return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="border border-black/[0.2] group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 h-[30rem] relative"
-    >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
-      <div
-        className="absolute cursor-pointer top-0 right-0 m-4 z-20"
-        onClick={() => handleOpenModal(index)}
-      >
-        <FaCirclePlus
-          size={30}
-          className="text-white bg-black text-3xl rounded-full"
-        />
-      </div>
-      <AnimatePresence>
-        {hovered && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="h-full w-full absolute inset-0"
+    <div className="lg:p-6 px-2 lg:px-0 mt-40 w-full  h-full">
+      <div className="text-center"></div>
+      <div className="flex flex-col lg:flex-row justify-around space-y-4 lg:space-x-6 lg:mr-10">
+        {cardContents.map((content, index) => (
+          <div
+            key={index}
+            className="relative bg-white rounded-3xl shadow-lg overflow-hidden w-full h-[12rem] lg:w-[35%] lg:h-[32rem] lg:ml-10 group"
           >
-            {children}
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <div className="relative z-20">
-        <div className="text-center text-8xl group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full mx-auto flex items-center justify-center">
-          {icon}
-        </div>
-        <h2 className="dark:text-white text-5xl text-center mx-4 opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black -mt-20 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
-          {title}
-        </h2>
+            <Image
+              src={content.image}
+              alt={content.title}
+              height={400}
+              width={400}
+              className="h-full w-full scale-100 group"
+            />
+            <div
+              className="absolute top-0 z-30 right-0 m-2 cursor-pointer"
+              onClick={() => handleOpenModal(index)}
+            >
+              <GrAddCircle size={30} className="text-white" />
+            </div>
+            <div className="absolute bottom-0 w-full h-full bg-gradient-to-t from-black to-transparent"></div>
+            <div className="absolute bottom-0 w-full h-16 bg-gradient-to-t from-black flex items-center justify-center">
+              <h2 className="lg:mb-[50rem] font-bold top-0 w-[80%] text-center text-xl lg:text-4xl text-white">
+                {content.title}
+              </h2>
+            </div>
+            <div className="absolute m-2 transform scale-[600%] bottom-32 right-1/2 translate-x-1/2 translate-y-1/2 transition-transform duration-300">
+              <LottieAnimation
+                animationData={content.lottieAnimation}
+                className="h-4 w-4 lg:h-10 lg:w-10" // Example Tailwind CSS classes for size
+              />
+            </div>
+          </div>
+        ))}
       </div>
+
       {openModalIndex !== null && (
         <Modal
-          image={CARDS_DATA[openModalIndex].image}
-          title={CARDS_DATA[openModalIndex].title}
-          firstname="First"
-          secondname="Last"
-          description="This is a description."
-          items={[]}
+          image={cardContents[openModalIndex].image}
+          title={cardContents[openModalIndex].title}
+          firstname={cardContents[openModalIndex].title}
+          description="" // Include any additional props for the modal here
           onClose={handleCloseModal}
         />
       )}
@@ -95,16 +69,4 @@ const Card = ({
   );
 };
 
-export const Icon = ({ className, ...rest }: any) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth="1.5"
-    stroke="currentColor"
-    className={className}
-    {...rest}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
-  </svg>
-);
+export default KnowMachine;

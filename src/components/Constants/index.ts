@@ -16,7 +16,9 @@ import {
     paperLunchBoxMachine,
     paperbag1,
 } from "../../../public/assets";
-
+import KnowYourMachine from "../../../public/assets/Lottiimages/know_your_machine.json"
+import KnowYouProduct from "../../../public/assets/Lottiimages/know_your_product.json"
+import KnowYoubusiness from "../../../public/assets/Lottiimages/know_your_business.json"
 import { StaticImageData } from "next/image";
 import KnowMore from "../../../public/assets/KnowMore1.png";
 import KnowMore1 from "../../../public/assets/KnowMore2.png";
@@ -342,32 +344,28 @@ export const newscardcontent = [
   },
 ];
 
-interface IconProps {
-  size?: number;
-  className?: string;
-}
-
 interface CardContent {
   title: string;
   image: StaticImageData;
-  icon: React.ComponentType<IconProps>;
+  lottieAnimation: any; // Adjust the type if you want to be more specific
 }
+
 
 export const cardContents: CardContent[] = [
   {
     title: "Know Your Product",
     image: productbox,
-    icon: AiOutlineProduct,
+    lottieAnimation: KnowYouProduct,
   },
   {
     title: "Know Your Machine",
     image: factory,
-    icon: LiaToolsSolid,
+    lottieAnimation: KnowYourMachine,
   },
   {
     title: "Know Your Business",
     image: teamunity,
-    icon: IoBarChartOutline,
+    lottieAnimation:KnowYoubusiness,
   },
 ];
 export const CARDS_DATA = [

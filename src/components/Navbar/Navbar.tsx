@@ -14,6 +14,7 @@ import CountryLayout from "../Layout/CountryLayout";
 import { VscAccount } from "react-icons/vsc";
 import { TfiSearch } from "react-icons/tfi";
 import { IoClose } from "react-icons/io5";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function NavbarDemo() {
   return (
@@ -67,7 +68,11 @@ function Navbar({ className }: { className?: string }) {
   const [expandedSearch, setExpandedSearch] = useState(false);
   const [expandedCountry, setExpandedCountry] = useState(false);
   const [expandedAccount, setExpandedAccount] = useState(false);
-
+  const router = useRouter();
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[3]?.toLowerCase();
+  console.log("countryCode,",countryCode);
+  
   // Function to handle expansion
   const handleExpand = (item: string) => {
     // Close other expanded items when one is opened
@@ -79,15 +84,15 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed flex w-full font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
+        "fixed flex w-full font-poppins lg:mt-0 items-center lg:border-b-[1px] inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
         "transition-all duration-500 ease-in-out",
-        scrolling ? "bg-white shadow-2xl" : "bg-white lg:shadow-2xl lg:rounded-none backdrop-blur-xl"
+        countryCode==="ourcompany" ? "bg-black" : "bg-white "
       )}
     >
       {/* Desktop Menu */}
-      <div className="hidden bg-white lg:flex w-full">
+      <div className="hidden  lg:flex w-full">
         <div className="w-[15%] lg:ml-8 flex justify-start items-center">
           <Link
             href="/"
@@ -111,6 +116,7 @@ function Navbar({ className }: { className?: string }) {
                 setActive={setActive}
                 active={active}
                 item={item.name}
+                link={item.link}
                 setPosition={() => {}}
               >
                 {item.component}
@@ -119,7 +125,7 @@ function Navbar({ className }: { className?: string }) {
           </Menu>
         </div>
 
-        <div className="w-[23%] flex mr-2 items-center justify-end">
+        <div className="w-[23%] flex mr-2  items-center justify-end">
           <RightNavbar />
         </div>
       </div>

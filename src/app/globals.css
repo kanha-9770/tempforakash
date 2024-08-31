@@ -322,3 +322,35 @@ body {
  .customnav{
   background-color: white !important;
  }
+ 
+/* hide scrollbar from blogs Page3 component */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* blogs page1 mass gradient */
+.mass-gradient-blogs {
+  position: relative; /* Ensure the mask covers the container */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index:20;
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* FeatureProject.module.css */
+.mask-gradient-featuredproject {
+  position: absolute;
+  bottom: 0;
+  top:0;
+   /* Adjust this height based on how much of the bottom you want to mask */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+}

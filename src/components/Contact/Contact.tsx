@@ -40,6 +40,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   });
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
 
   const handleMouseEnter = () => {
     setContactFormVisible(true);
@@ -69,7 +71,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         onMouseEnter={handleMouseEnter} // Open on hover
         onFocus={handleMouseEnter} // Open on focus for accessibility
       >
-        <Link href={"/contact"}>Contact</Link>
+        <Link href={`/${countryCode}/contact`}>Contact</Link>
       </button>
       <AnimatePresence>
         {isContactFormVisible && (

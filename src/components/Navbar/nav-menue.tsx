@@ -2,10 +2,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 
 export const Menu = ({ children }: { children: React.ReactNode }) => {
   const [active, setActive] = useState<string | null>(null);
-  const [position, setPosition] = useState({ left:500, width: 0, opacity: 0 });
+  const [position, setPosition] = useState({ left: 500, width: 0, opacity: 0 });
 
   return (
     <nav
@@ -31,12 +32,15 @@ export const MenuItem = ({
   setActive,
   active,
   item,
+  link,
   setPosition,
   children,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
+  link:string;
+  
   setPosition: (position: {
     left: number;
     width: number;
@@ -70,15 +74,21 @@ export const MenuItem = ({
       element.removeEventListener("mouseenter", handleMouseEnter);
     };
   }, [ref, setActive, setPosition, item]);
+  const router = useRouter();
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
 
   return (
     <div
       ref={ref}
-      className="z-10 cursor-pointer px-3 font-montserrat py-2 text-white  md:py-1 md:text-base "
+      className="z-10 cursor-pointer px-3 font-montserrat py-2  md:py-1 md:text-base "
     >
-      <p  className="text-black font-poppins text-16">
+      <Link
+        className="invert-0 font-poppins text-16"
+        href={`/${countryCode}/${link}`}
+      >
         {item}
-      </p>
+      </Link>
       {active === item && (
         <motion.div className="absolute  top-[calc(100%_-_1.0rem)] left-0 pt-4">
           <motion.div
@@ -110,7 +120,7 @@ const Cursor = ({
       }}
       transition={{
         type: "spring",
-        stiffness: 1000, 
+        stiffness: 1000,
         damping: 50, // Lower damping for less resistance
       }}
       className="absolute z-0 h-6 rounded-full bg-[#eaeaea] md:h-6 mt-[0.25rem]"

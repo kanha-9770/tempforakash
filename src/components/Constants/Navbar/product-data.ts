@@ -960,7 +960,6 @@ export const Machines = [
     related_product: "Paper Forming Machine J2, Paper Forming Machine J3",
   },
 ];
-
 export const SidebarLinks = [
   {
     name: "Paper Cup Machine",
@@ -1052,50 +1051,14 @@ export const SidebarLinks = [
     link: "/Paper Lid Machine",
     icon: paperbag1,
   },
-
-  {
-    name: "Rectangular Flat Bottom Bowl Machine",
-    link: "/Rectangular Flat Bottom Bowl Machine",
-    icon: paperbag1,
-  },
-
   {
     name: "Carton Erecting Machine",
     link: "/Carton Erecting Machine",
     icon: paperbag1,
   },
   {
-    name: "Paper Bucket Machine",
-    link: "/Paper Bucket Machine",
-    icon: paperbag1,
-  },
-
-  {
     name: "Rectangular Flat Bottom Bowl Machine",
     link: "/Rectangular Flat Bottom Bowl Machine",
     icon: paperbag1,
   },
-
-  {
-    name: "Carton Erecting Machine",
-    link: "/Carton Erecting Machine",
-    icon: paperbag1,
-  },
-  {
-    name: "Paper Bucket Machine",
-    link: "/Paper Bucket Machine",
-    icon: paperbag1,
-  },
-  {
-    name: "Paper Lid Machine",
-    link: "/Paper Lid Machine",
-    icon: paperbag1,
-  },
-
-  {
-    name: "Rectangular Flat Bottom Bowl Machine",
-    link: "/Rectangular Flat Bottom Bowl Machine",
-    icon: paperbag1,
-  },
-
 ];

@@ -43,6 +43,9 @@ const config: Config = {
         poppins: ["Poppins", "Montserrat"],
         alexBrush: ["Alex Brush", "Poppins"],
       },
+      fontStyle: {
+        italic: 'italic',
+      },
       fontSize: {
         18: "18px",
         16: "16px",

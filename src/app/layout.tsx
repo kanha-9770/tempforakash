@@ -8,6 +8,9 @@ import "@fontsource/poppins"; // Defaults to weight 400
 import "@fontsource/poppins/200.css"; // Specify weight
 import "@fontsource/poppins/500.css"; // Specify weight
 import "@fontsource/poppins/600.css"; // Specify weight
+import "@fontsource/poppins/700.css"; // Defaults to weight 400
+import Footer from "@/components/Footer/Footer";
+
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Nessco India",
@@ -26,6 +29,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavbarDemo />
         {children}
+        <Footer/>
       </body>
     </html>
   );

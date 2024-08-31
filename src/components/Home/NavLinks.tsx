@@ -107,19 +107,19 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
     };
   }, [navItems]);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const navTop = navRef.current?.getBoundingClientRect().top || 0;
-  //     if (navTop <= 140) {
-  //       setScrolling(true);
-  //     } else {
-  //       setScrolling(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleScroll = () => {
+      const navTop = navRef.current?.getBoundingClientRect().top || 0;
+      if (navTop <= 0) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setMenuExpanded((prev) => !prev);
@@ -130,11 +130,11 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
       ref={navRef}
       className={`sticky top-14 z-30 transition-all duration-300 ${
         scrolling
-          ? "bg-white py-2 backdrop-blur-none"
-          : "bg-white backdrop-blur-none"
+          ? "bg-white"
+          : "bg-[#f2f2f2]"
       }`}
     >
-      <div className="flex justify-between items-center px-2 py-2 md:hidden">
+      <div className="flex justify-between items-center  px-2 py-2 md:hidden">
         <button onClick={toggleMenu} className="text-black text-sm font-bold">
           {menuExpanded ? "Overview ▲" : "Overview ▼"}
         </button>
@@ -147,7 +147,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "0", opacity: 0 }}
             transition={{ duration: 0, ease: "easeInOut" }}
-            className="fixed inset-0 z-[99999] bg-white rouded-3xl flex flex-col items-start h-[45vh] w-full px-6 py-8 md:hidden"
+            className="fixed inset-0 mt-12 z-[99999] bg-white rouded-3xl flex flex-col items-start h-[45vh] w-full px-6 py-4 md:hidden"
           >
             <nav className="w-full">
               <button
@@ -175,7 +175,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
         )}
       </AnimatePresence>
 
-      <nav className="hidden bg-white md:flex left-0 mb-[4rem] mt-0 md:-mt-10 flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
+      <nav className="hidden  md:flex left-0 mb-[4rem] mt-0 md:-mt-10 flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
         {navItems.map((item, index) => (
           <NavLink
             key={index}
