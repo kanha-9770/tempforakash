@@ -134,7 +134,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
           : "bg-[#f2f2f2]"
       }`}
     >
-      <div className="flex justify-between items-center  px-2 py-2 md:hidden">
+      <div className="flex justify-between items-center px-2 py-2 md:hidden">
         <button onClick={toggleMenu} className="text-black text-sm font-bold">
           {menuExpanded ? "Overview ▲" : "Overview ▼"}
         </button>
@@ -175,7 +175,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
         )}
       </AnimatePresence>
 
-      <nav className="hidden  md:flex left-0 mb-[4rem] mt-0 md:-mt-10 flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
+      <nav className="hidden md:flex left-0 flex-row mt-14 flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black ">
         {navItems.map((item, index) => (
           <NavLink
             key={index}

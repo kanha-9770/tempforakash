@@ -61,9 +61,9 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
         style={{
           backgroundColor: color,
           scale,
-          top: `calc(2vh + ${i * 1}px)`,
+          top: ``,
         }}
-        className={styles.KnowMoreCard}
+        className={` ${styles.KnowMoreCard} top-[calc(2vh + ${i}px)] lg:top-[calc(2vh + ${i * 1}px)] `}
       >
         <div className={styles.body}>
           <div className={styles.description}>

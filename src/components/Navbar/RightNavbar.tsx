@@ -87,69 +87,34 @@ const RightNavbar: React.FC = memo(() => {
 
   return (
     <div
-      className={`w-full  max-w-screen-2xl  justify-end lg:justify-center relative top-0 ${
-        menuState.hoveredItem ? "rounded-t-lg" : "rounded-lg"
-      }`}
+      className={`w-full  max-w-screen-2xl  justify-start  relative top-0`}
     >
-      <div className="flex items-center gap-2 justify-end lg:justify-center h-14">
+      <div className="flex items-center justify-start h-14">
         <span
           onMouseEnter={handleMouseLeave}
-          className="w-full h-10 z-30 hidden lg:flex items-center gap-3 text-black"
+          className="w-[60%] h-10   z-30 hidden lg:flex items-center gap-1 text-black"
         >
-          <div className="bg-white  flex-row gap-3 px-2 rounded-3xl">
+          <div className=" flex-row bg-[#f2f2f2] gap-2 px-2 rounded-3xl">
             <CountryLayout />
           </div>
-          <SearchBarLayout
-            setIsFlagOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
-            }
-            openSearch={visibilityState.openSearch}
-            setOpenSearch={(value) =>
-              setVisibilityState((prev) => ({ ...prev, openSearch: value }))
-            }
-            setProfileOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
-            }
-            setAccountOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
-            }
-          />
-          <ProfileLayout
-            profileOpen={visibilityState.profileOpen}
-            setIsFlagOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
-            }
-            setOpenSearch={(value) =>
-              setVisibilityState((prev) => ({ ...prev, openSearch: value }))
-            }
-            setProfileOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
-            }
-            setAccountOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
-            }
-          />
-          <div className="relative">
-            <VscAccount
-              onClick={handleAccount}
-              className="text-18 cursor-pointer"
-            />
-            {visibilityState.accountOpen && (
-              <div ref={accountRef}>
-                <AccountLayout />
-              </div>
-            )}
-          </div>
-          <div className="ml-auto mr-10">
-            <ContactForm
-              isContactFormVisible={visibilityState.isContactFormVisible}
-              setContactFormVisible={(value) =>
-                setVisibilityState((prev) => ({
-                  ...prev,
-                  isContactFormVisible: value,
-                }))
+          <div className="px-1 flex flex-row items-center justify-start gap-1">
+            <SearchBarLayout
+              setIsFlagOpen={(value) =>
+                setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
               }
-              isVisible={isVisible}
+              openSearch={visibilityState.openSearch}
+              setOpenSearch={(value) =>
+                setVisibilityState((prev) => ({ ...prev, openSearch: value }))
+              }
+              setProfileOpen={(value) =>
+                setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
+              }
+              setAccountOpen={(value) =>
+                setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
+              }
+            />
+            <ProfileLayout
+              profileOpen={visibilityState.profileOpen}
               setIsFlagOpen={(value) =>
                 setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
               }
@@ -163,47 +128,43 @@ const RightNavbar: React.FC = memo(() => {
                 setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
               }
             />
-          </div>
-        </span>
-        <div className="relative -mt-6 h-full flex flex-col w-full  lg:hidden">
-          <div className="relative max-w-screen-2xl p-1 flex w-full mx-auto">
-            <div className="justify-center items-center w-full rounded-xl">
-              <form className="flex justify-start  ">
-                <div className="relative w-full border-gray-300">
-                  <input
-                    type="text"
-                    id="search-dropdown"
-                    value={searchValue}
-                    onChange={handleInputChange}
-                    className="block p-[0.6rem] w-full z-20 text-sm bg-gray-100 rounded-3xl border-slate-100 font-montserrat pr-10 focus:outline-none focus:ring-2 focus:ring-transparent"
-                    placeholder="Search Product Name..."
-                    required
-                  />
-                  {searchValue ? (
-                    <IoClose
-                      onClick={handleClearSearch}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer text-18"
-                    />
-                  ) : (
-                    <TfiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer text-18" />
-                  )}
-                </div>
-              </form>
-            </div>
-          </div>
-          <div className="flex felx-row items-center gap-2 border-t-[1px] border-b-[1px] justify-end w-full p-2">
-            <div className="relative ">
-              <CountryLayout />
-            </div>
-            <div className="relative ">
+            <div className="relative">
               <VscAccount
                 onClick={handleAccount}
-                className="text-xl cursor-pointer"
+                className="text-base cursor-pointer"
               />
+              {visibilityState.accountOpen && (
+                <div ref={accountRef}>
+                  <AccountLayout />
+                </div>
+              )}
             </div>
           </div>
+        </span>
+        <div className="relative flex justify-center  w-[40%]">
+          <ContactForm
+            isContactFormVisible={visibilityState.isContactFormVisible}
+            setContactFormVisible={(value) =>
+              setVisibilityState((prev) => ({
+                ...prev,
+                isContactFormVisible: value,
+              }))
+            }
+            isVisible={isVisible}
+            setIsFlagOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
+            }
+            setOpenSearch={(value) =>
+              setVisibilityState((prev) => ({ ...prev, openSearch: value }))
+            }
+            setProfileOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
+            }
+            setAccountOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
+            }
+          />
         </div>
-        {/* mobile view ends here */}
       </div>
     </div>
   );

@@ -19,20 +19,20 @@ const KnowMachine: React.FC = () => {
   };
 
   return (
-    <div className="lg:p-6 px-2 lg:px-0 mt-40 w-full  h-full">
-      <div className="text-center"></div>
-      <div className="flex flex-col lg:flex-row justify-around space-y-4 lg:space-x-6 lg:mr-10">
+    <div className="lg:p-6 px-2 lg:px-8 mt-40 w-full h-full">
+      {/* Container for the cards */}
+      <div className="flex flex-col lg:flex-row lg:flex-wrap justify-between space-y-4 lg:space-y-0 ">
         {cardContents.map((content, index) => (
           <div
             key={index}
-            className="relative bg-white rounded-3xl shadow-lg overflow-hidden w-full h-[12rem] lg:w-[35%] lg:h-[32rem] lg:ml-10 group"
+            className="relative bg-white rounded-3xl shadow-lg overflow-hidden w-full h-[12rem] lg:w-[32%] lg:h-[32rem] group flex-shrink-0"
           >
             <Image
               src={content.image}
               alt={content.title}
               height={400}
               width={400}
-              className="h-full w-full scale-100 group"
+              className="h-full w-full object-cover" // Make sure the image covers the entire div properly
             />
             <div
               className="absolute top-0 z-30 right-0 m-2 cursor-pointer"
@@ -41,8 +41,8 @@ const KnowMachine: React.FC = () => {
               <GrAddCircle size={30} className="text-white" />
             </div>
             <div className="absolute bottom-0 w-full h-full bg-gradient-to-t from-black to-transparent"></div>
-            <div className="absolute bottom-0 w-full h-16 bg-gradient-to-t from-black flex items-center justify-center">
-              <h2 className="lg:mb-[50rem] font-bold top-0 w-[80%] text-center text-xl lg:text-4xl text-white">
+            <div className="absolute bottom-4 lg:top-12 w-full h-16  flex items-center justify-center">
+              <h2 className="font-bold w-[80%] text-center text-xl lg:text-4xl text-white">
                 {content.title}
               </h2>
             </div>

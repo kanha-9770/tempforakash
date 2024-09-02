@@ -81,10 +81,10 @@ export const MenuItem = ({
   return (
     <div
       ref={ref}
-      className="z-10 cursor-pointer px-3 font-montserrat py-2  md:py-1 md:text-base "
+      className="z-10 cursor-pointer px-3 font-poppins"
     >
       <Link
-        className="invert-0 font-poppins text-16"
+        className="invert-0 text-9"
         href={`/${countryCode}/${link}`}
       >
         {item}
@@ -123,7 +123,7 @@ const Cursor = ({
         stiffness: 1000,
         damping: 50, // Lower damping for less resistance
       }}
-      className="absolute z-0 h-6 rounded-full bg-[#eaeaea] md:h-6 mt-[0.25rem]"
+      className="absolute z-0 h-6 rounded-full bg-[#eaeaea] md:h-6 "
     />
   );
 };

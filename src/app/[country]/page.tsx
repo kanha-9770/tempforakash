@@ -44,14 +44,14 @@ const CanvasRevealEffectDemo = dynamic(
       (mod) => mod.default
     ),
   {
-    ssr: false, // Assuming this component is heavy and not critical for SEO
+    ssr: false,
   }
 );
 
 const IotSection = dynamic(
   () => import("@/components/Home/IotSection").then((mod) => mod.default),
   {
-    ssr: false, // Assuming this component is heavy and not critical for SEO
+    ssr: false,
   }
 );
 
@@ -76,14 +76,21 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-[#f2f2f2]  ">
-      <div className="mx-2 mt-[4.5rem] lg:mt-4 lg:mx-0">
+    <main className="bg-[#f2f2f2]">
+      <div className=" mt-[4.5rem] lg:mt-4 ">
         <Hero />
       </div>
       <ContactIcons />
       <NavLinksDemo navItems={navItems} />
       <div className="h-full">
-      <div id="machines" className=" mt-32" ref={homeMachineRef}>
+        <div id="machines" className="flex flex-col justify-center items-center mt-32" ref={homeMachineRef}>
+          <h1 className="text-2xl lg:text-3xl font-semibold text-[#483d78] text-center">
+            Our <span className="text-red-500">Products</span>
+          </h1>
+          <p className="text-lg w-[50%] lg:text-base pt-4 text-center font-poppins font-medium">
+            We are known for manufacturing and globally exporting various paper
+            packaging machines including Cups, Glass, Straws and Plate Machines.
+          </p>
           <HomeMachine />
         </div>
         <div className="lg:mx-4 mt-8">
@@ -128,7 +135,7 @@ export default function Home() {
         </div>
         <div id="knowMachine" className="mt-32" ref={knowMachineRef}>
           {/* <CanvasRevealEffectDemo /> */}
-          <KnowMachine/>
+          <KnowMachine />
         </div>
         <div
           id="testimonials"

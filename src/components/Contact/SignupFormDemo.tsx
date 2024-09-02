@@ -23,17 +23,15 @@ const SignupFormDemo = () => {
 
   return (
     <motion.div
-      className="flex justify-end max-w-full mx-auto rounded-none md:rounded-xl p-4 md:p-8  shadow-input  bg-white dark:bg-black"
+      className="flex  max-w-full mx-auto px-4 justify-center"
       initial={{ y: "-100%", height: 0, opacity: 0 }}
       animate={{ y: 0, height: "33rem", opacity: 1 }}
       exit={{ y: "-100%", height: 0, opacity: 0 }}
       transition={transition}
     >
       <div className="w-full max-w-md">
-        <h2 className="font-montserrat text-xl text-neutral-800 dark:text-neutral-200">
-          GET IN TOUCH WITH US
-        </h2>
-        <form className="my-8" onSubmit={handleSubmit}>
+       
+        <form className="" onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
               <Label htmlFor="firstname">First name</Label>

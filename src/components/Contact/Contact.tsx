@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
 import { SignupFormDemo } from "./SignupFormDemo";
+import { IoClose } from "react-icons/io5"; // Import the close icon
 import Link from "next/link";
 
 interface ContactFormProps {
@@ -39,7 +40,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  });
+  }, []); // Ensure effect cleanup
+
   const pathname = usePathname() || "";
   const countryCode = pathname.split("/")[1]?.toLowerCase();
 
@@ -48,10 +50,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
     setIsFlagOpen(false);
     setOpenSearch(false);
     setProfileOpen(false);
-   
-    // Get country code from pathname or default to 'in'
-
-    // Navigate to the contact page with the correct URL
   };
 
   const transition = {
@@ -77,12 +75,27 @@ const ContactForm: React.FC<ContactFormProps> = ({
         {isContactFormVisible && (
           <motion.div
             ref={contactRef}
-            className="fixed top-14 right-0 z-50 mr-12 mt-0 w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px]"
+            className="fixed top-14 right-0 z-50 mr-10 mt-0 w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px] bg-white  rounded-lg overflow-hidden"
             initial={{ y: "-100%", height: 0, opacity: 0 }}
             animate={{ y: 0, height: "35rem", opacity: 1 }}
             exit={{ y: "-100%", height: 0, opacity: 0 }}
             transition={transition}
           >
+            {/* Header with text and close icon */}
+            <div className="flex justify-between items-center p-4">
+              <h2 className="font-montserrat text-xl text-neutral-800 dark:text-neutral-200">
+                GET IN TOUCH WITH US
+              </h2>
+              <button
+                onClick={() => setContactFormVisible(false)}
+                aria-label="Close contact form"
+                className="text-gray-600 hover:text-gray-800"
+              >
+                <IoClose size={24} />
+              </button>
+            </div>
+
+            {/* Content */}
             <SignupFormDemo />
           </motion.div>
         )}

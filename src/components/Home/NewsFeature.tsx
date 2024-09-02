@@ -126,7 +126,7 @@ const NewsFeature: React.FC = () => {
         </h1>
       </div>
       <div className="flex gap-2 mt-4 h-full">
-        <div className="relative w-[36%] ml-2">
+        <div className="relative w-[36%] ">
           <div className="relative group h-[83vh]">
             <Image
               src={newscardcontent[0].image.src}

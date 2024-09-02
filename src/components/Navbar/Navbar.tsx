@@ -71,8 +71,8 @@ function Navbar({ className }: { className?: string }) {
   const router = useRouter();
   const pathname = usePathname() || "";
   const countryCode = pathname.split("/")[3]?.toLowerCase();
-  console.log("countryCode,",countryCode);
-  
+  console.log("countryCode,", countryCode);
+
   // Function to handle expansion
   const handleExpand = (item: string) => {
     // Close other expanded items when one is opened
@@ -88,27 +88,27 @@ function Navbar({ className }: { className?: string }) {
         "translate-y-0",
         className,
         "transition-all duration-500 ease-in-out",
-        countryCode==="ourcompany" ? "bg-black" : "bg-white "
+        countryCode === "ourcompany" ? "bg-black" : "bg-white "
       )}
     >
       {/* Desktop Menu */}
-      <div className="hidden  lg:flex w-full">
-        <div className="w-[15%] lg:ml-8 flex justify-start items-center">
+      <div className="hidden px-8 lg:flex w-full">
+        <div className="w-1/5 flex items-center">
           <Link
             href="/"
-            className="h-6 rounded-2xl lg:ml-2 flex justify-center items-center"
+            className="w-full h-full  flex items-center "
           >
             <Image
               src={Logo}
               alt="Logo"
               width={500}
               height={500}
-              className="h-[1.4rem] w-full"
+              className="h-[1.4rem] w-16"
             />
           </Link>
         </div>
 
-        <div className="w-[65%] flex items-center justify-center">
+        <div className="w-3/5 flex items-center justify-center">
           <Menu>
             {navbarItems.map((item) => (
               <MenuItem
@@ -125,7 +125,7 @@ function Navbar({ className }: { className?: string }) {
           </Menu>
         </div>
 
-        <div className="w-[23%] flex mr-2  items-center justify-end">
+        <div className="w-1/5 flex  items-center justify-end">
           <RightNavbar />
         </div>
       </div>
@@ -174,7 +174,7 @@ function Navbar({ className }: { className?: string }) {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-gray-300/90 backdrop-blur-[80px] h-screen  shadow-lg z-[99999]">
+          <div className="lg:hidden absolute  left-0 w-full bg-gray-300/90 backdrop-blur-[80px] h-screen  shadow-lg z-[99999]">
             <div className="flex bg-white h-2/3 p-4 flex-col space-y-3">
               {navbarItems.map((item) => (
                 <div key={item.name}>

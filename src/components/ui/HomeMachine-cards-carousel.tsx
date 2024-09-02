@@ -126,25 +126,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                         : Math.ceil(items.length / 2)
                     )
                     .map((item, index) => (
-                      <motion.div
+                      <div
                         key={"card" + index}
-                        initial={{
-                          opacity: 0,
-                          y: 20,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                          transition: {
-                            duration: 0.5,
-                            delay: 0.2 * index,
-                            ease: "easeOut",
-                          },
-                        }}
                         className="last:pr-[5%] md:last:pr-[0%] rounded-3xl"
                       >
                         {item}
-                      </motion.div>
+                      </div>
                     ))}
                 </div>
               </div>
@@ -164,26 +151,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   {items
                     .slice(items.length / 2, items.length - 1)
                     .map((item, index) => (
-                      <motion.div
-                        initial={{
-                          opacity: 0,
-                          y: 20,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                          transition: {
-                            duration: 0.5,
-                            delay: 0.2 * index,
-                            ease: "easeOut",
-                            once: true,
-                          },
-                        }}
+                      <div
                         key={"card" + index}
                         className="last:pr-[5%] md:last:pr-[0%]  rounded-3xl"
                       >
                         {item}
-                      </motion.div>
+                      </div>
                     ))}
                 </div>
               </div>
@@ -208,25 +181,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   )}
                 >
                   {items.slice(0, items.length).map((item, index) => (
-                    <motion.div
+                    <div
                       key={"card" + index}
-                      initial={{
-                        opacity: 0,
-                        y: 20,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          duration: 0.5,
-                          delay: 0.2 * index,
-                          ease: "easeOut",
-                        },
-                      }}
                       className="last:pr-[5%] md:last:pr-[0%] rounded-3xl"
                     >
                       {item}
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -256,26 +216,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     )}
                   >
                     {items.slice(0, items.length / 2).map((item, index) => (
-                      <motion.div
-                        initial={{
-                          opacity: 0,
-                          y: 20,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                          transition: {
-                            duration: 0.5,
-                            delay: 0.2 * index,
-                            ease: "easeOut",
-                            once: true,
-                          },
-                        }}
+                      <div
                         key={"card" + index}
                         className="last:pr-[5%] md:last:pr-[0%]  rounded-3xl"
                       >
                         {item}
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -295,26 +241,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     {items
                       .slice(items.length / 2, items.length - 1)
                       .map((item, index) => (
-                        <motion.div
-                          initial={{
-                            opacity: 0,
-                            y: 20,
-                          }}
-                          animate={{
-                            opacity: 1,
-                            y: 0,
-                            transition: {
-                              duration: 0.5,
-                              delay: 0.2 * index,
-                              ease: "easeOut",
-                              once: true,
-                            },
-                          }}
+                        <div
                           key={"card" + index}
                           className="last:pr-[5%] md:last:pr-[0%]  rounded-3xl"
                         >
                           {item}
-                        </motion.div>
+                        </div>
                       ))}
                   </div>
                 </div>
@@ -382,36 +314,25 @@ export const Card = ({
 
   return (
     <>
-      <AnimatePresence>
-        {open && (
-          <div className="fixed  inset-0  h-screen z-[99999] overflow-auto">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="bg-black/80  backdrop-blur-lg h-full w-full fixed inset-0"
-            />
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              ref={containerRef}
-              layoutId={layout ? `card-${card.title}` : undefined}
-              className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+      {open && (
+        <div className="fixed  inset-0  h-screen z-[99999] overflow-auto">
+          <div className="bg-black/80  backdrop-blur-lg h-full w-full fixed inset-0" />
+          <div
+            ref={containerRef}
+            className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+          >
+            <button
+              className="sticky z-50 top-0 h-8 w-8 right-0 -mr-32 -mt-6 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
+              onClick={handleClose}
             >
-              <button
-                className="sticky z-50 top-0 h-8 w-8 right-0 -mr-32 -mt-6 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
-                onClick={handleClose}
-              >
-                <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
-              </button>
-              <div className="py-0">{card.content}</div>
-            </motion.div>
+              <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+            </button>
+            <div className="py-0">{card.content}</div>
           </div>
-        )}
-      </AnimatePresence>
-      <motion.button
-        layoutId={layout ? `card-${card.title}` : undefined}
+        </div>
+      )}
+
+      <button
         onClick={handleOpen}
         className=" h-48 rounded-3xl bg-white p-1 lg:p-2  w-40 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
@@ -477,15 +398,12 @@ export const Card = ({
           />
 
           <div className="absolute -mb-2 left-0 right-0 bottom-0 z-40 p-4">
-            <motion.p
-              layoutId={layout ? `category-${card.category}` : undefined}
-              className="text-black text-sm md:text-base font-medium font-sans text-left"
-            >
+            <p className="text-black text-sm md:text-base font-medium font-sans text-left">
               {card.title}
-            </motion.p>
+            </p>
           </div>
         </div>
-      </motion.button>
+      </button>
     </>
   );
 };

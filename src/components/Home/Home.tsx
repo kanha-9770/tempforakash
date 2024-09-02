@@ -147,8 +147,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import PositionAwareButton from "../ui/PositionAwareButton";
-import ContactIcons from "../Contact/ContactIcon";
-import { IoChatboxEllipsesOutline } from "react-icons/io5";
+
 import { IoPlaySharp, IoPauseSharp } from "react-icons/io5";
 import "@fontsource/poppins/400-italic.css"; // Specify weight and style
 
@@ -223,10 +222,10 @@ const Home: React.FC = () => {
   const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
 
   return (
-    <div className="relative h-auto lg:h-screen lg:bg-[#f2f2f2] lg:p-0  flex flex-col items-center overflow-hidden lg:min-h-screen w-full">
-      <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
+    <div className="relative h-full  lg:bg-[#f2f2f2] p-0 -top-2 lg:top-12  flex flex-col items-center overflow-hidden  w-full">
+      <div className="relative px-4  lg:px-10 w-full flex-wrap">
         <motion.div
-          className="md:mt-[2.5rem] w-full h-[calc(100vh-210px)] flex justify-center items-center sm:h-[calc(100vh-98px)] rounded-3xl"
+          className=" w-full  flex justify-center items-center h-[calc(100vh-220px)] lg:h-[calc(100vh-110px)] rounded-3xl"
           ref={containerRef}
           style={{ width: videoWidth, x: videoTransform, originX: 0.5 }}
         >
@@ -256,38 +255,20 @@ const Home: React.FC = () => {
         </motion.div>
       </div>
 
-      <div className="absolute h-full w-[80%] lg:w-full top-[30%] left-8 lg:top-[45%] lg:left-28 flex-col text-7xl text-white font-alexBrush">
+      <div className="absolute h-full w-[80%] lg:w-full  left-8 top-1/3 lg:top-[38%] lg:left-28 flex-col text-7xl text-white font-alexBrush">
         <p className="text-3xl text-center lg:text-justify mx-4 md:text-2xl lg:text-5xl font-poppins font-thin">
           FOOD PACKING MACHINES
         </p>
-        <div className="ml-2">
-          <span className="text-3xl lg:text-6xl text-[#f2f2f2] font-poppins italic ">
+        <div className="lg:ml-2  text-center lg:text-justify">
+          <span className="text-3xl  lg:text-6xl text-[#f2f2f2] font-poppins italic ">
             Manufacturing
           </span>
         </div>
-        <div className="absoute bottom-0 w-full font-poppins  lg:hidden  z-30 items-end flex justify-center">
-          <PositionAwareButton
-            margin="0.2rem"
-            borderWidth="1px"
-            iconSize="30px"
-            icon
-            textColor="black"
-            iconColor="black"
-            height="50px"
-            padding="5px"
-            width="200px"
-            bgColor="white"
-            fontSize="22px"
-            borderRadius="100px"
-            borderColor="white"
-            text={"Get a Quote"}
-          />
-        </div>
       </div>
 
-      <div className="absolute hidden lg:flex flex-col w-[30rem] h-[10rem] rounded-tl-[4rem] right-0 bg-[#f2f2f2] bottom-5 text-3xl font-poppins text-white text-center">
+      <div className="absolute flex flex-col w-1/2  lg:w-[30rem] lg:h-[10rem] lg:rounded-tl-[4rem] rounded-tl-[1.5rem] right-0 bg-[#f2f2f2] lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
         <motion.div
-          className="-mt-6 flex mr-10 justify-end"
+          className="-mt-6 flex mr-2 lg:mr-8 justify-end"
           style={{ x: svgTransform }} // SVG moves to the right
         >
           <svg
@@ -304,10 +285,10 @@ const Home: React.FC = () => {
             ></path>
           </svg>
         </motion.div>
-        <div className="w-full -ml-6 mt-10 flex justify-center">
+        <div className="w-full mt-10 hidden lg:flex justify-center">
           <PositionAwareButton
             borderWidth="1px"
-            iconSize="50px"
+            iconSize="50"
             icon
             height="75px"
             padding="20px"
@@ -318,13 +299,27 @@ const Home: React.FC = () => {
             text={"Get a Quote"}
           />
         </div>
-        <div className="">
+        <div className=" lg:hidden mt-2 -ml-2 items-center flex justify-center">
+          <PositionAwareButton
+            borderWidth="1px"
+            iconSize="30px"
+            icon
+            height="40px"
+            padding="5px"
+            width="150px"
+            fontSize="16px"
+            borderRadius="100px"
+            borderColor="black"
+            text={"Get a Quote"}
+          />
+        </div>
+        <div className="lg:mt-[1.3rem] -mt-2 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="100%"
             viewBox="0 0 20 20"
             fill="none"
-            className="-ml-[2.2rem] -mt-4 h-8 w-10"
+            className="-ml-[2rem]   h-6 w-10"
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"

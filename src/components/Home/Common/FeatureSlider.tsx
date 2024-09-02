@@ -71,14 +71,15 @@ export const FeatureSlider: React.FC = () => {
         animate={{ translateX: `-${itemIndex * 100}%` }}
         transition={SPRING_OPTIONS}
         onDragEnd={onDragEnd}
-        className="flex cursor-grab items-center active:cursor-grabbing"
+        className="flex  cursor-grab items-center active:cursor-grabbing"
       >
         {items.map((item, idx) => (
           <motion.div
             key={idx}
             animate={{ scale: itemIndex === idx ? 0.95 : 0.85 }}
             transition={SPRING_OPTIONS}
-            className={styles.card}
+            className={`${styles.card} bg-gradient-to-t from-black to-transparent`}
+          
           >
             <Image
               height={100}

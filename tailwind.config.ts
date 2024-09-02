@@ -51,6 +51,7 @@ const config: Config = {
         16: "16px",
         14: "14px",
         8:"0.65rem",
+        9:"0.95rem",
         5:"0.35rem"
       },
       screens: {

@@ -82,7 +82,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
           )}
         </h1>
         <div className="flex flex-col md:flex-row justify-between items-center w-full mt-4">
-          <div className="text-center mb-4 md:mb-0">
+          <div className="text-center w-1/5 mb-4 md:mb-0">
             <h2
               ref={machinesSoldRef}
               className="text-3xl font-extrabold text-[#483d73]"
@@ -91,10 +91,10 @@ const AboutUs: React.FC<AboutUsProps> = ({
             </h2>
             <p className="text-base font-poppins">Machines Sold</p>
           </div>
-          <p className="font-poppins text-sm lg:text-base md:px-6 py-4 text-center w-full md:w-[60%] leading-6">
+          <p className="font-poppins text-sm lg:text-base md:px-6 py-4 text-center w-full md:w-3/5 leading-6">
             {description}
           </p>
-          <div className="text-center mt-4 md:mt-0">
+          <div className="text-center w-1/5 mt-4 md:mt-0">
             <h2
               ref={readyStockMachinesRef}
               className="text-3xl font-extrabold text-[#483d73]"
