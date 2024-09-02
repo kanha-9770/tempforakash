@@ -66,10 +66,10 @@ export default function Home() {
   const iotRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
+    { text: "Machines", ref: homeMachineRef },
     { text: "About Us", ref: aboutUsRef },
     { text: "Clientele", ref: infiniteCardsRef },
     { text: "KnowMore", ref: knowMoreRef },
-    { text: "Machines", ref: homeMachineRef },
     { text: "IoT", ref: iotRef },
     { text: "News", ref: newsFeatureRef },
     { text: "Testimonials", ref: homeTestimonialRef },
@@ -87,7 +87,7 @@ export default function Home() {
           <h1 className="text-2xl lg:text-3xl font-semibold text-[#483d78] text-center">
             Our <span className="text-red-500">Products</span>
           </h1>
-          <p className="text-lg w-[50%] lg:text-base pt-4 text-center font-poppins font-medium">
+          <p className="text-sm w-full px-2 lg:w-[50%] lg:text-base pt-4 text-center font-poppins font-medium">
             We are known for manufacturing and globally exporting various paper
             packaging machines including Cups, Glass, Straws and Plate Machines.
           </p>
@@ -128,7 +128,7 @@ export default function Home() {
         </div>
         <div
           id="news"
-          className="mx-4 lg:flex hidden mt-32"
+          className="lg:mx-4 flex  mt-32"
           ref={newsFeatureRef}
         >
           <NewsFeature />

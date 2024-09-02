@@ -44,7 +44,7 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({
     </div>
 
     {/* Content */}
-    <div className="relative bg-red-400 justify-center ">
+    <div className="relative  justify-center ">
       <h3 className={`${styles.nameTitle} px-4`}>
         {name}
         <a

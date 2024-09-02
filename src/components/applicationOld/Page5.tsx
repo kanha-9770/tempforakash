@@ -46,7 +46,7 @@ const Page5: React.FC = () => {
         </div>
         <div
           className="w-full h-max flex justify-center items-center px-[4rem]"
-          ref={carouselRef}
+          // ref={carouselRef}
         >
           <div className="w-[70%] bg-white mx-[1rem] border-4 border-solid border-[#e8e5e5] h-full rounded-[2rem] flex items-center justify-center py-[0.5rem]">
             <div className="w-[60%] h-[27rem] mr-[0.5rem] overflow-hidden rounded-[1.5rem] ">

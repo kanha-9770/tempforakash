@@ -118,6 +118,18 @@ export const Page5Data = {
       title: "What is the main paper material for the cup",
       questionIcon: <FaQuestion />,
     },
+    {
+      title: "Is it possible to use renewable paperIs it possible to use renewable paperIs it possible to use renewable paper",
+      questionIcon: <FaQuestion />,
+    },
+    {
+      title: "Can the surface be printed and embossed?",
+      questionIcon: <FaQuestion />,
+    },
+    {
+      title: "What is the main paper material for the cup",
+      questionIcon: <FaQuestion />,
+    },
   ],
   answers: [
     {

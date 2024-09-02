@@ -1,6 +1,7 @@
 import React from "react";
 import SpecificationTable from "./SpecificationTable";
 import Image from "next/image";
+import SpeciGlass from "../../../public/assets/product/Specificationglass.png";
 import { BiSolidFilePdf } from "react-icons/bi";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
@@ -29,7 +30,13 @@ export function TechnicalSpecifications() {
         <div className="flex flex-row items-start">
           <SpecificationTable />
           <div className="ml-8  w-[50%]">
-           
+            <Image
+              src={SpeciGlass}
+              width={400}
+              height={400}
+              alt="Specification Glass"
+              className="w-full  h-auto object-contain"
+            />
           </div>
         </div>
       </div>

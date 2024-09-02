@@ -86,11 +86,11 @@ export const FeatureSlider: React.FC = () => {
               width={100}
               src={item.imageSrc}
               alt={item.title}
-              className={styles.image}
+              className="object-cover w-52 h-32 bg-white lg:mr-4 rounded-lg "
             />
-            <div className={styles.textWrapper}>
-              <h3 className={styles.title}>{item.title}</h3>
-              <p className={styles.description}>{item.description}</p>
+            <div className="flex flex-col py-16 lg:py-0">
+              <h3 className={`${styles.title} text-sm font-bold lg:text-lg`}>{item.title}</h3>
+              <p className="text-sm text-gray-500 lg:mt-2">{item.description}</p>
             </div>
           </motion.div>
         ))}

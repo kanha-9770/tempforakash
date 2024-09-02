@@ -24,23 +24,11 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .image {
-    width: 250px;
-    height: 150px;
-    background-color: white;
-    margin-right: 1rem;
-    border-radius:100%;
-    object-fit: cover;
-  }
-  
-  .textWrapper {
-    display: flex;
-    flex-direction: column;
-  }
+ 
+ 
   
   .title {
-    font-size: 1rem;
-    font-weight: bold;
+
     margin: 0;
     color: #333;
   }

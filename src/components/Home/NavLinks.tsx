@@ -24,7 +24,7 @@ const NavLink: React.FC<NavLinkProps> = memo(
     <Link
       href="#"
       scroll={false}
-      className={`text-black text-sm md:ml-[2.5rem] pt-2 hover:font-bold ${
+      className={`text-black  text-sm md:ml-[2.5rem] pt-2 hover:font-bold ${
         activeLink === index ? "border-b-2 border-red-600" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(index)}
@@ -46,6 +46,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   const [activeLink, setActiveLink] = useState<number>(-1);
   const [scrolling, setScrolling] = useState(false);
   const [menuExpanded, setMenuExpanded] = useState(false);
+  const [activeLinkText, setActiveLinkText] = useState<string>("Overview");
 
   const navRef = useRef<HTMLDivElement | null>(null);
 
@@ -78,6 +79,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
             (item) => item.ref.current === entry.target
           );
           setActiveLink(index);
+          setActiveLinkText(navItems[index].text);
         }
       });
     };
@@ -110,7 +112,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   useEffect(() => {
     const handleScroll = () => {
       const navTop = navRef.current?.getBoundingClientRect().top || 0;
-      if (navTop <= 0) {
+      if (navTop <= 56) {
         setScrolling(true);
       } else {
         setScrolling(false);
@@ -119,7 +121,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [scrolling]);
 
   const toggleMenu = () => {
     setMenuExpanded((prev) => !prev);
@@ -129,14 +131,15 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
     <div
       ref={navRef}
       className={`sticky top-14 z-30 transition-all duration-300 ${
-        scrolling
-          ? "bg-white"
-          : "bg-[#f2f2f2]"
+        scrolling ? "bg-white" : "bg-[#f2f2f2] border-none"
       }`}
     >
       <div className="flex justify-between items-center px-2 py-2 md:hidden">
-        <button onClick={toggleMenu} className="text-black text-sm font-bold">
-          {menuExpanded ? "Overview ▲" : "Overview ▼"}
+        <button
+          onClick={toggleMenu}
+          className="text-black px-2 text-sm font-bold"
+        >
+          {menuExpanded ? `${activeLinkText} ▲` : `${activeLinkText} ▼`}
         </button>
       </div>
 
@@ -154,7 +157,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
                 onClick={toggleMenu}
                 className="text-black text-sm font-bold mb-4"
               >
-                Overview ▲
+                {activeLinkText} ▲
               </button>
               <ul>
                 {navItems.map((item, index) => (
@@ -175,7 +178,11 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
         )}
       </AnimatePresence>
 
-      <nav className="hidden md:flex left-0 flex-row mt-14 flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black ">
+      <nav
+        className={`hidden ${
+          scrolling ? "border-t-[1px]" : "border-none"
+        } md:flex left-0 flex-row mt-14 flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black `}
+      >
         {navItems.map((item, index) => (
           <NavLink
             key={index}

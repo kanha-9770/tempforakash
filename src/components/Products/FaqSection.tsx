@@ -3,6 +3,7 @@ import { FaQuestionCircle, FaArrowRight } from 'react-icons/fa';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import "./style.css";
+import { Page5Data } from '../Constants/applicationOld/applicationOld_data';
 
 interface FaqItem {
   question: string;
@@ -49,6 +50,7 @@ const FaqSection: React.FC = () => {
         yPercent: -100,
         ease: "none",
         scrollTrigger: {
+          
           trigger: faqListRef.current,
           start: "top top",
           end: "bottom bottom",
@@ -63,35 +65,39 @@ const FaqSection: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:space-x-8 p-6 max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden">
-      <div
-        ref={faqListRef}
-        className="faq-list w-full lg:w-1/3 max-h-80 overflow-y-auto pr-4"
-      >
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            onClick={() => handleFaqClick(index)}
-            className={`cursor-pointer p-4 mb-4 flex items-center justify-between rounded-lg transition-transform transform ${
-              activeIndex === index
-                ? 'bg-red-100 text-red-600 scale-105'
-                : 'bg-white hover:bg-gray-100'
-            }`}
-          >
-            <span>{faq.question}</span>
-            {activeIndex === index ? (
-              <FaArrowRight className="text-red-600" />
-            ) : (
-              <FaQuestionCircle className="text-gray-400" />
-            )}
+    <div className="flex overflow-hidden h-max flex-col lg:flex-row lg:space-x-8 p-6 w-full mx-auto bg-white rounded-3xl ">
+               <div className="w-[70%] bg-white mx-[1rem] border-4 border-solid border-[#e8e5e5] h-full rounded-[2rem] flex items-center justify-center py-[0.5rem]">
+            <div className="w-[60%] h-[27rem] mr-[0.5rem] overflow-hidden rounded-[1.5rem] ">
+              <div className="overflow-auto h-full scrollbar-hide">
+                {Page5Data.questions.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="h-max py-[1rem] border-b-2 border-solid border-[#e8e5e5] flex items-center hover:text-[#e12d2c] hover:font-semibold active:text-[#e12d2c] active:font-semibold text-[#575555]"
+                  >
+                    <p className="text-[1.2rem] font-poppins w-[75%] mx-[1.5rem] ">
+                      {item.title}
+                    </p>
+                    <p className="text-[2rem] font-poppins  ml-[3rem] mr-[1rem]">
+                      {item.questionIcon}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="w-[40%] h-[27rem] mx-[0.5rem] rounded-[1.5rem] border-2 border-solid border-[#e8e5e5] overflow-hidden">
+              <div className="overflow-auto h-full scrollbar-hide">
+                {Page5Data.answers.map((item, idx) => (
+                  <div key={idx} className="flex justify-center">
+                    <p className="my-[2.5rem] w-[16vw] text-[1.2rem] text-center text-[#575555]">
+                      {item.ans}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-      <div className="w-full lg:w-2/3 p-4 bg-white rounded-lg">
-        {activeIndex !== null && (
-          <p className="text-gray-700 text-lg">{faqs[activeIndex].answer}</p>
-        )}
-      </div>
+
     </div>
   );
 };

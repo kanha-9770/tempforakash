@@ -21,7 +21,7 @@
 //   return (
 //     <div className="h-screen bg-black p-6 mt-40 w-full max-w-screen-2xl">
 //       <div className="text-center mt-10">
-//         <h1 className="text-3xl font-montserrat">
+//         <h1 className="text-3xl font-poppins">
 //           <span className="text-[#483d73]">Featured</span>{" "}
 //           <span className="text-red-600">News</span>
 //         </h1>
@@ -105,6 +105,7 @@ import { newscardcontent } from "../Constants";
 import Modal from "../ui/Modal";
 import FeatureCaraousel from "./Common/FeatureCaraousel";
 import { FeatureSlider } from "./Common/FeatureSlider";
+import Link from "next/link";
 
 const NewsFeature: React.FC = () => {
   const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
@@ -118,16 +119,16 @@ const NewsFeature: React.FC = () => {
   };
 
   return (
-    <div className="p-4 px-8 h-screen relative">
+    <div className="lg:p-4 px-2 lg:px-8 w-full h-full lg:h-screen">
       <div className="text-center">
-        <h1 className="text-3xl font-montserrat">
+        <h1 className="text-3xl font-poppins">
           <span className="text-[#483d73]">Featured</span>
           <span className="text-red-600"> News</span>
         </h1>
       </div>
-      <div className="flex gap-2 mt-4 h-full">
-        <div className="relative w-[36%] ">
-          <div className="relative group h-[83vh]">
+      <div className="flex h-[80vh] lg:full flex-col lg:flex-row gap-2 mt-4">
+        <div className="relative w-full lg:w-[36%] ">
+          <div className="relative group h-48 lg:h-full">
             <Image
               src={newscardcontent[0].image.src}
               alt={newscardcontent[0].title}
@@ -142,8 +143,8 @@ const NewsFeature: React.FC = () => {
               <FaCirclePlus className="rounded-full text-3xl bg-black text-white icon-invert" />
             </div>
             <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-full p-5">
-              <h2 className="text-2xl font-montserrat text-white font-bold -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
+            <div className="absolute bottom-2 left-0 w-full p-5">
+              <h2 className="absolute text-base lg:text-2xl bottom-0 font-poppins text-white font-bold transition-transform transform  group-hover:-translate-y-36 duration-300">
                 {newscardcontent[0].title}
               </h2>
               <p className="mt-2 text-base text-white opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
@@ -152,11 +153,11 @@ const NewsFeature: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="w-[64%]  flex flex-col">
-          <div className="flex ml-6 gap-2 h-[62%] space-x-6">
+        <div className="lg:w-[64%] h-full lg:h-full w-full  flex flex-col">
+          <div className="flex lg:ml-6 gap-2 w-full h-full lg:h-[70%] lg:space-x-6">
             {newscardcontent.slice(1, 3).map((content, index) => (
               <div key={index + 1} className="relative flex-1">
-                <div className="relative group h-full">
+                <div className="relative group h-full lg:h-full">
                   <Image
                     src={content.image.src}
                     alt={content.title}
@@ -171,21 +172,30 @@ const NewsFeature: React.FC = () => {
                     <FaCirclePlus className="rounded-full bg-black text-3xl text-white icon-invert" />
                   </div>
                   <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
-                  <div className="absolute bottom-0 left-0 w-full p-5">
-                    <h2 className="text-2xl font-bold text-white -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
+                  <div className="absolute bottom-1 left-0 w-full p-2 lg:p-5">
+                    <h2 className="absolute bottom-1 text-sm lg:text-2xl font-bold text-white  transition-transform slg:text-justify transform lg:group-hover:-translate-y-36 group-hover:-translate-y-24 duration-300">
                       {content.title}
                     </h2>
-                    <p className="mt-2 text-white text-base opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
+                    <p className="mt-2 text-white hidden lg:flex text-base opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
                       {content.description}
+                    </p>
+                    <p className="mt-2 text-white flex  lg:hidden text-sm opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
+                      {content.description.slice(0, 60)}
+                      <Link
+                        className="absolute left-[30%] -mb-4 bottom-0  text-blue-500 hover:underline"
+                        href="/next-page"
+                      >
+                        ...more
+                      </Link>
                     </p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex-grow  pt-2 flex">
-            <div className="w-full ml-6">
-              <FeatureSlider/>
+          <div className="flex-grow pt-2 lg:flex">
+            <div className="w-full ml-2 lg:ml-6">
+              <FeatureSlider />
             </div>
           </div>
         </div>
