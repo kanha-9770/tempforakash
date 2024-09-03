@@ -159,11 +159,11 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-full bg-white lg:w-screen lg:py-2  z-30 h-full lg:pb-8 flex max-w-screen-2xl mx-auto  items-start justify-center font-medium"
+      className="w-full lg:w-screen  z-30 h-full  flex max-w-screen-2xl mx-auto  items-start justify-center font-light"
     >
       {/* desktop view condition */}
       <div className="w-full hidden lg:flex flex-col lg:flex-row rounded-lg overflow-hidden">
-        <div className="flex  justify-center items-center w-full md:w-[72%] relative">
+        <div className="flex  justify-center items-center w-full md:w-3/4 relative">
           {filteredMachines.length > totalVisible && (
             <button
               onClick={handlePrev}
@@ -177,7 +177,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
 
-          <div className="flex flex-wrap h-full justify-start items-start overflow-hidden w-full">
+          <div className="flex flex-wrap justify-start items-start overflow-hidden w-full">
             {filteredMachines.length <= totalVisible
               ? filteredMachines.map((machine, index) => (
                   <motion.div
@@ -194,14 +194,13 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       <Image
                         src={machine.image}
                         alt={machine.name}
-                        className="object-contain transform hover:scale-90 transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
+                        className="object-contain transform  transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
                         width={200}
                         height={150}
                       />
-                      <h3 className="text-lg text-black mt-2 font-bold relative z-20">
+                      <h3 className="text-lg text-black hover:font-bold hover:text-[#483d78] mt-2 relative z-20">
                         {machine.name}
                       </h3>
-                     
                     </a>
                   </motion.div>
                 ))
@@ -222,14 +221,13 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                         <Image
                           src={machine.image}
                           alt={machine.name}
-                          className="object-contain transform hover:scale-90 transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
+                          className="object-contain transform  transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
                           width={200}
                           height={150}
                         />
-                        <h3 className="text-lg text-black mt-2 font-bold relative z-20">
+                        <h3 className="text-lg text-black mt-2 hover:font-bold hover:text-[#483d78] relative z-20">
                           {machine.name}
                         </h3>
-                      
                       </a>
                     </motion.div>
                   ))}
@@ -249,7 +247,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
         </div>
-        <div className="w-full lg:w-[28%] lg:h-[28rem] flex flex-col ">
+        <div className="w-full lg:w-1/4  lg:h-[26rem] flex flex-col ">
           <div className="w-full  h-full flex justify-center items-center border-l overflow-y-hidden border-gray-300 relative">
             {sidebarIndex > 0 && (
               <button
@@ -259,7 +257,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                 <MdKeyboardArrowUp />
               </button>
             )}
-            <div className="absolute space-y-4 h-[24rem] ">
+            <div className="space-y-4 pt-6 h-[24rem]">
               {SidebarLinks.slice(sidebarIndex, sidebarIndex + 8).map(
                 (link, index) => (
                   <motion.div

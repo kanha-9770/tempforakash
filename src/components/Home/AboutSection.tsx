@@ -67,7 +67,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
   return (
     <div className="flex mt-12 h-screen max-w-screen-2xl mx-auto flex-col items-center  md:px-6 lg:px-8">
       <h1 className="text-2xl text-[#483d78]">
-        About <span className="text-red-500 font-extrabold">US</span>
+        About <span className="text-red-500 font-bold">US</span>
       </h1>
       <h1 className="text-lg lg:text-4xl w-full text-center font-poppins lg:px-72 py-3">
         {heading.split(" ").map((word, index) =>
@@ -81,7 +81,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
         )}
       </h1>
       <div className="text-center flex flex-col w-full lg:max-w-6xl">
-        <p className="font-poppins flex lg:hidden text-sm lg:text-base  py-4 text-center w-full lg:w-3/5 leading-6">
+        <p className="font-poppins flex lg:hidden text-sm lg:text-base  font-light py-4 text-center w-full lg:w-3/5 leading-6">
           {description}
         </p>
         <div className="flex  flex-row justify-between items-center w-full mt-4">
@@ -94,7 +94,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
             </h2>
             <p className="text-sm lg:text-base font-poppins">Machines Sold</p>
           </div>
-          <p className="font-poppins hidden lg:flex text-sm lg:text-base md:px-6 py-4 text-center w-full md:w-3/5 leading-6">
+          <p className="font-poppins hidden lg:flex text-sm lg:text-base md:px-6 py-4 text-center font-light w-full md:w-3/5 leading-6">
             {description}
           </p>
           <div className="lg:text-center flex flex-col justify-end w-[50%] lg:w-1/5  md:mt-0">

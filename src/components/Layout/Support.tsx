@@ -4,7 +4,7 @@ import { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
-
+import bgPick from "../../../public/assets/nav_support/BgMapImage.png"
 type SupportItem = {
   title: string;
   image: StaticImageData;
@@ -115,7 +115,8 @@ const SupportGrid: React.FC<SupportGridProps> = ({
         {supporItem.map((item, index) => (
           <div key={index} className="flex flex-col space-y-4">
             <motion.div
-              className="flex-shrink-0 w-72 h-40 bg-[#f2f2f2] rounded-3xl p-4 flex flex-col justify-center items-center"
+              className="flex-shrink-0 w-72 h-40 rounded-3xl p-4 flex flex-col justify-center items-center bg-cover bg-center"
+              style={{ backgroundImage: `url(${bgPick.src})` }}
               initial="hidden"
               animate="visible"
               custom={index}
@@ -129,6 +130,7 @@ const SupportGrid: React.FC<SupportGridProps> = ({
                 className="object-contain"
               />
             </motion.div>
+
             <p className="relative font-poppins text-center mt-4 text-black font-medium hover:text-[#483d78] hover:font-bold text-16">
               {item.title}
             </p>

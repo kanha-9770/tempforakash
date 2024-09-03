@@ -120,7 +120,7 @@ const Solution: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <p className="text-base text-black mt-4 font-poppins w-auto">
+                <p className="text-base text-black mt-4 font-poppins font-light w-auto">
                   {selectedItem.description}
                 </p>
               </motion.div>

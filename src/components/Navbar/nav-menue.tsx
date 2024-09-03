@@ -84,7 +84,7 @@ export const MenuItem = ({
       className="z-10 cursor-pointer px-3 font-poppins"
     >
       <Link
-        className="invert-0 text-9"
+        className="invert-0 text-base font-light"
         href={`/${countryCode}/${link}`}
       >
         {item}

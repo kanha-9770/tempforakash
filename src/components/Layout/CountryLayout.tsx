@@ -547,14 +547,14 @@ const CountryLayout: React.FC = () => {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="flex ml-2 flex-col space-y-0">
+          <div className="flex ml-2 font-light flex-col space-y-0">
             <p className="font-poppins text-black hidden lg:flex text-16 m-0 p-0 leading-tight">
               {selectedCountry.code.toUpperCase()}
             </p>
             <p className="flex lg:hidden font-poppins text-black text-xs m-0 p-0 leading-tight">
               {selectedCountry.name}
             </p>
-            <p className="flex lg:hidden font-poppins text-black text-8 m-0 p-0 leading-tight">
+            <p className="flex lg:hidden font-poppins text-black text-sm m-0 p-0 leading-tight">
               {selectedCountry.language}
             </p>
           </div>

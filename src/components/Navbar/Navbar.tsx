@@ -222,7 +222,7 @@ function Navbar({ className }: { className?: string }) {
                             id="search-dropdown"
                             value={searchValue}
                             onChange={handleInputChange}
-                            className="block p-[0.6rem] w-full z-20 text-sm bg-gray-100 rounded-3xl border-slate-100 font-montserrat pr-10 focus:outline-none focus:ring-2 focus:ring-transparent"
+                            className="block p-[0.6rem] w-full z-20 text-sm bg-gray-100 rounded-3xl border-slate-100 font-poppins pr-10 focus:outline-none focus:ring-2 focus:ring-transparent"
                             placeholder="Search Product Name..."
                             required
                           />

@@ -24,14 +24,14 @@ const NavLink: React.FC<NavLinkProps> = memo(
     <Link
       href="#"
       scroll={false}
-      className={`text-black  text-sm md:ml-[2.5rem] pt-2 hover:font-bold ${
+      className={`text-black text-base font-light flex-flex-row  md:ml-[2.5rem] py-1 hover:text-[#483d78] ${
         activeLink === index ? "border-b-2 border-red-600" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >
-      {text}
+      {text} 
     </Link>
   )
 );
@@ -180,8 +180,8 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
 
       <nav
         className={`hidden ${
-          scrolling ? "border-t-[1px]" : "border-none"
-        } md:flex left-0 flex-row mt-14 flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black `}
+          scrolling ? "border-t-2" : "border-none"
+        } md:flex left-0 flex-row mt-14 flex-wrap text-base font-light font-poppins space-x-2 sm:space-x-6 text-black `}
       >
         {navItems.map((item, index) => (
           <NavLink

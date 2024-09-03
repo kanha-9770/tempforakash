@@ -39,9 +39,8 @@ const config: Config = {
         "semimedium":"500"
       },
       fontFamily: {
-        montserrat: ["Montserrat", "Poppins"],
-        poppins: ["Poppins", "Montserrat"],
-        alexBrush: ["Alex Brush", "Poppins"],
+        inter:["var(--inter)"],
+        poppins:["var(--poppins)"]
       },
       fontStyle: {
         italic: 'italic',

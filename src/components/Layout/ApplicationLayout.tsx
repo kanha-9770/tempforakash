@@ -6,7 +6,6 @@ import PositionAwareButton from "../ui/PositionAwareButton";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import the icons
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { IoIosArrowForward } from "react-icons/io";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -199,7 +198,7 @@ const Application: React.FC<{
                           className="object-cover w-full h-full transition-transform duration-300 ease-in-out rounded-md"
                         />
                       </a>
-                      <p className="w-full text-black font-semimedium text-sm text-center mt-2">
+                      <p className="w-full text-black font-medium text-sm text-center mt-2">
                         {item.name}
                       </p>
                     </motion.div>
@@ -311,7 +310,7 @@ const ApplicationPage: React.FC = () => {
                 <h3 className="text-6xl text-red-500 font-poppins font-extrabold">
                   {hoveredItem.name.split(" ")[1]}
                 </h3>
-                <p className="text-base mt-8 mr-4 text-justify text-[#483d73]">
+                <p className="text-base font-light mt-8 mr-4 text-justify text-[#483d73]">
                   {hoveredItem.description}
                 </p>
               </div>
