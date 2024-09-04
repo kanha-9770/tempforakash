@@ -4,10 +4,11 @@ import { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
-import bgPick from "../../../public/assets/nav_support/BgMapImage.png"
+import bgPick from "../../../public/assets/nav_support/BgMapImage.png";
+import LottieAnimation from "../ui/LottieAnimation";
 type SupportItem = {
   title: string;
-  image: StaticImageData;
+  image: any;
 };
 type supportMobile = {
   mobileFirst: string;
@@ -122,16 +123,10 @@ const SupportGrid: React.FC<SupportGridProps> = ({
               custom={index}
               variants={imageVariants}
             >
-              <Image
-                src={item.image.src}
-                alt={item.title}
-                width={96}
-                height={96}
-                className="object-contain"
-              />
+              <LottieAnimation className="h-32 w-56" animationData={item.image}></LottieAnimation>
             </motion.div>
 
-            <p className="relative font-poppins text-center mt-4 text-black font-medium hover:text-[#483d78] hover:font-bold text-16">
+            <p className="relative font-poppins text-center mt-4 text-black font-normal hover:text-[#483d78] hover:font-semibold text-base">
               {item.title}
             </p>
           </div>

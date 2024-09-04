@@ -25,7 +25,7 @@ export default function KnowMore() {
   }, []);
 
   return (
-    <main ref={container} className="cursor-pointer">
+    <main ref={container} className="h-full cursor-pointer">
       {projects.map((project, i) => {
         const targetScale =
           i < projects.length - 1 ? 1 - (projects.length - i) * 0.1 : 1;

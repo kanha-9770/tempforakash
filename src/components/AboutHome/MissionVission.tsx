@@ -72,7 +72,7 @@ const Missionvission: React.FC = () => {
                             style={{ height: '15rem', width: '15rem' }}
                           />
                         </div>
-                        <p className="text-lg text-center w-[26rem] font-montserrat mb-5">
+                        <p className="text-16 font-regular text-center w-[26rem] font-poppins mb-5">
                           {slide.description}
                         </p>
                       </div>

@@ -116,14 +116,14 @@ const Application: React.FC<{
               href={`/application/${item.name
                 .toLowerCase()
                 .replace(/ /g, "-")}`}
-              className="relative bg-slate-400 rounded-md h-24 w-32 block"
+              className="relative bg-slate-400 rounded-md h-20 w-28 block"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 height={400}
                 width={400}
-                className={`object-cover w-full h-full transition-transform duration-300 ease-in-out rounded-md ${
+                className={`object-cover w-28 h-20 transition-transform duration-300 ease-in-out rounded-md ${
                   hoveredIndex === index ? "transform translate-y-[-20%]" : ""
                 }`}
               />
@@ -300,7 +300,7 @@ const ApplicationPage: React.FC = () => {
               variants={sidebarVariants}
             >
               <div
-                className="absolute inset-0 bg-cover bg-center h-40 w-40 mt-32 opacity-10 transition-opacity duration-300 ease-in-out ml-40"
+                className="absolute inset-0 bg-cover bg-center h-40 w-40 mt-32 opacity-5 transition-opacity duration-300 ease-in-out ml-40"
                 style={{ backgroundImage: `url(${hoveredItem.bgpic.src})` }}
               ></div>
               <div className="relative z-10 p-4 -mt-14">
@@ -310,7 +310,7 @@ const ApplicationPage: React.FC = () => {
                 <h3 className="text-6xl text-red-500 font-poppins font-extrabold">
                   {hoveredItem.name.split(" ")[1]}
                 </h3>
-                <p className="text-base font-light mt-8 mr-4 text-justify text-[#483d73]">
+                <p className="text-base font-regular mt-8 mr-4 text-justify text-black">
                   {hoveredItem.description}
                 </p>
               </div>

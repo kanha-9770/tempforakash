@@ -120,7 +120,7 @@ const Solution: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <p className="text-base text-black mt-4 font-poppins font-light w-auto">
+                <p className="text-base text-black mt-4 font-poppins font-regular w-auto">
                   {selectedItem.description}
                 </p>
               </motion.div>
@@ -165,7 +165,7 @@ const Solution: React.FC = () => {
                       selectedItem.id === item.id || hoveredItem === item.id
                         ? "text-[#483d73] font-bold"
                         : "text-black"
-                    } hover:text-[#483d73] hover:font-bold`}
+                    } hover:text-[#483d73] hover:font-semibold`}
                     onMouseEnter={() => handleItemHover(item)}
                     onMouseLeave={handleItemLeave}
                     whileHover={{ scale: 1.05 }}

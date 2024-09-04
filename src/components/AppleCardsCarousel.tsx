@@ -120,10 +120,10 @@ export const Card = ({ src, title, category, date }: CardProps) => {
       </div>
       <div className="flex flex-col font-poppins h-24 md:h-28">
         <h3 className="text-black text-base md:text-2xl font-bold">{title}</h3>
-        <p className="text-gray-600 font-semibold text-sm md:text-lg">
+        <p className="text-gray-600 font-light text-sm md:text-lg">
           {category}
         </p>
-        <p className="text-gray-500 font-semibold text-sm md:text-lg mt-1">
+        <p className="text-gray-500 font-light text-sm md:text-lg mt-1">
           {date}
         </p>
       </div>

@@ -4,8 +4,8 @@ import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { IconClipboardCopy, IconFileBroken } from "@tabler/icons-react";
 export default function IotSection() {
   return (
-    <>
-      <BentoGrid className="w-full mt-6 mx-auto md:auto-rows-[25vh]">
+    <div className="h-screen">
+      <BentoGrid className="w-full  mx-auto md:auto-rows-[25vh]">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -32,7 +32,7 @@ export default function IotSection() {
           />
         ))}
       </BentoGrid>
-    </>
+    </div>
   );
 }
 const Skeleton = () => (

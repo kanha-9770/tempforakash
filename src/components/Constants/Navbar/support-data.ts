@@ -11,7 +11,10 @@ import {
 } from "../../../../public/assets";
 
 import { StaticImageData } from "next/image";
-
+import support from "../../../../public/assets/nav_support/support-animation.json"
+import geniune from "../../../../public/assets/nav_support/geniune-animation.json"
+import guide from "../../../../public/assets/nav_support/user-guide.json"
+import warranty from "../../../../public/assets/nav_support/warantee.json"
 interface Images {
   paperBowlMachineImage: StaticImageData;
   paperBagMachineImage: StaticImageData;
@@ -35,10 +38,10 @@ export const images: Images = {
 };
 // support itemm
 export const supporItem = [
-  { title: "Book a Service", image: BookServiceImage },
-  { title: "Genuine Parts", image: BookServiceImage },
-  { title: "User Guide", image: BookServiceImage },
-  { title: "Machine Warranty", image: BookServiceImage },
+  { title: "Book a Service", image: support},
+  { title: "Genuine Parts", image: geniune },
+  { title: "User Guide", image: guide },
+  { title: "Machine Warranty", image:warranty },
   // { title: "Additional Item 1", image: BookServiceImage },
   // { title: "Additional Item 2", image: BookServiceImage },
   // { title: "Additional Item 3", image: BookServiceImage },

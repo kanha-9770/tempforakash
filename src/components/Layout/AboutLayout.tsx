@@ -72,7 +72,7 @@ const AboutLayout = () => {
                 priority={index < 4}
                 loading={index < 4 ? "eager" : "lazy"}
               />
-              <p className="mt-2 flex items-center justify-center space-x-2 text-center font-poppins text-black hover:text-[#483d78] hover:font-bold text-xs sm:text-sm md:text-base transform lg:hover:scale-80 transition-transform duration-300">
+              <p className="mt-2 flex items-center justify-center space-x-2 text-center font-poppins text-black hover:text-[#483d78] hover:font-bold font-normal text-xs sm:text-sm md:text-base transform lg:hover:scale-80 transition-transform duration-300">
                 <span>{item.title}</span>
               </p>
             </a>
@@ -81,7 +81,7 @@ const AboutLayout = () => {
       </div>
       <div className="hidden lg:flex ml-2 w-2 h-72 border-l border-gray-300"></div>
       {/* desktop view */}
-      <div className="w-full  lg:w-[20vw] h-32 lg:h-auto hidden  lg:flex flex-col justify-between mt-4 lg:mt-0">
+      <div className="w-full  lg:w-[20vw] h-32 ml-4 lg:h-auto hidden  lg:flex flex-col justify-between mt-4  lg:mt-0">
         <AnimatedContainer currentIndex={currentIndex}>
           {items.slice(currentIndex, currentIndex + 2).map((item, index) => (
             <a key={index} href={`/${countryCode}/about/${item.title}`}>
@@ -94,10 +94,10 @@ const AboutLayout = () => {
                   <item.icon />
                 </div>
                 <div>
-                  <h3 className="text-sm  sm:text-md text-black font-bold mb-0">
+                  <h3 className="text-sm  sm:text-md text-black font-semibold mb-0">
                     {item.title}
                   </h3>
-                  <p className="text-xs hidden lg:flex text-black line-clamp-3">
+                  <p className="text-xs hidden lg:flex font-regular text-black line-clamp-3">
                     {item.description}
                   </p>
                 </div>

@@ -2,7 +2,8 @@ import HomeKnowmore2 from "../../../public/assets/HomeKnowmore2.jpg";
 import HomeKnowmore3 from "../../../public/assets/HomeKnowmore3.jpg";
 import HomeKnowmore4 from "../../../public/assets/HomeKnowmore4.jpg";
 import { paperBagMachineImage } from "../../../public/assets";
-
+import precisionlottie from "../../../public/assets/Lottiimages/precision-manufacturing.json"
+import indusctry from "../../../public/assets/Lottiimages/industry_experty.json"
 export const projects = [
   {
     title: "Industry Expertise",
@@ -13,7 +14,7 @@ export const projects = [
     color: "#24194c",
     expertiseExperience: "40+ Years of ",
     expertiseAbout: "Industry Experties",
-    icon: "/path/to/icon1.png",
+    icon:indusctry,
   },
   {
     title: "Indigenous Design Engineering",
@@ -24,7 +25,7 @@ export const projects = [
     color: "#4e3e8a",
     expertiseExperience: "40+ Years of ",
     expertiseAbout: "Industry Experties",
-    icon: "/path/to/icon2.png",
+    icon:precisionlottie,
   },
   {
     title: "Quality Control & Assurance",
@@ -35,7 +36,7 @@ export const projects = [
     color: "#8c52ff",
     expertiseExperience: "40+ Years of ",
     expertiseAbout: "Industry Experties",
-    icon: "/path/to/icon3.png",
+    icon:precisionlottie,
   },
   {
     title: "Advanced Engineering Technologies",
@@ -46,7 +47,7 @@ export const projects = [
     color: "#a58fe8",
     expertiseExperience: "25+ Years of ",
     expertiseAbout: " Quality",
-    icon: "/path/to/icon4.png",
+    icon:precisionlottie,
   },
   {
     title: "Comprehensive Support Services",
@@ -57,6 +58,6 @@ export const projects = [
     color: "#bca0dd",
     expertiseExperience: "40+ Years of ",
     expertiseAbout: "Industry Experties",
-    icon: "/path/to/icon5.png",
+    icon:precisionlottie,
   },
 ];

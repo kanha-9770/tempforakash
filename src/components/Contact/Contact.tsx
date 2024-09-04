@@ -65,11 +65,11 @@ const ContactForm: React.FC<ContactFormProps> = ({
     <div>
       <button
         type="button"
-        className="cursor-pointer font-poppins text-16 font-thin rounded-full px-2 text-white bg-[#483d78]"
+        className="cursor-pointer font-poppins text-sm font-regular rounded-full px-2 text-white bg-[#483d78]"
         onMouseEnter={handleMouseEnter} // Open on hover
         onFocus={handleMouseEnter} // Open on focus for accessibility
       >
-        <Link href={`/${countryCode}/contact`}>Contact</Link>
+        <Link className="" href={`/${countryCode}/contact`}>Enquire Now</Link>
       </button>
       <AnimatePresence>
         {isContactFormVisible && (

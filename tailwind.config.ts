@@ -36,7 +36,8 @@ const config: Config = {
       },
       fontWeight: {
         "extra-bold": "950", 
-        "semimedium":"500"
+        "semimedium":"500",
+        "regular":"350"
       },
       fontFamily: {
         inter:["var(--inter)"],

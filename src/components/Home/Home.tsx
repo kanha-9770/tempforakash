@@ -78,7 +78,7 @@ const Home: React.FC = () => {
   const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
 
   return (
-    <div className="relative h-full  lg:bg-[#f2f2f2] p-0 -top-2 lg:top-12  flex flex-col items-center overflow-hidden  w-full">
+    <div className="relative h-full   p-0   flex flex-col items-center overflow-hidden  w-full">
       <div className="relative px-4  lg:px-10 w-full flex-wrap">
         <motion.div
           className=" w-full  flex justify-center items-center h-[calc(100vh-220px)] lg:h-[calc(100vh-110px)] rounded-3xl"
@@ -113,16 +113,16 @@ const Home: React.FC = () => {
 
       <div className="absolute h-full w-[80%] lg:w-full  left-8 top-1/3 lg:top-[38%] lg:left-28 flex-col text-7xl text-white font-alexBrush">
         <p className="text-3xl text-center lg:text-justify mx-4 md:text-2xl lg:text-5xl font-poppins font-thin">
-          FOOD PACKING MACHINES
+          Quality Food Packaging
         </p>
         <div className="lg:ml-2  text-center lg:text-justify">
           <span className="text-3xl  lg:text-6xl text-[#f2f2f2] font-poppins italic ">
-            Manufacturing
+            Machinery & <span className="text-[#df1f27]">Solutions</span>
           </span>
         </div>
       </div>
 
-      <div className="absolute flex flex-col w-1/2  lg:w-[30rem] lg:h-[10rem] lg:rounded-tl-[4rem] rounded-tl-[1.5rem] right-0 bg-[#f2f2f2] lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
+      <div className="absolute flex flex-col w-1/2  lg:w-[30rem] lg:h-[10rem] lg:rounded-tl-[4rem] rounded-tl-[1.5rem] right-0 bg-white lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
         <motion.div
           className="-mt-6 flex mr-2 lg:mr-8 justify-end"
           style={{ x: svgTransform }} // SVG moves to the right
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
-              fill="#f2f2f2"
+              fill="white"
               transform="rotate(90 10 10)"
             ></path>
           </svg>
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
-              fill="#f2f2f2"
+              fill="white"
               transform="rotate(90 10 10)"
             ></path>
           </svg>

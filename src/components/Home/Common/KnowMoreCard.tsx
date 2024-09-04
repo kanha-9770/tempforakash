@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import { FaIndustry } from "react-icons/fa";
 import Link from "next/link";
 import AnimatedText from "@/components/ui/AnimatedText";
+import LottieAnimation from "@/components/ui/LottieAnimation";
 
 interface KnowMoreCardProps {
   i: number;
@@ -17,7 +18,7 @@ interface KnowMoreCardProps {
   color: string;
   expertiseExperience: string;
   expertiseAbout: string;
-  icon: string;
+  icon: any;
   progress: any;
   range: number[];
   targetScale: number;
@@ -30,6 +31,7 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
   src,
   url,
   color,
+  icon,
   expertiseExperience,
   expertiseAbout,
   progress,
@@ -56,7 +58,7 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
   };
 
   return (
-    <div ref={container} className={`${styles.KnowMoreCardContainer} -mt-[5rem]`}>
+    <div ref={container} className={`${styles.KnowMoreCardContainer} `}>
       <motion.div
         style={{
           backgroundColor: color,
@@ -73,7 +75,10 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
               }}
               className={styles.expertiseContainer}
             >
-              <FaIndustry className={`${styles.icon} text-white`} size={24} />
+             <LottieAnimation
+                animationData={icon}
+                className="h-8 w-8 lg:h-20 lg:w-20" // Example Tailwind CSS classes for size
+              />
               <div className={styles.expertiseText}>
                 <div className="font-poppins text-white">
                   {expertiseExperience}
@@ -86,7 +91,7 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
             <h2 className="text-center -mt-12 text-base lg:text-xl font-semibold text-white font-poppins">
               {title}
             </h2>
-            <p className="text-sm mt-2 lg:text-base text-white text-center font-poppins">
+            <p className="text-sm mt-2 lg:text-lg text-white text-center font-poppins">
               {renderDescription()}
             </p>
             {!isExpanded && description.split("\n").length >= 2 && (

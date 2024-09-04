@@ -98,10 +98,10 @@ const Modal: React.FC<ModalProps> = ({
               <span className="text-red-600">{firstname}</span>
               <span className="text-[#483d78] ml-2">{secondname}</span>
             </h1>
-            <p className="text-gray-700 mb-4">{description}</p>
+            <p className="text-gray-700 text-base font-regular mb-4">{description}</p>
             <ul className="list-none grid grid-cols-2 gap-4 text-gray-700">
               {items.map((item, index) => (
-                <li key={index} className="flex items-center space-x-2">
+                <li key={index} className="flex text-base font-regular items-center space-x-2">
                   {item.icon}
                   <span>{item.text}</span>
                 </li>

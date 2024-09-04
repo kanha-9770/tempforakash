@@ -156,6 +156,13 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
     { name: "Tissue machines", icon: <FaUtensils /> },
     { name: "new products", icon: <FaShoppingBag /> },
     { name: "Other products", icon: <FaShoppingBag /> },
+    { name: "Paper plate machines", icon: <FaConciergeBell /> },
+    { name: "Paper straw machines", icon: <FaStarHalf /> },
+    { name: "Paper wrap machines", icon: <FaRegPaperPlane /> },
+    { name: "Napkin machines", icon: <FaCoffee /> },
+    { name: "Tissue machines", icon: <FaUtensils /> },
+    { name: "new products", icon: <FaShoppingBag /> },
+    { name: "Other products", icon: <FaShoppingBag /> },
   ];
 
   const handleClick = (index: number) => {
@@ -194,12 +201,12 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
   useEffect(() => {
     const handleScroll = () => {
       const navTop = navRef.current?.getBoundingClientRect().top || 0;
-      if (navTop <= 84.796875) {
+      if (navTop <= 56) {
         setScrolling(true);
-        console.log(navTop);
+        // console.log(navTop);
       } else {
         setScrolling(false);
-        console.log("hello", navTop);
+        // console.log("hello", navTop);
       }
     };
 
@@ -208,8 +215,9 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
   }, [scrolling]);
 
   return (
-    <div ref={navRef} className={`sticky top-[5.3rem] left-0 w-full z-20 ${scrolling ?"bg-white border-t-[0.5px]":"bg-[#f2f2f2"}`}>
+    <div ref={navRef} className={`sticky top-14 left-0 w-full z-30 ${scrolling ?"bg-white border-t-[0.5px]":"bg-[#f2f2f2"}`}>
       <div className="relative flex items-center justify-center w-full h-20 max-w-screen-2xl mx-auto lg:h-24 ">
+        <div className="w-screen mask-gradient-stepper">
         <div
           className="relative flex items-center justify-start overflow-x-scroll scrollbar-hide w-full "
           ref={stepperRef}
@@ -218,7 +226,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
           {steps.map((step, index) => (
             <React.Fragment key={index}>
               <motion.div
-                className={`flex flex-col items-center relative cursor-pointer ${
+                className={`flex flex-col last:pr-[6%]  first:pl-[4%] items-center justify-center relative cursor-pointer ${
                   index === activeStep ? "text-black" : "text-gray-500"
                 }`}
                 onClick={() => handleClick(index)}
@@ -235,7 +243,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
                 >
                   {step.icon}
                 </motion.div>
-                <span className="text-xs lg:text-sm mt-2 font-poppins text-center w-20 lg:w-24">
+                <span className="text-xs lg:text-xs font-regular mt-2 font-poppins text-center w-20 lg:w-20">
                   {step.name}
                 </span>
               </motion.div>
@@ -246,6 +254,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
               )}
             </React.Fragment>
           ))}
+        </div>
         </div>
       </div>
     </div>

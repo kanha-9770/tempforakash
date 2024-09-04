@@ -225,7 +225,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                           width={200}
                           height={150}
                         />
-                        <h3 className="text-lg text-black mt-2 hover:font-bold hover:text-[#483d78] relative z-20">
+                        <h3 className="text-base font-normal text-black mt-2 hover:font-semibold hover:text-[#483d78] relative z-20">
                           {machine.name}
                         </h3>
                       </a>
@@ -271,9 +271,9 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       setCurrentIndex(0);
                     }}
                     onClick={() => handleCategoryClick(link.name, link.name)}
-                    className={`flex items-center space-x-4 text-lg transition-colors duration-300 cursor-pointer ${
+                    className={`flex items-center space-x-4 text-base font-normal  transition-colors duration-300 cursor-pointer ${
                       hoveredCategory === link.name
-                        ? "font-poppins text-[#483d78]"
+                        ? "font-poppins hover:font-semibold text-[#483d78]"
                         : "font-poppins text-black"
                     }`}
                   >

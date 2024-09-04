@@ -334,10 +334,10 @@ export const Card = ({
 
       <button
         onClick={handleOpen}
-        className=" h-48 rounded-3xl bg-white p-1 lg:p-2  w-40 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className=" h-48 rounded-3xl bg-[#f2f2f2] p-1 lg:p-2  w-40 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="relative p-2 h-full w-full">
-          <div className="absolute flex bg-white h-14 lg:h-16 w-24 lg:w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
+          <div className="absolute flex bg-[#f2f2f2] h-14 lg:h-16 w-24 lg:w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
             <div className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -348,7 +348,7 @@ export const Card = ({
               >
                 <path
                   d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
-                  fill="white" // Use the color prop here
+                  fill="#f2f2f2" // Use the color prop here
                 ></path>
               </svg>
             </div>
@@ -384,7 +384,7 @@ export const Card = ({
               >
                 <path
                   d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
-                  fill="white" // Use the color prop here
+                  fill="#f2f2f2" // Use the color prop here
                 ></path>
               </svg>
             </div>
@@ -394,7 +394,7 @@ export const Card = ({
             src={card.image}
             alt={card.title}
             fill
-            className="object-contain border-2 bg-[#f2f2f2]  rounded-[1.5rem] absolute z-10 inset-0"
+            className="object-contain border-2 bg-white  rounded-[1.5rem] absolute z-10 inset-0"
           />
 
           <div className="absolute -mb-2 left-0 right-0 bottom-0 z-40 p-4">

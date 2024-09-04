@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
 import { navbarItems } from "@/components/Constants/Navbar/navbarData";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,7 +19,7 @@ import { useRouter, usePathname } from "next/navigation";
 
 export default function NavbarDemo() {
   return (
-    <div className="relative  bg-[#f2f2f2] lg:h-auto lg:mt-0  flex items-center justify-between lg:justify-center">
+    <div className="relative   lg:h-auto lg:mt-0  flex items-center justify-between lg:justify-center">
       <Navbar className="top-0 " />
     </div>
   );
@@ -94,10 +95,7 @@ function Navbar({ className }: { className?: string }) {
       {/* Desktop Menu */}
       <div className="hidden px-8 lg:flex w-full">
         <div className="w-1/5 flex items-center">
-          <Link
-            href="/"
-            className="w-full h-full  flex items-center "
-          >
+          <Link href="/" className="w-full h-full  flex items-center ">
             <Image
               src={Logo}
               alt="Logo"
@@ -191,7 +189,7 @@ function Navbar({ className }: { className?: string }) {
                   </div>
                   {expandedItem === item.name && (
                     <div className="absolute h-screen inset-0 bg-white z-50 flex flex-col">
-                      <div className="flex border-b-2 bg-[#f2f2f2] justify-between items-center">
+                      <div className="flex border-b-2  justify-between items-center">
                         <span className="text-lg pl-4  text-[#483d73] font-semibold ">
                           {item.name}
                         </span>
