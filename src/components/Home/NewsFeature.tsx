@@ -121,12 +121,12 @@ const NewsFeature: React.FC = () => {
   return (
     <div className="lg:p-4 px-2 lg:px-8 w-full h-full lg:h-screen">
       <div className="text-center">
-        <h1 className="text-3xl font-poppins">
+        <h1 className="text-3xl font-regular font-poppins">
           <span className="text-[#483d73]">Featured</span>
-          <span className="text-red-600"> News</span>
+          <span className="text-red-600 font-semibold"> News</span>
         </h1>
       </div>
-      <div className="flex h-[80vh] lg:full flex-col lg:flex-row gap-2 mt-4">
+      <div className="flex h-[80vh] lg:full flex-col lg:flex-row gap-2 mt-12">
         <div className="relative w-full lg:w-[36%] ">
           <div className="relative group h-48 lg:h-full">
             <Image
@@ -144,10 +144,10 @@ const NewsFeature: React.FC = () => {
             </div>
             <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
             <div className="absolute bottom-2 left-0 w-full p-5">
-              <h2 className="absolute text-base lg:text-2xl bottom-0 font-poppins text-white font-bold transition-transform transform  group-hover:-translate-y-36 duration-300">
+              <h2 className="absolute text-base lg:text-2xl bottom-0 font-poppins text-white font-medium transition-transform transform  group-hover:-translate-y-36 duration-300">
                 {newscardcontent[0].title}
               </h2>
-              <p className="mt-2 text-base text-white opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
+              <p className="mt-2 text-base text-white opacity-0 transition-opacity group-hover:opacity-100 font-regular group-hover:translate-y-[-10px] duration-300">
                 {newscardcontent[0].description}
               </p>
             </div>
@@ -173,10 +173,10 @@ const NewsFeature: React.FC = () => {
                   </div>
                   <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
                   <div className="absolute bottom-1 left-0 w-full p-2 lg:p-5">
-                    <h2 className="absolute bottom-1 text-sm lg:text-2xl font-bold text-white  transition-transform slg:text-justify transform lg:group-hover:-translate-y-36 group-hover:-translate-y-24 duration-300">
+                    <h2 className="absolute bottom-1 text-sm lg:text-2xl font-medium text-white  transition-transform slg:text-justify transform lg:group-hover:-translate-y-36 group-hover:-translate-y-24 duration-300">
                       {content.title}
                     </h2>
-                    <p className="mt-2 text-white hidden lg:flex text-base opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
+                    <p className="mt-2 text-white hidden lg:flex text-base font-regular opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
                       {content.description}
                     </p>
                     <p className="mt-2 text-white flex  lg:hidden text-sm opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">

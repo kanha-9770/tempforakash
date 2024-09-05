@@ -21,6 +21,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     }
   }, [initialScroll]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      scrollRight();
+    }, 3000); // Adjust delay as needed (3000ms = 3 seconds)
+
+    return () => clearInterval(interval);
+  }, []);
+
   const checkScrollability = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
@@ -32,36 +40,44 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const scrollLeft = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      checkScrollability();
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      if (scrollLeft + clientWidth >= scrollWidth) {
+        // If we reach the end, reset to the beginning for infinite scrolling
+        carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      }
+      checkScrollability();
     }
   };
 
   return (
     <div className="relative flex flex-col lg:flex-row w-full items-center">
-      <div className="flex flex-col items-center h-[6rem] lg:h-[8rem] w-full lg:w-[30%] gap-1 px-4 lg:px-0">
+      <div className="flex flex-col  h-[6rem] lg:h-[5rem] w-full lg:w-[20%] gap-1 px-2 lg:px-0">
         <div className="flex flex-col items-center">
-          <h1 className="text-2xl lg:text-3xl font-semibold text-red-500 text-center">
+          <h1 className="text-2xl lg:text-2xl font-semibold text-red-500 text-center">
             Announcements
           </h1>
-          <p className="text-lg lg:text-xl text-center font-poppins font-medium">
+          <p className="text-lg lg:text-lg text-center font-poppins font-medium">
             Our Latest Events
           </p>
         </div>
-        <div className="flex justify-between w-full lg:w-auto">
+        <div className="flex justify-around w-full lg:w-auto">
           <button
-            className="relative z-20 h-12 w-12 lg:h-20 lg:w-24 rounded-full flex items-center justify-center disabled:opacity-50"
+            className="relative z-20 h-12 w-12 lg:h-14 lg:w-24 rounded-full flex items-center justify-center disabled:opacity-50"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
             <FaArrowLeft className="text-xl lg:text-2xl text-gray-500" />
           </button>
           <button
-            className="relative z-20 h-12 w-12 lg:h-20 lg:w-24 rounded-full flex items-center justify-center disabled:opacity-50"
+            className="relative z-20 h-12 w-12 lg:h-14 lg:w-24 rounded-full flex items-center justify-center disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
@@ -108,22 +124,21 @@ interface CardProps {
 
 export const Card = ({ src, title, category, date }: CardProps) => {
   return (
-    <motion.div className="rounded-3xl bg-white shadow-lg dark:bg-neutral-900 h-32 w-[18rem] md:h-[9.5rem] md:w-96 overflow-hidden flex items-center space-x-4 p-4">
-      <div className="relative flex-shrink-0 h-20 w-20 md:h-28 md:w-28 rounded-2xl overflow-hidden">
+    <motion.div className="rounded-2xl bg-white shadow-lg  dark:bg-neutral-900 h-28 w-[18rem] md:h-[5rem] md:w-80 overflow-hidden flex items-center space-x-4 p-2">
+      <div className="relative flex-shrink-0 h-12 w-12 md:h-16 md:w-16 rounded-2xl overflow-hidden">
         <Image
           src={src}
           alt={title}
-          height={200}
-          width={200}
-          className="object-cover"
+          fill
+          className="object-fill"
         />
       </div>
-      <div className="flex flex-col font-poppins h-24 md:h-28">
-        <h3 className="text-black text-base md:text-2xl font-bold">{title}</h3>
-        <p className="text-gray-600 font-light text-sm md:text-lg">
+      <div className="flex flex-col font-poppins h-16 md:h-16">
+        <h3 className="text-black text-base  font-medium">{title}</h3>
+        <p className="text-gray-600 font-light text-sm  ">
           {category}
         </p>
-        <p className="text-gray-500 font-light text-sm md:text-lg mt-1">
+        <p className="text-gray-500 font-light text-sm ">
           {date}
         </p>
       </div>

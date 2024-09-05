@@ -14,13 +14,10 @@ const HomeTestimonial: React.FC = () => {
           <h2 className="lg:text-5xl font-bold ml-4 mt-20">
             Don&lsquo;t Just Take
           </h2>
-          <h2 className="text-5xl font-bold ml-4 mt-6">
+          <h2 className="text-5xl flex flex-row font-bold ml-4 mt-6">
             Our
             <span className="relative ml-1 ">
-              <span className="absolute rounded-2xl inset-0" />
-              <Highlight className="text-black dark:text-white">
-                Word for it
-              </Highlight>
+              <AnimatedText blockClassName="h-full rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500" className="text-5xl text-black font-bold" text={"Word for it"}/>
             </span>
           </h2>
           <h4 className="mt-20 text-lg text-center font-poppins">

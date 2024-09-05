@@ -42,7 +42,7 @@ const KnowMachine: React.FC = () => {
             </div>
             <div className="absolute bottom-0 w-full h-full bg-gradient-to-t from-black to-transparent"></div>
             <div className="absolute bottom-4 lg:top-12 w-full h-16  flex items-center justify-center">
-              <h2 className="font-bold w-[80%] text-center text-xl lg:text-4xl text-white">
+              <h2 className="font-semibold w-[60%] text-center text-xl lg:text-4xl text-white">
                 {content.title}
               </h2>
             </div>

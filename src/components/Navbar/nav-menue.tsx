@@ -39,7 +39,7 @@ export const MenuItem = ({
   setActive: (item: string) => void;
   active: string | null;
   item: string;
-  link:string;
+  link?:string;
   
   setPosition: (position: {
     left: number;

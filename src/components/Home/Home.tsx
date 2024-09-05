@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -9,6 +8,8 @@ import "@fontsource/poppins/400-italic.css"; // Specify weight and style
 
 import Image from "next/image";
 import homeimg from "../../../public/video/BgHomeimg.webp";
+import { paperCupMachineImage } from "../../../public/assets";
+import { Page1Data } from "../Constants/mission&vision/mission&vision_data";
 const Home: React.FC = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
   const [isSafari, setIsSafari] = useState<boolean>(false);
@@ -67,65 +68,72 @@ const Home: React.FC = () => {
 
   const { scrollY } = useScroll();
 
-  // Always call the hook
-  const defaultVideoTransform = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
-  const defaultVideoWidth = useTransform(scrollY, [0, 300], ["100%", "150%"]);
-  const defaultSvgTransform = useTransform(scrollY, [0, 100], ["0%", "25%"]);
+  // Smoother and slower transform ranges for image
+  const defaultImageTransform = useTransform(scrollY, [0, 600], ["0%", "-15%"]);
+  const defaultImageWidth = useTransform(scrollY, [0, 600], ["100%", "120%"]);
+  const svgTransform = useTransform(scrollY, [0, 100], ["0%", "25%"]);
 
-  // Conditionally apply the transform based on the screen size
-  const videoTransform = isLargeScreen ? defaultVideoTransform : "0%";
-  const videoWidth = isLargeScreen ? defaultVideoWidth : "100%";
-  const svgTransform = isLargeScreen ? defaultSvgTransform : "0%";
+  const imageTransform = isLargeScreen ? defaultImageTransform : "0%";
+  const imageWidth = isLargeScreen ? defaultImageWidth : "100%";
 
   return (
-    <div className="relative h-full   p-0   flex flex-col items-center overflow-hidden  w-full">
-      <div className="relative px-4  lg:px-10 w-full flex-wrap">
+    <div className="relative h-full p-0 flex flex-col items-center overflow-hidden w-full">
+      <div className="relative px-4 lg:px-10 w-full flex-wrap">
         <motion.div
-          className=" w-full  flex justify-center items-center h-[calc(100vh-220px)] lg:h-[calc(100vh-110px)] rounded-3xl"
+          className="w-full flex justify-center items-center h-[calc(100vh-220px)] lg:h-[calc(100vh-110px)] rounded-3xl"
           ref={containerRef}
-          style={{ width: videoWidth, x: videoTransform, originX: 0.5 }}
+          style={{ width: imageWidth, x: imageTransform, originX: 0.5 }}
         >
-          <div className="relative w-full h-full">
-            <Image
-              className="w-full h-full object-cover rounded-2xl lg:rounded-3xl"
-              src={homeimg}
-              alt={"home"}
-            />
-
-            <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl lg:rounded-3xl"></div>
-            {isSafari && (
-              <div className="absolute top-4 right-4 z-[9999]">
-                <button
-                  onClick={handlePlayPause}
-                  className="text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition"
+          {isVideoLoaded ? (
+            <>
+              <div className="relative w-full h-full">
+                <video
+                  id="background-video"
+                  className="w-full h-full object-cover rounded-2xl"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  onLoadedData={() => setIsVideoLoaded(true)}
                 >
-                  {isPlaying ? (
-                    <IoPauseSharp size={24} />
-                  ) : (
-                    <IoPlaySharp size={24} />
-                  )}
-                </button>
+                  <source src="video/BgHome.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-xl"></div>
               </div>
-            )}
-          </div>
+            </>
+          ) : (
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              <Image
+                className="w-full h-full object-cover rounded-2xl lg:rounded-3xl"
+                src={homeimg}
+                alt={"home"}
+              />
+            </motion.div>
+          )}
         </motion.div>
       </div>
 
-      <div className="absolute h-full w-[80%] lg:w-full  left-8 top-1/3 lg:top-[38%] lg:left-28 flex-col text-7xl text-white font-alexBrush">
+      <div className="absolute h-full w-[80%] lg:w-full left-8 top-1/3 lg:top-[38%] lg:left-28 flex-col text-7xl text-white font-alexBrush">
         <p className="text-3xl text-center lg:text-justify mx-4 md:text-2xl lg:text-5xl font-poppins font-thin">
           Quality Food Packaging
         </p>
-        <div className="lg:ml-2  text-center lg:text-justify">
-          <span className="text-3xl  lg:text-6xl text-[#f2f2f2] font-poppins italic ">
+        <div className="lg:ml-2 text-center lg:text-justify">
+          <span className="text-3xl lg:text-6xl text-[#f2f2f2] font-poppins italic">
             Machinery & <span className="text-[#df1f27]">Solutions</span>
           </span>
         </div>
       </div>
 
-      <div className="absolute flex flex-col w-1/2  lg:w-[30rem] lg:h-[10rem] lg:rounded-tl-[4rem] rounded-tl-[1.5rem] right-0 bg-white lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
+      <div className="absolute flex flex-col w-1/2 lg:w-[30rem] lg:h-[10rem] lg:rounded-tl-[4rem] rounded-tl-[1.5rem] right-0 bg-[#f2f2f2] lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
         <motion.div
           className="-mt-6 flex mr-2 lg:mr-8 justify-end"
-          style={{ x: svgTransform }} // SVG moves to the right
+          style={{ x: svgTransform }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +144,7 @@ const Home: React.FC = () => {
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
-              fill="white"
+              fill="#f2f2f2"
               transform="rotate(90 10 10)"
             ></path>
           </svg>
@@ -155,7 +163,7 @@ const Home: React.FC = () => {
             text={"Get a Quote"}
           />
         </div>
-        <div className=" lg:hidden mt-2 -ml-2 items-center flex justify-center">
+        <div className="lg:hidden mt-2 -ml-2 items-center flex justify-center">
           <PositionAwareButton
             borderWidth="1px"
             iconSize="30px"
@@ -169,17 +177,17 @@ const Home: React.FC = () => {
             text={"Get a Quote"}
           />
         </div>
-        <div className="lg:mt-[1.3rem] -mt-2 ">
+        <div className="lg:mt-[1.3rem] -mt-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="100%"
             viewBox="0 0 20 20"
             fill="none"
-            className="-ml-[2rem]   h-6 w-10"
+            className="-ml-[2rem] h-6 w-10"
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
-              fill="white"
+              fill="#f2f2f2"
               transform="rotate(90 10 10)"
             ></path>
           </svg>

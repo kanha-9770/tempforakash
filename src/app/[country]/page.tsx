@@ -229,8 +229,8 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative bg-white top-16 h-full">
-      <div className="">
+    <main className="relative bg-[#f2f2f2] top-14 h-full">
+      <div className="top-2 relative">
         <Hero />
       </div>
       <ContactIcons />
@@ -250,7 +250,7 @@ export default function Home() {
           </div>
           <HomeMachine />
         </div>
-        <div className="">
+        <div className="h-auto py-8">
           <AppleCardsCarouselDemo />
         </div>
         <div id="aboutUs" className="" ref={aboutUsRef}>
@@ -269,12 +269,12 @@ export default function Home() {
           <KnowMore />
         </div>
 
-        <div id="iot" className=" lg:flex flex-col hidden" ref={iotRef}>
+        {/* <div id="iot" className=" lg:flex flex-col hidden" ref={iotRef}>
           <h4 className="text-xl text-center lg:text-2xl font-poppins lg:leading-tight text-black dark:text-white">
             IoT <span className="text-red-500 font-bold">System</span>
           </h4>
           <IotSection />
-        </div>
+        </div> */}
         <div id="news" className="" ref={newsFeatureRef}>
           <NewsFeature />
         </div>

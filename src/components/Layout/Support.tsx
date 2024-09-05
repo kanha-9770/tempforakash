@@ -99,7 +99,7 @@ const SupportGrid: React.FC<SupportGridProps> = ({
       {/* desktop view */}
       {shouldShowArrows && (
         <button
-          className="h-12 w-20 rounded-full flex items-center justify-center disabled:opacity-50"
+          className="h-12 w-20 z-20 rounded-full flex items-center justify-center disabled:opacity-50"
           onClick={scrollLeft}
           disabled={!canScrollLeft}
         >
@@ -134,7 +134,7 @@ const SupportGrid: React.FC<SupportGridProps> = ({
       </div>
       {shouldShowArrows && (
         <button
-          className="h-12 w-20 rounded-full flex items-center justify-center disabled:opacity-50"
+          className="h-12 w-20 z-20 rounded-full flex items-center justify-center disabled:opacity-50"
           onClick={scrollRight}
           disabled={!canScrollRight}
         >

@@ -215,8 +215,8 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
   }, [scrolling]);
 
   return (
-    <div ref={navRef} className={`sticky top-14 left-0 w-full z-30 ${scrolling ?"bg-white border-t-[0.5px]":"bg-[#f2f2f2"}`}>
-      <div className="relative flex items-center justify-center w-full h-20 max-w-screen-2xl mx-auto lg:h-24 ">
+    <div ref={navRef} className={`sticky top-14 left-0 w-full z-30 ${scrolling ?"bg-white border-t-[0.5px]":"bg-[#f2f2f2]"}`}>
+      <div className="relative flex items-center justify-center w-full h-20 max-w-screen-2xl mx-auto lg:h-20 ">
         <div className="w-screen mask-gradient-stepper">
         <div
           className="relative flex items-center justify-start overflow-x-scroll scrollbar-hide w-full "
@@ -226,7 +226,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
           {steps.map((step, index) => (
             <React.Fragment key={index}>
               <motion.div
-                className={`flex flex-col last:pr-[6%]  first:pl-[4%] items-center justify-center relative cursor-pointer ${
+                className={`flex flex-col pt-1 last:pr-[6%]  first:pl-[4%] items-center justify-center relative cursor-pointer ${
                   index === activeStep ? "text-black" : "text-gray-500"
                 }`}
                 onClick={() => handleClick(index)}

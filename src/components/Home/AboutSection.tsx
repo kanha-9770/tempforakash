@@ -6,6 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedText from "../ui/AnimatedText";
+import styles from "../ui/AnimatedText.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,8 +67,8 @@ const AboutUs: React.FC<AboutUsProps> = ({
 
   return (
     <div className="flex mt-12 h-screen max-w-screen-2xl mx-auto flex-col items-center  md:px-6 lg:px-8">
-      <h1 className="text-2xl text-[#483d78]">
-        About <span className="text-red-500 font-bold">US</span>
+      <h1 className="text-3xl font-regular text-[#483d78]">
+        About <span className="text-red-500 font-semibold">US</span>
       </h1>
       <h1 className="text-lg lg:text-4xl w-full text-center font-poppins lg:px-72 py-3">
         {heading.split(" ").map((word, index) =>
@@ -88,23 +89,25 @@ const AboutUs: React.FC<AboutUsProps> = ({
           <div className="lg:text-center w-[50%] lg:w-1/5  md:mb-0">
             <h2
               ref={machinesSoldRef}
-              className=" text-xl lg:text-3xl font-extrabold text-[#483d73]"
+              className=" text-xl lg:text-3xl font-bold text-[#483d73]"
             >
               0
             </h2>
-            <p className="text-sm lg:text-base font-poppins">Machines Sold</p>
+            <p className="text-sm lg:text-base font-regular font-poppins">
+              Machines Sold
+            </p>
           </div>
-          <p className="font-poppins hidden lg:flex text-sm lg:text-base md:px-6 py-4 text-center font-light w-full md:w-3/5 leading-6">
+          <p className="font-poppins hidden lg:flex text-sm lg:text-base md:px-6 py-4 text-center font-regular w-full md:w-3/5 leading-6">
             {description}
           </p>
           <div className="lg:text-center flex flex-col justify-end w-[50%] lg:w-1/5  md:mt-0">
             <h2
               ref={readyStockMachinesRef}
-              className=" text-xl lg:text-3xl font-extrabold text-[#483d73]"
+              className=" text-xl lg:text-3xl font-bold text-[#483d73]"
             >
               0
             </h2>
-            <p className="lg:text-base  text-sm font-poppins">
+            <p className="lg:text-base font-regular  text-sm font-poppins">
               Ready Stock Machines
             </p>
           </div>
@@ -112,7 +115,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
 
         <Link
           href="/products"
-          className="text-[#483d73] text-center font-poppins text-base mt-4 "
+          className="text-[#483d73] text-center font-poppins text-base hover:font-semibold mt-4 "
         >
           Read more
         </Link>
@@ -146,9 +149,16 @@ const AboutUs: React.FC<AboutUsProps> = ({
                 <div className="absolute bottom-0 left-0 p-4 flex justify-between items-end w-full">
                   <a
                     href={card.link}
-                    className="text-white flex items-end text-base"
+                    className="text-white flex items-end text-base font-regular"
                   >
-                    <AnimatedText text={`${card.title}`} />
+                    <div className={styles.container}>
+                      <div className={styles.box}>
+                        <div className={styles.title}>
+                          <span className={styles.block}></span>
+                          <AnimatedText text={`${card.title}`} />
+                        </div>
+                      </div>
+                    </div>
                   </a>
                   <BsBoxArrowUpRight className="text-2xl text-white font-extrabold text-bold" />
                 </div>

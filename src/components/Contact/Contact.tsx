@@ -10,18 +10,18 @@ interface ContactFormProps {
   setContactFormVisible: (visible: boolean) => void;
   isVisible: boolean;
   setIsFlagOpen: (flag: boolean) => void;
-  setOpenSearch: (open: boolean) => void;
-  setProfileOpen: (open: boolean) => void;
-  setAccountOpen: (open: boolean) => void;
+  // setOpenSearch: (open: boolean) => void;
+  // setProfileOpen: (open: boolean) => void;
+  // setAccountOpen: (open: boolean) => void;
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({
   isContactFormVisible,
   setContactFormVisible,
-  isVisible,
+  // isVisible,
   setIsFlagOpen,
-  setOpenSearch,
-  setProfileOpen,
+  // setOpenSearch,
+  // setProfileOpen,
 }) => {
   const contactRef = useRef<HTMLDivElement>(null);
   const router = useRouter(); // Initialize useRouter
@@ -48,8 +48,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
   const handleMouseEnter = () => {
     setContactFormVisible(true);
     setIsFlagOpen(false);
-    setOpenSearch(false);
-    setProfileOpen(false);
+    // setOpenSearch(false);
+    // setProfileOpen(false);
   };
 
   const transition = {
@@ -65,17 +65,19 @@ const ContactForm: React.FC<ContactFormProps> = ({
     <div>
       <button
         type="button"
-        className="cursor-pointer font-poppins text-sm font-regular rounded-full px-2 text-white bg-[#483d78]"
+        className="cursor-pointer font-poppins text-sm font-regular rounded-full py-1 px-4 text-white bg-[#483d78]"
         onMouseEnter={handleMouseEnter} // Open on hover
         onFocus={handleMouseEnter} // Open on focus for accessibility
       >
-        <Link className="" href={`/${countryCode}/contact`}>Enquire Now</Link>
+        <Link className="" href={`/${countryCode}/contact`}>
+          Enquire
+        </Link>
       </button>
       <AnimatePresence>
         {isContactFormVisible && (
           <motion.div
             ref={contactRef}
-            className="fixed top-14 right-0 z-50 mr-10 mt-0 w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px] bg-white  rounded-lg overflow-hidden"
+            className="fixed top-14 right-0 z-50 mr-8 mt-0 w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px] bg-white  rounded-lg overflow-hidden"
             initial={{ y: "-100%", height: 0, opacity: 0 }}
             animate={{ y: 0, height: "35rem", opacity: 1 }}
             exit={{ y: "-100%", height: 0, opacity: 0 }}

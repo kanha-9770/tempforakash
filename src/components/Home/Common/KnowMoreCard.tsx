@@ -58,14 +58,14 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
   };
 
   return (
-    <div ref={container} className={`${styles.KnowMoreCardContainer} `}>
+    <div ref={container} className={`${styles.KnowMoreCardContainer} -mt-[5rem]`}>
       <motion.div
         style={{
           backgroundColor: color,
           scale,
           top: ``,
         }}
-        className={` ${styles.KnowMoreCard} top-[calc(2vh + ${i}px)] lg:top-[calc(2vh + ${i * 1}px)] `}
+        className={` ${styles.KnowMoreCard} top-[calc(2vh + ${i}px)] lg:top-[calc(2vh + ${i * 0.5}px)] `}
       >
         <div className={styles.body}>
           <div className={styles.description}>
@@ -91,7 +91,7 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
             <h2 className="text-center -mt-12 text-base lg:text-xl font-semibold text-white font-poppins">
               {title}
             </h2>
-            <p className="text-sm mt-2 lg:text-lg text-white text-center font-poppins">
+            <p className="text-sm mt-2 lg:text-base text-white text-center font-poppins">
               {renderDescription()}
             </p>
             {!isExpanded && description.split("\n").length >= 2 && (

@@ -6,20 +6,21 @@ import { navbarItems } from "@/components/Constants/Navbar/navbarData";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/assets/Logo.png";
-import RightNavbar from "./RightNavbar";
-import ProfileLayout from "../Layout/ProfileLayout";
+// import RightNavbar from "./RightNavbar";
+// import ProfileLayout from "../Layout/ProfileLayout";
 import { Menu, MenuItem } from "./nav-menue";
-import { BiMinus } from "react-icons/bi";
+// import { BiMinus } from "react-icons/bi";
 import { HiMiniMinusCircle } from "react-icons/hi2";
 import CountryLayout from "../Layout/CountryLayout";
 import { VscAccount } from "react-icons/vsc";
 import { TfiSearch } from "react-icons/tfi";
 import { IoClose } from "react-icons/io5";
 import { useRouter, usePathname } from "next/navigation";
+import ContactForm from "../Contact/Contact";
 
 export default function NavbarDemo() {
   return (
-    <div className="relative   lg:h-auto lg:mt-0  flex items-center justify-between lg:justify-center">
+    <div className="relative lg:h-auto lg:mt-0  flex items-center justify-between lg:justify-center">
       <Navbar className="top-0 " />
     </div>
   );
@@ -66,6 +67,7 @@ function Navbar({ className }: { className?: string }) {
   const handleClearSearch = () => {
     setSearchValue("");
   };
+
   const [expandedSearch, setExpandedSearch] = useState(false);
   const [expandedCountry, setExpandedCountry] = useState(false);
   const [expandedAccount, setExpandedAccount] = useState(false);
@@ -81,11 +83,22 @@ function Navbar({ className }: { className?: string }) {
     setExpandedCountry(item === "country");
     setExpandedAccount(item === "account");
   };
+  const [isVisible, setIsVisible] = useState(true);
+  const [visibilityState, setVisibilityState] = useState({
+    isFlagOpen: false,
+
+    isContactFormVisible: false,
+  });
+  useEffect(() => {
+    const { isFlagOpen } = visibilityState;
+    setIsVisible(!isFlagOpen);
+  }, [visibilityState]);
+  const searchRef = useRef<HTMLDivElement>(null);
 
   return (
     <div
       className={cn(
-        "fixed flex w-full font-poppins lg:mt-0 items-center  inset-x-0 mx-auto z-[99999] transition-transform duration-300",
+        "fixed flex w-full font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
         "transition-all duration-500 ease-in-out",
@@ -95,13 +108,13 @@ function Navbar({ className }: { className?: string }) {
       {/* Desktop Menu */}
       <div className="hidden px-8 lg:flex w-full">
         <div className="w-1/5 flex items-center">
-          <Link href="/" className="w-full h-full  flex items-center ">
+          <Link href="/" className="w-full h-full flex items-center ">
             <Image
               src={Logo}
               alt="Logo"
               width={500}
               height={500}
-              className="h-[1.4rem] w-16"
+              className="h-[1.4rem] w-20"
             />
           </Link>
         </div>
@@ -123,8 +136,23 @@ function Navbar({ className }: { className?: string }) {
           </Menu>
         </div>
 
-        <div className="w-1/5 flex  items-center justify-end">
-          <RightNavbar />
+        <div className="w-1/5 flex h-14 justify-end items-center flex-row gap-4 ">
+          <div className="bg-[#f2f2f2] gap-2 px-2 rounded-3xl">
+            <CountryLayout />
+          </div>
+          <ContactForm
+            isContactFormVisible={visibilityState.isContactFormVisible}
+            setContactFormVisible={(value) =>
+              setVisibilityState((prev) => ({
+                ...prev,
+                isContactFormVisible: value,
+              }))
+            }
+            isVisible={isVisible}
+            setIsFlagOpen={(value) =>
+              setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
+            }
+          />
         </div>
       </div>
 

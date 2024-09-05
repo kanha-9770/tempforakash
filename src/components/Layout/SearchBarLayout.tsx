@@ -62,7 +62,7 @@ const SearchBarLayout: FC<SearchBarLayoutProps> = ({
         </div>
       )}
       {openSearch && (
-        <div className="absolute -ml-[49rem] mr-32 max-w-screen-2xl flex justify-start items-start top-10 w-[98vw] mx-auto">
+        <div className="absolute -ml-[49rem] mr-36 max-w-screen-2xl flex justify-start items-start top-10 w-[98vw] mx-auto">
           <div className="bg-white w-full h-[60vh] p-4 rounded-xl shadow-lg">
             <form className="flex justify-start w-1/2 items-center mx-auto space-x-1">
               <div className="relative w-full border-gray-300">

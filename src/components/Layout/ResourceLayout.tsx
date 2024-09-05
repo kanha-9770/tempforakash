@@ -99,7 +99,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile 
       {/* desktop view */}
       {shouldShowArrows && (
         <button
-          className="h-12 w-16 rounded-full hidden lg:flex items-center justify-center disabled:opacity-50"
+          className="h-12 w-16 z-30 cursor-pointer rounded-full hidden lg:flex items-center justify-center disabled:opacity-50"
           onClick={scrollLeft}
           disabled={!canScrollLeft}
         >
@@ -148,11 +148,11 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile 
       </div>
       {shouldShowArrows && (
         <button
-          className="h-12 w-16 hidden rounded-full lg:flex items-center justify-center disabled:opacity-50"
+          className="h-12 z-30 w-16 cursor-pointer  hidden rounded-full lg:flex items-center justify-center disabled:opacity-50"
           onClick={scrollRight}
           disabled={!canScrollRight}
         >
-          <IoIosArrowForward className="text-2xl text-gray-500" />
+          <IoIosArrowForward className="text-2xl z-30 text-gray-500" />
         </button>
       )}
       {/* mobile view */}

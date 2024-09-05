@@ -154,15 +154,15 @@ const RightNavbar: React.FC = memo(() => {
             setIsFlagOpen={(value) =>
               setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))
             }
-            setOpenSearch={(value) =>
-              setVisibilityState((prev) => ({ ...prev, openSearch: value }))
-            }
-            setProfileOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
-            }
-            setAccountOpen={(value) =>
-              setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
-            }
+            // setOpenSearch={(value) =>
+            //   setVisibilityState((prev) => ({ ...prev, openSearch: value }))
+            // }
+            // setProfileOpen={(value) =>
+            //   setVisibilityState((prev) => ({ ...prev, profileOpen: value }))
+            // }
+            // setAccountOpen={(value) =>
+            //   setVisibilityState((prev) => ({ ...prev, accountOpen: value }))
+            // }
           />
         </div>
       </div>

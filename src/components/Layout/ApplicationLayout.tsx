@@ -314,7 +314,7 @@ const ApplicationPage: React.FC = () => {
                   {hoveredItem.description}
                 </p>
               </div>
-              <div className={styles.container}>
+              <div className={`${styles.container} z-20 `}>
                 <PositionAwareButton
                   text={"Explore More"}
                   borderRadius="100px"

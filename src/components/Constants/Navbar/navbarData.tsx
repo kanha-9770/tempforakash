@@ -12,7 +12,7 @@ import ResourceGrid from "@/components/Layout/ResourceLayout";
 export interface NavbarItem {
   name: string;
   link:string;
-  component: React.ReactNode;
+  component?: React.ReactNode;
   type?: string;
 }
 
@@ -38,11 +38,7 @@ export const navbarItems: NavbarItem[] = [
     link:"application",
     component: <ApplicationPage />,
   },
-  {
-    name: "Solution",
-    link:"solution",
-    component: <SolutionLayout />,
-  },
+ 
   {
     name: "Support",
     link:"support",
@@ -59,6 +55,10 @@ export const navbarItems: NavbarItem[] = [
     name: "Video",
     link:"video",
     component: <ResourceGrid supporItem={DataBankItem} ResourcesMobile={ResourcesMobile} />,
+  },
+  {
+    name: "Contact", 
+    link:"contact"
   },
 ];
 // for mobile

@@ -33,10 +33,10 @@ export default function MarqueeSection() {
     <div className="h-screen px-8 flex flex-col justify-center gap-12 overflow-hidden">
       <motion.div className="relative h-1/3 flex flex-col lg:flex-row">
         <div className="flex w-[10%] lg:w-[15%] flex-col">
-          <div className="text-sm font-light lg:text-2xl mt-8 font-poppins whitespace-nowrap">
+          <div className="text-sm lg:text-2xl font-regular mt-8 font-poppins whitespace-nowrap">
             Trusted By
           </div>
-          <div className="text-sm lg:text-2xl font-light mt-14  font-poppins whitespace-nowrap">
+          <div className="text-sm lg:text-2xl font-regular mt-12 font-poppins whitespace-nowrap">
             Partner Brands
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function MarqueeSection() {
         </div>
       </motion.div>
       <motion.div className="relative flex flex-col h-[20%] items-center  text-center">
-        <p className="text-sm lg:text-2xl mx-4 w-full lg:w-[62%] font-poppins font-light leading-8">
+        <p className="text-sm lg:text-2xl mx-4 w-full lg:w-[62%] font-poppins font-regular leading-8">
           Empowering sustainable packaging with advanced paper-based solutions.
           Our innovative machines drive global <span className="text-red-500">CO2</span> reduction, paving the way for
           a greener earth and elevating your packaging capabilities.
