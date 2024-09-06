@@ -13,7 +13,7 @@ const ProductApplication = dynamic(() => import("./ProductApplication"), {
 const ProductDescription = () => {
   return (
     <div className="h-screen flex flex-row w-full gap-4">
-      <div className="w-[80%] h-[90%] bg-white shadow-lg p-4 rounded-3xl flex flex-col">
+      <div className="w-[80%] h-[90%] bg-white shadow-lg p-4 rounded-xl flex flex-col">
         {/* heading */}
         <div className="w-full justify-start">
           <span className="text-[#483d78] text-2xl">Product</span>

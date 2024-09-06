@@ -8,7 +8,7 @@ const ContactIcons = () => {
   return (
     <div className="h-full w-full">
       {/* Container for larger screens */}
-      <div className="bg-white hidden md:flex flex-col z-[9999] rounded-xl p-2 fixed right-0 top-1/2 transform -translate-y-1/2 space-y-4">
+      <div className="bg-white hidden md:flex flex-col z-[9999] rounded-xl p-1 fixed right-0 top-1/2 transform -translate-y-1/2 space-y-4">
         <a
           href="sms:+123456789"
           className="flex items-center justify-center h-8 w-10 text-black hover:bg-opacity-90 transition duration-300 pb-2 border-b border-gray-300"

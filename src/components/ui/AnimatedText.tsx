@@ -98,19 +98,19 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className, blockClass
 
         const tl = gsap.timeline();
 
-        // Animate the block sliding over the text
+        // Animate the block sliding over the text at a faster speed
         tl.fromTo(
           block,
           { width: '0%' },
           {
             width: '100%',
-            duration: 1.5,
+            duration: 0.4, // Faster duration
             ease: 'cubic-bezier(0.74, 0.06, 0.4, 0.92)',
           }
         ).to(block, {
           width: '0%',
           left: '100%',
-          duration: 0.5,
+          duration: 0.3, // Faster duration
           ease: 'power2.out',
         });
       }
@@ -121,11 +121,11 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className, blockClass
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            handleAnimation(); // Trigger animation each time element enters viewport
+            handleAnimation(); // Trigger animation each time element enters the viewport
           }
         });
       },
-      { threshold: 0.5 } // Trigger when 50% of the element is visible
+      { threshold: 0.3 } // Trigger when 30% of the element is visible
     );
 
     observer.observe(container);
@@ -140,7 +140,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className, blockClass
     <div ref={containerRef} className="relative flex flex-col justify-center w-auto">
       <div className="relative flex items-center justify-center w-full h-auto">
         {/* The animated block with customizable background class */}
-        <span className={`block absolute  ${blockClassName ? blockClassName : 'bg-white h-full'}`}></span>
+        <span className={`block absolute ${blockClassName ? blockClassName : 'bg-white h-full'}`}></span>
         {/* The heading text with customizable class */}
         <h1 className={`${className ? className : 'text-base font-regular'}`}>
           {text}

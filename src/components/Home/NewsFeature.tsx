@@ -119,7 +119,7 @@ const NewsFeature: React.FC = () => {
   };
 
   return (
-    <div className="lg:p-4 px-2 lg:px-8 w-full h-full lg:h-screen">
+    <div className="lg:p-4 px-2 lg:px-12 pb-24 lg:pb-32 w-full h-full">
       <div className="text-center">
         <h1 className="text-3xl font-regular font-poppins">
           <span className="text-[#483d73]">Featured</span>
@@ -127,7 +127,7 @@ const NewsFeature: React.FC = () => {
         </h1>
       </div>
       <div className="flex h-[80vh] lg:full flex-col lg:flex-row gap-2 mt-12">
-        <div className="relative w-full lg:w-[36%] ">
+        <div className="relative w-full lg:w-[35%] ">
           <div className="relative group h-48 lg:h-full">
             <Image
               src={newscardcontent[0].image.src}
@@ -153,7 +153,7 @@ const NewsFeature: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-[64%] h-full lg:h-full w-full  flex flex-col">
+        <div className="lg:w-[62%] h-full lg:h-full w-full  flex flex-col">
           <div className="flex lg:ml-6 gap-2 w-full h-full lg:h-[70%] lg:space-x-6">
             {newscardcontent.slice(1, 3).map((content, index) => (
               <div key={index + 1} className="relative flex-1">

@@ -138,7 +138,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
         scrolling ? "bg-white" : "bg-[#f2f2f2] border-none"
       }`}
     >
-      <div className="flex justify-between items-center px-2 py-2 md:hidden">
+      <div className="flex justify-between mt-4 items-center px-2 py-2 md:hidden">
         <button
           onClick={toggleMenu}
           className="text-black px-2 text-sm font-bold"
@@ -185,7 +185,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
       <nav
         className={`hidden ${
           scrolling ? "border-t-2" : "border-none"
-        } md:flex left-0 flex-row flex-wrap text-base md:h-10 font-light font-poppins px-10 mt-4  space-x-2 sm:space-x-6 text-black `}
+        } md:flex left-0 flex-row flex-wrap text-base  lg:h-10 font-light font-poppins px-10 lg:mt-4  space-x-2 sm:space-x-6 text-black `}
       >
         {navItems.map((item, index) => (
           <NavLink

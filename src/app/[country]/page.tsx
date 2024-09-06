@@ -229,20 +229,26 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative bg-[#f2f2f2] top-14 h-full">
+    <main className="relative bg-[rgb(242,242,242)]  top-14 h-full">
       <div className="top-2 relative">
         <Hero />
       </div>
       <ContactIcons />
       <NavLinksDemo navItems={navItems} />
-      <div className="h-full py-14">
-        <div id="machines" className="flex space-y-6 flex-col" ref={homeMachineRef}>
-          <h1 className="text-2xl lg:text-3xl font-regular
-           text-[#483d78] text-center">
+      <div className="h-full font-poppins py-20">
+        <div
+          id="machines"
+          className="flex space-y-6 flex-col"
+          ref={homeMachineRef}
+        >
+          <h1
+            className="text-2xl lg:text-3xl font-regular
+           text-[#483d78] text-center"
+          >
             Our <span className="text-red-500 font-semibold">Products</span>
           </h1>
           <div className="text-sm w-full lg:w-full flex items-center justify-center">
-            <p className="w-[50%] text-base font-regular text-center">
+            <p className="lg:w-[50%] text-sm lg:px-0 px-2 lg:text-base font-regular text-center">
               We are known for manufacturing and globally exporting various
               paper packaging machines including Cups, Glass, Straws and Plate
               Machines.
@@ -250,7 +256,7 @@ export default function Home() {
           </div>
           <HomeMachine />
         </div>
-        <div className="h-auto py-8">
+        <div className="h-auto lg:py-8">
           <AppleCardsCarouselDemo />
         </div>
         <div id="aboutUs" className="" ref={aboutUsRef}>
@@ -287,10 +293,7 @@ export default function Home() {
           className="relative  bg-gradient-to-l via-purple-200 to-transparent h-screen overflow-hidden"
           ref={homeTestimonialRef}
         >
-          <div className="absolute"></div>
-          <div className="relative ">
-            <HomeTestimonial />
-          </div>
+          <HomeTestimonial />
         </div>
       </div>
     </main>

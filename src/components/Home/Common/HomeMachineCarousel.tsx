@@ -82,7 +82,7 @@ const DummyContent: React.FC<DummyContentProps> = ({
 }) => {
   return (
     <>
-      <div className="bg-[#F5F5F7] z-[99999] dark:bg-neutral-800 p-8  md:p-14 h-80 rounded-3xl mb-4">
+      <div className="bg-[#F5F5F7] z-[99999] dark:bg-neutral-800 p-8 font-poppins font-regular md:p-14 h-80 rounded-3xl mb-4">
         <div className="fixed inset-0 flex items-center justify-center">
           <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm"></div>
           <div className="relative w-full max-w-[78rem] h-[90vh] bg-white rounded-xl p-6 transform transition-transform overflow-y-auto z-50">
@@ -112,16 +112,16 @@ const DummyContent: React.FC<DummyContentProps> = ({
                 </div>
               </div>
               <div>
-                <h1 className="text-3xl font-bold mb-4">
+                <h1 className="text-xl lg:text-3xl font-semibold lg:font-bold mb-4">
                   <span className="text-red-600">{firstname}</span>
                   <span className="text-[#483d78] ml-2">{secondname}</span>
                 </h1>
-                <p className="text-gray-700 mb-4">{description}</p>
+                <p className="text-gray-700 text-sm font-regular mb-4">{description}</p>
                 <ul className="list-none grid grid-cols-2 gap-4 text-gray-700">
                   {items.map((item, index) => (
                     <li key={index} className="flex items-center space-x-2">
                       <FaCircleNotch className={item.className} />
-                      <span>{item.text}</span>
+                      <span className="text-sm font-regular">{item.text}</span>
                     </li>
                   ))}
                 </ul>

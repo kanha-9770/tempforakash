@@ -38,7 +38,7 @@ export const images: Images = {
 };
 // support itemm
 export const supporItem = [
-  { title: "Book a Service", image: support},
+  { title: "Book a Service", image: guide},
   { title: "Genuine Parts", image: geniune },
   { title: "User Guide", image: guide },
   { title: "Machine Warranty", image:warranty },

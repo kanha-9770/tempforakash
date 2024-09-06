@@ -40,32 +40,29 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
 }) => {
   const container = useRef<HTMLDivElement>(null);
   const scale = useTransform(progress, range, [1, targetScale]);
-  
+
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   const toggleDescription = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const renderDescription = () => {
-    const lines = description.split("\n");
-
-    if (lines.length <= 4 || isExpanded) {
-      return description;
-    }
-
-    return lines.slice(0, 4).join("\n") + "...";
-  };
+ 
 
   return (
-    <div ref={container} className={`${styles.KnowMoreCardContainer} -mt-[5rem]`}>
+    <div
+      ref={container}
+      className={`${styles.KnowMoreCardContainer} -mt-[5rem]`}
+    >
       <motion.div
         style={{
           backgroundColor: color,
           scale,
           top: ``,
         }}
-        className={` ${styles.KnowMoreCard} top-[calc(2vh + ${i}px)] lg:top-[calc(2vh + ${i * 0.5}px)] `}
+        className={` ${
+          styles.KnowMoreCard
+        } top-[calc(2vh + ${i}px)] lg:top-[calc(2vh + ${i * 0.5}px)] `}
       >
         <div className={styles.body}>
           <div className={styles.description}>
@@ -75,7 +72,7 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
               }}
               className={styles.expertiseContainer}
             >
-             <LottieAnimation
+              <LottieAnimation
                 animationData={icon}
                 className="h-8 w-8 lg:h-20 lg:w-20" // Example Tailwind CSS classes for size
               />
@@ -84,35 +81,20 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
                   {expertiseExperience}
                 </div>
                 <div className="text-white font-bold font-poppins">
-                  <AnimatedText text={`${expertiseAbout}`} />
+                  <AnimatedText className="text-red-500" text={`${expertiseAbout}`} />
                 </div>
               </div>
             </div>
-            <h2 className="text-center -mt-12 text-base lg:text-xl font-semibold text-white font-poppins">
+            <h2 className="text-center  text-base lg:text-lg font-semibold text-white font-poppins">
               {title}
             </h2>
-            <p className="text-sm mt-2 lg:text-base text-white text-center font-poppins">
-              {renderDescription()}
+            <p className="text-sm mt-2 lg:text-base font-regular text-white text-center font-poppins">
+              {description}
             </p>
-            {!isExpanded && description.split("\n").length >= 2 && (
-              <button
-                className="text-base text-white font-poppins font-bold text-center mt-2"
-                onClick={toggleDescription}
-              >
-                More
-              </button>
-            )}
-            {isExpanded && (
-              <button
-                className="text-base text-white font-poppins font-bold text-center mt-2"
-                onClick={toggleDescription}
-              >
-                Less
-              </button>
-            )}
+          
             <span className="w-full flex flex-row justify-center items-center">
               <Link
-                className="text-base text-white font-poppins font-bold text-center"
+                className="text-base text-[#483d78] font-poppins font-semibold text-center"
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"

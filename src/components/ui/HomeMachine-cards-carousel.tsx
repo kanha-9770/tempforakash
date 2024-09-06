@@ -315,7 +315,7 @@ export const Card = ({
   return (
     <>
       {open && (
-        <div className="fixed  inset-0  h-screen z-[99999] overflow-auto">
+        <div className="fixed font-poppins  inset-0  h-screen z-[99999] overflow-auto">
           <div className="bg-black/80  backdrop-blur-lg h-full w-full fixed inset-0" />
           <div
             ref={containerRef}
@@ -334,7 +334,7 @@ export const Card = ({
 
       <button
         onClick={handleOpen}
-        className=" h-48 rounded-3xl bg-white p-1 lg:p-2  w-40 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className=" h-48 rounded-3xl bg-white font-poppins p-1 lg:p-2  w-40 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="relative p-2 h-full w-full">
           <div className="absolute flex bg-white h-14 lg:h-16 w-24 lg:w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
@@ -397,8 +397,8 @@ export const Card = ({
             className="object-contain border-2 bg-[#f2f2f2]  rounded-[1.5rem] absolute z-10 inset-0"
           />
 
-          <div className="absolute -mb-2 left-0 right-0 bottom-0 z-40 p-4">
-            <p className="text-black text-sm md:text-base font-medium font-sans text-left">
+          <div className="absolute -mb-2 font-poppins left-0 right-0 bottom-0 z-40 p-4">
+            <p className="text-black font-poppins text-sm md:text-base font-regular text-left">
               {card.title}
             </p>
           </div>

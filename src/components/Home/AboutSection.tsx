@@ -66,7 +66,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
   }, [stats]);
 
   return (
-    <div className="flex mt-12 h-screen max-w-screen-2xl mx-auto flex-col items-center  md:px-6 lg:px-8">
+    <div className="flex mt-12 h-full max-w-screen-2xl mx-auto flex-col items-center  md:px-6 lg:px-8">
       <h1 className="text-3xl font-regular text-[#483d78]">
         About <span className="text-red-500 font-semibold">US</span>
       </h1>

@@ -19,13 +19,13 @@ const KnowMachine: React.FC = () => {
   };
 
   return (
-    <div className="lg:p-6 px-2 lg:px-8 mt-40 w-full h-full">
+    <div className="lg:p-6 px-2 pb-24 lg:pb-32 lg:px-8 w-full h-full">
       {/* Container for the cards */}
-      <div className="flex flex-col lg:flex-row lg:flex-wrap justify-between space-y-4 lg:space-y-0 ">
+      <div className="flex flex-col lg:flex-row lg:flex-wrap justify-around space-y-4 lg:space-y-0 ">
         {cardContents.map((content, index) => (
           <div
             key={index}
-            className="relative bg-white rounded-3xl shadow-lg overflow-hidden w-full h-[12rem] lg:w-[32%] lg:h-[32rem] group flex-shrink-0"
+            className="relative bg-white rounded-3xl shadow-lg overflow-hidden w-full h-[12rem] lg:w-[31%] lg:h-[75vh] group flex-shrink-0"
           >
             <Image
               src={content.image}
