@@ -2,7 +2,6 @@
 import React, { useRef } from "react";
 import NavLinksDemo from "@/components/Home/NavLinks";
 import { notFound, useParams } from "next/navigation";
-import { Machines } from "@/components/Constants/Navbar/product-data";
 import Machine from "@/components/Products/machine/MachineHome";
 import ProductDescription from "@/components/Products/ProductDescription";
 import CupFormactionProcess from "@/components/Products/CupFormactionProcess";
@@ -10,18 +9,25 @@ import { TechnicalSpecifications } from "@/components/Products/TechnicalSpecific
 import MachineCard from "@/components/Products/MachineCard";
 import FaqSection from "@/components/Products/FaqSection";
 import { SignupFormDemoProduct } from "@/components/Contact/CustomProductForm";
-import NewMachine from "@/components/Products/machine/NewMachine";
+import NewMachine from "@/components/Products/machine/NewMachine"; // Ensure this is correct
+import machineData from "../../../../components/Products/machine.json"; // Import the machine.json file
+import { ProductApplication } from "@/components/Products/ProductApplication";
 
 export default function Home() {
   const params = useParams();
 
   const machinename =
     typeof params?.id === "string" ? decodeURIComponent(params.id) : "";
-  const machine = Machines.find((m) => m.name === machinename);
+
+  const product = machineData.find((m) => m.category === "Product");
+
+  // Optional chaining to safely access Machines array
+  const machine = product?.data?.Machines?.find((m) => m.name === machinename);
 
   const overviewRef = useRef<HTMLDivElement>(null);
   const productDescriptionRef = useRef<HTMLDivElement>(null);
   const processRef = useRef<HTMLDivElement>(null);
+  const applicationRef = useRef<HTMLDivElement>(null);
   const technicalSpecificationsRef = useRef<HTMLDivElement>(null);
   const optionalAddOnsRef = useRef<HTMLDivElement>(null);
   const faqsRef = useRef<HTMLDivElement>(null);
@@ -35,6 +41,7 @@ export default function Home() {
     { text: "Overview", ref: overviewRef },
     { text: "Product Description", ref: productDescriptionRef },
     { text: "Process", ref: processRef },
+    { text: "Application", ref: applicationRef },
     { text: "Technical Specifications", ref: technicalSpecificationsRef },
     { text: "Optional Add-Ons", ref: optionalAddOnsRef },
     { text: "FAQs", ref: faqsRef },
@@ -45,6 +52,7 @@ export default function Home() {
     <main className="bg-[#f2f2f2] h-full">
       <Machine
         name={machine.name}
+        image={machine.image}
         application={machine.application}
         mimage={machine.mimage}
         product_heading={machine.product_heading}
@@ -55,20 +63,30 @@ export default function Home() {
       <NavLinksDemo navItems={navLinks} />
       <NewMachine
         name={machine.name}
+        status={machine.status}
+        rating={machine.rating}
+        technicalSpecifications={machine.technicalSpecifications}
+        advantages={machine.advantages}
+        paperTypes={machine.paperTypes}
         application={machine.application}
+        image={machine.image}
         mimage={machine.mimage}
         product_heading={machine.product_heading}
         first_name={machine.first_name}
         second_name={machine.second_name}
         description={machine.product_description}
+        specification_image={machine.specification_image}
       />
       <div className="h-full flex flex-row w-full">
         <div className="w-2/3">
-          <div className="mx-10 mt-32" ref={productDescriptionRef}>
-            <ProductDescription />
+          <div className="mx-10 " ref={productDescriptionRef}>
+            <ProductDescription machine={machine} />
           </div>
           <div className="mx-10 mt-32" ref={processRef}>
             <CupFormactionProcess />
+          </div>
+          <div className="mx-10 mt-32" ref={applicationRef}>
+            <ProductApplication/>
           </div>
 
           <div className="mx-6 mt-32" ref={technicalSpecificationsRef}>

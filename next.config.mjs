@@ -11,8 +11,10 @@ const nextConfig = {
       'piano.io',
       'www.svgrepo.com',
       'in.pinterest.com',
-      'restcountries.com'
-    ], // Add any other domains you need
+      'restcountries.com',
+      'assets.nesscoindustries.com',
+      'www.nesscoindia.com'
+    ],
   },
   swcMinify: true,
 };

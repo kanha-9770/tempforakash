@@ -92,7 +92,7 @@ const MachineGrid: React.FC<MachineGridProps> = ({ supporItem }) => {
         {supporItem.map((item, index) => (
           <div key={index} className="flex flex-col space-y-4">
             <motion.div
-              className="relative flex-shrink-0 w-[11rem] h-32 border-2 rounded-3xl p-4 flex flex-col justify-center items-center"
+              className="relative flex-shrink-0 w-[11rem] h-32 border-2  rounded-3xl p-4 flex flex-col justify-center items-center"
               initial="hidden"
               animate="visible"
               custom={index}

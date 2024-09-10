@@ -1,240 +1,224 @@
-import React, { useRef, useEffect } from "react";
-import {
-  MdKeyboardArrowRight,
-  MdKeyboardArrowLeft,
-  MdPlayCircleOutline,
-} from "react-icons/md";
-import { BgMapImage } from "../../../public/assets";
-import { gsap } from "gsap";
-import Image, { StaticImageData } from "next/image";
-import "./Layout.css";
-import PositionAwareButton from "../ui/PositionAwareButton";
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { FaArrowLeft, FaArrowRight, FaPhone } from "react-icons/fa";
+import bgPick from "../../../public/assets/nav_support/BgMapImage.png";
+import LottieAnimation from "../ui/LottieAnimation";
+import data from "../Constants/Navbar/index.json";
 
-interface SupportItem {
+type SupportItem = {
   title: string;
-  image: StaticImageData;
+  image: string;
+};
+type SupportMobile = {
+  mobileFirst: string;
+  mobileSecond: string;
+};
+interface SupportGridProps {
+  supportItem: SupportItem[];
+  supportMobile: SupportMobile;
 }
 
-interface SupportLayoutProps {
-  setHoveredItem: (item: any) => void;
-  supporItem: SupportItem[];
-  type: string;
-}
-
-const SupportLayout: React.FC<SupportLayoutProps> = ({
-  setHoveredItem,
-  supporItem,
-  type,
-}) => {
-  const carouselRef = useRef<HTMLUListElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const firstCardWidth = useRef<number>(0);
-  const cardCount = supporItem.length;
-
-  const backgroundImageStyle =
-    type !== "Resources" ? { backgroundImage: `url(${BgMapImage})` } : {};
+const SupportGrid: React.FC<SupportGridProps> = () => {
+  const supportData = data.find(item => item.category === "Support")?.data;
+  const supportItems: SupportItem[] = supportData?.supportItem || [];
+  const mobileItem: SupportMobile = supportData?.supportMobile || { mobileFirst: "", mobileSecond: "" };
+  
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const initializeCarousel = () => {
-      firstCardWidth.current =
-        (carousel.querySelector(".card") as HTMLElement)?.offsetWidth || 0;
-      const carouselChildren = Array.from(carousel.children);
-      carouselChildren
-        .slice(-cardCount)
-        .reverse()
-        .forEach((card) => {
-          carousel.insertAdjacentHTML(
-            "afterbegin",
-            (card as HTMLElement).outerHTML
-          );
-        });
-      carouselChildren.slice(0, cardCount).forEach((card) => {
-        carousel.insertAdjacentHTML(
-          "beforeend",
-          (card as HTMLElement).outerHTML
-        );
-      });
-
-      carousel.classList.add("no-transition");
-      carousel.scrollLeft = firstCardWidth.current * cardCount;
-      carousel.classList.remove("no-transition");
-    };
-
-    initializeCarousel();
-    window.addEventListener("resize", initializeCarousel);
-
-    const handleScroll = () => {
-      if (carousel.scrollLeft === 0) {
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = firstCardWidth.current * cardCount;
-        carousel.classList.remove("no-transition");
-      } else if (
-        Math.ceil(carousel.scrollLeft) ===
-        carousel.scrollWidth - carousel.offsetWidth
-      ) {
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = firstCardWidth.current * cardCount;
-        carousel.classList.remove("no-transition");
-      }
-    };
-
-    carousel.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("resize", initializeCarousel);
-      carousel.removeEventListener("scroll", handleScroll);
-    };
-  }, [cardCount]);
-
-  const handleArrowClick = (direction: "left" | "right") => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-    const scrollAmount =
-      direction === "left" ? -firstCardWidth.current : firstCardWidth.current;
-    carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
-  };
-
-  const handleMouseLeave = (e: MouseEvent) => {
-    const container = containerRef.current;
-    if (!container) return;
-    const rect = container.getBoundingClientRect();
-    if (e.clientY >= rect.bottom) {
-      gsap.to(container, {
-        duration: 0.2,
-        opacity: 0,
-        onComplete: () => {
-          setHoveredItem(null);
-          gsap.to(container, { opacity: 1 });
-        },
-      });
-    }
-  };
-
-  const IMAGE_WIDTH = 300;
-  const IMAGE_HEIGHT = 200;
-
-  useEffect(() => {
-    const containerElement = containerRef.current;
-    if (containerElement) {
-      containerElement.addEventListener("mouseleave", handleMouseLeave);
-    }
-    return () => {
-      if (containerElement) {
-        containerElement.removeEventListener("mouseleave", handleMouseLeave);
-      }
-    };
+    checkScrollability();
   }, []);
 
-  const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
-    e.dataTransfer.effectAllowed = "move";
+  const checkScrollability = () => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+    }
   };
 
-  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = "move";
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: -carouselRef.current.clientWidth,
+        behavior: "smooth",
+      });
+      checkScrollability();
+    }
   };
 
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: carouselRef.current.clientWidth,
+        behavior: "smooth",
+      });
+      checkScrollability();
+    }
   };
+
+  const imageVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    }),
+  };
+
+  const shouldShowArrows = supportItems.length > 4;
+
+  const chunkItems = (arr: SupportItem[], size: number): SupportItem[][] =>
+    arr.length ? [arr.slice(0, size), ...chunkItems(arr.slice(size), size)] : [];
+
+  const paginatedItems = chunkItems(supportItems, 4);
 
   return (
-    <div
-      ref={containerRef}
-      className="wrapper rounded-lg bg-white w-[98vw] max-w-screen-2xl mx-auto relative h-full flex items-center justify-center p-14"
-    >
-      <button
-        onClick={() => handleArrowClick("left")}
-        className="absolute z-10 left-0 p-0 text-4xl ml-2 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
-      >
-        <span className="relative z-10">
-          <MdKeyboardArrowLeft />
-        </span>
-      </button>
-      <ul className="carousel" ref={carouselRef}>
-        {supporItem.map((card, index) => (
-          <li
-            className="ml-4 flex flex-col items-center justify-center"
-            key={`original-${index}`}
-          >
-            <div
-              style={backgroundImageStyle}
-              className="card relative"
-              draggable
-              onDragStart={handleDragStart}
-              onDragOver={handleDragOver}
-              onDrop={handleDrop}
-            >
-              {type === "Resources" && (
-                <MdPlayCircleOutline className="absolute top-2 right-2 text-[#483d78] text-3xl" />
-              )}
-              <Image
-                className="img"
-                src={card.image}
-                alt={card.title}
-                width={IMAGE_WIDTH}
-                height={IMAGE_HEIGHT}
-                draggable="false"
-              />
-            </div>
-            <span className="font-poppins mt-4 text-black font-medium hover:text-[#483d78] hover:font-bold text-16">
-              {card.title}
-            </span>
-          </li>
-        ))}
-        {supporItem.map((card, index) => (
-          <li
-            className="ml-4 flex flex-col items-center justify-center"
-            key={`clone-start-${index}`}
-          >
-            <div
-              style={backgroundImageStyle}
-              className="card relative"
-              draggable
-              onDragStart={handleDragStart}
-              onDragOver={handleDragOver}
-              onDrop={handleDrop}
-            >
-              {type === "Resources" && (
-                <MdPlayCircleOutline className="absolute top-2 right-2 text-[#483d78] text-3xl" />
-              )}
-              <Image
-                className="img"
-                src={card.image.src}
-                alt={card.title}
-                width={IMAGE_WIDTH}
-                height={IMAGE_HEIGHT}
-                draggable="false"
-              />
-            </div>
-            <span className="font-poppins text-black mt-4 font-medium hover:text-[#483d78] hover:font-bold text-16">
-              {card.title}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <button
-        onClick={() => handleArrowClick("right")}
-        className="absolute right-0 z-10 p-0 text-4xl mr-2 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
-      >
-        <span className="relative z-10">
-          <MdKeyboardArrowRight />
-        </span>
-      </button>
-      {type === "Resources" && (
-        <div className="absolute bottom-2 mt-19  z-30 right-20  transition-all">
-          <PositionAwareButton
-            text={"Explore All Resources"}
-            width="240px"
-            icon
-          />
-        </div>
+    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-4 w-[100vw]">
+      {/* desktop view */}
+      {shouldShowArrows && (
+        <button
+          className="h-12 w-20 z-20 rounded-full flex items-center justify-center disabled:opacity-50"
+          onClick={scrollLeft}
+          disabled={!canScrollLeft}
+        >
+          <FaArrowLeft className="text-xl text-gray-500" />
+        </button>
       )}
+      <div
+        className={`hidden lg:flex overflow-x-auto py-8 ${
+          shouldShowArrows ? "scroll-smooth" : ""
+        } [scrollbar-width:none] gap-8`}
+        ref={carouselRef}
+        onScroll={checkScrollability}
+      >
+        {supportItems.map((item, index) => (
+          <div key={index} className="flex flex-col space-y-4">
+            <motion.div
+              className="flex-shrink-0 w-72 h-40 rounded-3xl p-4 flex flex-col justify-center items-center bg-cover bg-center"
+              style={{ backgroundImage: `url(${bgPick.src})` }}
+              initial="hidden"
+              animate="visible"
+              custom={index}
+              variants={imageVariants}
+            >
+              <LottieAnimation
+                className="h-32 w-56"
+                animationData={item.image}
+              ></LottieAnimation>
+            </motion.div>
+
+            <p className="relative font-poppins text-center mt-4 text-black font-normal hover:text-[#483d78] hover:font-semibold text-base">
+              {item.title}
+            </p>
+          </div>
+        ))}
+      </div>
+      {shouldShowArrows && (
+        <button
+          className="h-12 w-20 z-20 rounded-full flex items-center justify-center disabled:opacity-50"
+          onClick={scrollRight}
+          disabled={!canScrollRight}
+        >
+          <FaArrowRight className="text-xl text-gray-500" />
+        </button>
+      )}
+      {/* mobile view */}
+
+      <div className="relative p-1 h-screen  flex lg:hidden flex-col items-center">
+        <div
+          className="w-full h-[45%] py-2 overflow-x-scroll scroll-smooth [scrollbar-width:none]"
+          ref={carouselRef}
+          onScroll={checkScrollability}
+        >
+          <div className="flex flex-row gap-2">
+            {paginatedItems.map((group, groupIndex) => (
+              <motion.div
+                key={`slide-${groupIndex}`}
+                className="min-w-full p-1 grid grid-cols-2 grid-rows-2 gap-4"
+              >
+                {group.map((item, itemIndex) => (
+                  <motion.div
+                    key={itemIndex}
+                    className="relative w-40 h-36 border-[1px] bg-white rounded-xl  flex flex-col justify-start items-center p-2"
+                    initial="hidden"
+                    animate="visible"
+                    custom={itemIndex}
+                    variants={imageVariants}
+                  >
+                    <div className="relative w-32 bg-white rounded-xl border-[1px] h-16 flex justify-center items-center"></div>
+                    <p className="relative font-poppins text-center mt-4 text-black font-medium hover:text-[#483d78] hover:font-bold text-16">
+                      {item.title}
+                    </p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        {shouldShowArrows && (
+          <div className="flex h-[5%] justify-center w-full ">
+            <button
+              className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
+              onClick={scrollLeft}
+              disabled={!canScrollLeft}
+            >
+              <FaArrowLeft className="text-xl text-gray-500" />
+            </button>
+            <button
+              className="h-12 w-12 rounded-full flex items-start justify-center disabled:opacity-50"
+              onClick={scrollRight}
+              disabled={!canScrollRight}
+            >
+              <FaArrowRight className="text-xl text-gray-500" />
+            </button>
+          </div>
+        )}
+        <div className="flex lg:hidden h-[50%] flex-col w-full mt-4">
+          <p className="text-black pl-4 text-lg font-poppins font-medium">
+            Give us a Call:
+          </p>
+          <div className="flex justify-between items-center border-b-2 h-28 flex-row pt-6">
+            <p
+              className="text-black text-lg flex flex-row gap-2 items-center"
+              style={{
+                backgroundImage:
+                  "url('https://i.pinimg.com/236x/76/c8/c0/76c8c0172ba662b6fb6d0c095c1158fe.jpg')",
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                padding: "5px 10px",
+              }}
+            >
+              <FaPhone />
+              {mobileItem.mobileFirst}
+            </p>
+            <div className="w-1 h-20 border-l-2"></div>
+            <p
+              className="text-black text-lg flex flex-row gap-2 items-center"
+              style={{
+                backgroundImage:
+                  "url('https://i.pinimg.com/236x/76/c8/c0/76c8c0172ba662b6fb6d0c095c1158fe.jpg')",
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                padding: "5px 10px",
+              }}
+            >
+              <FaPhone />
+              {mobileItem.mobileSecond}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default SupportLayout;
+export default SupportGrid;

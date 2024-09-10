@@ -1,21 +1,30 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { item, Item } from "../Constants/index";
 import styles from "./application.module.css";
 import PositionAwareButton from "../ui/PositionAwareButton";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import the icons
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-
-const ITEMS_PER_PAGE = 9;
-
+import data from "../Constants/Navbar/index.json";
+interface itemDataType {
+  src: string;
+  alt: string;
+  name: string;
+  description: string;
+  bgpic: string;
+}
 const Application: React.FC<{
-  onHover: (item: Item) => void;
-  items: Item[];
+  onHover: (item: itemDataType) => void;
+  items: itemDataType[];
 }> = ({ onHover, items }) => {
+    // Get aboutData, and check if it exists before destructuring
+    const applicationData = data.find(item => item.category === "Application")?.data;
+    // Provide fallback values if aboutData is undefined
+    const applications = applicationData?.item|| [];
+    console.log("application",applications);
+    
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [currentPage, setCurrentPage] = useState<number>(0);
-  const handleMouseEnter = (index: number, item: Item) => {
+  const handleMouseEnter = (index: number, item: itemDataType) => {
     setHoveredIndex(index);
     onHover(item);
   };
@@ -23,17 +32,7 @@ const Application: React.FC<{
   const handleMouseLeave = () => {
     setHoveredIndex(null);
   };
-  const handleNextPage = () => {
-    if ((currentPage + 1) * ITEMS_PER_PAGE < items.length) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
 
-  const handlePreviousPage = () => {
-    if (currentPage > 0) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -72,7 +71,7 @@ const Application: React.FC<{
     }
   };
 
-  const chunkItems = (arr: Item[], size: number): Item[][] =>
+  const chunkItems = (arr: itemDataType[], size: number): itemDataType[][] =>
     arr.length
       ? [arr.slice(0, size), ...chunkItems(arr.slice(size), size)]
       : [];
@@ -101,7 +100,7 @@ const Application: React.FC<{
     <>
       <div className="hidden lg:grid grid-cols-3  mx-auto max-w-screen-2xl lg:grid-cols-6 pt-2 gap-4 lg:p-6 rounded">
         {/* desktop view */}
-        {items.map((item, index) => (
+        {applications.map((item, index) => (
           <motion.div
             key={index}
             className="relative mt-2 h-24 w-32 rounded-lg"
@@ -162,10 +161,7 @@ const Application: React.FC<{
                         | number
                         | bigint
                         | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
+                        | React.ReactElement<string>
                         | Iterable<React.ReactNode>
                         | Promise<React.AwaitedReactNode>
                         | null
@@ -224,48 +220,21 @@ const Application: React.FC<{
             <FaArrowRight className="text-xl text-gray-500" />
           </button>
         </div>
-        {/* <div className="w-full font-poppins font-semimedium overflow-y-auto h-[45%]">
-          {items.map((item, index) => (
-            <motion.div
-              key={index}
-              className="relative "
-              custom={index}
-              initial="hidden"
-              animate="visible"
-              variants={imageVariants}
-            >
-              <a
-                // href={`/application/${item.name
-                //   .toLowerCase()
-                //   .replace(/ /g, "-")}`}
-                className="flex border-t-[1px] justify-between p-4 flex-row"
-              >
-                <div className="flex flex-row space-x-3">
-                  <div className="h-full w-6 flex items-center">
-                    
-                    <Image
-                      className="h-6 w-6"
-                      src={item.bgpic}
-                      alt={item.name}
-                    />
-                  </div>
-                  <p className="text-base">{item.name}</p>
-                </div>
-
-                <IoIosArrowForward className="text-2xl" />
-              </a>
-            </motion.div>
-          ))}
-        </div> */}
       </div>
     </>
   );
 };
 
 const ApplicationPage: React.FC = () => {
-  const [hoveredItem, setHoveredItem] = useState<Item>(item[0]);
+  const applicationData = data.find(item => item.category === "Application")?.data;
+  // Provide fallback values if aboutData is undefined
+  const applications = applicationData?.item|| [];
+  console.log("application",applications);
+  const [hoveredItem, setHoveredItem] = useState<itemDataType>(
+    applications[0]
+  );
 
-  const handleHover = (item: Item) => {
+  const handleHover = (item: itemDataType) => {
     setHoveredItem(item);
   };
 
@@ -283,12 +252,12 @@ const ApplicationPage: React.FC = () => {
 
   return (
     <>
-      <div className="lg:flex rounded-3xl mx-auto max-w-screen-2xl w-full lg:w-[100vw] h-full hidden justify-start lg:justify-center items-start lg:max-w-screen-2xl">
+      <div className="lg:flex mx-auto max-w-screen-2xl w-full lg:w-[100vw] h-full hidden justify-start lg:justify-center items-start lg:max-w-screen-2xl">
         {/* desktop view */}
         <div className="overflow-hidden relative">
           <div className="flex">
             <div className="w-full lg:w-[75%] pt-4">
-              <Application onHover={handleHover} items={item} />
+              <Application onHover={handleHover} items={applications} />
             </div>
             <div className="hidden lg:flex relative ml-2 p-4 pb-8  items-center">
               <div className="ml-2 hidden lg:flex w-2 h-full  border-l border-gray-300"></div>
@@ -301,7 +270,7 @@ const ApplicationPage: React.FC = () => {
             >
               <div
                 className="absolute inset-0 bg-cover bg-center h-40 w-40 mt-32 opacity-5 transition-opacity duration-300 ease-in-out ml-40"
-                style={{ backgroundImage: `url(${hoveredItem.bgpic.src})` }}
+                style={{ backgroundImage: `url(${hoveredItem.bgpic})` }}
               ></div>
               <div className="relative z-10 p-4 -mt-14">
                 <h2 className="text-6xl font-poppins font-extrabold text-[#483d73]">
@@ -329,7 +298,7 @@ const ApplicationPage: React.FC = () => {
         </div>
       </div>
       <div className="flex w-screen lg:hidden">
-        <Application onHover={handleHover} items={item} />
+        <Application onHover={handleHover} items={applications} />
       </div>
     </>
   );

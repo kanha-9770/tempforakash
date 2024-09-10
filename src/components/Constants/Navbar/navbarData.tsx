@@ -20,7 +20,7 @@ export const navbarItems: NavbarItem[] = [
   {
     name: "About Us",
     link:"about",
-    component: <AboutLayout />,
+    component:<AboutLayout/>,
   },
   {
     name: "Products",

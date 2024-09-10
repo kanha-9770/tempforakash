@@ -1,30 +1,36 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa6";
 import { MdPlayCircleOutline } from "react-icons/md";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import PositionAwareButton from "../ui/PositionAwareButton";
+import data from "../Constants/Navbar/index.json";
 import Link from "next/link";
 
 type SupportItem = {
   title: string;
-  image: StaticImageData;
-  bgPic: StaticImageData; // Corrected property name
+  image: string;
+  bgPic: string; // Corrected property name
 };
 type ResourcesMobile = {
   title: string;
-  bgPic: StaticImageData; // Corrected property name
+  bgPic: string;
 };
 interface ResourceGridProps {
   supporItem: SupportItem[];
-  ResourcesMobile:ResourcesMobile[];
+  ResourcesMobile: ResourcesMobile[];
 }
 const ITEMS_PER_PAGE = 4;
 
-const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile }) => {
+const ResourceGrid: React.FC<ResourceGridProps> = ({
+ 
+}) => {
+  const supportData = data.find((item) => item.category === "Resources")?.data;
+  console.log("supportData",supportData);
+  
+  const DataBankItem= supportData?.DataBankItem || [];
+  const ResourcesMobile= supportData?.ResourcesMobile ||[];
+
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -74,11 +80,11 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile 
     }),
   };
 
-  const shouldShowArrows = supporItem.length > 4;
+  const shouldShowArrows = DataBankItem.length > 4;
   const [currentPage, setCurrentPage] = useState<number>(0);
 
   const handleNextPage = () => {
-    if ((currentPage + 1) * ITEMS_PER_PAGE < supporItem.length) {
+    if ((currentPage + 1) * ITEMS_PER_PAGE < DataBankItem.length) {
       setCurrentPage(currentPage + 1);
     }
   };
@@ -93,7 +99,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile 
       ? [arr.slice(0, size), ...chunkItems(arr.slice(size), size)]
       : [];
 
-  const paginatedItems = chunkItems(supporItem, 4);
+  const paginatedItems = chunkItems(DataBankItem, 4);
   return (
     <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-4 w-[100vw]">
       {/* desktop view */}
@@ -113,7 +119,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile 
         ref={carouselRef}
         onScroll={checkScrollability}
       >
-        {supporItem.map((item, index) => (
+        {DataBankItem.map((item, index) => (
           <div key={index} className="flex flex-col space-y-4">
             <motion.div
               className="relative flex-shrink-0 w-72 h-40 bg-[#f2f2f2] rounded-3xl p-4 flex flex-col justify-center items-center"
@@ -124,7 +130,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile 
             >
               <div className="relative w-full h-full flex justify-center items-center">
                 <Image
-                  src={item.image.src}
+                  src={item.image}
                   alt={item.title}
                   width={96}
                   height={96}
@@ -180,7 +186,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile 
                   >
                     <div className="relative w-32 bg-white rounded-xl border-[1px] h-16 flex justify-center items-center">
                       <Image
-                        src={item.image.src}
+                        src={item.image}
                         alt={item.title}
                         width={96}
                         height={96}
@@ -228,6 +234,8 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({ supporItem,ResourcesMobile 
                     <div className="h-full w-6 flex items-center">
                       <Image
                         className="h-6 w-6"
+                        width={10}
+                        height={10}
                         src={item.bgPic}
                         alt={item.title}
                       />

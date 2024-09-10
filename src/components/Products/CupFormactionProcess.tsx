@@ -5,7 +5,7 @@ import DetaillProcess from "./DetaillProcess";
 const CupFormactionProcess = () => {
   return (
     <div className="h-full">
-      <div className="h-[80%] p-4 flex rounded-3xl flex-col bg-white shadow-lg w-full">
+      <div className="h-[80%] p-4 flex rounded-xl flex-col bg-white shadow-lg w-full">
         <div className="z-20 text-base font-poppins">
           {" "}
           <span className="z-20">Process of</span>{" "}

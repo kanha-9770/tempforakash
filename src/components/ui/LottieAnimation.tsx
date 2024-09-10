@@ -3,7 +3,7 @@ import React from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 
 interface LottieAnimationProps {
-  animationData: object; // You can be more specific with the type if you know the shape of your JSON
+  animationData:string | object; // You can be more specific with the type if you know the shape of your JSON
   loop?: boolean;
   autoplay?: boolean;
   className?: string; // For applying Tailwind CSS classes

@@ -2,11 +2,25 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { items, titlesWithImages } from "../Constants/Navbar/about-data";
 import { motion } from "framer-motion";
 import AnimatedContainer from "@/hooks/AnimatedContainer";
-import { IoIosArrowForward } from "react-icons/io";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
+
+interface NavItem {
+  title: string;
+  link?: string;
+  image?: string;
+  textcolor?: string;
+  description?: string;
+}
+
+interface AboutData {
+  category: string;
+  data: {
+    navLeftData: NavItem[];
+    navRightData: NavItem[];
+  };
+}
 
 const IoIosArrowDown = dynamic(() =>
   import("react-icons/io").then((mod) => mod.IoIosArrowDown)
@@ -16,16 +30,48 @@ const IoIosArrowUp = dynamic(() =>
 );
 const Link = dynamic(() => import("next/link"), { ssr: false });
 
-const AboutLayout = () => {
+const AboutLayout: React.FC<AboutData> = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const router = useRouter();
+  const [data, setData] = useState<any[]>([]);
   const pathname = usePathname() || "";
   const countryCode = pathname.split("/")[1]?.toLowerCase();
 
-  const scrollDown = useCallback(() => {
-    setCurrentIndex((prev) => (prev < items.length - 2 ? prev + 1 : prev));
+  // Fetch data from the index.json file
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://backend.nesscoindustries.com/testing.json"
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        console.error("There was a problem with the fetch operation:", error);
+      }
+    };
+
+    fetchData();
   }, []);
+
+  // Get aboutData, and check if it exists before destructuring
+  const aboutData = data.find(
+    (item: AboutData) => item.category === "About"
+  )?.data;
+  console.log("ABOUTDATA", aboutData);
+
+  // Provide fallback values if aboutData is undefined
+  const navLeftData = aboutData?.navLeftData || [];
+  const navRightData = aboutData?.navRightData || [];
+
+  const scrollDown = useCallback(() => {
+    setCurrentIndex((prev) =>
+      prev < navLeftData.length - 2 ? prev + 1 : prev
+    );
+  }, [navLeftData]);
 
   const scrollUp = useCallback(() => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
@@ -52,9 +98,9 @@ const AboutLayout = () => {
   }, [handleWheel]);
 
   return (
-    <div className="flex w-full bg-white p-2 lg:p-2  lg:border-none  lg:px-4 lg:pb-6  mx-auto max-w-screen-2xl flex-col lg:flex-row items-center justify-center lg:rounded-xl h-full">
+    <div className="flex w-full bg-white p-2 lg:p-2 lg:border-none lg:px-4 lg:pb-6 mx-auto max-w-screen-2xl flex-col lg:flex-row items-center justify-center lg:rounded-xl h-full">
       <div className="grid grid-cols-2 h-[80%] sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full lg:w-[75vw]">
-        {titlesWithImages.map((item, index) => (
+        {navRightData.map((item: NavItem, index: number) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }}
@@ -64,9 +110,9 @@ const AboutLayout = () => {
           >
             <a href={`/${countryCode}/about/${item.link}`}>
               <Image
-                src={item.image}
+                src={item.image || "/path/to/fallback-image.jpg"} // Add a fallback image if `item.image` is undefined
                 alt={item.title}
-                className="rounded-2xl cursor-pointer w-44 h-32  lg:w-56 lg:h-56 object-cover transform lg:hover:scale-80 transition-transform duration-200"
+                className="rounded-2xl cursor-pointer w-44 h-32 lg:w-56 lg:h-56 object-cover transform lg:hover:scale-80 transition-transform duration-200"
                 width={224}
                 height={224}
                 priority={index < 4}
@@ -81,48 +127,33 @@ const AboutLayout = () => {
       </div>
       <div className="hidden lg:flex ml-2 w-2 h-72 border-l border-gray-300"></div>
       {/* desktop view */}
-      <div className="w-full  lg:w-[20vw] h-32 ml-4 lg:h-auto hidden  lg:flex flex-col justify-between mt-4  lg:mt-0">
+      <div className="w-full lg:w-[20vw] h-32 ml-4 lg:h-auto hidden lg:flex flex-col justify-between mt-4 lg:mt-0">
         <AnimatedContainer currentIndex={currentIndex}>
-          {items.slice(currentIndex, currentIndex + 2).map((item, index) => (
-            <a key={index} href={`/${countryCode}/about/${item.title}`}>
-              <div
-                className={`${item.color} hidden lg:flex border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
-              >
+          {navLeftData
+            .slice(currentIndex, currentIndex + 2)
+            .map((item: NavItem, index: number) => (
+              <a key={index} href={`/${countryCode}/about/${item.title}`}>
                 <div
-                  className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
+                  className={`hidden lg:flex border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
                 >
-                  <item.icon />
+                  <div
+                    className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
+                  >
+                    {/* <item.icon/> */}
+                  </div>
+                  <div>
+                    <h3 className="text-sm sm:text-md text-black font-semibold mb-0">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs hidden lg:flex font-regular text-black line-clamp-3">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm  sm:text-md text-black font-semibold mb-0">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs hidden lg:flex font-regular text-black line-clamp-3">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-              <div
-                className={`flex lg:hidden border-t-[1px] lg:border-none lg:hover:scale-80 transition-transform duration-200  items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
-              >
-                <div
-                  className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
-                >
-                  <item.icon />
-                </div>
-                <div className="flex flex-row w-full justify-between">
-                  <h3 className="text-sm  sm:text-md text-black font-bold mb-0">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs hidden lg:flex text-black line-clamp-3">
-                    {item.description}
-                  </p>
-                  <IoIosArrowForward className="text-2xl" />
-                </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            ))}
         </AnimatedContainer>
+        {/* Scroll Buttons */}
         <div className="hidden lg:flex w-full bg-gray-800 justify-center">
           {currentIndex > 0 && (
             <button
@@ -134,74 +165,10 @@ const AboutLayout = () => {
           )}
         </div>
         <div className="bottom-4 hidden lg:flex w-full justify-center text-3xl">
-          {currentIndex < items.length - 2 && (
+          {currentIndex < navLeftData.length - 2 && (
             <button
               onClick={scrollDown}
-              className="absolute bg-transparent text-black flex justify-center items-center rounded-full"
-            >
-              <IoIosArrowDown />
-            </button>
-          )}
-        </div>
-      </div>
-      {/* mobile view */}
-      <div className="w-full lg:w-[20vw] h-32 lg:h-auto  flex lg:hidden flex-col justify-between mt-4 lg:mt-0">
-        <AnimatedContainer currentIndex={currentIndex}>
-          {items.slice(currentIndex, currentIndex + 4).map((item, index) => (
-            <Link key={index} href={`/${item.title}`} passHref>
-              <div
-                className={`${item.color} hidden lg:flex border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
-              >
-                <div
-                  className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
-                >
-                  <item.icon />
-                </div>
-                <div>
-                  <h3 className="text-sm  sm:text-md text-black font-bold mb-0">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs hidden lg:flex text-black line-clamp-3">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-              <div
-                className={`flex lg:hidden border-t-[1px] lg:border-none lg:hover:scale-80 transition-transform duration-200  items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
-              >
-                <div
-                  className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
-                >
-                  <item.icon />
-                </div>
-                <div className="flex flex-row w-full justify-between">
-                  <h3 className="text-sm  sm:text-md text-black font-bold mb-0">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs hidden lg:flex text-black line-clamp-3">
-                    {item.description}
-                  </p>
-                  <IoIosArrowForward className="text-2xl" />
-                </div>
-              </div>
-            </Link>
-          ))}
-        </AnimatedContainer>
-        <div className="hidden lg:flex w-full bg-gray-800 justify-center">
-          {currentIndex > 0 && (
-            <button
-              onClick={scrollUp}
-              className="absolute text-2xl text-black lg:top-0 top-[55%] rounded-full"
-            >
-              <IoIosArrowUp />
-            </button>
-          )}
-        </div>
-        <div className="bottom-4 hidden lg:flex w-full justify-center text-3xl">
-          {currentIndex < items.length - 2 && (
-            <button
-              onClick={scrollDown}
-              className="absolute bg-transparent text-black flex justify-center items-center rounded-full"
+              className="absolute bg-transparent text-black flex justify-center items-center"
             >
               <IoIosArrowDown />
             </button>

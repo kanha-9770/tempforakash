@@ -50,7 +50,7 @@ export const DataBankItem = [
   },
   { title: "Paper Bucket Machine", image: paperStrawMachine, bgPic: papercup },
   { title: "Additional Item 4", image: BookServiceImage, bgPic: paperbowl },
-  { title: "Additional Item 5", image: BookServiceImage, bgPic: papercup },
+  { title: "Additional Item 5", image: paperLunchBoxMachine, bgPic: papercup },
 ];
 export const ResourcesMobile = [
   { title: "knowledge Center", bgPic: paperbowl },

@@ -15,7 +15,8 @@ interface MachineProps {
   first_name: string;
   second_name: string;
   application: string;
-  mimage: StaticImageData;
+  mimage: string;
+  image: string;
   description: string;
 }
 
@@ -23,6 +24,7 @@ const Machine: React.FC<MachineProps> = ({
   product_heading,
   description,
   name,
+  image,
   application,
   mimage,
   first_name,
@@ -49,7 +51,7 @@ const Machine: React.FC<MachineProps> = ({
               <div className="w-[40%] h-full flex justify-end relative">
                 <div className="w-full h-72 flex justify-end items-end relative">
                   <Image
-                    src={mimage}
+                    src={image}
                     height={800}
                     width={400}
                     alt="Flexo Printing Machine"

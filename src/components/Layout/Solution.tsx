@@ -6,7 +6,6 @@ import Image from "next/image";
 import PositionAwareButton from "../ui/PositionAwareButton";
 import { motion, useAnimation } from "framer-motion"; // Import Framer Motion for animations
 import { IoIosArrowForward } from "react-icons/io";
-import { BiMinus } from "react-icons/bi";
 import Link from "next/link";
 
 const Solution: React.FC = () => {
@@ -68,10 +67,7 @@ const Solution: React.FC = () => {
   };
   // expand feature for mobile
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
-  const [active, setActive] = useState<string | null>(null);
-  const toggleItem = (item: string) => {
-    setActive(active === item ? null : item);
-  };
+ 
 
   const expandItem = (item: string) => {
     setExpandedItem(expandedItem === item ? null : item);

@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import {
-  Machines,
-  SidebarLinks,
-  images,
-} from "../Constants/Navbar/product-data";
+
+import data from "../Constants/Navbar/index.json";
+
 import Image, { StaticImageData } from "next/image";
 import {
   MdKeyboardArrowRight,
@@ -15,8 +13,7 @@ import { BlurImage } from "../ui/BlurImage";
 import { motion } from "framer-motion";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { BiMinus } from "react-icons/bi";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 interface ProductLayoutProps {
   setHoveredItem: (item: string | null) => void;
@@ -33,21 +30,23 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   setHeading,
   setIsVisible,
 }) => {
+  const productData = data.find(item => item.category === "Product")?.data;
+  // Provide fallback values if aboutData is undefined
+  const navLeftData = productData?.Machines || [];
+  const navRightData = productData?.SidebarLinks || [];
+  
   const [hoveredCategory, setHoveredCategory] = useState<string>(
-    SidebarLinks[0].name
+    navRightData[0].name
   );
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(
-    null
-  );
+
   const [sidebarIndex, setSidebarIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const filteredMachines = Machines.filter((machine) =>
+  const filteredMachines = navLeftData.filter((machine) =>
     hoveredCategory ? machine.category.includes(hoveredCategory) : false
   ).map((machine) => ({
     ...machine,
-    image: (images as unknown as Images)[machine.image],
   }));
 
   const totalVisible = 6;
@@ -128,9 +127,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
     setHeading(heading);
     setIsVisible(false);
   };
-  const handleImageClick = (linkName: number) => {
-    setHoveredImageIndex(linkName);
-  };
+
   const sidebarVariants = {
     hidden: { opacity: 0, x: -30 },
     visible: (i: number) => ({
@@ -145,15 +142,11 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   };
   // expand feature for mobile
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
-  const [active, setActive] = useState<string | null>(null);
-  const toggleItem = (item: string) => {
-    setActive(active === item ? null : item);
-  };
+
 
   const expandItem = (item: string) => {
     setExpandedItem(expandedItem === item ? null : item);
   };
-  const router = useRouter();
   const pathname = usePathname() || "";
   const countryCode = pathname.split("/")[1]?.toLowerCase();
   return (
@@ -187,8 +180,6 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                     initial="hidden"
                     animate="visible"
                     variants={imageVariants}
-                    onMouseEnter={() => setHoveredImageIndex(index)}
-                    onMouseLeave={() => setHoveredImageIndex(null)}
                   >
                     <a href={`/${countryCode}/products/${machine.name}`}>
                       <Image
@@ -214,9 +205,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       initial="hidden"
                       animate="visible"
                       variants={imageVariants}
-                      onMouseEnter={() => setHoveredImageIndex(index)}
-                      onMouseLeave={() => setHoveredImageIndex(null)}
-                    >
+                        >
                       <a href={`/${countryCode}/products/${machine.name}`}>
                         <Image
                           src={machine.image}
@@ -258,7 +247,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
               </button>
             )}
             <div className="space-y-4 pt-6 h-[24rem]">
-              {SidebarLinks.slice(sidebarIndex, sidebarIndex + 8).map(
+              {navRightData.slice(sidebarIndex, sidebarIndex + 8).map(
                 (link, index) => (
                   <motion.div
                     key={link.name}
@@ -297,7 +286,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                 )
               )}
             </div>
-            {sidebarIndex + 8 < SidebarLinks.length && (
+            {sidebarIndex + 8 < navRightData.length && (
               <button
                 onClick={handleSidebarNext}
                 className="absolute bottom-0 left-1/2 text-4xl text-black"
@@ -314,10 +303,10 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           <div className="absolute w-full h-full flex flex-col">
             <div className="w-full flex justify-start items-start overflow-y-hidden relative">
               <div className="space-y-4 pb-32 h-full stopscrollProduct overflow-y-auto w-full">
-                {SidebarLinks.slice(sidebarIndex, SidebarLinks.length).map(
+                {navRightData.slice(sidebarIndex, navRightData.length).map(
                   (link, index) => (
                     <motion.div
-                      key={link.name}
+                      key={index}
                       initial={{
                         height: expandedItem === link.name ? "auto" : "3rem",
                       }}
@@ -381,7 +370,6 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                                         initial="hidden"
                                         animate="visible"
                                         variants={imageVariants}
-                                        onClick={() => handleImageClick(index)}
                                       >
                                         <Image
                                           src={machine.image}
@@ -408,9 +396,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                                           initial="hidden"
                                           animate="visible"
                                           variants={imageVariants}
-                                          onClick={() =>
-                                            handleImageClick(index)
-                                          }
+                                         
                                         >
                                           <BlurImage
                                             src={machine.image}
