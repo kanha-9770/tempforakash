@@ -49,7 +49,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-[#f2f2f2] h-full">
+    <main className="bg-[#f2f2f2] w-full h-full">
       <Machine
         name={machine.name}
         image={machine.image}
@@ -77,16 +77,16 @@ export default function Home() {
         description={machine.product_description}
         specification_image={machine.specification_image}
       />
-      <div className="h-full flex flex-row w-full">
-        <div className="w-2/3">
-          <div className="mx-10 " ref={productDescriptionRef}>
+      <div className="h-full px-10 gap-4 flex flex-row w-full">
+        <div className="w-[66.2%] ">
+          <div className=" " ref={productDescriptionRef}>
             <ProductDescription machine={machine} />
           </div>
-          <div className="mx-10 mt-32" ref={processRef}>
+          <div className=" mt-32" ref={processRef}>
             <CupFormactionProcess />
           </div>
-          <div className="mx-10 mt-32" ref={applicationRef}>
-            <ProductApplication/>
+          <div className=" mt-32" ref={applicationRef}>
+            <ProductApplication />
           </div>
 
           <div className="mx-6 mt-32" ref={technicalSpecificationsRef}>
@@ -99,7 +99,7 @@ export default function Home() {
             <MachineCard />
           </div>
         </div>
-        <div className="w-1/3 sticky">
+        <div className="w-[33%] sticky">
           <SignupFormDemoProduct />
         </div>
       </div>

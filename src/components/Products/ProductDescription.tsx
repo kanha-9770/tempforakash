@@ -41,7 +41,7 @@ interface ProductDescriptionProps {
 const ProductDescription: React.FC<ProductDescriptionProps> = ({ machine }) => {
   return (
     <div className="h-full bg-white rounded-xl p-4 gap-4">
-      <div className="h-[80vh] p-4 rounded-xl flex flex-col">
+      <div className="h-[75vh] p-4 rounded-xl flex flex-col">
         {/* heading */}
         <div className="w-full h-[60%] justify-start">
           <span className="text-gray-400 font-semibold text-3xl">Product</span>

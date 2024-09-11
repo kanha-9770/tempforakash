@@ -3,9 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import "./machine.css";
-import { MdOutlineFileDownload } from "react-icons/md";
 import BreadcrumbProduct from "@/components/ui/BreadCrumbProduct";
-import { NewSignupFormDemo } from "@/components/Contact/ProductContact";
 import { motion } from "framer-motion";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import RightSidebar from "./RightSidebar";
@@ -120,7 +118,7 @@ const NewMachine: React.FC<MachineProps> = ({
   ];
 
   return (
-    <div className="h-screen font-poppins  mt-20 px-6">
+    <div className="h-screen font-poppins  mt-20 px-10">
       <div className="flex flex-row gap-4">
         <div className="font-poppins bg-white rounded-xl  w-[67%]">
           <div className="p-4 pl-4">
@@ -150,11 +148,11 @@ const NewMachine: React.FC<MachineProps> = ({
                   />
                 </div>
                 <div className="h-1/3 grid grid-rows-1 gap-2 grid-cols-4">
-                  <div className="relative flex flex-row items-center mx-auto w-[64vw]">
+                  <div className="relative flex flex-row items-center mx-auto w-[62vw]">
                     {/* Left Arrow */}
                     {shouldShowArrows && (
                       <button
-                        className="h-12 w-16 z-30 cursor-pointer rounded-full hidden lg:flex items-center justify-center disabled:opacity-50"
+                        className="h-12 w-16 z-20 cursor-pointer rounded-full hidden lg:flex items-center justify-center disabled:opacity-50"
                         onClick={scrollLeft}
                         disabled={!canScrollLeft}
                       >
@@ -166,7 +164,7 @@ const NewMachine: React.FC<MachineProps> = ({
                     <div
                       className={`hidden lg:flex overflow-x-auto py-8 ${
                         shouldShowArrows ? "scroll-smooth" : ""
-                      } [scrollbar-width:none] gap-4`}
+                      } [scrollbar-width:none] gap-3`}
                       ref={carouselRef}
                       onScroll={checkScrollability}
                     >
@@ -198,11 +196,11 @@ const NewMachine: React.FC<MachineProps> = ({
                     {/* Right Arrow */}
                     {shouldShowArrows && (
                       <button
-                        className="h-12 z-30 w-16 cursor-pointer hidden rounded-full lg:flex items-center justify-center disabled:opacity-50"
+                        className="h-12 z-20 w-16 cursor-pointer hidden rounded-full lg:flex items-center justify-center disabled:opacity-50"
                         onClick={scrollRight}
                         disabled={!canScrollRight}
                       >
-                        <IoIosArrowForward className="text-2xl z-30 text-gray-500" />
+                        <IoIosArrowForward className="text-2xl z-20 text-gray-500" />
                       </button>
                     )}
                   </div>

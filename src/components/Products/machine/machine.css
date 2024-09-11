@@ -4,7 +4,9 @@
   padding: 0 10px;
   direction: rtl; /* Reverse the scrollbar to the left side */
 }
-
+.scrollbar-product-description{
+  overflow: auto;
+}
 /*       ScrollBar 1        */
 #scrollbar1::-webkit-scrollbar {
   width: 10px;

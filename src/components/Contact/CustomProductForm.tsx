@@ -1,68 +1,201 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { MessageBox } from "../ui/MessageBox";
 import { cn } from "@/lib/utils";
+import CountrySelect from "../ui/CountrySelect";
+import { BsCloudDownload } from "react-icons/bs";
+const products = [
+  {
+    id: 1,
+    title: "Die Cutting Machines",
+    description: "Raw Material fulfillment for paper cup machines",
+    image:
+      "https://www.nesscoindia.com/Assets/images/resource/flexo-printing-machine-nessco.webp",
+  },
+  {
+    id: 2,
+    title: "Flexo Printing Machines",
+    description: "Raw Material fulfillment for paper cup machines",
+    image:
+      "https://www.nesscoindia.com/Assets/images/resource/paper-cutlery-making-machine.webp",
+  },
+  {
+    id: 3,
+    title: "Die Cutting Machines",
+    description: "Raw Material fulfillment for paper cup machines",
+    image:
+      "https://www.nesscoindia.com/Assets/images/resource/paper-glass-machine.webp",
+  },
+];
 
-const transition = {
-  type: "spring",
-  mass: 0.5,
-  damping: 11.5,
-  stiffness: 100,
-  restDelta: 0.001,
-  restSpeed: 0.001,
-};
 
 const SignupFormDemoProduct = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
   };
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <motion.div
-      className="flex sticky top-28   max-w-full mx-auto px-4 justify-center"
-      initial={{ y: "-100%", height: 0, opacity: 0 }}
+      className="flex w-full sticky top-[6.4rem] h-full   mx-auto  justify-center"
       animate={{ y: 0, height: "33rem", opacity: 1 }}
-      exit={{ y: "-100%", height: 0, opacity: 0 }}
-      transition={transition}
     >
-      <div className="w-full max-w-md">
-       
-        <form className="" onSubmit={handleSubmit}>
-          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
+      <div className="w-full h-screen  gap-2 flex flex-col ">
+        {/* part-one-contact-page */}
+        <form
+          className="w-full  bg-white p-4 rounded-xl"
+          onSubmit={handleSubmit}
+        >
+          <div className="flex flex-col md:flex-row  md:space-y-0 mb-1 ">
             <LabelInputContainer>
-              <Label htmlFor="firstname">First name</Label>
-              <Input id="firstname" placeholder="Tyler" type="text" />
+              <Input
+                className="h-8"
+                id="firstname"
+                placeholder="Tyler"
+                type="text"
+              />
             </LabelInputContainer>
             <LabelInputContainer>
-              <Label htmlFor="lastname">Last name</Label>
-              <Input id="lastname" placeholder="Durden" type="text" />
+              <Input
+                className="h-8"
+                id="lastname"
+                placeholder="Durden"
+                type="text"
+              />
             </LabelInputContainer>
           </div>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="email">Email Address</Label>
-            <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <LabelInputContainer className="mb-1">
+            <Input
+              className="h-8"
+              id="email"
+              placeholder="projectmayhem@fc.com"
+              type="email"
+            />
           </LabelInputContainer>
-          <LabelInputContainer className="mb-4">
-            <Label htmlFor="mobilenumber">Mobile Number</Label>
-            <Input id="mobilenumber" placeholder="123-456-7890" type="tel" />
+          <LabelInputContainer className="mb-1">
+            <CountrySelect isoCode={"in"} />
           </LabelInputContainer>
-          <LabelInputContainer className="mb-8">
-            <Label htmlFor="message">Your Message</Label>
-            <MessageBox id="message" placeholder="Type your message here..." />
-          </LabelInputContainer>
-
-          <button
-            className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-            type="submit"
-          >
-            Submit &rarr;
-            <BottomGradient />
-          </button>
+          <div className="w-full flex justify-center">
+            <button
+              className="bg-gradient-to-br h-8 relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-1/3 text-white rounded-md  font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+              type="submit"
+            >
+              Submit &rarr;
+              <BottomGradient />
+            </button>
+          </div>
         </form>
+        {/* second-part-of right side */}
+        <div className="h-[41vh] bg-white p-4 font-regular rounded-xl">
+          <h2 className="font-semibold text-gray-700 mb-4">
+            <span className="text-gray-400">Related</span> Products
+          </h2>
+
+          <div
+            id="scrollbar1"
+            className={`w-full space-y-2 flex flex-col  transition-all duration-300 ease-in-out ${
+              expanded
+                ? "h-[30vh] overflow-auto scrollbar-product-description "
+                : "h-[30vh] overflow-hidden"
+            }`}
+          >
+            <div className="p-4 w-full max-w-md">
+              {products
+                .slice(0, expanded ? products.length : 3)
+                .map((product) => (
+                  <div
+                    key={product.id}
+                    className="flex border-b-[2px] items-start mb-4"
+                  >
+                    {/* Product Image */}
+                    <div className="w-16 h-16 rounded-md overflow-hidden">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={64}
+                        height={64}
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Product Info */}
+                    <div className="ml-4 flex-1">
+                      <h3 className="font-semibold text-sm">{product.title}</h3>
+                      <p className="text-xs text-gray-500">
+                        {product.description}
+                      </p>
+                    </div>
+
+                    {/* Action Menu Icon */}
+                    <div className="ml-2">
+                      <button>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6 text-gray-500"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M6.75 12a.75.75 0 110-1.5h.008a.75.75 0 010 1.5h-.008zm6 0a.75.75 0 110-1.5h.008a.75.75 0 010 1.5h-.008zm6 0a.75.75 0 110-1.5h.008a.75.75 0 010 1.5h-.008z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+
+          {/* Show More / Show Less Button */}
+          <div className="flex justify-center">
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className=" p-1 rounded-full -mt-4 bg-gray-200 hover:bg-gray-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className={`w-4 h-4 text-gray-500 transform transition-transform ${
+                  expanded ? "rotate-180" : "rotate-0"
+                }`}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div className="w-full flex flex-row h-[10vh] bg-white rounded-xl p-4 items-center justify-between">
+          <div className="w-2/3 flex flex-col items-start justify-center space-y-0">
+            <h2 className="font-semibold text-gray-700">
+              <span className="text-gray-400">Download</span> Brochure
+            </h2>
+            <p className="text-black font-semibold text-sm">
+              <span className="text-gray-700 font-regular">
+                Nessco Paper Cup Machine{" "}
+              </span>{" "}
+              Catalogue
+            </p>
+          </div>
+          <div className="w-1/3 font-poppins flex items-center justify-center">
+            <BsCloudDownload className="text-3xl font-black text-black " />
+          </div>
+        </div>
       </div>
     </motion.div>
   );
