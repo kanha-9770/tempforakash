@@ -3,25 +3,38 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import PositionAwareButton from "../ui/PositionAwareButton";
 
-import { IoPlaySharp, IoPauseSharp } from "react-icons/io5";
-import "@fontsource/poppins/400-italic.css"; // Specify weight and style
 
 import Image from "next/image";
 import homeimg from "../../../public/video/BgHomeimg.webp";
+import Link from "next/link";
+const imgs = [
+  "/imgs/nature/1.jpg",
+  "/imgs/nature/2.jpg",
+  "/imgs/nature/3.jpg",
+  "/imgs/nature/4.jpg",
+  "/imgs/nature/5.jpg",
+  "/imgs/nature/6.jpg",
+  "/imgs/nature/7.jpg",
+];
+const ONE_SECOND = 1000;
+const AUTO_DELAY = ONE_SECOND * 10;
+const DRAG_BUFFER = 50;
+
+const SPRING_OPTIONS = {
+  type: "spring",
+  mass: 3,
+  stiffness: 400,
+  damping: 50,
+};
+
 const Home: React.FC = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
-  const [isSafari, setIsSafari] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Check if the browser is Safari
-    const ua = navigator.userAgent.toLowerCase();
-    setIsSafari(ua.includes("safari") && !ua.includes("chrome"));
-
-    // Check for larger screens on the client-side
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
     setIsLargeScreen(mediaQuery.matches);
 
@@ -53,17 +66,7 @@ const Home: React.FC = () => {
     };
   }, []);
 
-  const handlePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
+  
   const { scrollY } = useScroll();
 
   // Always call the hook
@@ -101,7 +104,6 @@ const Home: React.FC = () => {
                 <source src="video/bg.ogv" type="video/ogg" />
               </video>
               <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl lg:rounded-3xl"></div>
-              
             </div>
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -145,7 +147,7 @@ const Home: React.FC = () => {
             ></path>
           </svg>
         </motion.div>
-        <div className="w-full mt-10 hidden lg:flex justify-center">
+        <Link className="w-full mt-10 hidden lg:flex justify-center" href={"/in/applications"}>
           <PositionAwareButton
             borderWidth="1px"
             iconSize="50"
@@ -156,9 +158,9 @@ const Home: React.FC = () => {
             fontSize="35px"
             borderRadius="100px"
             borderColor="black"
-            text={"Get a Quote"}
+            text={"Learn More"}
           />
-        </div>
+        </Link>
         <div className=" lg:hidden mt-2 -ml-2 items-center flex justify-center">
           <PositionAwareButton
             borderWidth="1px"
@@ -170,7 +172,7 @@ const Home: React.FC = () => {
             fontSize="16px"
             borderRadius="100px"
             borderColor="black"
-            text={"Get a Quote"}
+            text={"Learn More"}
           />
         </div>
         <div className="lg:mt-[1.3rem] -mt-2 ">

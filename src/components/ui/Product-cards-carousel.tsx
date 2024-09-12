@@ -16,6 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { BlurImage } from "./BlurImage";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -93,18 +94,18 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       {items.length <= 10 ? (
         <>
           <div
-            className=" grid grid-rows-2  w-full overflow-x-scroll overscroll-x-auto py-4 md:py-4 scroll-smooth [scrollbar-width:none]"
+            className=" grid grid-rows-2  w-full overflow-x-scroll overscroll-x-auto py-2 scroll-smooth [scrollbar-width:none]"
             ref={carouselRef}
             onScroll={checkScrollability}
           ></div>
 
           {items.length > 5 ? (
             <div
-              className="grid grid-rows-2 w-full overflow-x-scroll overscroll-x-auto py-4 md:py-4 scroll-smooth [scrollbar-width:none]"
+              className="grid grid-rows-2 w-full overflow-x-scroll overscroll-x-auto py-2 scroll-smooth [scrollbar-width:none]"
               ref={carouselRef}
               onScroll={checkScrollability}
             >
-              <div className="relative mt-12 w-full">
+              <div className="relative  w-full">
                 <div
                   className={cn(
                     "absolute right-0  z-10 h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
@@ -162,7 +163,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             </div>
           ) : (
             <div
-              className="flex w-full overflow-x-scroll overscroll-x-auto py-4 md:py-4 scroll-smooth [scrollbar-width:none]"
+              className="flex w-full overflow-x-scroll overscroll-x-auto py-2 scroll-smooth [scrollbar-width:none]"
               ref={carouselRef}
               onScroll={checkScrollability}
             >
@@ -195,7 +196,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       ) : (
         <>
           <div
-            className="flex  w-full overflow-x-scroll overscroll-x-auto py-4 md:py-4 scroll-smooth [scrollbar-width:none]"
+            className="flex  w-full overflow-x-scroll overscroll-x-auto py-2 scroll-smooth [scrollbar-width:none]"
             ref={carouselRef}
             onScroll={checkScrollability}
           >
@@ -283,59 +284,26 @@ export const Card = ({
   index: number;
   layout?: boolean;
 }) => {
-
-
-
-  
   return (
     <>
-      <motion.button
-        layoutId={layout ? `card-${card.title}` : undefined}
-        className="relative rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[16rem] md:w-48 overflow-hidden flex flex-col items-start justify-end z-10"
+    <motion.button
+      layoutId={layout ? `card-${card.title}` : undefined}
+      className="relative rounded-2xl bg-gray-100  h-80 w-56 md:h-[15.5rem] md:w-48 overflow-hidden flex flex-col items-start justify-end z-10"
+    >
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent z-30 pointer-events-none" />
+      <BlurImage
+        src={card.src}
+        alt={card.title}
+        fill
+        className="object-cover absolute z-10 inset-0"
+      />
+      <motion.p
+        layoutId={layout ? `title-${card.title}` : undefined}
+        className="text-white md:text-base font-semibold max-w-xs text-left font-sans absolute bottom-4 left-4 z-40"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-        <BlurImage
-          src={card.src}
-          alt={card.title}
-          fill
-          className="object-cover absolute z-10 inset-0"
-        />
-        <motion.p
-          layoutId={layout ? `title-${card.title}` : undefined}
-          className="text-white md:text-base font-semibold max-w-xs text-left font-sans absolute bottom-4 left-4 z-40"
-        >
-          {card.title}
-        </motion.p>
-      </motion.button>
-    </>
-  );
-};
-
-export const BlurImage = ({
-  height,
-  width,
-  src,
-  className,
-  alt,
-  ...rest
-}: ImageProps) => {
-  const [isLoading, setLoading] = useState(true);
-  return (
-    <Image
-      className={cn(
-        "transition duration-300",
-        isLoading ? "blur-sm" : "blur-0",
-        className
-      )}
-      onLoad={() => setLoading(false)}
-      src={src}
-      width={width}
-      height={height}
-      loading="lazy"
-      decoding="async"
-      blurDataURL={typeof src === "string" ? src : undefined}
-      alt={alt ? alt : "Background of a beautiful view"}
-      {...rest}
-    />
+        {card.title}
+      </motion.p>
+    </motion.button>
+  </>  
   );
 };

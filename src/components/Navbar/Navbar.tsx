@@ -1,22 +1,17 @@
 "use client";
-import SupportGrid from "@/components/Layout/Support";
-import ResourceGrid from "@/components/Layout/ResourceLayout";
+import React, { useState, useEffect, useRef } from "react";
+import { cn } from "@/lib/utils";
+import { navbarItems } from "@/components/Constants/Navbar/navbarData";
 import Image from "next/image";
 import Link from "next/link";
-import CountryLayout from "../Layout/CountryLayout";
-
-import ContactForm from "../Contact/Contact";
 import Logo from "../../../public/assets/Logo.png";
 import { Menu, MenuItem } from "./nav-menue";
-import { useState, useEffect } from "react";
-import {
-  DataBankItem,
-  ResourcesMobile,
-} from "../Constants/Navbar/resources-data";
-import AboutLayout from "../Layout/AboutLayout";
-import ApplicationPage from "../Layout/ApplicationLayout";
-import ProductLayout from "../Layout/ProductLayout";
-
+import { HiMiniMinusCircle } from "react-icons/hi2";
+import CountryLayout from "../Layout/CountryLayout";
+import { VscAccount } from "react-icons/vsc";
+import { TfiSearch } from "react-icons/tfi";
+import { IoClose } from "react-icons/io5";
+import ContactForm from "../Contact/Contact";
 export default function NavbarDemo() {
   return (
     <div className="relative lg:h-auto lg:mt-0 flex items-center justify-between lg:justify-center">
@@ -27,6 +22,7 @@ export default function NavbarDemo() {
 
 function Navbar({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("");
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const [searchValue, setSearchValue] = useState<string>("");
   const [isVisible, setIsVisible] = useState(true);
@@ -41,11 +37,24 @@ function Navbar({ className }: { className?: string }) {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearchValue(e.target.value);
   const handleClearSearch = () => setSearchValue("");
+  const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
     setIsVisible(!visibilityState.isFlagOpen);
   }, [visibilityState]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div
       className={`fixed flex w-full bg-white font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
@@ -63,131 +72,19 @@ function Navbar({ className }: { className?: string }) {
             />
           </Link>
         </div>
-
         <div className="w-3/5 flex items-center justify-center">
           <Menu>
-            <MenuItem
-              setActive={() => {}}
-              active={null}
-              item="About Us"
-              link="about"
-              setPosition={function (position: {
-                left: number;
-                width: number;
-                opacity: number;
-              }): void {
-                throw new Error("Function not implemented.");
-              }}
-            >
-              <AboutLayout
-                category={""}
-                data={{
-                  navLeftData: [],
-                  navRightData: [],
-                }}
-              />
-            </MenuItem>
-
-            <MenuItem
-              setActive={() => {}}
-              active={null}
-              item="Products"
-              link="Products"
-              setPosition={function (position: {
-                left: number;
-                width: number;
-                opacity: number;
-              }): void {
-                throw new Error("Function not implemented.");
-              }}
-            >
-              <ProductLayout
-                setHoveredItem={() => {}}
-                setHeading={() => {}}
-                setIsVisible={() => {}}
-              />
-            </MenuItem>
-
-            <MenuItem
-              setActive={() => {}}
-              active={null}
-              item="Application"
-              link="application"
-              setPosition={function (position: {
-                left: number;
-                width: number;
-                opacity: number;
-              }): void {
-                throw new Error("Function not implemented.");
-              }}
-            >
-              <ApplicationPage />
-            </MenuItem>
-
-            <MenuItem
-              setActive={() => {}}
-              active={null}
-              item="Support"
-              link="support"
-              setPosition={function (position: {
-                left: number;
-                width: number;
-                opacity: number;
-              }): void {
-                throw new Error("Function not implemented.");
-              }}
-            >
-              <SupportGrid supportItem={[]} supportMobile={{
-                mobileFirst: "",
-                mobileSecond: ""
-              }} />
-            </MenuItem>
-
-            <MenuItem
-              setActive={() => {}}
-              active={null}
-              item="Resources"
-              link="resources"
-              setPosition={function (position: {
-                left: number;
-                width: number;
-                opacity: number;
-              }): void {
-                throw new Error("Function not implemented.");
-              }}
-            >
-              <ResourceGrid supporItem={[]} ResourcesMobile={[]} />
-            </MenuItem>
-
-            <MenuItem
-              setActive={() => {}}
-              active={null}
-              item="Video"
-              link="video"
-              setPosition={function (position: {
-                left: number;
-                width: number;
-                opacity: number;
-              }): void {
-                throw new Error("Function not implemented.");
-              }}
-            >
-              <ResourceGrid supporItem={[]} ResourcesMobile={[]} />
-            </MenuItem>
-
-            <MenuItem
-              setActive={() => {}}
-              active={null}
-              item="Contact"
-              link="contact"
-              setPosition={function (position: {
-                left: number;
-                width: number;
-                opacity: number;
-              }): void {
-                throw new Error("Function not implemented.");
-              }}
-            />
+            {navbarItems.map((item) => (
+              <MenuItem
+                key={item.name}
+                setActive={setActive}
+                active={active}
+                item={item.name}
+                setPosition={() => {}}
+              >
+                {item.component}
+              </MenuItem>
+            ))}
           </Menu>
         </div>
 
@@ -212,8 +109,8 @@ function Navbar({ className }: { className?: string }) {
       </div>
 
       {/* Mobile Menu */}
-      <div className="lg:hidden flex w-full">
-        <div className="w-full flex justify-between items-center -ml-2 p-4">
+      <div className=" lg:hidden  border-b-2 flex w-full ">
+        <div className="lg:hidden w-full flex justify-between items-center -ml-2 p-4">
           <Link href="/" className="h-6 flex items-center">
             <Image
               src={Logo}
@@ -224,12 +121,16 @@ function Navbar({ className }: { className?: string }) {
             />
           </Link>
 
-          <button className="ml-2 text-gray-700" onClick={toggleMenu}>
+          <button
+            className="ml-2 text-gray-700 focus:outline-none"
+            onClick={toggleMenu}
+          >
             <svg
               className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               {isOpen ? (
                 <path
@@ -251,88 +152,79 @@ function Navbar({ className }: { className?: string }) {
         </div>
 
         {isOpen && (
-          <div className="absolute top-14 left-0 w-full bg-gray-300/90 h-screen z-[99999] shadow-lg">
-            <div className="bg-white h-2/3 p-4 flex-col space-y-3">
-              <div
-                className="flex justify-between items-center py-2 border-b"
-                onClick={() => expandItem("About Us")}
-              >
-                <span className="text-lg">About Us</span>
-                <span className="text-2xl">
-                  {expandedItem === "About Us" ? "-" : "+"}
-                </span>
-              </div>
-              {expandedItem === "About Us" && <AboutLayout category={""} data={{
-                navLeftData: [],
-                navRightData: []
-              }} />}
-
-              {/* Repeat for other items */}
-              <div
-                className="flex justify-between items-center py-2 border-b"
-                onClick={() => expandItem("Products")}
-              >
-                <span className="text-lg">Products</span>
-                <span className="text-2xl">
-                  {expandedItem === "Products" ? "-" : "+"}
-                </span>
-              </div>
-              {expandedItem === "Products" && (
-                <ProductLayout
-                  setHoveredItem={() => {}}
-                  setHeading={() => {}}
-                  setIsVisible={() => {}}
-                />
-              )}
-
-              <div
-                className="flex justify-between items-center py-2 border-b"
-                onClick={() => expandItem("Application")}
-              >
-                <span className="text-lg">Application</span>
-                <span className="text-2xl">
-                  {expandedItem === "Application" ? "-" : "+"}
-                </span>
-              </div>
-              {expandedItem === "Application" && <ApplicationPage />}
-              <div
-                className="flex justify-between items-center py-2 border-b"
-                onClick={() => expandItem("Support")}
-              >
-                <span className="text-lg">Support</span>
-                <span className="text-2xl">
-                  {expandedItem === "Support" ? "-" : "+"}
-                </span>
-              </div>
-              {expandedItem === "Support" && <SupportGrid supportItem={[]} supportMobile={{
-                mobileFirst: "",
-                mobileSecond: ""
-              }} />}
-              <div
-                className="flex justify-between items-center py-2 border-b"
-                onClick={() => expandItem("Resources")}
-              >
-                <span className="text-lg">Resources</span>
-                <span className="text-2xl">
-                  {expandedItem === "Resources" ? "-" : "+"}
-                </span>
-              </div>
-              {expandedItem === "Resources" && <ResourceGrid supporItem={[]} ResourcesMobile={[]} />}
-              <div
-                className="flex justify-between items-center py-2 border-b"
-                onClick={() => expandItem("Video")}
-              >
-                <span className="text-lg">Video</span>
-                <span className="text-2xl">
-                  {expandedItem === "Video" ? "-" : "+"}
-                </span>
-              </div>
-              {expandedItem === "Video" && <ResourceGrid supporItem={[]} ResourcesMobile={[]} />}
-              <div
-                className="flex justify-between items-center py-2 border-b"
-                onClick={() => expandItem("Video")}
-              >
-                <span className="text-lg">Contact</span>
+          <div className="lg:hidden absolute top-full left-0 w-full bg-gray-300/90 backdrop-blur-[80px] h-screen  shadow-lg z-[99999]">
+            <div className="flex bg-white h-2/3 p-4 flex-col space-y-3">
+              {navbarItems.map((item) => (
+                <div key={item.name}>
+                  <div
+                    className="flex -mt-3 justify-between items-center py-2 border-b"
+                    onClick={() => expandItem(item.name)}
+                  >
+                    <span className="text-lg font-semimedium text-black">
+                      {item.name}
+                    </span>
+                    <span className="text-gray-500 pr-2 text-2xl">
+                      {expandedItem === item.name ? "-" : "+"}
+                    </span>
+                  </div>
+                  {expandedItem === item.name && (
+                    <div className="absolute h-screen inset-0 bg-white z-50 flex flex-col">
+                      <div className="flex border-b-2 bg-[#f2f2f2] justify-between items-center">
+                        <span className="text-lg pl-4  text-[#483d73] font-semibold ">
+                          {item.name}
+                        </span>
+                        <button
+                          className=" invert-0 p-4"
+                          onClick={() => expandItem(item.name)}
+                        >
+                          <HiMiniMinusCircle className="text-2xl" />
+                        </button>
+                      </div>
+                      <div className="py-4 flex-grow">
+                        <div className="text-sm text-gray-700">
+                          {item.component}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+              <div className="w-full">
+                <div className="relative -mt-3 h-full flex flex-col w-full  lg:hidden">
+                  <div className="relative max-w-screen-2xl p-1 flex w-full mx-auto">
+                    <div className="justify-center items-center w-full rounded-xl">
+                      <form className="flex justify-start  ">
+                        <div className="relative w-full border-gray-300">
+                          <input
+                            type="text"
+                            id="search-dropdown"
+                            value={searchValue}
+                            onChange={handleInputChange}
+                            className="block p-[0.6rem] w-full z-20 text-sm bg-gray-100 rounded-3xl border-slate-100 font-montserrat pr-10 focus:outline-none focus:ring-2 focus:ring-transparent"
+                            placeholder="Search Product Name..."
+                            required
+                          />
+                          {searchValue ? (
+                            <IoClose
+                              onClick={handleClearSearch}
+                              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer text-18"
+                            />
+                          ) : (
+                            <TfiSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer text-18" />
+                          )}
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div className="flex felx-row justify-between items-center gap-2 border-t-[1px] border-b-[1px]  w-full p-2">
+                    <div className="relative ">
+                      <CountryLayout />
+                    </div>
+                    <div className="relative ">
+                      <VscAccount className="text-xl cursor-pointer" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -5,19 +5,76 @@ import Image, { StaticImageData } from "next/image";
 import "./machine.css";
 import { MdOutlineFileDownload } from "react-icons/md";
 import BreadcrumbProduct from "@/components/ui/BreadCrumbProduct";
-import { SignupFormDemo } from "@/components/Contact/SignupFormDemo";
 import InfoCard from "@/components/Products/InfoCard";
-import { NewSignupFormDemo } from "@/components/Contact/ProductContact";
+import PositionAwareButton from "@/components/ui/PositionAwareButton";
+
+interface SpecificationImage {
+  first?: string;
+  second?: string;
+  third?: string;
+  fourth?: string;
+  fifth?: string;
+}
+
+interface Rating {
+  stars: number;
+  reviews: number;
+}
+
+interface TechnicalSpecifications {
+  title: string;
+  specifications: string[];
+}
+
+interface Advantages {
+  title: string;
+  items: string[];
+}
+
+interface PaperTypes {
+  title: string;
+  types: {
+    type: string;
+    image: string;
+  }[];
+}
+
+interface LottieAnimations {
+  speed: string;
+  size: string;
+}
+
+interface ProductDetails {
+  speedDescription: string;
+  sizeDescription: string;
+  rangeDescription: string;
+}
 
 interface MachineProps {
-  product_heading: string;
   name: string;
+  image: string;
+  mimage: string;
+  description: string;
+  specification_image: SpecificationImage[];
+  product_heading: string;
   first_name: string;
   second_name: string;
+  category: string;
+  icon: string;
+  introduction: string;
+  parameters: string;
   application: string;
-  mimage: string;
-  image: string;
-  description: string;
+  product_description: string;
+  status: string;
+  rating: Rating;
+  technicalSpecifications: TechnicalSpecifications;
+  advantages: Advantages;
+  paperTypes: PaperTypes;
+  optional_add_ons: string;
+  faqs: string;
+  related_product: string;
+  lottieAnimations: LottieAnimations;
+  productDetails: ProductDetails;
 }
 
 const Machine: React.FC<MachineProps> = ({
@@ -29,24 +86,48 @@ const Machine: React.FC<MachineProps> = ({
   mimage,
   first_name,
   second_name,
+  advantages,
 }) => {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Products", href: "/products" },
     { label: name, current: true },
   ];
+  // Function to render text with bold part before the colon
+  const renderTextWithBoldColon = (text: string) => {
+    // Split text by the first colon
+    const parts = text.split(/:(.+)/);
+    if (parts.length > 1) {
+      return (
+        <>
+          <span className="font-medium text-black">{parts[0]}:</span>
+          <span>{parts[1]}</span>
+        </>
+      );
+    }
+    return text; // If no colon is present, return the text as is
+  };
+
   return (
-    <div className="h-full mt-20 flex flex-col pb-8 justify-start ">
-      <div className=" mx-10 z-30 flex flex-row">
+    <div className="mt-20 h-screen flex flex-col  justify-start">
+      <div className="h-[60%] mx-10 z-30 flex flex-row">
         <div className="font-poppins w-[70%]">
           <BreadcrumbProduct items={breadcrumbItems} />
           <div className="flex w-full h-full">
             <div className="flex flex-row mt-6 items-start relative">
-              <div className="w-[60%] flex flex-col">
-                <h1 className="text-4xl font-poppins text-[#483d78] font-black">
+              <div className="w-[40%] flex flex-col">
+                <h1 className="text-5xl py-6 font-poppins text-[#483d78] font-black">
                   {name}
                 </h1>
-                <p className="text-sm text-black  mt-6">{description}</p>
+                <div className="text-gray-600 mb-4">
+                  <h3 className="font-bold mb-1">{advantages.title}</h3>
+                  <ul className="list-disc text-sm font-regular list-inside">
+                    {advantages.items.map((advantage, index) => (
+                      <li key={index}>{renderTextWithBoldColon(advantage)}</li>
+                    ))}
+                  </ul>
+                </div>
+                {/* <p className="text-sm text-black  mt-6">{description}</p> */}
               </div>
               <div className="w-[40%] h-full flex justify-end relative">
                 <div className="w-full h-72 flex justify-end items-end relative">
@@ -72,12 +153,25 @@ const Machine: React.FC<MachineProps> = ({
             </div>
           </div>
         </div>
-        <div className=" w-[30%]">
-          <NewSignupFormDemo />
+        <div className="w-[30%] flex justify-end flex-col items-end">
+          <div className="w-[80%] flex justify-center items-center">
+            <PositionAwareButton
+              text={"Enquire Now"}
+              bgColor="white"
+              icon={true}
+            />
+          </div>
+          <InfoCard
+            sizeRange="3 oz to 32 oz"
+            speedRoundShapes="up to 180 cups/min."
+            maxCups={180}
+            bmp100Compact="BMP 100 COMPACT"
+            bmp100Super="BMP 100 SUPER"
+          />
         </div>
       </div>
-      <div className="relative -mt-32 border-t-4 border-gray-300">
-        <table className="min-w-full divide-y border-separate border-spacing-0">
+      <div className="relative h-[40%]  border-t-4 border-gray-300">
+        <table className="w-full divide-y border-separate border-spacing-0">
           <thead className="border-b border-gray-200">
             <tr>
               <th

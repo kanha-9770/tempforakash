@@ -82,26 +82,49 @@ const CountrySelect = ({ isoCode }: CountrySelectProps) => {
   return (
     <div className="relative w-full mx-auto">
       {/* Phone number input with country calling code inside the input */}
-      <Input
-        type="tel"
-        placeholder="Enter Phone Number"
-        className="w-full  h-8 "
-        value={phoneNumber}
-        onChange={handlePhoneNumberChange}
-      />
+      <motion.div className="">
+        <div className="relative w-full px-1 flex items-center  overflow-hidden">
+          <div
+            className="flex h-8 w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-none rounded-l-lg px-3 py-2 text-sm  file:border-0 file:bg-transparent 
+          file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder-text-neutral-600 
+          focus-visible:outline-none focus-visible:ring-[2px]  focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600
+           disabled:cursor-not-allowed disabled:opacity-50
+           dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]
+           group-hover/input:shadow-none transition duration-400"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {selectedCountry && (
+              <>
+                <span
+                  className={`iconify text-xl`}
+                  data-icon={`flag:${selectedCountry.code.toLowerCase()}-4x3`}
+                ></span>
+                <strong className="ml-1">{selectedCountry.phone}</strong>
+              </>
+            )}
+          </div>
+          <Input
+              type="tel"
+              placeholder="Enter Phone Number"
+              className="w-80 placeholder:text-center rounded-none rounded-r-lg h-8 " // Ensure proper spacing for the country code
+              value={phoneNumber}
+              onChange={handlePhoneNumberChange}
+            />
+        </div>
+      </motion.div>
 
       {isOpen && (
         <div className="absolute top-10 w-full bg-white rounded-md shadow-lg z-10">
           <input
             type="text"
-            className="w-full px-4 py-2 bg-gray-100 rounded-t-md"
+            className="w-full px-4 focus-visible:outline-none focus-visible:ring-[2px]  focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600 py-2 bg-gray-100 rounded-t-md"
             placeholder="Search Country Name"
             value={searchQuery}
             onChange={handleSearch}
           />
           <ol
             id="scrollbar1"
-            className="scrollbar-product-description list-none max-h-[10rem] overflow-y-auto"
+            className="scrollbar-product-description list-none max-h-[15rem] overflow-y-auto"
           >
             {filteredCountries.map((country) => (
               <li

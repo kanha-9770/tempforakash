@@ -59,6 +59,17 @@ export default function Home() {
         first_name={machine.first_name}
         second_name={machine.second_name}
         description={machine.product_description}
+        specification_image={[]}
+        advantages={machine.advantages}
+        category={""}
+        icon={""}
+        introduction={""}
+        parameters={""}
+        product_description={""}
+        status={""}
+        optional_add_ons={""}
+        faqs={""}
+        related_product={""}
       />
       <NavLinksDemo navItems={navLinks} />
       <NewMachine

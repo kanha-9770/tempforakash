@@ -21,7 +21,7 @@ const InfoCard: FC<InfoCardProps> = ({
   bmp100Super,
 }) => {
   return (
-    <div className="w-[80%] grid grid-cols-2 items-center  p-4 ">
+    <div className="w-[80%] text-xs font-poppins grid grid-cols-2 items-center  p-4 ">
       <div className="flex flex-col font-poppins items-start justify-center h-24 p-2 border-b-2 border-r-2">
         <div className="flex items-center space-x-2 ">
           <FaBowlFood className="text-2xl"/>

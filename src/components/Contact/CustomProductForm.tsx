@@ -51,7 +51,7 @@ const SignupFormDemoProduct = () => {
           className="w-full  bg-white p-4 rounded-xl"
           onSubmit={handleSubmit}
         >
-          <div className="flex flex-col md:flex-row  md:space-y-0 mb-1 ">
+          <div className="flex px-1 flex-col md:flex-row  md:space-y-0 mb-1 ">
             <LabelInputContainer>
               <Input
                 className="h-8"
@@ -69,7 +69,7 @@ const SignupFormDemoProduct = () => {
               />
             </LabelInputContainer>
           </div>
-          <LabelInputContainer className="mb-1">
+          <LabelInputContainer className="mb-1 px-1">
             <Input
               className="h-8"
               id="email"
