@@ -1,12 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import "./machine.css";
 import { MdOutlineFileDownload } from "react-icons/md";
 import BreadcrumbProduct from "@/components/ui/BreadCrumbProduct";
 import InfoCard from "@/components/Products/InfoCard";
 import PositionAwareButton from "@/components/ui/PositionAwareButton";
+import ZigzagLine from "../ZigzagLine";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { motion } from "framer-motion";
 
 interface SpecificationImage {
   first?: string;
@@ -85,14 +88,10 @@ const Machine: React.FC<MachineProps> = ({
   application,
   mimage,
   first_name,
+  specification_image,
   second_name,
   advantages,
 }) => {
-  const breadcrumbItems = [
-    { label: "Home", href: "/" },
-    { label: "Products", href: "/products" },
-    { label: name, current: true },
-  ];
   // Function to render text with bold part before the colon
   const renderTextWithBoldColon = (text: string) => {
     // Split text by the first colon
@@ -100,43 +99,89 @@ const Machine: React.FC<MachineProps> = ({
     if (parts.length > 1) {
       return (
         <>
-          <span className="font-medium text-black">{parts[0]}:</span>
-          <span>{parts[1]}</span>
+          <span className="font-medium  text-black">{parts[0]}:</span>
+          <span className="text-gray-500 font-regular">{parts[1]}</span>
         </>
       );
     }
     return text; // If no colon is present, return the text as is
   };
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<string>(image);
+  useEffect(() => {
+    checkScrollability();
+  }, []);
 
+  const checkScrollability = () => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+    }
+  };
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: -carouselRef.current.clientWidth,
+        behavior: "smooth",
+      });
+      setTimeout(checkScrollability, 300);
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: carouselRef.current.clientWidth,
+        behavior: "smooth",
+      });
+      setTimeout(checkScrollability, 300);
+    }
+  };
+  console.log("images", specification_image);
+
+  const images = specification_image.flatMap((img) => Object.values(img)); // Flattening the images array
+  const shouldShowArrows = images.length > 4;
+
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
+    { label: name, current: true },
+  ];
   return (
-    <div className="mt-20 h-screen flex flex-col  justify-start">
-      <div className="h-[60%] mx-10 z-30 flex flex-row">
-        <div className="font-poppins w-[70%]">
+    <div className="mt-16 h-full flex flex-col  justify-start">
+      <div className="h-[53vh] mx-10 z-30 flex flex-row">
+        <div className="font-poppins  w-[70%]">
           <BreadcrumbProduct items={breadcrumbItems} />
           <div className="flex w-full h-full">
-            <div className="flex flex-row mt-6 items-start relative">
-              <div className="w-[40%] flex flex-col">
-                <h1 className="text-5xl py-6 font-poppins text-[#483d78] font-black">
-                  {name}
+            <div className="flex flex-row mt-1 items-start relative">
+              {/* fixed text area */}
+              <div className="w-[50%] h-full flex flex-col">
+                <h1 className="text-4xl py-2 font-poppins text-red-500 font-bold">
+                 <span className="text-gray-400">{first_name}</span> {second_name}
                 </h1>
-                <div className="text-gray-600 mb-4">
-                  <h3 className="font-bold mb-1">{advantages.title}</h3>
-                  <ul className="list-disc text-sm font-regular list-inside">
-                    {advantages.items.map((advantage, index) => (
-                      <li key={index}>{renderTextWithBoldColon(advantage)}</li>
-                    ))}
-                  </ul>
+                <div className="text-gray-600 text-sm font-regular mb-4">{description}</div>
+                <div className="">
+                  <PositionAwareButton icon={true} text={"Book Now"} />
                 </div>
-                {/* <p className="text-sm text-black  mt-6">{description}</p> */}
+                <div className="absolute bottom-10 text-5xl py-2 font-bold text-gray-400">
+                  {" "}
+                  {name}
+                </div>
               </div>
-              <div className="w-[40%] h-full flex justify-end relative">
-                <div className="w-full h-72 flex justify-end items-end relative">
+              {/* fixeed image area */}
+              <div className="w-[50%] h-full flex relative">
+                <ZigzagLine />
+                <div className="w-full h-[22rem] flex  relative">
                   <Image
-                    src={image}
+                    src={selectedImage}
                     height={800}
                     width={400}
                     alt="Flexo Printing Machine"
-                    className="h-full w-auto"
+                    className="h-full object-contain w-full"
                   />
                   {/* Small image positioned at the top right corner */}
                   <div className="absolute top-0 right-0 p-2">
@@ -154,23 +199,17 @@ const Machine: React.FC<MachineProps> = ({
           </div>
         </div>
         <div className="w-[30%] flex justify-end flex-col items-end">
-          <div className="w-[80%] flex justify-center items-center">
-            <PositionAwareButton
-              text={"Enquire Now"}
-              bgColor="white"
-              icon={true}
-            />
+          <div className="text-black mb-4">
+            <h3 className="font-bold text-lg mb-4">{advantages.title}</h3>
+            <ul className="list-disc text-base font-regular list-inside">
+              {advantages.items.map((advantage, index) => (
+                <li key={index}>{renderTextWithBoldColon(advantage)}</li>
+              ))}
+            </ul>
           </div>
-          <InfoCard
-            sizeRange="3 oz to 32 oz"
-            speedRoundShapes="up to 180 cups/min."
-            maxCups={180}
-            bmp100Compact="BMP 100 COMPACT"
-            bmp100Super="BMP 100 SUPER"
-          />
         </div>
       </div>
-      <div className="relative h-[40%]  border-t-4 border-gray-300">
+      <div className="relative h-[33vh] border-t-4  border-gray-300">
         <table className="w-full divide-y border-separate border-spacing-0">
           <thead className="border-b border-gray-200">
             <tr>
@@ -188,8 +227,67 @@ const Machine: React.FC<MachineProps> = ({
               </th>
               <th
                 scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200 w-[20%]"
-              ></th>
+                className="px-6  text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200 w-[20%]"
+              >
+                <div className="absolute -top-1 left-[55%]  flex h-full flex-row  items-center justify-center mx-auto ">
+                  {/* Left Arrow */}
+                  <div className="bg-white mt-4 rounded-2xl w-[40vw] flex flex-row items-center justify-center p-4 px-2">
+                    {shouldShowArrows && (
+                      <button
+                        className="h-12 w-12 z-20 items-center rounded-full cursor-pointer  hidden lg:flex  disabled:opacity-50"
+                        onClick={scrollLeft}
+                        disabled={!canScrollLeft}
+                      >
+                        <IoIosArrowBack className="text-2xl text-gray-500" />
+                      </button>
+                    )}
+
+                    {/* Carousel */}
+                    <div
+                      className={`hidden lg:flex overflow-x-auto  ${
+                        shouldShowArrows ? "scroll-smooth" : ""
+                      } [scrollbar-width:none] gap-3`}
+                      ref={carouselRef}
+                      onScroll={checkScrollability}
+                    >
+                      {images.map((image, index) => (
+                        <div key={index} className="flex flex-col ">
+                          <motion.div
+                            className={`relative flex-shrink-0 w-[8.4rem] h-24 border-2 rounded-2xl p-1 flex flex-col  ${
+                              selectedImage === image ? "border-red-500" : ""
+                            }`}
+                            initial="hidden"
+                            animate="visible"
+                            custom={index}
+                            onClick={() => setSelectedImage(image)} // Set selected image on click
+                          >
+                            <div className="relative w-full h-full flex ">
+                              <Image
+                                src={image}
+                                alt={`Image ${index}`}
+                                width={196}
+                                height={196}
+                                className="object-contain w-full h-full cursor-pointer"
+                              />
+                            </div>
+                          </motion.div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Right Arrow */}
+                    {shouldShowArrows && (
+                      <button
+                        className="h-12 z-20 w-16 cursor-pointer hidden rounded-full lg:flex items-center justify-center disabled:opacity-50"
+                        onClick={scrollRight}
+                        disabled={!canScrollRight}
+                      >
+                        <IoIosArrowForward className="text-2xl z-20 text-gray-500" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </th>
               <th
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200 w-[20%]"
@@ -212,23 +310,12 @@ const Machine: React.FC<MachineProps> = ({
               ></th>
             </tr>
           </thead>
-          <tbody className="bg-white">{/* No rows */}</tbody>
+          <tbody className="bg-white"></tbody>
         </table>
 
         {/* Buttons positioned on the column lines */}
-        <div className="absolute z-40 top-40 left-0 w-full h-full pointer-events-none">
+        <div className="absolute z-40 top-20 left-0 w-full h-full pointer-events-none">
           <div className="flex justify-between">
-            <div className="relative -ml-10 w-[40%]">
-              <button className="absolute flex flex-row right-0 transform text-red-500 font-bold translate-x-[100%] -translate-y-full p-4 px-6 border-2 border-red-500 rounded-xl pointer-events-auto">
-                <MdOutlineFileDownload className="text-2xl mr-2 text-red-500 font-bold" />{" "}
-                Download Brochure
-              </button>
-            </div>
-            <div className="-ml-8 relative w-[22%]">
-              <button className="absolute text-white font-bold right-0 transform translate-x-[100%] -translate-y-full p-4 px-12 bg-[#483d78]  border-2 border-[#483d78] rounded-xl pointer-events-auto">
-                Make an Enquiry
-              </button>
-            </div>
             <div className="relative w-[15%]"></div>
             <div className="relative w-[10%]"></div>
             <div className="relative w-[10%]"></div>

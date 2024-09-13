@@ -31,7 +31,7 @@ const NavLink: React.FC<NavLinkProps> = memo(
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >
-      {text} 
+      {text}
     </Link>
   )
 );
@@ -39,10 +39,11 @@ const NavLink: React.FC<NavLinkProps> = memo(
 NavLink.displayName = "NavLink";
 
 interface NavLinksDemoProps {
+  type?: string;
   navItems: { text: string; ref: React.RefObject<HTMLDivElement> }[];
 }
 
-const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
+const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ type, navItems }) => {
   const [activeLink, setActiveLink] = useState<number>(-1);
   const [scrolling, setScrolling] = useState(false);
   const [menuExpanded, setMenuExpanded] = useState(false);
@@ -115,11 +116,9 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
       if (navTop <= 56) {
         setScrolling(true);
         console.log(navTop);
-        
       } else {
         setScrolling(false);
         console.log(navTop);
-
       }
     };
 
@@ -135,7 +134,11 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
     <div
       ref={navRef}
       className={`sticky top-14 z-30 transition-all duration-300 ${
-        scrolling ? "bg-white" : "bg-[#f2f2f2] border-none"
+        scrolling
+          ? "bg-white"
+          : type === "product"
+          ? "bg-white border-none"
+          : "bg-[#f2f2f2] border-none"
       }`}
     >
       <div className="flex justify-between mt-4 items-center px-2 py-2 md:hidden">
@@ -185,7 +188,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
       <nav
         className={`hidden ${
           scrolling ? "border-t-2" : "border-none"
-        } md:flex left-0 flex-row flex-wrap text-base  lg:h-10 font-light font-poppins px-10 lg:mt-4  space-x-2 sm:space-x-6 text-black `}
+        } md:flex left-0 flex-row flex-wrap text-base  lg:h-10 font-light font-poppins px-10 lg:mt-0  space-x-2 sm:space-x-6 text-black `}
       >
         {navItems.map((item, index) => (
           <NavLink

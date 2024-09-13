@@ -19,7 +19,7 @@ const BreadcrumbProduct: React.FC<BreadcrumbProps> = ({ items }) => {
             {item.href ? (
               <a
                 href={item.href}
-                className={`inline-flex items-center md:text-3xl font-semibold ${
+                className={`inline-flex items-center md:text-2xl font-semibold ${
                   item.current
                     ? "text-gray-500"
                     : "text-gray-700 hover:text-[#483d78] dark:text-gray-400 dark:hover:text-white"
@@ -36,7 +36,7 @@ const BreadcrumbProduct: React.FC<BreadcrumbProps> = ({ items }) => {
               </a>
             ) : (
               <span
-                className={`inline-flex items-center font-poppins font-regular md:text-3xl ${
+                className={`inline-flex items-center font-poppins font-regular md:text-2xl ${
                   item.current ? "text-gray-400" : "text-gray-400"
                 }`}
               >

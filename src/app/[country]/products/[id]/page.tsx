@@ -59,7 +59,7 @@ export default function Home() {
         first_name={machine.first_name}
         second_name={machine.second_name}
         description={machine.product_description}
-        specification_image={[]}
+        specification_image={machine.specification_image}
         advantages={machine.advantages}
         category={""}
         icon={""}
@@ -71,7 +71,7 @@ export default function Home() {
         faqs={""}
         related_product={""}
       />
-      <NavLinksDemo navItems={navLinks} />
+      <NavLinksDemo type="product" navItems={navLinks} />
       <NewMachine
         name={machine.name}
         status={machine.status}

@@ -229,7 +229,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative bg-[rgb(242,242,242)]  top-14 h-full">
+    <main className="relative bg-[rgb(242,242,242)]  top-14 gap-2 h-full">
       <div className="top-2 relative">
         <Hero />
       </div>
