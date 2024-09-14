@@ -7,11 +7,12 @@ import ProductDescription from "@/components/Products/ProductDescription";
 import CupFormactionProcess from "@/components/Products/CupFormactionProcess";
 import { TechnicalSpecifications } from "@/components/Products/TechnicalSpecification";
 import MachineCard from "@/components/Products/MachineCard";
-import FaqSection from "@/components/Products/FaqSection";
 import { SignupFormDemoProduct } from "@/components/Contact/CustomProductForm";
 import NewMachine from "@/components/Products/machine/NewMachine"; // Ensure this is correct
 import machineData from "../../../../components/Products/machine.json"; // Import the machine.json file
 import { ProductApplication } from "@/components/Products/ProductApplication";
+import FaqProducts from "@/components/Faq/FaqProduct";
+import RelatedProducts from "@/components/Products/RelatedProducts";
 
 export default function Home() {
   const params = useParams();
@@ -63,7 +64,7 @@ export default function Home() {
         advantages={machine.advantages}
         category={""}
         icon={""}
-        introduction={""}
+        introduction={machine.introduction}
         parameters={""}
         product_description={""}
         status={""}
@@ -72,7 +73,7 @@ export default function Home() {
         related_product={""}
       />
       <NavLinksDemo type="product" navItems={navLinks} />
-      <NewMachine
+      {/* <NewMachine
         name={machine.name}
         status={machine.status}
         rating={machine.rating}
@@ -87,8 +88,8 @@ export default function Home() {
         second_name={machine.second_name}
         description={machine.product_description}
         specification_image={machine.specification_image}
-      />
-      <div className="h-full px-10 gap-4 flex flex-row w-full">
+      /> */}
+      <div className="h-full px-10 mt-24 gap-4 flex flex-row w-full">
         <div className="w-[66.2%] ">
           <div className=" " ref={productDescriptionRef}>
             <ProductDescription machine={machine} />
@@ -100,19 +101,19 @@ export default function Home() {
             <ProductApplication />
           </div>
 
-          <div className="mx-6 mt-32" ref={technicalSpecificationsRef}>
+          <div className="mt-32" ref={technicalSpecificationsRef}>
             <TechnicalSpecifications />
           </div>
-          <div className="mx-6 mt-32" ref={faqsRef}>
-            <FaqSection />
-          </div>
-          <div className="mx-6 mt-32" ref={relatedProductsRef}>
-            <MachineCard />
+          <div className="mt-32" ref={faqsRef}>
+            <FaqProducts />
           </div>
         </div>
         <div className="w-[33%] sticky">
           <SignupFormDemoProduct />
         </div>
+      </div>
+      <div className="mt-32" ref={relatedProductsRef}>
+        <RelatedProducts />
       </div>
     </main>
   );

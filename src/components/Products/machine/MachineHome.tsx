@@ -86,6 +86,7 @@ const Machine: React.FC<MachineProps> = ({
   name,
   image,
   application,
+  introduction,
   mimage,
   first_name,
   specification_image,
@@ -153,21 +154,24 @@ const Machine: React.FC<MachineProps> = ({
   ];
   return (
     <div className="mt-16 h-full flex flex-col  justify-start">
-      <div className="h-[53vh] mx-10 z-30 flex flex-row">
-        <div className="font-poppins  w-[70%]">
+      <div className="h-[55vh] mx-10 z-30 flex flex-row">
+        <div className="font-poppins   w-[70%]">
           <BreadcrumbProduct items={breadcrumbItems} />
-          <div className="flex w-full h-full">
-            <div className="flex flex-row mt-1 items-start relative">
+          <div className="flex w-full  h-full">
+            <div className="flex flex-row  items-start relative">
               {/* fixed text area */}
-              <div className="w-[50%] h-full flex flex-col">
+              <div className="w-[50%]  h-full flex flex-col">
                 <h1 className="text-4xl py-2 font-poppins text-red-500 font-bold">
-                 <span className="text-gray-400">{first_name}</span> {second_name}
+                  <span className="text-gray-400">{first_name}</span>{" "}
+                  {second_name}
                 </h1>
-                <div className="text-gray-600 text-sm font-regular mb-4">{description}</div>
-                <div className="">
+                <div className="text-black  text-sm py-4 font-normal">
+                  {introduction}
+                </div>
+                <div className="py-2">
                   <PositionAwareButton icon={true} text={"Book Now"} />
                 </div>
-                <div className="absolute bottom-10 text-5xl py-2 font-bold text-gray-400">
+                <div className="absolute bottom-10 text-4xl py-2 font-bold text-gray-400">
                   {" "}
                   {name}
                 </div>
@@ -175,7 +179,7 @@ const Machine: React.FC<MachineProps> = ({
               {/* fixeed image area */}
               <div className="w-[50%] h-full flex relative">
                 <ZigzagLine />
-                <div className="w-full h-[22rem] flex  relative">
+                <div className="w-full h-[55vh] flex  relative">
                   <Image
                     src={selectedImage}
                     height={800}
@@ -209,7 +213,7 @@ const Machine: React.FC<MachineProps> = ({
           </div>
         </div>
       </div>
-      <div className="relative h-[33vh] border-t-4  border-gray-300">
+      <div className="relative h-[30vh] border-t-4  border-gray-300">
         <table className="w-full divide-y border-separate border-spacing-0">
           <thead className="border-b border-gray-200">
             <tr>
@@ -312,16 +316,6 @@ const Machine: React.FC<MachineProps> = ({
           </thead>
           <tbody className="bg-white"></tbody>
         </table>
-
-        {/* Buttons positioned on the column lines */}
-        <div className="absolute z-40 top-20 left-0 w-full h-full pointer-events-none">
-          <div className="flex justify-between">
-            <div className="relative w-[15%]"></div>
-            <div className="relative w-[10%]"></div>
-            <div className="relative w-[10%]"></div>
-            <div className="relative w-[10%]"></div>
-          </div>
-        </div>
       </div>
     </div>
   );

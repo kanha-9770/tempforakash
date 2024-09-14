@@ -2,7 +2,7 @@ import React from "react";
 
 const SpecificationTable: React.FC = () => {
   return (
-    <div className="max-w-xl mt-4 text-sm">
+    <div className="max-w-xl text-sm">
       <table className="w-full table-auto border-collapse">
         <thead className="bg-[#a6a6a6]">
           <tr>

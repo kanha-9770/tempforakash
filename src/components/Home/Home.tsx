@@ -22,14 +22,12 @@ const imgs = [
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 10;
 const DRAG_BUFFER = 50;
-
 const SPRING_OPTIONS = {
   type: "spring",
   mass: 3,
   stiffness: 400,
   damping: 50,
 };
-
 const Images = ({ imgIndex }: { imgIndex: number }) => {
   return (
     <>
@@ -79,18 +77,12 @@ const Dots = ({
 };
 
 const Home: React.FC = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
-  const [isSafari, setIsSafari] = useState<boolean>(false);
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+ 
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Check if the browser is Safari
-    const ua = navigator.userAgent.toLowerCase();
-    setIsSafari(ua.includes("safari") && !ua.includes("chrome"));
-
+ 
     // Check for larger screens on the client-side
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
     setIsLargeScreen(mediaQuery.matches);
@@ -101,27 +93,7 @@ const Home: React.FC = () => {
     return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVideoLoaded(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0 }
-    );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (observer) {
-        observer.disconnect();
-      }
-    };
-  }, []);
 
   const { scrollY } = useScroll();
 
@@ -173,34 +145,6 @@ const Home: React.FC = () => {
     <div className="relative h-full p-0   flex flex-col items-center overflow-hidden  w-full">
       <div className="relative px-4  lg:px-10 w-full flex-wrap">
         <motion.div className=" flex justify-center items-center h-[calc(100vh-220px)] lg:h-[calc(100vh-110px)] rounded-3xl">
-          {/* {isVideoLoaded ? (
-            <div className="relative w-full h-full">
-              <video
-                ref={videoRef}
-                id="background-video"
-                className="w-full h-full object-cover rounded-2xl lg:rounded-3xl"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-              >
-                <source src="video/BgHome.mp4" type="video/mp4" />
-                <source src="video/bg.webm" type="video/webm" />
-                <source src="video/bg.ogv" type="video/ogg" />
-              </video>
-              <div className="absolute inset-0 bg-black bg-opacity-30 rounded-2xl lg:rounded-3xl"></div>
-              
-            </div>
-          ) : (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Image
-                className="w-full h-full object-cover rounded-2xl lg:rounded-3xl"
-                src={homeimg}
-                alt={"home"}
-              />
-            </div>
-          )} */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="overflow-hidden py-8">
               <motion.div

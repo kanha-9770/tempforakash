@@ -86,7 +86,7 @@
         {
           "name": "NS-016",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
+          "mimage": "https://i.pinimg.com/236x/2a/63/4f/2a634f524ec7e8bd98127d419701df64.jpg",
           "specification_image": [
             {
               "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
@@ -112,7 +112,7 @@
           "introduction": "The NS-016 paper cup machine is designed for versatility and efficiency, catering to small to medium-scale enterprises. It offers reliable performance and ease of operation.",
           "parameters": "Voltage: 220V, Power: 1500W",
           "application": "Suitable for producing a variety of paper cup sizes, ranging from 4oz to 12oz, for both hot and cold beverages.",
-          "product_description": "This machine is crafted from lightweight aluminum alloy, making it easy to transport and install. It features a user-friendly interface and low maintenance requirements.",
+          "product_description": "Experience unparalleled efficiency with our Servo Driven Paper Cup Machine, a marvel of engineering that integrates advanced mechanical, electronic, pneumatic, and electrical technologies. This high-precision machine is equipped with 13 servos that work in perfect sync via PLC, enabling the production of up to 180 high-quality paper cups per minute, equivalent to 3 cups per second. The machine features a two-step curling process, which ensures the rim of each cup is curled twice to provide extra rigidity and durability & High-quality sealing is guaranteed through the use of ultrasonic and hot air mechanisms, minimizing the risk of leakage, making it ideal for both hot and cold beverages.",
           "status": "New",
           "rating": {
             "stars": 4,
@@ -323,7 +323,7 @@
         {
           "name": "NS-019",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
+          "mimage": "https://i.pinimg.com/236x/2a/63/4f/2a634f524ec7e8bd98127d419701df64.jpg",
           "specification_image": [
             {
               "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"

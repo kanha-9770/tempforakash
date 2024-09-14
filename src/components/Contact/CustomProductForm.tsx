@@ -48,10 +48,10 @@ const SignupFormDemoProduct = () => {
       <div className="w-full h-screen  gap-2 flex flex-col ">
         {/* part-one-contact-page */}
         <form
-          className="w-full  bg-white p-4 rounded-xl"
+          className="w-full h-[29.2vh]  bg-white p-4 rounded-xl"
           onSubmit={handleSubmit}
         >
-          <div className="flex px-1 flex-col md:flex-row  md:space-y-0 mb-1 ">
+          <div className="flex px-1 flex-col md:flex-row  md:space-y-0 mb-2 ">
             <LabelInputContainer>
               <Input
                 className="h-8"
@@ -69,7 +69,7 @@ const SignupFormDemoProduct = () => {
               />
             </LabelInputContainer>
           </div>
-          <LabelInputContainer className="mb-1 px-1">
+          <LabelInputContainer className="mb-2 px-1">
             <Input
               className="h-8"
               id="email"
@@ -77,7 +77,7 @@ const SignupFormDemoProduct = () => {
               type="email"
             />
           </LabelInputContainer>
-          <LabelInputContainer className="mb-1">
+          <LabelInputContainer className="mb-2">
             <CountrySelect isoCode={"in"} />
           </LabelInputContainer>
           <div className="w-full flex justify-center">

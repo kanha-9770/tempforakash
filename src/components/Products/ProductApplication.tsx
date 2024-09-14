@@ -8,8 +8,8 @@ export function ProductApplication() {
   ));
 
   return (
-    <div className="w-full bg-white h-full p-2 flex flex-col rounded-xl">
-      <h1 className="text-5xl text-red-500 p-4 font-semibold">Applications</h1>
+    <div className="w-full bg-white h-[88vh] p-2 flex flex-col rounded-xl">
+      <h1 className="text-4xl text-red-500 p-3 font-semibold">Applications</h1>
       <Carousel items={cards} />
     </div>
   );

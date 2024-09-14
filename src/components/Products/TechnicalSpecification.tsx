@@ -18,9 +18,9 @@ export function TechnicalSpecifications() {
   return (
     <div className="w-full h-full flex flex-row p-4 ">
       {/* Left Side: Specification and Image */}
-      <div className="flex-grow bg-white p-6 rounded-xl flex flex-col justify-between">
+      <div className="flex-grow bg-white p-4 rounded-2xl flex flex-col justify-between">
         <div className="mb-4">
-          <h1 className="font-poppins text-xl font-semibold">
+          <h1 className="font-poppins text-3xl font-semibold">
             Technical{" "}
             <span className="text-red-600 font-extrabold ml-2">
               Specifications
@@ -39,7 +39,7 @@ export function TechnicalSpecifications() {
             />
           </div>
         </div>
-       </div>
+      </div>
     </div>
   );
 }
