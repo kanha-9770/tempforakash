@@ -80,7 +80,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
     }),
   };
 
-  const shouldShowArrows = DataBankItem.length > 4;
+  const shouldShowArrows = DataBankItem.length > 5;
   const [currentPage, setCurrentPage] = useState<number>(0);
 
   const handleNextPage = () => {
@@ -99,7 +99,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
       ? [arr.slice(0, size), ...chunkItems(arr.slice(size), size)]
       : [];
 
-  const paginatedItems = chunkItems(DataBankItem, 4);
+  const paginatedItems = chunkItems(DataBankItem, 5);
   return (
     <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-4 w-[100vw]">
       {/* desktop view */}
@@ -115,14 +115,14 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
       <div
         className={`hidden lg:flex overflow-x-auto py-8 ${
           shouldShowArrows ? "scroll-smooth" : ""
-        } [scrollbar-width:none] gap-8`}
+        } [scrollbar-width:none] gap-6`}
         ref={carouselRef}
         onScroll={checkScrollability}
       >
         {DataBankItem.map((item, index) => (
           <div key={index} className="flex flex-col space-y-4">
             <motion.div
-              className="relative flex-shrink-0 w-72 h-40 bg-[#f2f2f2] rounded-3xl p-4 flex flex-col justify-center items-center"
+              className="relative flex-shrink-0 w-56 h-32 bg-[#f2f2f2] rounded-3xl p-4 flex flex-col justify-center items-center"
               initial="hidden"
               animate="visible"
               custom={index}
@@ -224,10 +224,10 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({
         )}
         <div className="h-[50%] w-full">
           <div className="h-full pb-40 overflow-y-auto w-full">
-            {ResourcesMobile.map((item, index) => (
+            {DataBankItem.map((item, index) => (
               <div key={index} className="flex flex-col space-y-4">
                 <Link
-                  href={""}
+                  href={"/"}
                   className="flex felx-row justify-between items-center border-t-[1px]  p-4"
                 >
                   <div className="flex flex-row space-x-3">

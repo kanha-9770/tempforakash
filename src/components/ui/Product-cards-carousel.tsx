@@ -94,7 +94,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       {items.length <= 10 ? (
         <>
           <div
-            className=" grid grid-rows-2  w-full overflow-x-scroll overscroll-x-auto py-2 scroll-smooth [scrollbar-width:none]"
+            className=" cursor-grab grid grid-rows-2  w-full overflow-x-scroll overscroll-x-auto py-2 scroll-smooth [scrollbar-width:none]"
             ref={carouselRef}
             onScroll={checkScrollability}
           ></div>
@@ -290,7 +290,7 @@ export const Card = ({
       layoutId={layout ? `card-${card.title}` : undefined}
       className="relative rounded-3xl bg-gray-100  h-80 w-56 md:h-[32vh] md:w-[13.5vw] overflow-hidden flex flex-col items-start justify-end z-10"
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent z-30 pointer-events-none" />
+      <div className="absolute inset-0 cursor-grab bg-gradient-to-t from-black/90 via-black/70 to-transparent z-30 " />
       <BlurImage
         src={card.src}
         alt={card.title}

@@ -12,6 +12,7 @@ import { VscAccount } from "react-icons/vsc";
 import { TfiSearch } from "react-icons/tfi";
 import { IoClose } from "react-icons/io5";
 import ContactForm from "../Contact/Contact";
+import { usePathname } from "next/navigation";
 export default function NavbarDemo() {
   return (
     <div className="relative lg:h-auto lg:mt-0 flex items-center justify-between lg:justify-center">
@@ -26,6 +27,8 @@ function Navbar({ className }: { className?: string }) {
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const [searchValue, setSearchValue] = useState<string>("");
   const [isVisible, setIsVisible] = useState(true);
+  const pathname = usePathname() || "";
+  const componentCode = pathname.split("/")[2]?.toLowerCase();
   const [visibilityState, setVisibilityState] = useState({
     isFlagOpen: false,
     isContactFormVisible: false,
@@ -55,9 +58,10 @@ function Navbar({ className }: { className?: string }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <div
-      className={`fixed flex w-full bg-white font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
+      className={`fixed flex w-full ${componentCode === "knowledge-center"?'bg-black text-white':'bg-white'} font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
     >
       {/* Desktop Menu */}
       <div className="hidden px-8 lg:flex w-full">

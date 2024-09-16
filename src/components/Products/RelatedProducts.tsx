@@ -6,29 +6,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { TfiGallery } from "react-icons/tfi";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
-
+import productsetting from "../../../public/assets/product/productsetting.json";
+import LottieAnimation from "../ui/LottieAnimation";
 gsap.registerPlugin(ScrollTrigger);
-
+import "./style.css"
 const RelatedProducts: React.FC = () => {
   const RelatedProductsproduct = {
-    title: "Product Title",
-    description: "This is a description for the product.",
+    title: "Related Products",
+    description: "You Might Want to take a look at our other products also.",
     inquiry: "Inquire Now",
     imageWithDescription: [
       {
-        img: "/path/to/image1.jpg",
+        img: "https://www.nesscoindia.com/Assets/images/resource/ServoDrivenMachine.webp",
         description: "Product 1 description",
       },
       {
-        img: "/path/to/image2.jpg",
+        img: "https://www.nesscoindia.com/Assets/images/resource/paper-container-bowl-machine.webp",
         description: "Product 2 description",
       },
       {
-        img: "/path/to/image3.jpg",
+        img: "https://www.nesscoindia.com/Assets/images/resource/LunchBoxMachine.webp",
         description: "Product 3 description",
       },
       {
-        img: "/path/to/image4.jpg",
+        img: "https://www.nesscoindia.com/Assets/images/resource/CartonErectingMachine.webp",
         description: "Product 4 description",
       },
     ],
@@ -144,10 +145,10 @@ const RelatedProducts: React.FC = () => {
   return (
     <>
       <div className="w-full lg:mt-[4vh] mt-[12vh] font-poppins">
-        <div className="flex lg:flex-row flex-col lg:my-[14vh] lg:py-[4vh] lg:mx-[2vw] bg-white rounded-[0.5rem]">
-          <div className="lg:w-[22%] lg:pt-[5vh] pt-[3vh] lg:bg-white bg-[#f2f2f2] relative">
+        <div className="flex lg:flex-row flex-col h-[65vh] lg:my-[12vh] lg:py-[2vh] lg:mx-[2vw] bg-white rounded-xl">
+          <div className="lg:w-[22%] lg:pt-[3vh] pt-[2vh] lg:bg-white bg-[#f2f2f2] relative">
             <div className="flex flex-col lg:items-center lg:justify-center">
-              <h2 className="lg:text-[2.6rem] text-[1.5rem] lg:mx-0 mx-[1rem] lg:text-center font-semibold mb-[2vh]">
+              <h2 className="lg:text-[2.6rem] text-[1.5rem] lg:mx-0 mx-[1rem] lg:text-center pt-10 font-semibold ">
                 <span className="text-[#9e9c9c]">
                   {RelatedProductsproduct?.title.trim().replace(/\s+\S+$/, "")}
                 </span>{" "}
@@ -155,19 +156,22 @@ const RelatedProducts: React.FC = () => {
                   {RelatedProductsproduct?.title.trim().match(/\S+$/)}
                 </span>
               </h2>
-              <p className="text-[#9e9c9c] w-[68%] text-center mb-[2vh] lg:block hidden">
+              <p className="text-[#9e9c9c] w-[68%] text-sm font-regular text-center mb-[4vh] lg:block hidden">
                 {RelatedProductsproduct.description}
               </p>
-              <TfiGallery className="text-[#9e9c9c] text-[2.8rem] lg:block hidden" />
+              <LottieAnimation
+                className="h-16 w-16 rotate-45"
+                animationData={productsetting}
+              />
             </div>
             <button
-              className="text-[#9e9c9c] lg:text-[2rem] lg:bg-transparent bg-white p-1 rounded-full text-[1.2rem] absolute lg:bottom-[5vh] lg:left-[3vw] right-[15vw] -bottom-[60vh] hover:text-[#dc0e2a]"
+              className="text-[#9e9c9c] lg:text-[2rem] lg:bg-transparent bg-white p-1 rounded-full text-[1.2rem] absolute lg:bottom-[8vh] lg:left-[3vw] right-[15vw] -bottom-[60vh] hover:text-[#dc0e2a]"
               onClick={handleLeftScroll}
             >
               <IoIosArrowBack />
             </button>
             <button
-              className="text-[#9e9c9c] lg:text-[2rem] text-[1.2rem] lg:bg-transparent bg-white p-1 rounded-full absolute lg:bottom-[5vh] lg:right-[3vw] right-[5vw] -bottom-[60vh] hover:text-[#dc0e2a]"
+              className="text-[#9e9c9c] lg:text-[2rem] text-[1.2rem] lg:bg-transparent bg-white p-1 rounded-full absolute lg:bottom-[8vh] lg:right-[3vw] right-[5vw] -bottom-[60vh] hover:text-[#dc0e2a]"
               onClick={handleRightScroll}
             >
               <IoIosArrowForward />
@@ -187,7 +191,7 @@ const RelatedProducts: React.FC = () => {
                 {currentItems.map((item, idx) => (
                   <div
                     key={idx}
-                    className="lg:mx-[0.8vw] mx-[1.5vw] bg-white lg:w-[26vw] w-[44vw] lg:h-[60vh] h-[25vh] lg:rounded-[0.6rem] rounded-[0.4rem] overflow-hidden"
+                    className="lg:mx-[0.8vw] mx-[1.5vw] bg-white lg:w-[20vw] w-[44vw] lg:h-[55vh] h-[25vh] lg:rounded-[0.6rem] rounded-[0.4rem] overflow-hidden"
                   >
                     <div className="bg-[#f2f2f2] relative h-[70%] lg:p-0 p-4 flex items-center justify-center">
                       <Image
@@ -200,18 +204,18 @@ const RelatedProducts: React.FC = () => {
                       <div className="bg-gradient-to-t from-white absolute bottom-0 left-0 w-full lg:top-[20vh] top-[8vh]"></div>
                     </div>
                     <div className="flex items-center h-[20%] justify-center relative">
-                      <p className="text-center lg:w-[80%] w-[90%] lg:mb-0 mb-[0.5vh] lg:text-[1.3rem] text-[0.7rem] font-medium">
+                      <p className="text-center lg:w-[60%] w-[90%] lg:mb-0 mb-[0.5vh] lg:text-lg font-medium">
                         {item.description}
                       </p>
-                      <IoArrowForwardCircleSharp className="lg:text-[1.4rem] absolute lg:bottom-[1.8vh] bottom-[0.9vh] lg:right-[1.8vw] right-[3vw] hover:text-[#dc0e2a]" />
+                      <IoArrowForwardCircleSharp className="lg:text-xl absolute lg:bottom-[2vh] bottom-[0.9vh] lg:right-[1.8vw] right-[3vw] hover:text-[#dc0e2a]" />
                     </div>
 
-                    <div className="flex lg:items-center items-start justify-center pt-2 border-[#9e9c9c] lg:text-[1.4rem] text-[0.7rem] lg:text-[#9e9c9c] text-[#9e9c9c]">
+                    <div className="flex lg:items-center items-start justify-center pt-2 border-[#9e9c9c] lg:text-base text-[0.7rem] lg:text-[#9e9c9c] text-[#9e9c9c]">
                       <input
                         type="checkbox"
                         checked={checkedItems[idx]}
                         onChange={() => handleCheckboxChange(idx)}
-                        className="lg:w-[2rem] w-[1rem] lg:h-[2rem] h-[1rem] mr-[0.5rem]"
+                        className="custom-checkbox lg:w-[1.4rem] w-[1rem] lg:h-[1.4rem] h-[1rem] mr-[0.5rem] appearance-none border border-[#9e9c9c] rounded focus:outline-none"
                       />
                       <label>{RelatedProductsproduct?.inquiry}</label>
                     </div>

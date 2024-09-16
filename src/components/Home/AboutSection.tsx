@@ -140,7 +140,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
                   alt={card.title}
                   width={600}
                   height={250}
-                  className={`w-full rounded-3xl border-2 object-cover ${
+                  className={`w-full rounded-2xl border-2 object-cover ${
                     index === 1
                       ? "h-[15rem] lg:w-full w-full md:w-full"
                       : "h-52"

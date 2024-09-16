@@ -56,737 +56,148 @@
           "name": "NS-015",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Cup Machine, All Products",
-          "icon": "papercup",
-          "introduction": "The NS-015 is a high-performance paper cup machine designed for efficient production in medium to large scale enterprises. It combines reliability with speed, capable of producing up to 100 cups per minute.",
-          "parameters": "Voltage: 220V, Power: 1500W",
-          "application": "Ideal for producing paper cups of various sizes, from 6oz to 16oz, suitable for hot and cold beverages.",
-          "product_description": "This machine features a robust stainless steel construction that ensures durability and hygiene standards are met. It includes PLC control for precise operation and minimal wastage.",
-          "technical_specification": "Material: Stainless steel, Weight: 500kg",
-          "optional_add_ons": "Custom cup size molds available upon request.",
-          "faqs": "Q: What is the warranty period? A: 1-year warranty provided for parts and service.",
-          "related_product": "NS-016, NS-017"
+          "category": "Paper Cup Machine, All Products"
         },
 
         {
           "name": "NS-016",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Cup Machine, All Products",
-          "icon": "papercup",
-          "introduction": "The NS-016 paper cup machine is designed for versatility and efficiency, catering to small to medium-scale enterprises. It offers reliable performance and ease of operation.",
-          "parameters": "Voltage: 220V, Power: 1500W",
-          "application": "Suitable for producing a variety of paper cup sizes, ranging from 4oz to 12oz, for both hot and cold beverages.",
-          "product_description": "This machine is crafted from lightweight aluminum alloy, making it easy to transport and install. It features a user-friendly interface and low maintenance requirements.",
-          "technical_specification": "Material: Aluminum alloy, Weight: 450kg",
-          "optional_add_ons": "Automatic cup stacking unit available as an optional accessory.",
-          "faqs": "Q: How many cups can it produce per minute? A: This machine can produce up to 80 cups per minute.",
-          "related_product": "NS-015, NS-017"
+
+          "category": "Paper Cup Machine, All Products"
         },
         {
           "name": "NS-017",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Cup Machine, All Products",
-          "icon": "papercup",
-          "introduction": "The NS-017 paper cup machine is known for its precision and high-speed production capabilities, suitable for large-scale operations requiring consistent quality.",
-          "parameters": "Voltage: 220V, Power: 1800W",
-          "application": "Designed to produce paper cups with sizes ranging from 8oz to 20oz, catering to a wide range of beverage serving needs.",
-          "product_description": "Built with durable components and advanced PLC control, this machine ensures minimal downtime and optimal output. It includes features for custom mold adjustments and easy maintenance.",
-          "technical_specification": "Material: Stainless steel, Weight: 600kg",
-          "optional_add_ons": "Additional molds for special cup designs available upon request.",
-          "faqs": "Q: What material can this machine handle? A: It is capable of handling both single and double PE coated paper.",
-          "related_product": "NS-015, NS-016"
+
+          "category": "Paper Cup Machine, All Products"
         },
         {
           "name": "NS-018",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Cup Machine, All Products",
-          "icon": "papercup",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Cup Machine, All Products"
         },
         {
           "name": "NS-019",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Cup Machine, All Products",
-          "icon": "papercup",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Cup Machine, All Products"
         },
         {
           "name": "NS-020",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Cup Machine, All Products",
-          "icon": "papercup",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Cup Machine, All Products"
         },
         {
           "name": "NS-021",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Cup Machine, All Products",
-          "icon": "papercup",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Cup Machine, All Products"
         },
         {
           "name": "NS-022",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Cup Machine, All Products",
-          "icon": "papercup",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Cup Machine, All Products"
         },
         {
           "name": "NS-023",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Cup Machine, All Products",
-          "icon": "papercup",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Cup Machine, All Products"
         },
         {
           "name": "Paper Bowl Machine 01",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Bowl Machine, All Products",
-          "icon": "paperbowl",
-          "introduction": "The Paper Bowl Machine 01 is designed for high-volume production of paper bowls, offering precision and efficiency.",
-          "parameters": "Voltage: 240V, Power: 1800W",
-          "application": "Suitable for producing various sizes of paper bowls, ideal for both hot and cold food items.",
-          "product_description": "This machine is equipped with advanced features for precise bowl forming and stacking, ensuring consistent quality output.",
-          "technical_specification": "Material: Stainless steel, Weight: 700kg",
-          "optional_add_ons": "Customizable bowl depth and diameter settings available.",
-          "faqs": "Q: What is the production capacity of this machine? A: It can produce up to 120 bowls per minute.",
-          "related_product": "Paper Bowl Machine 02, Paper Bowl Machine 03"
+
+          "category": "Paper Bowl Machine, All Products"
         },
         {
           "name": "Paper Bowl Machine 02",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Bowl Machine, All Products",
-          "icon": "paperbowl",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Bowl Machine, All Products"
         },
         {
           "name": "Paper Bowl Machine 03",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second_name",
-          "category": "Paper Bowl Machine, All Products",
-          "icon": "paperbowl",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing.",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Bowl Machine, All Products"
         },
         {
           "name": "Paper Bowl Machine 04",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Bowl Machine, All Products",
-          "icon": "paperbowl",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Bowl Machine, All Products"
         },
         {
           "name": "NS-021",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Plate Machine, All Products",
-          "icon": "paperplate2",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Plate Machine, All Products"
         },
         {
           "name": "NS-022",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Plate Machine, All Products",
-          "icon": "paperplate2",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Plate Machine, All Products"
         },
         {
           "name": "Cybertruck",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Plate Machine, All Products",
-          "icon": "paperplate2",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Plate Machine, All Products"
         },
         {
           "name": "Cybertruck2",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Plate Machine, All Products",
-          "icon": "paperplate2",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Plate Machine, All Products"
         },
         {
           "name": "Paper Flexo Machine",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/FlexoPrintingMachine.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/FlexoPrintingMachine.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Flexo Machine, All Products",
-          "icon": "paperlid",
-          "introduction": "The Paper Flexo Machine is designed for printing on various paper surfaces, offering high-quality print results and flexibility.",
-          "parameters": "Voltage: 220V, Power: 2000W",
-          "application": "Ideal for printing logos, designs, and labels on paper cups, bowls, and plates.",
-          "product_description": "This paper container machine or paper bowl making machine from Nessco is designed with high level of accuracy and international standards. This machine makes paper containers and bowls for food packaging and serving. The machines runs a whole procedure of paper feeding, bowl-fan wall sealing, oil lubrication, bottom punching, heating, rolling, rimming, rounding, and discharge as well.",
-          "technical_specification": "Material: Aluminum alloy, Weight: 800kg",
-          "optional_add_ons": "Additional color printing units available for multi-color designs.",
-          "faqs": "Q: What is the printing speed of this machine? A: It can print up to 150 meters per minute.",
-          "related_product": "Paper Flexo Machine 2, Paper Flexo Machine 3"
+
+          "category": "Paper Flexo Machine, All Products"
         },
         {
           "name": "Paper Flexo Machine",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/FlexoPrintingMachine.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/FlexoPrintingMachine.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Flexo Machine, All Products",
-          "icon": "paperlid",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "product_description": "This paper container machine or paper bowl making machine from Nessco is designed with high level of accuracy and international standards. This machine makes paper containers and bowls for food packaging and serving. The machines runs a whole procedure of paper feeding, bowl-fan wall sealing, oil lubrication, bottom punching, heating, rolling, rimming, rounding, and discharge as well.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Flexo Machine, All Products"
         },
         {
           "name": "Paper Flexo Machine2",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/FlexoPrintingMachine.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/FlexoPrintingMachine.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Flexo Machine, All Products",
-          "icon": "paperlid",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "product_description": "This paper container machine or paper bowl making machine from Nessco is designed with high level of accuracy and international standards. This machine makes paper containers and bowls for food packaging and serving. The machines runs a whole procedure of paper feeding, bowl-fan wall sealing, oil lubrication, bottom punching, heating, rolling, rimming, rounding, and discharge as well.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Flexo Machine, All Products"
         },
         {
           "name": "Paper Flexo Machine3",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/FlexoPrintingMachine.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/FlexoPrintingMachine.png",
-          "specification_image": [
-            {
-              "first": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-            },
-            {
-              "second": "https://assets.nesscoindustries.com/public/assets/nav_machine/PCM110WithPLC.png"
-            },
-            {
-              "third": "https://i.pinimg.com/236x/2a/5b/e5/2a5be5abd69ada09ccb3750016ebec30.jpg"
-            },
-            {
-              "fourth": "https://i.pinimg.com/236x/b7/bb/49/b7bb49c3704487e6a03611ed5961105d.jpg"
-            },
-            {
-              "fifth": "https://i.pinimg.com/236x/f1/44/5b/f1445be4317e797249a7b94466ed99c7.jpg"
-            }
-          ],
-          "product_heading": "food packaging machine",
-          "first_name": "first name",
-          "second_name": "second name",
-          "category": "Paper Flexo Machine, All Products",
-          "icon": "paperlid",
-          "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "parameters": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "application": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "product_description": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
-          "technical_specification": "Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.",
-          "optional_add_ons": "Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-          "faqs": "Experience unmatched efficiency with our Servo Driven Paper Cup Machine, producing up to 180 cups per minute with superior rigidity and leak-proof sealing",
-          "related_product": "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+
+          "category": "Paper Flexo Machine, All Products"
         }
       ],
       "SidebarLinks": [
@@ -916,54 +327,32 @@
     "data": {
       "DataBankItem": [
         {
-          "title": "Paper Cup Machine",
+          "title": "FAQ",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
           "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
         },
-        {
-          "title": "Paper Bowl Machine",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "bgPic": "papercup"
-        },
-        {
-          "title": "Paper Straw Machine",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-        },
-        {
-          "title": "Paper Bucket Machine",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-        },
-        {
-          "title": "Additional Item 4",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-        },
-        {
-          "title": "Additional Item 5",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          " bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
-        }
-      ],
-      "ResourcesMobile": [
         {
           "title": "knowledge Center",
+          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
           "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
         },
         {
           "title": "Media Rooms",
+          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
           "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
         },
         {
           "title": "Blogs",
+          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
           "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
         },
         {
           "title": "clientel",
+          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
           "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
         }
       ]
+      
     }
   },
   {

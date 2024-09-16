@@ -16,7 +16,7 @@ const categories = [
 
 export function TechnicalSpecifications() {
   return (
-    <div className="w-full h-full flex flex-row p-4 ">
+    <div className="w-full h-full flex flex-row ">
       {/* Left Side: Specification and Image */}
       <div className="flex-grow bg-white p-4 rounded-2xl flex flex-col justify-between">
         <div className="mb-4">
@@ -28,8 +28,8 @@ export function TechnicalSpecifications() {
           </h1>
         </div>
         <div className="flex flex-row items-start">
-          <SpecificationTable />
-          <div className="ml-8  w-[50%]">
+           <SpecificationTable />
+          <div className="w-[40%]">
             <Image
               src={SpeciGlass}
               width={400}
