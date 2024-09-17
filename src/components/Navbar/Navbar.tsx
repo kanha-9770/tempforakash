@@ -61,7 +61,7 @@ function Navbar({ className }: { className?: string }) {
 
   return (
     <div
-      className={`fixed flex w-full ${componentCode === "knowledge-center"?'bg-black text-white':'bg-white'} font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
+      className={`fixed flex w-full ${componentCode === "knowledge-center"?'bg-[#7f7d7d] text-white':'bg-white'} font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
     >
       {/* Desktop Menu */}
       <div className="hidden px-8 lg:flex w-full">

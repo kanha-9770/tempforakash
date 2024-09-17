@@ -10,7 +10,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ number, title, description, Icon }) => {
   return (
-    <div className="flex justify-between gap-4 items-center bg-black text-white p-8 rounded-md mb-6 shadow-md">
+    <div className="flex justify-between items-center bg-black text-white p-8 rounded-md mb-6 shadow-md">
       <div>
         <h2 className="text-4xl font-bold mb-4">{number}. {title}</h2>
         <p className="text-lg">{description}</p>
