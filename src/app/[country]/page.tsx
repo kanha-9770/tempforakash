@@ -160,6 +160,7 @@ import { data } from "@/components/Constants/Navbar/about-data";
 import { AppleCardsCarouselDemo } from "@/components/AppleCardsCarouselDemo";
 import ContactIcons from "@/components/Contact/ContactIcon";
 import KnowMachine from "@/components/Home/CanvasRevealEffectDemo";
+import FeatureNews from "@/components/Home/FeatureNews";
 
 const AboutUs = dynamic(() => import("@/components/Home/AboutSection"), {
   ssr: true,
@@ -282,7 +283,8 @@ export default function Home() {
           <IotSection />
         </div> */}
         <div id="news" className="" ref={newsFeatureRef}>
-          <NewsFeature />
+          {/* <NewsFeature /> */}
+          <FeatureNews/>
         </div>
         <div id="knowMachine" className="" ref={knowMachineRef}>
           {/* <CanvasRevealEffectDemo /> */}

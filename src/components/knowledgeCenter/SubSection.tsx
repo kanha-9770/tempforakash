@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { LampContainer } from "../ui/lamp";
 import { FaBoxOpen, FaCogs, FaChartLine } from "react-icons/fa";
-import Section from "./Section";
+import { LampContainer } from "../ui/lamp";
+
 export function SubSection() {
   const sections = [
     {
@@ -33,7 +33,6 @@ export function SubSection() {
     <div className="h-full w-full">
       <LampContainer>
         <motion.h1
-         
           className="mt-8 bg-gradient-to-br from-slate-300 to-slate-300 py-4 bg-clip-text text-center text-xl font-bold tracking-tight text-transparent md:text-5xl"
         >
           Insight. Precision. Growth.

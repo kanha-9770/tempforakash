@@ -4,24 +4,29 @@
     "data": {
       "navLeftData": [
         {
-          "title": "Sustainability",
-          "description": "Paper industry adopts biodegradable materials and enhances recycling efforts.",
-          "textcolor": "text-green-500"
-        },
-        {
           "title": "Featured Projects",
           "description": "Showcasing innovative projects in paper production and recycling.",
-          "textcolor": "text-yellow-500"
+          "textcolor": "text-yellow-500",
+          "icon": "https://i.pinimg.com/564x/bf/0b/bc/bf0bbc113db9ab88699fa6eab029b35d.jpg"
         },
         {
-          "title": "Innovation",
+          "title": "Customer Reviews",
           "description": "New technologies in paper manufacturing increase efficiency.",
-          "textcolor": "text-pink-500"
+          "textcolor": "text-pink-500",
+          "icon": "https://assets.nesscoindustries.com/public/assets/nav_machine_icon/paperbag.png"
         },
+        {
+          "title": "Sustainability",
+          "description": "Paper industry adopts biodegradable materials and enhances recycling efforts.",
+          "textcolor": "text-green-500",
+          "icon": "https://i.pinimg.com/564x/39/e4/26/39e426741c29f67274c8d23734f19aea.jpg"
+        },
+
         {
           "title": "Recycling",
           "description": "Recycling initiatives in the paper industry have grown significantly.",
-          "textcolor": "text-blue-500"
+          "textcolor": "text-blue-500",
+          "icon":"https://assets.nesscoindustries.com/public/assets/nav_machine_icon/paperlid.png"
         }
       ],
       "navRightData": [
@@ -147,7 +152,6 @@
           "name": "NS-021",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
-
           "category": "Paper Plate Machine, All Products"
         },
         {
@@ -168,7 +172,6 @@
           "name": "Cybertruck2",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
           "mimage": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperPlate.png",
-
           "category": "Paper Plate Machine, All Products"
         },
         {
@@ -291,6 +294,132 @@
           "name": "Paper Cups",
           "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
           "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+          "alt": "Cups",
+          "name": "Paper Bowl",
+          "description": "Paper cups are disposable containers made from paper and often lined with plastic or wax to prevent liquid leakage. They are widely used in the beverage and food industry.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+          "alt": "Item 2",
+          "name": "Paper Cups",
+          "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+          "alt": "Cups",
+          "name": "Paper Bowl",
+          "description": "Paper cups are disposable containers made from paper and often lined with plastic or wax to prevent liquid leakage. They are widely used in the beverage and food industry.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+          "alt": "Item 2",
+          "name": "Paper Cups",
+          "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+          "alt": "Cups",
+          "name": "Paper Bowl",
+          "description": "Paper cups are disposable containers made from paper and often lined with plastic or wax to prevent liquid leakage. They are widely used in the beverage and food industry.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+          "alt": "Item 2",
+          "name": "Paper Cups",
+          "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+          "alt": "Cups",
+          "name": "Paper Bowl",
+          "description": "Paper cups are disposable containers made from paper and often lined with plastic or wax to prevent liquid leakage. They are widely used in the beverage and food industry.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+          "alt": "Item 2",
+          "name": "Paper Cups",
+          "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+          "alt": "Cups",
+          "name": "Paper Bowl",
+          "description": "Paper cups are disposable containers made from paper and often lined with plastic or wax to prevent liquid leakage. They are widely used in the beverage and food industry.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+          "alt": "Item 2",
+          "name": "Paper Cups",
+          "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+          "alt": "Cups",
+          "name": "Paper Bowl",
+          "description": "Paper cups are disposable containers made from paper and often lined with plastic or wax to prevent liquid leakage. They are widely used in the beverage and food industry.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+          "alt": "Item 2",
+          "name": "Paper Cups",
+          "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+          "alt": "Cups",
+          "name": "Paper Bowl",
+          "description": "Paper cups are disposable containers made from paper and often lined with plastic or wax to prevent liquid leakage. They are widely used in the beverage and food industry.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+          "alt": "Item 2",
+          "name": "Paper Cups",
+          "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+          "alt": "Cups",
+          "name": "Paper Bowl",
+          "description": "Paper cups are disposable containers made from paper and often lined with plastic or wax to prevent liquid leakage. They are widely used in the beverage and food industry.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+          "alt": "Item 2",
+          "name": "Paper Cups",
+          "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+          "alt": "Cups",
+          "name": "Paper Bowl",
+          "description": "Paper cups are disposable containers made from paper and often lined with plastic or wax to prevent liquid leakage. They are widely used in the beverage and food industry.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
+        },
+        {
+          "src": "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+          "alt": "Item 2",
+          "name": "Paper Cups",
+          "description": "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs.",
+          "bgpic": "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg"
         }
       ]
     }
@@ -352,7 +481,6 @@
           "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
         }
       ]
-      
     }
   },
   {

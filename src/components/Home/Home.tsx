@@ -9,6 +9,7 @@ import React, {
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 import PositionAwareButton from "../ui/PositionAwareButton";
 import "@fontsource/poppins/400-italic.css"; // Specify weight and style
+import ImageSlider from "../ui/ImageSlider";
 const imgs = [
   "https://i.pinimg.com/236x/07/46/92/0746927691f85ff34910e34db6e37437.jpg",
   "https://i.pinimg.com/236x/07/46/92/0746927691f85ff34910e34db6e37437.jpg",
@@ -77,12 +78,10 @@ const Dots = ({
 };
 
 const Home: React.FC = () => {
- 
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
- 
     // Check for larger screens on the client-side
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
     setIsLargeScreen(mediaQuery.matches);
@@ -92,8 +91,6 @@ const Home: React.FC = () => {
 
     return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
-
-
 
   const { scrollY } = useScroll();
 
@@ -127,15 +124,6 @@ const Home: React.FC = () => {
     return () => clearInterval(intervalRef);
   }, []);
 
-  const onDragEnd = () => {
-    const x = dragX.get();
-
-    if (x <= -DRAG_BUFFER && imgIndex < imgs.length - 1) {
-      setImgIndex((pv) => pv + 1);
-    } else if (x >= DRAG_BUFFER && imgIndex > 0) {
-      setImgIndex((pv) => pv - 1);
-    }
-  };
   const videoStyle = {
     transform: `translateX(${dragX}px) ${videoTransform}`,
     width: videoWidth,
@@ -143,36 +131,12 @@ const Home: React.FC = () => {
   };
   return (
     <div className="relative h-full p-0   flex flex-col items-center overflow-hidden  w-full">
-      <div className="relative px-4  lg:px-10 w-full flex-wrap">
-        <motion.div className=" flex justify-center items-center h-[calc(100vh-220px)] lg:h-[calc(100vh-110px)] rounded-3xl">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="overflow-hidden py-8">
-              <motion.div
-                ref={containerRef}
-                style={{
-                  // x: dragX,
-                  width: videoWidth,
-                  x: videoTransform,
-                  originX: 0.5,
-                }}
-                drag="x"
-                dragConstraints={{
-                  left: 0,
-                  right: 0,
-                }}
-                animate={{
-                  translateX: `-${imgIndex * 100}%`,
-                }}
-                transition={SPRING_OPTIONS}
-                onDragEnd={onDragEnd}
-                className="flex cursor-grab items-center active:cursor-grabbing"
-              >
-                <Images imgIndex={imgIndex} />
-              </motion.div>
+      <div className="relative px-4 lg:px-10 w-full flex-wrap">
+        <motion.div
 
-              <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
-            </div>
-          </div>
+          className=" w-full flex justify-center items-center h-[calc(100vh-100px)] lg:h-[calc(100vh-100px)] rounded-2xl"
+        >
+          <ImageSlider />
         </motion.div>
       </div>
 
@@ -189,7 +153,7 @@ const Home: React.FC = () => {
 
       <div className="absolute flex flex-col w-1/2  lg:w-[30rem] lg:h-[10rem] lg:rounded-tl-[4rem] rounded-tl-[1.5rem] right-0 bg-[#f2f2f2] lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
         <motion.div
-          className="-mt-4 lg:-mt-6 flex mr-0 lg:mr-6 justify-end"
+          className="-mt-4 lg:-mt-6 flex mr-2 lg:mr-8 justify-end"
           style={{ x: svgTransform }} // SVG moves to the right
         >
           <svg
@@ -197,7 +161,7 @@ const Home: React.FC = () => {
             width="100%"
             viewBox="0 0 20 20"
             fill="none"
-            className="flex  right-1/2 h-4 w-8 lg:h-6 lg:w-10"
+            className="flex  h-4 w-8 lg:h-6 lg:w-10"
           >
             <path
               d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"

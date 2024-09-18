@@ -32,6 +32,7 @@
     "imagesloaded": "^5.0.0",
     "lenis": "^1.1.6",
     "locomotive-scroll": "^4.1.4",
+    "lucide-react": "^0.441.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.5",
     "react": "^18",

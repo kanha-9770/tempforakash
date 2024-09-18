@@ -5,11 +5,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedContainer from "@/hooks/AnimatedContainer";
 import { usePathname } from "next/navigation";
+import data from "../Constants/Navbar/index.json";
 
 interface NavItem {
   title: string;
   link?: string;
   image?: string;
+  icon?:string;
   textcolor?: string;
   description?: string;
 }
@@ -33,34 +35,33 @@ const Link = dynamic(() => import("next/link"), { ssr: false });
 const AboutLayout: React.FC<AboutData> = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [data, setData] = useState<any[]>([]);
+  // const [data, setData] = useState<any[]>();
   const pathname = usePathname() || "";
   const countryCode = pathname.split("/")[1]?.toLowerCase();
 
-  // Fetch data from the index.json file
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://backend.nesscoindustries.com/testing.json"
-        );
-        if (!response.ok) {
-          throw new Error("Network response was not ok " + response.statusText);
-        }
-        const jsonData = await response.json();
-        setData(jsonData);
-      } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
-      }
-    };
+  // // Fetch data from the index.json file
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "https://backend.nesscoindustries.com/testing.json"
+  //       );
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok " + response.statusText);
+  //       }
+  //       const jsonData = await response.json();
+  //       setData(jsonData);
+  //     } catch (error) {
+  //       console.error("There was a problem with the fetch operation:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   // Get aboutData, and check if it exists before destructuring
-  const aboutData = data.find(
-    (item: AboutData) => item.category === "About"
-  )?.data;
+  const aboutData = data.find((item) => item.category === "About")?.data;
+
   console.log("ABOUTDATA", aboutData);
 
   // Provide fallback values if aboutData is undefined
@@ -96,7 +97,7 @@ const AboutLayout: React.FC<AboutData> = () => {
       }
     };
   }, [handleWheel]);
-
+  const bgColors = ["bg-[#f6ffef]", "bg-[#f4f4ff]", "bg-blue-200", "bg-yellow-200"];
   return (
     <div className="flex w-full bg-white p-2 lg:p-2 lg:border-none lg:px-4 lg:pb-6 mx-auto max-w-screen-2xl flex-col lg:flex-row items-center justify-center lg:rounded-xl h-full">
       <div className="grid grid-cols-2 h-[80%] sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full lg:w-[75vw]">
@@ -134,12 +135,20 @@ const AboutLayout: React.FC<AboutData> = () => {
             .map((item: NavItem, index: number) => (
               <a key={index} href={`/${countryCode}/about/${item.title}`}>
                 <div
-                  className={`hidden lg:flex border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2`}
+                  className={`hidden lg:flex border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2 ${bgColors[index % bgColors.length]}`}
                 >
                   <div
                     className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
                   >
-                    {/* <item.icon/> */}
+                    <Image
+                      src={item.icon || "/path/to/fallback-image.jpg"} // Add a fallback image if `item.image` is undefined
+                      alt={item.title}
+                      className="rounded-2xl cursor-pointer h-8 w-8 object-cover transform lg:hover:scale-80 transition-transform duration-200"
+                      width={24}
+                      height={24}
+                      priority={index < 4}
+                      loading={index < 4 ? "eager" : "lazy"}
+                    />
                   </div>
                   <div>
                     <h3 className="text-sm sm:text-md text-black font-semibold mb-0">
