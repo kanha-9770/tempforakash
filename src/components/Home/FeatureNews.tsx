@@ -4,17 +4,17 @@ import newsData from "./newsData.json"; // Assuming the JSON file is in the data
 
 export default function FeatureNews() {
   return (
-    <div className="h-screen px-10 py-10 mx-auto p-4">
+    <div className="h-full lg:h-screen lg:px-10 py-10 mx-auto p-4">
       <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-2">
         {/* Left side big article */}
         <div className="md:col-span-1">
-          <article className="bg-white h-[83.8vh] p-2 shadow-lg rounded-xl overflow-hidden flex flex-col">
+          <article className="bg-white h-[30vh] lg:h-[83.8vh] p-2 shadow-lg rounded-xl overflow-hidden flex flex-col">
             <div className="p-2 relative h-[20%]">
-              <h2 className="text-xl font-bold">{newsData[0].title}</h2>
-              <p className="text-sm text-gray-600">{newsData[0].description}</p>
+              <h2 className="text-base lg:text-xl lg:font-bold">{newsData[0].title}</h2>
+              <p className="text-sm hidden lg:flex font-regular text-gray-600">{newsData[0].description}</p>
             </div>
             {/* Icon positioned absolutely over the image */}
-            <div className="relative h-[67%] mt-auto">
+            <div className="relative h-[75%] lg:h-[67%] mt-auto">
               <Image
                 src={newsData[0].image}
                 alt={newsData[0].alt}

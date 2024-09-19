@@ -11,7 +11,7 @@ interface NavItem {
   title: string;
   link?: string;
   image?: string;
-  icon?:string;
+  icon?: string;
   textcolor?: string;
   description?: string;
 }
@@ -97,10 +97,15 @@ const AboutLayout: React.FC<AboutData> = () => {
       }
     };
   }, [handleWheel]);
-  const bgColors = ["bg-[#f6ffef]", "bg-[#f4f4ff]", "bg-blue-200", "bg-yellow-200"];
+  const bgColors = [
+    "bg-[#f6ffef]",
+    "bg-[#f4f4ff]",
+    "bg-blue-200",
+    "bg-yellow-200",
+  ];
   return (
     <div className="flex w-full bg-white p-2 lg:p-2 lg:border-none lg:px-4 lg:pb-6 mx-auto max-w-screen-2xl flex-col lg:flex-row items-center justify-center lg:rounded-xl h-full">
-      <div className="grid grid-cols-2 h-[80%] sm:grid-cols-3 lg:grid-cols-4 gap-4 w-full lg:w-[75vw]">
+      <div className="grid grid-cols-2 h-[80%] px-4 sm:grid-cols-3 lg:grid-cols-4 w-full lg:w-[75vw]">
         {navRightData.map((item: NavItem, index: number) => (
           <motion.div
             key={index}
@@ -113,7 +118,7 @@ const AboutLayout: React.FC<AboutData> = () => {
               <Image
                 src={item.image || "/path/to/fallback-image.jpg"} // Add a fallback image if `item.image` is undefined
                 alt={item.title}
-                className="rounded-2xl cursor-pointer w-44 h-32 lg:w-56 lg:h-56 object-cover transform lg:hover:scale-80 transition-transform duration-200"
+                className="rounded-xl cursor-pointer w-44 h-32 lg:w-56 lg:h-56 object-cover transform lg:hover:scale-80 transition-transform duration-200"
                 width={224}
                 height={224}
                 priority={index < 4}
@@ -135,7 +140,9 @@ const AboutLayout: React.FC<AboutData> = () => {
             .map((item: NavItem, index: number) => (
               <a key={index} href={`/${countryCode}/about/${item.title}`}>
                 <div
-                  className={`hidden lg:flex border-t-2 lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2 ${bgColors[index % bgColors.length]}`}
+                  className={`hidden lg:flex border-t-2 h-[6.5rem] lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2 ${
+                    bgColors[index % bgColors.length]
+                  }`}
                 >
                   <div
                     className={`h-12 w-12 mr-4 flex justify-center items-center text-2xl ${item.textcolor}`}
@@ -143,7 +150,7 @@ const AboutLayout: React.FC<AboutData> = () => {
                     <Image
                       src={item.icon || "/path/to/fallback-image.jpg"} // Add a fallback image if `item.image` is undefined
                       alt={item.title}
-                      className="rounded-2xl cursor-pointer h-8 w-8 object-cover transform lg:hover:scale-80 transition-transform duration-200"
+                      className="rounded-xl cursor-pointer h-8 w-8 object-cover transform lg:hover:scale-80 transition-transform duration-200"
                       width={24}
                       height={24}
                       priority={index < 4}
@@ -167,7 +174,7 @@ const AboutLayout: React.FC<AboutData> = () => {
           {currentIndex > 0 && (
             <button
               onClick={scrollUp}
-              className="absolute text-2xl text-black lg:top-[10%] top-[55%] rounded-full"
+              className="absolute text-3xl text-black lg:top-[9%] top-[55%] rounded-full"
             >
               <IoIosArrowUp />
             </button>

@@ -6,13 +6,12 @@ import Machine from "@/components/Products/machine/MachineHome";
 import ProductDescription from "@/components/Products/ProductDescription";
 import CupFormactionProcess from "@/components/Products/CupFormactionProcess";
 import { TechnicalSpecifications } from "@/components/Products/TechnicalSpecification";
-import MachineCard from "@/components/Products/MachineCard";
 import { SignupFormDemoProduct } from "@/components/Contact/CustomProductForm";
-import NewMachine from "@/components/Products/machine/NewMachine"; // Ensure this is correct
 import machineData from "../../../../components/Products/machine.json"; // Import the machine.json file
 import { ProductApplication } from "@/components/Products/ProductApplication";
 import FaqProducts from "@/components/Faq/FaqProduct";
 import RelatedProducts from "@/components/Products/RelatedProducts";
+import ProcessFlow from "@/components/Products/ProcessFlow";
 
 export default function Home() {
   const params = useParams();
@@ -115,6 +114,7 @@ export default function Home() {
       <div className="mt-32" ref={relatedProductsRef}>
         <RelatedProducts />
       </div>
+      <ProcessFlow page4Data={machine.Page4Data} />
     </main>
   );
 }

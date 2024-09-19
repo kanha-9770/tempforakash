@@ -12,21 +12,14 @@ type SupportItem = {
   image: string;
   bgPic: string; // Corrected property name
 };
-type ResourcesMobile = {
-  title: string;
-  bgPic: string;
-};
-interface ResourceGridProps {
-  supporItem: SupportItem[];
-  ResourcesMobile: ResourcesMobile[];
-}
+
 const ITEMS_PER_PAGE = 4;
 
-const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
-  const supportData = data.find((item) => item.category === "Resources")?.data;
-  console.log("supportData", supportData);
+const VideoGrid: React.FC = ({}) => {
+  const videoData = data.find((item) => item.category === "Video")?.data;
+  console.log("videoData", videoData);
 
-  const DataBankItem = supportData?.DataBankItem || [];
+  const videoDataItem = videoData?.videoDataItem || [];
 
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -77,11 +70,11 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
     }),
   };
 
-  const shouldShowArrows = DataBankItem.length > 5;
+  const shouldShowArrows = videoDataItem.length > 5;
   const [currentPage, setCurrentPage] = useState<number>(0);
 
   const handleNextPage = () => {
-    if ((currentPage + 1) * ITEMS_PER_PAGE < DataBankItem.length) {
+    if ((currentPage + 1) * ITEMS_PER_PAGE < videoDataItem.length) {
       setCurrentPage(currentPage + 1);
     }
   };
@@ -96,56 +89,35 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
       ? [arr.slice(0, size), ...chunkItems(arr.slice(size), size)]
       : [];
 
-  const paginatedItems = chunkItems(DataBankItem, 5);
+  const paginatedItems = chunkItems(videoDataItem, 5);
   return (
-    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-4 w-[100vw]">
-      {/* desktop view */}
-      {shouldShowArrows && (
-        <button
-          className="h-12 w-16 z-30 cursor-pointer rounded-full hidden lg:flex items-center justify-center disabled:opacity-50"
-          onClick={scrollLeft}
-          disabled={!canScrollLeft}
-        >
-          <IoIosArrowBack className="text-2xl text-gray-500" />
-        </button>
-      )}
+    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-2 w-[100vw]">
       <div
-        className={`hidden lg:flex overflow-x-auto py-8 ${
+        className={`hidden lg:flex  overflow-x-auto py-2 ${
           shouldShowArrows ? "scroll-smooth" : ""
         } [scrollbar-width:none] gap-6`}
         ref={carouselRef}
         onScroll={checkScrollability}
       >
-        {DataBankItem.map((item, index) => (
-          <div key={index} className="flex flex-col space-y-4">
-            <Link href={`$`}>
+        {videoDataItem.map((item, index) => (
+          <div key={index} className="flex cursor-grab flex-col space-y-4">
+            <Link href={`/`}>
               <motion.div
-                className="relative flex-shrink-0 w-56 h-32 rounded-3xl p-4 flex flex-col justify-center items-center"
+                className="relative flex-shrink-0 cursor-grab w-80 h-48 bg-[#f2f2f2] rounded-3xl  flex flex-col justify-center items-center"
                 initial="hidden"
                 animate="visible"
                 custom={index}
                 variants={imageVariants}
               >
-                {/* Pseudo-element for the background image */}
-                <div
-                  className="absolute inset-0 rounded-xl"
-                  style={{
-                    backgroundImage: `url(${item.bgPic})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    opacity: 0.2, // Adjust this value for desired opacity
-                  }}
-                ></div>
-
                 <div className="relative w-full h-full flex justify-center items-center">
                   <Image
                     src={item.image}
                     alt={item.title}
                     width={96}
                     height={96}
-                    className="object-contain"
+                    className="object-cover h-full w-full rounded-xl"
                   />
-                  <MdPlayCircleOutline className="absolute top-0 right-2 text-3xl text-white" />
+                  <MdPlayCircleOutline className="absolute top-2  right-2 text-3xl text-white" />
                 </div>
               </motion.div>
               <p className="relative font-poppins text-center mt-4 text-black font-normal hover:text-[#483d78] hover:font-semibold text-base">
@@ -218,7 +190,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
         )}
         <div className="h-[50%] w-full">
           <div className="h-full pb-40 overflow-y-auto w-full">
-            {DataBankItem.map((item, index) => (
+            {videoDataItem.map((item, index) => (
               <div key={index} className="flex flex-col space-y-4">
                 <Link
                   href={"/"}
@@ -247,4 +219,4 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
   );
 };
 
-export default ResourceGrid;
+export default VideoGrid;

@@ -130,7 +130,7 @@ const Home: React.FC = () => {
     transformOrigin: "50% 0%", // this sets originX to 0.5
   };
   return (
-    <div className="relative h-full p-0   flex flex-col items-center overflow-hidden  w-full">
+    <div className="relative  bg-red h-full p-0   flex flex-col items-center overflow-hidden  w-screen">
       <div className="relative px-4 lg:px-10 w-full flex-wrap">
         <motion.div
 

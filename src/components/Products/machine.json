@@ -80,6 +80,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
 
@@ -160,6 +202,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -239,6 +323,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -318,6 +444,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -397,6 +565,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -476,6 +686,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -555,6 +807,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -634,6 +928,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -713,6 +1049,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -792,6 +1170,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -871,6 +1291,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -1029,6 +1491,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -1108,6 +1612,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -1187,6 +1733,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -1266,6 +1854,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -1345,6 +1975,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -1424,6 +2096,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -1503,6 +2217,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -1582,6 +2338,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         },
         {
@@ -1661,6 +2459,48 @@
             "speedDescription": "Speed round shapes: up to 180 cups/min.",
             "sizeDescription": "Size range: 3 oz to 32 oz",
             "rangeDescription": "up to 180 cups per minute up to 160 cups per minute"
+          },
+          "Page4Data": {
+            "title": "Start your customized project",
+            "paragraph": "There are many details to consider when designing the finished size, of which market acceptance is the most important. Our team of professional designers will work with you to confirm the specifications and produce a prototype for mould design approval",
+            "container": [
+              {
+                "title1": "1. Paper Roll",
+                "title2": "1. Paper Roll",
+                "description": "The process begins with the sourcing of large paper rolls, typically made from food-grade paper that has been coated with a thin layer of polyethylene to make it waterproof. These rolls are the raw material that will be transformed into paper cups.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "2. Printing",
+                "title2": "2. Printing",
+                "description": "In the printing stage, the paper is fed into a high-speed printing machine that applies custom designs, logos, and other branding elements to the paper. This step is essential for creating branded cups that can be used for promotional purposes in cafes, restaurants, and events.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "3. Cutting",
+                "title2": "3. Cutting",
+                "description": "After printing, the paper rolls are sent to the cutting machine, where they are precisely cut into flat, fan-shaped pieces known as blanks. These blanks will form the body of the paper cup. Accurate cutting is critical to ensure that the pieces fit together perfectly during the forming stage, avoiding any gaps or misalignment.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "4. Paper Fan",
+                "title2": "4. Paper Fan",
+                "description": "The cut blanks are then shaped into a fan-like structure, ready to be formed into the cylindrical body of the cup. This step is important as it begins to give the paper its cup-like shape. The fan-shaped blanks are designed to make it easier to form a tight seam when the edges are joined together.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "5. Forming",
+                "title2": "5. Forming",
+                "description": "In this stage, the paper fan is rolled into a cylindrical shape, and the edges are sealed together to form the body of the cup. The machine uses heat and pressure to bond the edges of the paper and create a strong seam. This step transforms the flat blanks into the final cup shape, which is then ready for the next stage.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              },
+              {
+                "title1": "6. Final Paper Cup Product",
+                "title2": "6. Final Product",
+                "description": "Once the cup body is formed, the bottom of the cup is sealed using a separate machine. This step involves applying a bottom piece and sealing it with heat and pressure to ensure the cup is watertight. This final step ensures that the cup can hold liquids without leaking.",
+                "img": "https://assets.nesscoindustries.com/public/assets/nav_machine/FullyAutomaticPaperBagMachine.png"
+              }
+            ]
           }
         }
       ]

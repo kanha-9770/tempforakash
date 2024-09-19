@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       <Subscribe />
 
       <PolicyHeader />
-      <footer className={styles.footer}>
+      <footer className={`${styles.footer} max-w-sc mx-auto`}>
         <div className={styles.bgimagefooter}></div>
         <div className={styles.footercontainer}>
           <div className={styles.footercontent}>

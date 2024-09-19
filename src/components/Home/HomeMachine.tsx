@@ -12,7 +12,7 @@ const HomeMachine: React.FC = () => {
       : cardsData.filter((card) => card.category === categories[activeStep]);
 
   return (
-    <div className="h-full w-screen">
+    <div className="h-full w-screen max-w-screen-2xl mx-auto">
       <Stepper onStepChange={setActiveStep} />
       <div className="h-[90%]  mt-4 lg:ml-0">
         <HomeMachineCarousel filteredCardsData={filteredCardsData} />

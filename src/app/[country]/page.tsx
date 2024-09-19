@@ -230,7 +230,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="relative bg-[rgb(242,242,242)]  top-14 gap-2 h-full">
+    <main className="relative  top-14 gap-2 h-full">
       <div className="top-2 relative">
         <Hero />
       </div>
@@ -257,7 +257,7 @@ export default function Home() {
           </div>
           <HomeMachine />
         </div>
-        <div className="h-auto lg:py-8">
+        <div className="h-auto max-w-screen-2xl mx-auto lg:py-8">
           <AppleCardsCarouselDemo />
         </div>
         <div id="aboutUs" className="" ref={aboutUsRef}>
@@ -269,7 +269,7 @@ export default function Home() {
           />
         </div>
 
-        <div id="clientele" className="" ref={infiniteCardsRef}>
+        <div id="clientele" className="max-w-screen-2xl mx-auto" ref={infiniteCardsRef}>
           <MarqueeSection />
         </div>
         <div id="knowMore" className="h-auto" ref={knowMoreRef}>

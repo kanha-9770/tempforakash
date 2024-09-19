@@ -3,6 +3,7 @@ import ProductLayout from "../../Layout/ProductLayout";
 import ApplicationPage from "../../Layout/ApplicationLayout";
 import SupportGrid from "@/components/Layout/Support";
 import ResourceGrid from "@/components/Layout/ResourceLayout";
+import VideoGrid from "@/components/Layout/VideoLayout";
 
 export interface NavbarItem {
   name: string;
@@ -30,9 +31,9 @@ export const navbarItems: NavbarItem[] = [
     link: "Products",
     component: (
       <ProductLayout
-        setHoveredItem={() => {}}
-        setHeading={() => {}}
-        setIsVisible={() => {}}
+      setHoveredItem={() => {}}
+      setHeading={() => {}}
+      setIsVisible={() => {}}
       />
     ),
   },
@@ -63,7 +64,7 @@ export const navbarItems: NavbarItem[] = [
   {
     name: "Video",
     link: "video",
-    component: <ResourceGrid supporItem={[]} ResourcesMobile={[]} />,
+    component: <VideoGrid/>,
   },
   {
     name: "Contact",

@@ -37,7 +37,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${poppins.variable}`}>
         <NavbarDemo />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

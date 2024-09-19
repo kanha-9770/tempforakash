@@ -13,7 +13,8 @@ const nextConfig = {
       'in.pinterest.com',
       'restcountries.com',
       'assets.nesscoindustries.com',
-      'www.nesscoindia.com'
+      'www.nesscoindia.com',
+      'res.cloudinary.com'
     ],
   },
   swcMinify: true,

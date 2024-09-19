@@ -457,28 +457,75 @@
       "DataBankItem": [
         {
           "title": "FAQ",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
+          "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/tp1roenkfl9i7oqa8jbn.png",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         },
         {
           "title": "knowledge Center",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
+          "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/hzyjkxanmoewqydiqrhf.png",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         },
         {
           "title": "Media Rooms",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
+          "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/gbtsuvpwuzhz6jnqcpea.png",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         },
         {
           "title": "Blogs",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
+          "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/nvfu0wu7vm2z2vfhiie2.png",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         },
         {
           "title": "clientel",
-          "image": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp",
-          "bgPic": "https://assets.nesscoindustries.com/public/assets/nav_machine/PaperBowlMachine.webp"
+          "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/snifsvmdtl5pjmv7lwyf.png",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
+        }
+      ]
+    }
+  },
+  {
+    "category": "Video",
+    "data": {
+      "videoDataItem": [
+        {
+          "title": "Paper Cup Machine",
+          "image": "https://assets.nesscoindustries.com/public/video/home.webp",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
+        },
+        {
+          "title": "Paper Bowl Machine",
+          "image": "https://assets.nesscoindustries.com/public/video/home.webp",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
+        },
+        {
+          "title": "Paper Bag Machine",
+          "image": "https://assets.nesscoindustries.com/public/video/home.webp",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
+        },
+        {
+          "title": "Paper Plate Machine",
+          "image": "https://assets.nesscoindustries.com/public/video/home.webp",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
+        },
+        {
+          "title": "Paper Lid Machine",
+          "image": "https://assets.nesscoindustries.com/public/video/home.webp",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
+        },
+        {
+          "title": "Paper Flexo Machine",
+          "image": "https://assets.nesscoindustries.com/public/video/home.webp",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
+        },
+        {
+          "title": "Paper Spoon Machine",
+          "image": "https://assets.nesscoindustries.com/public/video/home.webp",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
+        },
+        {
+          "title": "Flexo Pringting Machine",
+          "image": "https://assets.nesscoindustries.com/public/video/home.webp",
+          "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         }
       ]
     }
