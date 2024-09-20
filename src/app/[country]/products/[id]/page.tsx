@@ -93,10 +93,11 @@ export default function Home() {
           <div className=" " ref={productDescriptionRef}>
             <ProductDescription machine={machine} />
           </div>
-          <div className=" mt-32" ref={processRef}>
+          <div className="h-auto  mt-32" ref={processRef}>
             <CupFormactionProcess />
+            <ProcessFlow page4Data={machine.Page4Data} />
           </div>
-          <div className=" mt-32" ref={applicationRef}>
+          <div className="mt-32" ref={applicationRef}>
             <ProductApplication />
           </div>
 
@@ -114,7 +115,6 @@ export default function Home() {
       <div className="mt-32" ref={relatedProductsRef}>
         <RelatedProducts />
       </div>
-      <ProcessFlow page4Data={machine.Page4Data} />
     </main>
   );
 }

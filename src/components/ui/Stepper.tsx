@@ -215,7 +215,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
   }, [scrolling]);
 
   return (
-    <div ref={navRef} className={`sticky top-14 max-w-screen-2xl left-0 w-full z-30 ${scrolling ?"bg-white border-t-[0.5px]":"bg-[#f2f2f2]"}`}>
+    <div ref={navRef} className={`sticky top-14 max-w-screen-2xl left-0 w-full z-40 ${scrolling ?"bg-white border-t-[0.5px]":"bg-[#f2f2f2]"}`}>
       <div className="relative flex items-center justify-center w-full h-20  mx-auto lg:h-20 ">
         <div className="w-screen mask-gradient-stepper">
         <div

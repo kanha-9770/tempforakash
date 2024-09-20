@@ -6,7 +6,7 @@ import AboutUs from '../../../public/assets/AboutUs.png';
 
 const CupFormactionProcess = () => {
   return (
-    <div className="h-full">
+    <div className="h-auto ">
       <div className="h-[80vh] p-4 flex rounded-xl flex-col bg-white shadow-lg w-full">
         <div className="z-20 text-3xl font-poppins">
           <span className="z-20">Process of</span>{' '}

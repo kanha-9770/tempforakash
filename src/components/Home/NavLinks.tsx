@@ -133,7 +133,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ type, navItems }) => {
   return (
     <div
       ref={navRef}
-      className={`sticky top-14 z-30 transition-all duration-300 ${
+      className={`sticky top-14 z-40 transition-all duration-300 ${
         scrolling
           ? "bg-white"
           : type === "product"

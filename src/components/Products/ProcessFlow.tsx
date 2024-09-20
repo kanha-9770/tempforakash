@@ -4,58 +4,48 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
-// Interfaces for page data and props
-interface PageData {
+export interface PageData {
   title1: string;
   title2: string;
   description: string;
   img: string;
 }
 
-interface Page4Data {
+export interface Page4Data {
   title: string;
   paragraph: string;
   container: PageData[];
 }
 
-interface ProcessFlowProps {
+export interface ProcessFlowProps {
   page4Data: Page4Data;
 }
 
 // ProcessFlow component
 const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
-  const borderRef = useRef<HTMLDivElement | null>(null);
   const borderImgRef = useRef<HTMLDivElement | null>(null);
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
   const title2Refs = useRef<(HTMLHeadingElement | null)[]>([]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<PageData | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{
+    img: string;
+    title2: string;
+  } | null>(null);
+
+  const openModal = (img: string, title2: string) => {
+    setSelectedImage({ img, title2 });
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
-    // Border animation
-    if (borderRef.current) {
-      gsap.fromTo(
-        borderRef.current,
-        { width: "2%" },
-        {
-          width: "13%",
-          ease: "none",
-          scrollTrigger: {
-            trigger: carouselRef.current,
-            start: "-15% 40%",
-            end: "0% 50%",
-            scrub: true,
-          },
-        }
-      );
-    }
-
-    // Border image animation
     if (borderImgRef.current) {
       gsap.fromTo(
         borderImgRef.current,
@@ -72,8 +62,9 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
         }
       );
     }
+  }, []);
 
-    // Image and title animation
+  useEffect(() => {
     imageRefs.current.forEach((imageRef, idx) => {
       const title2Ref = title2Refs.current[idx];
       if (imageRef && title2Ref) {
@@ -96,73 +87,36 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
                   gsap.to(title2Ref, { opacity: 0, y: 20, duration: 0.5 });
                 }
               },
-            }
+            },
           }
         );
       }
     });
   }, []);
 
-  // Modal open handler
-  const openModal = (img: string) => {
-    const selected = page4Data.container.find((item) => item.img === img);
-    setSelectedImage(selected ?? null);
-    setIsModalOpen(true);
-  };
-
-  // Modal close handler
-  const closeModal = () => setIsModalOpen(false);
-
   return (
-    <>
+    <div className="h-auto w-full">
       <div
-        className="lg:mt-[8rem] mt-[6vh] lg:px-[2rem] px-[1rem] font-poppins pb-[8vh]"
+        className="rounded-xl h-ful bg-white mt-[6vh] p-6 font-poppins"
         ref={carouselRef}
       >
-        {/* Page Title and Description */}
-        <div className="lg:px-[1rem] lg:mb-[22vh] mb-[10vh]">
-          <div>
-            <h2 className="lg:text-[2.9rem] text-[1.5rem] font-medium">
-              <span className="text-[#c6c5c5]">
-                {page4Data.title.trim().replace(/\s+\S+$/, "")}
-              </span>{" "}
-              <span className="text-[#dc0e2a]">
-                {page4Data.title.trim().match(/\S+$/)}
-              </span>
-            </h2>
-          </div>
-          <div
-            className="border-t-[0.2rem] border-solid border-[#dc0e2a] w-[8rem] mt-[1rem]"
-            ref={borderRef}
-          ></div>
-          <div className="lg:w-[76vw] w-[98%] lg:mt-[2rem] mt-[1rem]">
-            <p className="lg:text-[1rem] text-[0.8rem]">
-              {page4Data.paragraph}
-            </p>
-          </div>
+        <div className="lg:px-[1rem]">
+          <div className="border-t-[0.2rem] border-solid border-white w-[8rem] mt-[1rem]"></div>
         </div>
 
-        {/* Carousel Container */}
         <div className="relative">
-          <div className="lg:w-[1.7rem] w-[1.2rem] lg:h-[1.7rem] h-[1.2rem] bg-white border-2 border-solid border-[#dc0e2a] absolute lg:right-[5.6vw] right-[6vw] lg:-top-[7vh] -top-[3vh] rounded-full"></div>
+          <div className="lg:w-[1.7rem] w-[1.2rem] lg:h-[1.7rem] z-20 h-[1.2rem] bg-white border-2 border-solid border-[#dc0e2a] absolute left-[5.7rem] lg:-top-[7vh] -top-[3vh] rounded-full"></div>
           <div
-            className="border-solid lg:border-r-[0.2rem] border-r-2 border-[#dc0e2a] absolute lg:-top-[4vh] -top-[2vh] lg:right-[6.5vw] right-[8.2vw] -z-10"
+            className="border-solid lg:border-r-[0.2rem] border-r-2 border-[#dc0e2a] absolute lg:-top-[4vh] -top-[2vh] left-[6.5rem] z-10"
             ref={borderImgRef}
           ></div>
+
           {page4Data.container.map((item, idx) => (
-            <div key={idx} className="flex lg:my-[8vh] my-[2vh]">
-              <div className="lg:w-[65%] w-[60%] pl-[1vw]">
-                <h2 className="lg:text-[1.6rem] text-[1rem] text-[#483d73] font-medium lg:mb-[2vh] mb-[0.8vh]">
-                  {item.title1}
-                </h2>
-                <p className="lg:text-[1rem] text-[0.6rem]">
-                  {item.description}
-                </p>
-              </div>
-              <div className="lg:w-[35%] w-[40%] flex justify-end items-center">
-                <div className="h-full flex items-end">
+            <div key={idx} className="flex lg:my-[8vh] my-[2vh] items-center">
+              <div className="lg:w-[25%] w-[40%] relative flex justify-center">
+                <div className="absolute bottom-0 left-0 right-0 z-30 flex justify-center">
                   <h3
-                    className="bg-[#483d73] text-white lg:text-[1.1rem] text-[0.5rem] lg:py-[0.8vh] lg:px-[2.5vw] px-[1.2vw] rounded-[2rem] whitespace-nowrap"
+                    className="text-black text-xs font-semibold bg-white p-2 rounded-xl"
                     ref={(el) => {
                       title2Refs.current[idx] = el;
                     }}
@@ -171,8 +125,8 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
                   </h3>
                 </div>
                 <div
-                  className="lg:w-[11rem] w-[4rem] h-[4rem] lg:h-[11rem] border-2 border-solid border-[#483d73] rounded-full overflow-hidden"
-                  onClick={() => openModal(item.img)}
+                  className="lg:w-[7rem] w-[4rem] bg-[#f5f5f5] rounded-xl z-20 h-[4rem] lg:h-[9rem] border-[1px] overflow-hidden cursor-pointer"
+                  onClick={() => openModal(item.img, item.title2)}
                   ref={(el) => {
                     imageRefs.current[idx] = el;
                   }}
@@ -186,12 +140,18 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
                   />
                 </div>
               </div>
+
+              <div className="lg:w-[70%] w-[60%] pl-[1vw]">
+                <h2 className="lg:text-base font-semibold text-[#483d73] lg:mb-[2vh] mb-[0.8vh]">
+                  {item.title1}
+                </h2>
+                <p className="lg:text-sm text-sm font-regular">{item.description}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Modal */}
       {isModalOpen && selectedImage && (
         <div className="fixed inset-0 bg-black bg-opacity-70 lg:hidden flex items-center justify-center z-50">
           <div className="bg-white p-6 mx-4 rounded-lg max-w-lg w-full">
@@ -203,7 +163,7 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
                 className="object-cover w-full h-full rounded-lg"
                 src={selectedImage.img}
                 alt={selectedImage.title2}
-                layout="fill"
+                fill
               />
             </div>
             <button
@@ -215,7 +175,7 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
