@@ -43,7 +43,7 @@ export default function Home() {
     { text: "Process", ref: processRef },
     { text: "Application", ref: applicationRef },
     { text: "Technical Specifications", ref: technicalSpecificationsRef },
-    { text: "Optional Add-Ons", ref: optionalAddOnsRef },
+    // { text: "Optional Add-Ons", ref: optionalAddOnsRef },
     { text: "FAQs", ref: faqsRef },
     { text: "Related Products", ref: relatedProductsRef },
   ];
@@ -93,18 +93,18 @@ export default function Home() {
           <div className=" " ref={productDescriptionRef}>
             <ProductDescription machine={machine} />
           </div>
-          <div className="h-auto  mt-32" ref={processRef}>
+          <div className="h-auto  mt-12" ref={processRef}>
             <CupFormactionProcess />
             <ProcessFlow page4Data={machine.Page4Data} />
           </div>
-          <div className="mt-32" ref={applicationRef}>
+          <div className="mt-12" ref={applicationRef}>
             <ProductApplication />
           </div>
 
-          <div className="mt-32" ref={technicalSpecificationsRef}>
+          <div className="mt-12" ref={technicalSpecificationsRef}>
             <TechnicalSpecifications />
           </div>
-          <div className="mt-32" ref={faqsRef}>
+          <div className="mt-12" ref={faqsRef}>
             <FaqProducts />
           </div>
         </div>
@@ -113,7 +113,9 @@ export default function Home() {
         </div>
       </div>
       <div className="mt-32" ref={relatedProductsRef}>
-        <RelatedProducts />
+        <RelatedProducts
+          page4product={machine.related_product}
+        />
       </div>
     </main>
   );

@@ -97,7 +97,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
               Machines Sold
             </p>
           </div>
-          <p className="font-poppins hidden lg:flex text-sm lg:text-base md:px-6 py-4 text-center font-regular w-full md:w-3/5 leading-6">
+          <p className="font-poppins hidden lg:flex text-sm lg:text-sm md:px-6 py-4 text-center font-regular w-full md:w-3/5 leading-6">
             {description}
           </p>
           <div className="lg:text-center flex flex-col justify-end w-[50%] lg:w-1/5  md:mt-0">
