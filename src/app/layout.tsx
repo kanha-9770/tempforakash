@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import "@fontsource/montserrat";
-import "@fontsource/alex-brush";
-import "@fontsource/poppins"; // Defaults to weight 400
-import "@fontsource/poppins/200.css"; // Specify weight
-import "@fontsource/poppins/500.css"; // Specify weight
-import "@fontsource/poppins/600.css"; // Specify weight
-import "@fontsource/poppins/700.css"; // Specify weight
+
 import NavbarDemo from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
@@ -16,7 +10,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--inter" });
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--poppins",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Fixed the `weights` key to `weight`
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 // Define metadata for the application
@@ -37,7 +31,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${poppins.variable}`}>
         <NavbarDemo />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

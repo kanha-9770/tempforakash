@@ -104,8 +104,8 @@ const AboutLayout: React.FC<AboutData> = () => {
     "bg-yellow-200",
   ];
   return (
-    <div className="flex w-full bg-white p-2 lg:p-2 lg:border-none lg:px-4 lg:pb-6 mx-auto max-w-screen-2xl flex-col lg:flex-row items-center justify-center lg:rounded-xl h-full">
-      <div className="grid grid-cols-2 h-[80%] px-4 sm:grid-cols-3 lg:grid-cols-4 w-full lg:w-[75vw]">
+    <div className="flex w-full lg:border-none lg:pb-6 mx-auto max-w-screen-2xl flex-col lg:flex-row items-center justify-center lg:rounded-xl h-full">
+      <div className="grid grid-cols-2 h-[80%]  sm:grid-cols-3 lg:grid-cols-4 w-full lg:w-[70.5vw]">
         {navRightData.map((item: NavItem, index: number) => (
           <motion.div
             key={index}
@@ -124,7 +124,7 @@ const AboutLayout: React.FC<AboutData> = () => {
                 priority={index < 4}
                 loading={index < 4 ? "eager" : "lazy"}
               />
-              <p className="mt-2 flex items-center justify-center space-x-2 text-center font-poppins text-black hover:text-[#483d78] hover:font-bold font-normal text-xs sm:text-sm md:text-base transform lg:hover:scale-80 transition-transform duration-300">
+              <p className="mt-2 flex items-center justify-center space-x-2 text-center font-poppins invert-0 hover:text-[#483d78] hover:font-bold font-normal text-xs sm:text-sm md:text-base transform lg:hover:scale-80 transition-transform duration-300">
                 <span>{item.title}</span>
               </p>
             </a>
@@ -174,7 +174,7 @@ const AboutLayout: React.FC<AboutData> = () => {
           {currentIndex > 0 && (
             <button
               onClick={scrollUp}
-              className="absolute text-3xl text-black lg:top-[9%] top-[55%] rounded-full"
+              className="absolute text-3xl invert-0 lg:top-[5%] top-[55%] rounded-full"
             >
               <IoIosArrowUp />
             </button>
@@ -184,7 +184,7 @@ const AboutLayout: React.FC<AboutData> = () => {
           {currentIndex < navLeftData.length - 2 && (
             <button
               onClick={scrollDown}
-              className="absolute bg-transparent text-black flex justify-center items-center"
+              className="absolute bg-transparent invert-0 flex justify-center items-center"
             >
               <IoIosArrowDown />
             </button>

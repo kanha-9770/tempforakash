@@ -1,0 +1,46 @@
+.btnPosnawr {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+     transition: color 0.3s ease-in-out;
+    z-index: 9;
+    padding: 0 15px;
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+  
+  .icon {
+    margin-left: 8px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btnPosnawr span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #483878;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+    top: var(--y);
+    left: var(--x);
+    z-index: -1;
+  }
+  
+  .btnPosnawr:hover {
+    color: #ffffff;
+  }
+  
+  .btnPosnawr:hover span {
+    width: 225%;
+    height: 562.5px;
+  }
+  
+  .btnPosnawr:hover .icon {
+    transform: translateX(8px);
+  }
+  

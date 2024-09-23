@@ -69,23 +69,22 @@ const Home: React.FC = () => {
     <>
       <div className="relative  bg-red h-full p-0   flex flex-col items-center overflow-hidden  w-screen">
         <div className="relative px-4 lg:px-10 w-full flex-wrap">
-          <motion.div className=" w-full flex justify-center items-center h-[calc(100vh-100px)] lg:h-[calc(100vh-350px)] rounded-3xl">
+          <motion.div className=" w-full flex justify-center items-center h-[calc(100vh-100px)] lg:h-[52vh] rounded-3xl">
             <ImageSlider />
           </motion.div>
         </div>
-
         <div className="absolute h-auto w-[80%] lg:w-auto  left-8 top-1/3 lg:top-[38%] lg:left-28 flex-col text-7xl text-white font-alexBrush">
           <p className="text-3xl text-center lg:text-justify mx-4 md:text-2xl lg:text-5xl font-poppins font-thin">
             Quality Food Packaging
           </p>
           <div className="lg:ml-2  text-center lg:text-justify">
-            <span className="text-3xl  lg:text-6xl text-[#f2f2f2] font-poppins italic ">
-              Machinery & <span className="text-[#df1f27]">Solutions</span>
+            <span className="text-3xl  lg:text-6xl text-[#f2f2f2] font-poppins font-semibold ">
+              Machinery & <span className="">Solutions</span>
             </span>
           </div>
         </div>
 
-        <div className="absolute flex flex-col w-1/2  lg:w-[20rem] lg:h-[5rem] lg:rounded-tl-[4rem] rounded-tl-[1.5rem] right-0 bg-[#f2f2f2] lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
+        <div className="absolute flex flex-col w-1/2  lg:w-[20rem] lg:h-[5rem] lg:rounded-tl-[2rem] rounded-tl-[1.5rem] right-0 bg-[#f2f2f2] lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
           <motion.div
             className="-mt-4 lg:-mt-6 flex mr-2 lg:mr-8 justify-end"
             style={{ x: svgTransform }} // SVG moves to the right
@@ -149,7 +148,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <FeatureProducts  page4product={relatedProductData.related_product} />
+      <FeatureProducts page4product={relatedProductData.related_product} />
     </>
   );
 };

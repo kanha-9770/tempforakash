@@ -179,7 +179,7 @@
 //       <div className="flex items-center space-x-4">
 //         <button
 //           type="button"
-//           className="inline-flex items-center h-8 w-full rounded-md text-sm font-medium text-gray-700 focus:outline-none"
+//           className="inline-flex items-center h-8 w-full rounded-md text-sm font-medium invert-0 focus:outline-none"
 //           id="menu-button"
 //           aria-expanded={isFlagOpen}
 //           aria-haspopup="true"
@@ -208,7 +208,7 @@
 //         >
 //           <div className="relative p-4">
 //             <div className="absolute inset-y-0 right-6 flex items-center pointer-events-none">
-//               <FiSearch className="text-black" />
+//               <FiSearch className="invert-0" />
 //             </div>
 //             <input
 //               type="text"
@@ -225,7 +225,7 @@
 //             {filteredCountries.slice(0, visibleCount).map((country, index) => (
 //               <button
 //                 key={index}
-//                 className="w-full text-left px-4 py-0 text-sm text-gray-700 hover:bg-gray-100 flex items-center border-r border-gray-300"
+//                 className="w-full text-left px-4 py-0 text-sm invert-0 hover:bg-gray-100 flex items-center border-r border-gray-300"
 //                 role="menuitem"
 //                 onClick={() => {
 //                   setSelectedCountry(country);
@@ -530,15 +530,15 @@ const CountryLayout: React.FC = () => {
 
   return (
     <div ref={countryRef} className="relative inline-block text-left">
-      <div className="flex items-center space-x-4">
+      <div className="flex justify-center items-center space-x-4">
         <button
           type="button"
-          className="inline-flex items-center h-8 w-full rounded-md text-sm font-medium text-gray-700 focus:outline-none"
+          className="inline-flex  w-full rounded-md text-sm font-medium invert-0 focus:outline-none"
           aria-expanded={isFlagOpen}
           aria-haspopup="true"
           onClick={handleFlagOpen}
         >
-          <div className="h-[1.35rem] w-[1.35rem] flex items-center rounded-full justify-center overflow-hidden">
+          <div className="h-[1.25rem] w-[1.25rem] flex items-center rounded-full justify-center overflow-hidden">
             <Image
               width={100}
               height={100}
@@ -548,13 +548,13 @@ const CountryLayout: React.FC = () => {
             />
           </div>
           <div className="flex ml-2 font-light flex-col space-y-0">
-            <p className="font-poppins text-black hidden lg:flex text-16 m-0 p-0 leading-tight">
+            <p className="font-poppins invert-0 hidden lg:flex text-16 m-0 p-0 leading-tight">
               {selectedCountry.code.toUpperCase()}
             </p>
-            <p className="flex lg:hidden font-poppins text-black text-xs m-0 p-0 leading-tight">
+            <p className="flex lg:hidden font-poppins invert-0 text-xs m-0 p-0 leading-tight">
               {selectedCountry.name}
             </p>
-            <p className="flex lg:hidden font-poppins text-black text-sm m-0 p-0 leading-tight">
+            <p className="flex lg:hidden font-poppins invert-0 text-sm m-0 p-0 leading-tight">
               {selectedCountry.language}
             </p>
           </div>
@@ -567,7 +567,7 @@ const CountryLayout: React.FC = () => {
         >
           <div className="relative p-4">
             <div className="absolute inset-y-0 right-6 flex items-center pointer-events-none">
-              <FiSearch className="text-black" />
+              <FiSearch className="invert-0" />
             </div>
             <input
               type="text"
@@ -581,7 +581,7 @@ const CountryLayout: React.FC = () => {
             {filteredCountries.slice(0, visibleCount).map((country, index) => (
               <button
                 key={index}
-                className="w-full text-left px-4 py-0 text-sm text-gray-700 flex items-center"
+                className="w-full text-left px-4 py-0 text-sm invert-0 flex items-center"
                 onClick={() => handleCountrySelect(country)}
               >
                 <p className="px-1 w-24 hover:bg-gray-200 hover:rounded-3xl ">

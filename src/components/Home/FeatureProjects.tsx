@@ -72,14 +72,14 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
 
   return (
     <>
-      <div className="w-full px-10 font-poppins">
+      <div className="w-full h-[35vh] px-10 font-poppins">
         <div
           ref={borderRef}
           className="border-t-[0.1rem] border-solid border-[#f2f2f2] w-[10%] lg:mx-[2rem] mx-[1rem]"
         ></div>
-        <div className="flex flex-row rounded-2xl   lg:my-[2vh]  bg-white p-4 relative">
-          <div className=" flex flex-col">
-            <h2 className="lg:text-2xl text-center  text-[1.5rem] font-semibold">
+        <div className="flex flex-row rounded-2xl   lg:my-[1vh]  bg-white p-4 relative">
+          <div className=" flex w-[20%] flex-col">
+            <h2 className="lg:text-2xl text-center   text-[1.8rem] font-semibold">
               <h1 className="text-[#9e9c9c]">
                 {related_product?.title.trim().replace(/\s+\S+$/, "")}
               </h1>{" "}
@@ -87,7 +87,7 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
                 {related_product?.title.trim().match(/\S+$/)}
               </h1>
             </h2>
-            <p className="text-center text-sm font-regular">
+            <p className="text-center text-xs p-4 font-regular">
               {related_product?.description}
             </p>
             <div className="flex absolute bottom-0 flex-row justify-between">
@@ -95,7 +95,7 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
                 className="text-[#cccaca] lg:text-[2rem] text-[1.8rem]  hover:text-black"
                 onClick={scrollbarLeft}
               >
-                <IoIosArrowDropleftCircle />
+                <IoIosArrowDropleftCircle/>
               </button>
               <button
                 className="text-[#cccaca] lg:text-[2rem] text-[1.8rem]  hover:text-black"
@@ -116,7 +116,7 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
                 {page4product.imageWithDescription.map((item, idx) => (
                   <div
                     key={idx}
-                    className="relative h-[28vh] lg:w-[15vw] w-[70vw] bg-gradient-to-b from-[#f5f5f5] to-[#f2f2f2] rounded-lg "
+                    className="relative h-[28vh] lg:w-[13vw] w-[70vw] bg-gradient-to-b from-[#f5f5f5] to-[#f2f2f2] rounded-lg "
                   >
                     {/* Icons */}
                     <div className="absolute top-2 right-4 flex space-x-2">
@@ -172,7 +172,7 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
 
                     {/* Image */}
                     <div className="flex justify-center items-center">
-                      <div className=" w-[80%] lg:h-[15vh] flex justify-center items-center">
+                      <div className=" w-full px-2 lg:h-[20vh] flex justify-center items-center">
                         <Image
                           className="object-contain"
                           src={item.img}
@@ -183,12 +183,7 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
                       </div>
                     </div>
 
-                    {/* Key Points or View Machine Button */}
-                    <div className="my-[2vh] flex lg:flex-rows flex-col items-center justify-center lg:h-[6vh]">
-                      <button className="lg:text-sm font-normal text-[0.9rem] w-[65%] lg:h-[5vh] h-[3.5vh] border-[0.1rem] border-solid  rounded-lg transition-colors duration-300 border-[#9c9c9c] hover:border-black hover:bg-black hover:text-white">
-                        {related_product.viewMachine}
-                      </button>
-                    </div>
+                   
                   </div>
                 ))}
               </div>

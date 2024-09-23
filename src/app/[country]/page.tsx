@@ -9,6 +9,8 @@ import { AppleCardsCarouselDemo } from "@/components/AppleCardsCarouselDemo";
 import ContactIcons from "@/components/Contact/ContactIcon";
 import KnowMachine from "@/components/Home/CanvasRevealEffectDemo";
 import FeatureNews from "@/components/Home/FeatureNews";
+import Applications from "@/components/Icons/Applications";
+import MyButton from "@/components/Layout/MyButton";
 
 const AboutUs = dynamic(() => import("@/components/Home/AboutSection"), {
   ssr: true,
@@ -84,6 +86,7 @@ export default function Home() {
       </div>
       <ContactIcons />
       <NavLinksDemo navItems={navItems} />
+      <MyButton></MyButton>
       <div className="h-full font-poppins py-20">
         <div
           id="machines"
@@ -106,6 +109,7 @@ export default function Home() {
           <HomeMachine />
         </div>
         <div className="h-auto max-w-screen-2xl mx-auto lg:py-8">
+
           <AppleCardsCarouselDemo />
         </div>
         <div id="aboutUs" className="" ref={aboutUsRef}>

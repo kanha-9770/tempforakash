@@ -91,7 +91,7 @@ const VideoGrid: React.FC = ({}) => {
 
   const paginatedItems = chunkItems(videoDataItem, 5);
   return (
-    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-2 w-[100vw]">
+    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-2 w-full">
       <div
         className={`hidden lg:flex  overflow-x-auto py-2 ${
           shouldShowArrows ? "scroll-smooth" : ""

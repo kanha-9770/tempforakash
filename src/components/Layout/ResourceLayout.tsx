@@ -98,7 +98,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
 
   const paginatedItems = chunkItems(DataBankItem, 5);
   return (
-    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-4 w-[100vw]">
+    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-4 w-full">
       {/* desktop view */}
       {shouldShowArrows && (
         <button

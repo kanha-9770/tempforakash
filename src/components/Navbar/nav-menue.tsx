@@ -49,7 +49,7 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-
+  
   useEffect(() => {
     if (!ref.current) return;
 
@@ -77,6 +77,7 @@ export const MenuItem = ({
   const router = useRouter();
   const pathname = usePathname() || "";
   const countryCode = pathname.split("/")[1]?.toLowerCase();
+  const componentCode = pathname.split("/")[2]?.toLowerCase();
 
   return (
     <div
@@ -94,9 +95,9 @@ export const MenuItem = ({
           <motion.div
             transition={{ duration: 0.3 }}
             layoutId="active"
-            className="bg-white dark:bg-black overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+            className={`${componentCode==="knowledge-center"?'bg-[#222222]':'bg-white'} dark:bg-black overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl`}
           >
-            <motion.div layout className="w-screen mx-auto h-full p-0">
+            <motion.div layout className="w-screen mx-auto h-full px-12">
               {children}
             </motion.div>
           </motion.div>
@@ -111,6 +112,9 @@ const Cursor = ({
 }: {
   position: { left: number; width: number; opacity: number };
 }) => {
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
+  const componentCode = pathname.split("/")[2]?.toLowerCase();
   return (
     <motion.div
       animate={{
@@ -123,7 +127,7 @@ const Cursor = ({
         stiffness: 1000,
         damping: 50, // Lower damping for less resistance
       }}
-      className="absolute z-0 h-6 rounded-full bg-[#eaeaea] md:h-6 "
+      className={`${componentCode==="knowledge-center"?"bg-[#525252]":"bg-[#eaeaea]"} absolute z-0 h-6 rounded-full md:h-6`}
     />
   );
 };

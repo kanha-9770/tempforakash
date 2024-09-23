@@ -61,22 +61,22 @@ function Navbar({ className }: { className?: string }) {
 
   return (
     <div
-      className={`fixed flex w-full ${componentCode === "knowledge-center"?'bg-[#7f7d7d] text-white':'bg-white'} font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
+      className={`fixed flex w-full ${componentCode === "knowledge-center"?'bg-[#222222] text-white':'bg-white'} h-14 font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
     >
       {/* Desktop Menu */}
-      <div className="hidden px-8 lg:flex w-full">
-        <div className="w-1/5 flex items-center">
+      <div className="hidden px-12 lg:flex w-full">
+        <div className="w-1/5  flex items-center">
           <Link href="/" className="w-full h-full flex items-center">
             <Image
               src={Logo}
               alt="Logo"
               width={500}
               height={500}
-              className="h-[1.4rem] w-20"
+              className="h-[1.4rem]  w-20"
             />
           </Link>
         </div>
-        <div className="w-3/5 flex items-center justify-center">
+        <div className="w-3/5  flex items-center justify-center">
           <Menu>
             {navbarItems.map((item) => (
               <MenuItem
@@ -92,8 +92,8 @@ function Navbar({ className }: { className?: string }) {
           </Menu>
         </div>
 
-        <div className="w-1/5 flex h-14 justify-end items-center gap-4">
-          <div className="bg-[#f2f2f2] gap-2 px-2 rounded-3xl">
+        <div className="w-1/5 flex justify-end items-center gap-4">
+          <div className={`${componentCode==="knowledge-center"?'bg-[#525252]':'bg-[#f2f2f2]'} gap-2 px-2 h-[1.80rem]  flex items-center justify-center rounded-3xl`}>
             <CountryLayout />
           </div>
           <ContactForm

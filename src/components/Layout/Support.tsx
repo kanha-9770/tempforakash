@@ -81,7 +81,7 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
   const paginatedItems = chunkItems(supportItems, 4);
 
   return (
-    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-4 w-[100vw]">
+    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-4 w-full">
       {/* desktop view */}
       {shouldShowArrows && (
         <button
@@ -95,7 +95,7 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
       <div
         className={`hidden lg:flex overflow-x-auto py-8 ${
           shouldShowArrows ? "scroll-smooth" : ""
-        } [scrollbar-width:none] gap-8`}
+        } [scrollbar-width:none] gap-6`}
         ref={carouselRef}
         onScroll={checkScrollability}
       >
