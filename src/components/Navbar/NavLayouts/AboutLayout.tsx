@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedContainer from "@/hooks/AnimatedContainer";
 import { usePathname } from "next/navigation";
-import data from "../Constants/Navbar/index.json";
+import data from "../../Constants/Navbar/index.json";
 
 interface NavItem {
   title: string;
@@ -35,36 +35,13 @@ const Link = dynamic(() => import("next/link"), { ssr: false });
 const AboutLayout: React.FC<AboutData> = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  // const [data, setData] = useState<any[]>();
   const pathname = usePathname() || "";
   const countryCode = pathname.split("/")[1]?.toLowerCase();
 
-  // // Fetch data from the index.json file
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         "https://backend.nesscoindustries.com/testing.json"
-  //       );
-  //       if (!response.ok) {
-  //         throw new Error("Network response was not ok " + response.statusText);
-  //       }
-  //       const jsonData = await response.json();
-  //       setData(jsonData);
-  //     } catch (error) {
-  //       console.error("There was a problem with the fetch operation:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  // Get aboutData, and check if it exists before destructuring
   const aboutData = data.find((item) => item.category === "About")?.data;
 
   console.log("ABOUTDATA", aboutData);
 
-  // Provide fallback values if aboutData is undefined
   const navLeftData = aboutData?.navLeftData || [];
   const navRightData = aboutData?.navRightData || [];
 

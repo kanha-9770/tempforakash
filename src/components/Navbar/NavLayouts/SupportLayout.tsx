@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight, FaPhone } from "react-icons/fa";
-import bgPick from "../../../public/assets/nav_support/BgMapImage.png";
-import LottieAnimation from "../ui/LottieAnimation";
-import data from "../Constants/Navbar/index.json";
+import bgPick from "../../../../public/assets/nav_support/BgMapImage.png";
+import LottieAnimation from "../../ui/LottieAnimation";
+import data from "../../Constants/Navbar/index.json";
 
 type SupportItem = {
   title: string;
@@ -22,7 +22,6 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
   const supportData = data.find(item => item.category === "Support")?.data;
   const supportItems: SupportItem[] = supportData?.supportItem || [];
   const mobileItem: SupportMobile = supportData?.supportMobile || { mobileFirst: "", mobileSecond: "" };
-  console.log("supports",supportItems,mobileItem);
   
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -81,7 +80,7 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
   const paginatedItems = chunkItems(supportItems, 4);
 
   return (
-    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-4 w-full">
+    <div className="relative flex flex-row items-center mx-auto max-w-screen-2xl justify-center lg:p-2 w-full">
       {/* desktop view */}
       {shouldShowArrows && (
         <button
@@ -95,14 +94,14 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
       <div
         className={`hidden lg:flex overflow-x-auto py-8 ${
           shouldShowArrows ? "scroll-smooth" : ""
-        } [scrollbar-width:none] gap-6`}
+        } [scrollbar-width:none] gap-8`}
         ref={carouselRef}
         onScroll={checkScrollability}
       >
         {supportItems.map((item, index) => (
           <div key={index} className="flex flex-col space-y-4">
             <motion.div
-              className="flex-shrink-0 w-72 h-40 rounded-xl p-4 flex flex-col justify-center items-center bg-cover bg-center"
+              className="flex-shrink-0 w-72 h-40 rounded-3xl p-4 flex flex-col justify-center items-center bg-cover bg-center"
               style={{ backgroundImage: `url(${bgPick.src})` }}
               initial="hidden"
               animate="visible"

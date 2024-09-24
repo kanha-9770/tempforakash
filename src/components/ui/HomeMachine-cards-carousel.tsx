@@ -6,15 +6,13 @@ import React, {
   createContext,
   useContext,
 } from "react";
-import {
-  IconArrowNarrowLeft,
-  IconArrowNarrowRight,
-  IconX,
-} from "@tabler/icons-react";
+
 import { cn } from "@/lib/utils";
 import { StaticImageData } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { BlurImage } from "./BlurImage";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { BiCross } from "react-icons/bi";
 interface CarouselProps {
   items: JSX.Element[];
   initialScroll?: number;
@@ -258,14 +256,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
               onClick={scrollLeft}
               disabled={!canScrollLeft}
             >
-              <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
+              <ArrowLeft className="h-6 w-6 text-gray-500" />
             </button>
             <button
               className="relative z-20 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
               onClick={scrollRight}
               disabled={!canScrollRight}
             >
-              <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
+              <ArrowRight className="h-6 w-6 text-gray-500" />
             </button>
           </div>
         </>
@@ -324,7 +322,7 @@ export const Card = ({
               className="sticky z-50 top-0 h-8 w-8 right-0 -mr-32 -mt-6 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
               onClick={handleClose}
             >
-              <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+              <BiCross className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
             </button>
             <div className="py-0">{card.content}</div>
           </div>

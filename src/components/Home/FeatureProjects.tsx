@@ -9,7 +9,6 @@ import {
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
 import { related_product } from "./Feature.json";
-import { Label } from "@radix-ui/react-label";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,7 +71,7 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
 
   return (
     <>
-      <div className="w-full h-[35vh] px-10 font-poppins">
+      <div className="w-full  h-[35vh] px-10 font-poppins">
         <div
           ref={borderRef}
           className="border-t-[0.1rem] border-solid border-[#f2f2f2] w-[10%] lg:mx-[2rem] mx-[1rem]"
@@ -90,7 +89,7 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
             <p className="text-center text-xs p-4 font-regular">
               {related_product?.description}
             </p>
-            <div className="flex absolute bottom-0 flex-row justify-between">
+            <div className="flex absolute left-20 bottom-6 flex-row justify-between">
               <button
                 className="text-[#cccaca] lg:text-[2rem] text-[1.8rem]  hover:text-black"
                 onClick={scrollbarLeft}
@@ -107,7 +106,7 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
           </div>
 
           {/* Main Carousel Container */}
-          <div className="w-full  h-[28vh] flex items-center overflow-hidden">
+          <div className="w-full cursor-grab h-[28vh] flex items-center overflow-hidden">
             <div
               className="overflow-auto  scrollbar-hide px-1 "
               ref={carouselRef}

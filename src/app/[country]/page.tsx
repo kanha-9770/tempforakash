@@ -7,10 +7,7 @@ import NavLinksDemo from "@/components/Home/NavLinks";
 import { data } from "@/components/Constants/Navbar/about-data";
 import { AppleCardsCarouselDemo } from "@/components/AppleCardsCarouselDemo";
 import ContactIcons from "@/components/Contact/ContactIcon";
-import KnowMachine from "@/components/Home/CanvasRevealEffectDemo";
 import FeatureNews from "@/components/Home/FeatureNews";
-import Applications from "@/components/Icons/Applications";
-import MyButton from "@/components/Layout/MyButton";
 
 const AboutUs = dynamic(() => import("@/components/Home/AboutSection"), {
   ssr: true,
@@ -31,9 +28,7 @@ const HomeMachine = dynamic(() => import("@/components/Home/HomeMachine"), {
   ssr: true,
 });
 
-const NewsFeature = dynamic(() => import("@/components/Home/NewsFeature"), {
-  ssr: true,
-});
+
 
 const HomeTestimonial = dynamic(
   () => import("@/components/Home/TestimonialsSection"),
@@ -42,22 +37,9 @@ const HomeTestimonial = dynamic(
   }
 );
 
-const CanvasRevealEffectDemo = dynamic(
-  () =>
-    import("@/components/Home/CanvasRevealEffectDemo").then(
-      (mod) => mod.default
-    ),
-  {
-    ssr: false,
-  }
-);
 
-const IotSection = dynamic(
-  () => import("@/components/Home/IotSection").then((mod) => mod.default),
-  {
-    ssr: false,
-  }
-);
+
+
 
 export default function Home() {
   const aboutUsRef = useRef<HTMLDivElement>(null);
@@ -82,11 +64,10 @@ export default function Home() {
   return (
     <main className="relative  top-14 gap-2 h-full">
       <div className="top-2 relative">
-        <Hero />
+        <Hero/>
       </div>
       <ContactIcons />
       <NavLinksDemo navItems={navItems} />
-      <MyButton></MyButton>
       <div className="h-full font-poppins py-20">
         <div
           id="machines"
@@ -128,20 +109,12 @@ export default function Home() {
           <KnowMore />
         </div>
 
-        {/* <div id="iot" className=" lg:flex flex-col hidden" ref={iotRef}>
-          <h4 className="text-xl text-center lg:text-2xl font-poppins lg:leading-tight text-black dark:text-white">
-            IoT <span className="text-red-500 font-bold">System</span>
-          </h4>
-          <IotSection />
-        </div> */}
+        
         <div id="news" className="" ref={newsFeatureRef}>
           {/* <NewsFeature /> */}
           <FeatureNews/>
         </div>
-        <div id="knowMachine" className="" ref={knowMachineRef}>
-          {/* <CanvasRevealEffectDemo /> */}
-          <KnowMachine />
-        </div>
+        
         <div
           id="testimonials"
           className="relative  bg-gradient-to-l via-purple-200 to-transparent h-screen overflow-hidden"

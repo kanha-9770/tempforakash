@@ -1,21 +1,14 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { IoIosArrowForward } from "react-icons/io";
+// Import new arrow icons from react-icons (e.g., BsArrowRight and BsArrowLeft)
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import styles from "./MyButton.module.css";
 
 interface MyButtonProps {
-  href?: string;
-  className?: string;
-  icon?: React.ReactNode;
-  text?: string;
+  user?: string; // Make `user` optional
 }
 
-const MyButton: React.FC<MyButtonProps> = ({
-  href = "/",
-  className = "",
-  icon = <IoIosArrowForward />,
-  text = ""
-}) => {
+const MyButton: React.FC<MyButtonProps> = ({ user = "right" }) => {
   const buttonRef = useRef<HTMLAnchorElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -40,14 +33,18 @@ const MyButton: React.FC<MyButtonProps> = ({
   return (
     <Link
       ref={buttonRef}
-      className={`${styles.btnPosnawr} h-6 w-6 ${className}`}
-      href={href}
+      className={`${styles.btnPosnawr} ml-10 h-10 w-10 border border-[#483d78] rounded-full`}
+      href="/"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {icon}
-      
+      {user === "left" ? (
+        <BsArrowLeft className={`${styles.icon} text-6xl`} /> // Display left arrow for "left" user
+      ) : (
+        <BsArrowRight className={`${styles.icon} text-6xl`} /> // Display right arrow by default or for "right" user
+      )}
+      <span></span>
     </Link>
   );
 };

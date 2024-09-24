@@ -4,17 +4,17 @@
     text-decoration: none;
     position: relative;
     overflow: hidden;
-     transition: color 0.3s ease-in-out;
-    z-index: 9;
+     transition: color 0.3s ease-in-out;   
     padding: 0 15px;
+    border-radius: 100%;
     background-color: transparent;
     box-sizing: border-box;
   }
   
   .icon {
-    margin-left: 8px;
-    font-size: 1.5rem;
-    transition: transform 0.3s ease-in-out;
+    margin-left:8px;
+    z-index: 99999;
+    color: black;
   }
   
   .btnPosnawr span {
@@ -38,9 +38,5 @@
   .btnPosnawr:hover span {
     width: 225%;
     height: 562.5px;
-  }
-  
-  .btnPosnawr:hover .icon {
-    transform: translateX(8px);
   }
   

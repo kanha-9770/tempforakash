@@ -11,8 +11,8 @@ import {
   MdKeyboardArrowUp,
 } from "react-icons/md";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
-import { BlurImage } from "../ui/BlurImage";
-import data from "../Constants/Navbar/index.json";
+import { BlurImage } from "../../ui/BlurImage";
+import data from "../../Constants/Navbar/index.json";
 
 interface ProductLayoutProps {
   setHoveredItem: (item: string | null) => void;

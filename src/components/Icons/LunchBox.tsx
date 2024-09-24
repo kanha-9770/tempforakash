@@ -3,7 +3,7 @@ import styles from "./LunchBox.module.css";
 interface LunchBox {
   width?: string | number; // Width can be a string (e.g., '100px') or a number (e.g., 100 for pixels)
 }
-const LunchBox: React.FC<LunchBox> = ({ width="100" }) => {
+const LunchBox: React.FC<LunchBox> = ({ width = "100" }) => {
   return (
     <div>
       <svg

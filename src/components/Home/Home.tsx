@@ -113,7 +113,6 @@ const Home: React.FC = () => {
               width="230px"
               fontSize="22px"
               borderRadius="100px"
-              borderColor="black"
               text={"Get a Quote"}
             />
           </div>
@@ -127,7 +126,6 @@ const Home: React.FC = () => {
               width="150px"
               fontSize="16px"
               borderRadius="100px"
-              borderColor="black"
               text={"Get a Quote"}
             />
           </div>

@@ -1,9 +1,9 @@
-import AboutLayout from "../../Layout/AboutLayout";
-import ProductLayout from "../../Layout/ProductLayout";
-import ApplicationPage from "../../Layout/ApplicationLayout";
-import SupportGrid from "@/components/Layout/Support";
-import ResourceGrid from "@/components/Layout/ResourceLayout";
-import VideoGrid from "@/components/Layout/VideoLayout";
+import AboutLayout from "@/components/Navbar/NavLayouts/AboutLayout";
+import ApplicationLayout from "@/components/Navbar/NavLayouts/ApplicationLayout";
+import ProductLayout from "@/components/Navbar/NavLayouts/ProductLayout";
+import ResourceGrid from "@/components/Navbar/NavLayouts/ResourceLayout";
+import SupportGrid from "@/components/Navbar/NavLayouts/SupportLayout";
+import VideoGrid from "@/components/Navbar/NavLayouts/VideoLayout";
 
 export interface NavbarItem {
   name: string;
@@ -31,16 +31,16 @@ export const navbarItems: NavbarItem[] = [
     link: "Products",
     component: (
       <ProductLayout
-      setHoveredItem={() => {}}
-      setHeading={() => {}}
-      setIsVisible={() => {}}
+        setHoveredItem={() => {}}
+        setHeading={() => {}}
+        setIsVisible={() => {}}
       />
     ),
   },
   {
     name: "Application",
     link: "application",
-    component: <ApplicationPage />,
+    component: <ApplicationLayout />,
   },
 
   {
@@ -64,7 +64,7 @@ export const navbarItems: NavbarItem[] = [
   {
     name: "Video",
     link: "video",
-    component: <VideoGrid/>,
+    component: <VideoGrid />,
   },
   {
     name: "Contact",

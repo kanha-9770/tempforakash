@@ -7,12 +7,12 @@ import Link from "next/link";
 import Logo from "../../../public/assets/Logo.png";
 import { Menu, MenuItem } from "./nav-menue";
 import { HiMiniMinusCircle } from "react-icons/hi2";
-import CountryLayout from "../Layout/CountryLayout";
 import { VscAccount } from "react-icons/vsc";
 import { TfiSearch } from "react-icons/tfi";
 import { IoClose } from "react-icons/io5";
 import ContactForm from "../Contact/Contact";
 import { usePathname } from "next/navigation";
+import CountryLayout from "./NavLayouts/CountryLayout";
 export default function NavbarDemo() {
   return (
     <div className="relative lg:h-auto lg:mt-0 flex items-center justify-between lg:justify-center">

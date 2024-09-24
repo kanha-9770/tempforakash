@@ -1,7 +1,6 @@
 import React from "react";
 import iotImage from "../../../public/assets/iotImage.png";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
-import { IconClipboardCopy, IconFileBroken } from "@tabler/icons-react";
 export default function IotSection() {
   return (
     <div className="h-screen">
@@ -14,7 +13,7 @@ export default function IotSection() {
             description={item.description}
             header={item.header}
             className={item.className}
-            icon={item.icon}
+            // icon={item.icon}
           />
         ))}
       </BentoGrid>
@@ -28,7 +27,7 @@ export default function IotSection() {
             header={item.header}
             className={item.className}
             image={item.image}
-            icon={item.icon}
+            // icon={item.icon}
           />
         ))}
       </BentoGrid>
@@ -59,7 +58,7 @@ const items = [
     title: "Nessco Remote Control",
     description: "Maintenance System",
     className: "md:col-span-2",
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+    // icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
     type: "two",
@@ -75,7 +74,7 @@ const items1 = [
     description: "Explore the birth of groundbreaking ideas and inventions.",
     className: "md:col-span-2",
     image: iotImage,
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+    // icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
     type: "four",
@@ -84,6 +83,6 @@ const items1 = [
     header: <Skeleton />,
     className: "md:col-span-1",
     image: iotImage,
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+    // icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
 ];
