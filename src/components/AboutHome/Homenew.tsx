@@ -2,7 +2,7 @@
 import React, { useState, useCallback, memo, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Page1Data } from "@/components/Constants/About/homenew-page";
+import { Page1Data } from "@/components/Constants/About/AboutUsPage.json";
 import { gsap } from "gsap";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -29,15 +29,15 @@ const Home: React.FC = () => {
           paddingLeft: "1vw",
           scrollTrigger: {
             trigger: triggerElement,
-            start: "30% 10%",
+            start: "40% 10%",
             end: "10%",
             scrub: true,
           },
         });
 
         gsap.to(textElement, {
-          fontSize: "3rem",
-          paddingTop: "3vh",
+          fontSize: "2rem",
+          paddingTop: "5vh",
           scrollTrigger: {
             trigger: triggerElement,
             start: "30% 10%",
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
 
         gsap.to(".text-element span", {
           color: "#ededed",
-          fontWeight: "600",
+          fontWeight: "300",
           scrollTrigger: {
             trigger: ".trigger",
             start: "30% 10%",
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
 
         gsap.to(".text-element .lg\\:text-\\[\\#e12d2c\\]", {
           color: "#ededed",
-          fontWeight: "600",
+          fontWeight: "350",
           scrollTrigger: {
             trigger: ".trigger",
             start: "30% 10%",
@@ -143,10 +143,10 @@ const Home: React.FC = () => {
   return (
     <div className="relative lg:h-screen flex flex-col items-center overflow-hidden min-h-screen w-full lg:top-3 top-[4vh] ">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
-        <div className="trigger lg:fixed lg:-top-[2vh] absolute z-30 lg:mt-[7vh] lg:w-full w-[13rem] lg:text-left text-center pl-[4vw] lg:left-0 lg:h-[18.5vh] left-[20vw] bottom-[20vh]">
-          <h1 className="text-element font-poppins lg:pt-[6vh] lg:pl-[1vw] lg:text-[5rem] text-[3.5rem] lg:leading-normal leading-[5.6vh] font-medium">
+        <div className="trigger lg:fixed lg:-top-[1vh] absolute z-30 lg:mt-[5vh] lg:w-full w-[13rem] lg:text-left text-center pl-[4vw] lg:left-0 lg:h-[18.5vh] left-[20vw] bottom-[20vh]">
+          <h1 className="text-element font-poppins lg:pt-[6vh] lg:pl-[1vw] lg:text-[4rem] text-[3.5rem] lg:leading-normal leading-[5.6vh] font-medium">
             <span className="lg:text-[#9e9c9c] text-white">
-              <span className="lg:font-semibold">
+              <span className="lg:font-medium">
                 {Page1Data.title
                   .trim()
                   .replace(/\s+\S+$/, "")
@@ -158,7 +158,7 @@ const Home: React.FC = () => {
                 .slice(1)}
             </span>{" "}
             <span className="lg:text-[#e12d2c] text-white">
-              <span className="lg:font-semibold">
+              <span className="lg:font-medium">
                 {Page1Data.title.trim().match(/\S+$/)?.[0].charAt(0) || ""}
               </span>
               {Page1Data.title.trim().match(/\S+$/)?.[0].slice(1) || ""}
@@ -201,19 +201,23 @@ const Home: React.FC = () => {
           <Image
             src={Page1Data.leftBorderImg}
             alt="Content"
+            height={100}
+            width={100}
             className="w-[10vw] absolute -left-[1vw] -top-[3vw] hidden lg:block"
           />
-          <p className="lg:static absolute bottom-[6vh] lg:w-[95%] lg:mx-[1rem] mx-[1rem] lg:text-[0.9rem] text-[0.7rem] font-poppins text-center">
+          <p className="lg:static absolute bottom-[6vh] lg:w-[95%] lg:mx-[1rem] mx-[1rem] text-sm font-regular font-poppins text-center">
             {isMobile
               ? getFirst20Words(Page1Data.description)
               : Page1Data.description}
           </p>
         </div>
-        <div className="lg:static absolute bottom-[32vh] left-[28vw] w-[22%] flex items-center justify-cente">
+        <div className="lg:static absolute bottom-[32vh] left-[35vw] w-[22%] flex items-center justify-center">
           <Image
             src={Page1Data.mainImg}
             alt="Content"
-            className="lg:w-[16vw] max-w-[30vw]"
+            height={100}
+            width={100}
+            className="lg:w-[16vw] max-w-[40vw] "
           />
         </div>
         <div className="w-[38%] lg:relative flex items-center justify-center ">
@@ -225,9 +229,11 @@ const Home: React.FC = () => {
               <Image
                 src={item.img}
                 alt="Content"
+                height={100}
+                width={100}
                 className="w-[6vw] hidden lg:block"
               />
-              <p className="font-medium text-[1.1rem] hidden lg:block">
+              <p className="font-medium  text-[1.1rem] hidden lg:block">
                 {item.title}
               </p>
             </div>
@@ -235,6 +241,8 @@ const Home: React.FC = () => {
           <Image
             src={Page1Data.rightBorderImg}
             alt="Content"
+            height={100}
+            width={100}
             className="w-[10vw] absolute top-[1vh] -right-[1.5vw] hidden lg:block"
           />
         </div>

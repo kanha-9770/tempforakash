@@ -41,11 +41,13 @@
     color: white;
   }
 
+  /* founderpage */
   
   .card {
     position: relative;
     background-color: black;
     border-radius: 1rem;
+    padding: 0.80rem; /* Adjust as needed */
     color: white;
     border: 2px solid;
     transition: all 0.3s ease-in-out;
@@ -58,7 +60,10 @@
     border-color: black;
   }
   
- 
+  .imageContainer {
+    position: relative;
+    
+  }
   
  
   
@@ -77,6 +82,7 @@
     font-size: 1.100rem;
     font-weight: 400;
     display: flex;
+    align-items: center;
     
   }
   
@@ -87,18 +93,19 @@
   .descriptionContainer {
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
     background-color: white;
     color: black;
     overflow: hidden;
-  
-    transform: translateY(160%);
+    height: 50%; /* Adjust height based on how much of the image you want to cover */
+    transform: translateY(150%);
     transition: transform 0.3s ease-out;
   }
   
   .card:hover .descriptionContainer {
     transform: translateY(0);
-    height: 160%;
+    height: 90%;
   }
 
 /* Medium screens (tablets) */

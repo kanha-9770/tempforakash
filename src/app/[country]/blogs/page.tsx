@@ -1,7 +1,7 @@
-import Pages from '@/components/blogs/Pages'
+import Pages from '@/components/blogs/Pages';
 import React from 'react'
 
-const pages = () => {
+const page = () => {
   return (
     <>
       <Pages/>
@@ -9,4 +9,5 @@ const pages = () => {
   )
 }
 
-export default pages
+export default page;
+

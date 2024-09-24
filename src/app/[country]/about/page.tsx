@@ -1,4 +1,6 @@
 "use client";
+import { useEffect, useState} from "react";
+import Loader from "@/components/Loader"; // Your loader component
 
 import Home from "@/components/AboutHome/Home";
 import NavLinksDemo from "@/components/AboutHome/NavLink";
@@ -11,6 +13,8 @@ import SustainableLayout from "@/components/AboutHome/Sustainable";
 import FeatureProject from "@/components/AboutHome/FeatureProject";
 import Awards from "@/components/AboutHome/Awards";
 import Homenew from "@/components/AboutHome/Homenew";
+import { ExpandableCardDemo } from "@/components/AboutHome/NewOurstrenght";
+import NewSustainability from "@/components/AboutHome/NewSustainability";
 
 
 export default function about ()
@@ -37,28 +41,29 @@ export default function about ()
 
 
     return(
-        <main className="bg-[#f5f5f5]">
+        <main className="bg-[#f5f5f5] overflow-hidden">
         {/* <Home /> */}
         <Homenew/>
+        <div className="">
         <NavLinksDemo navItems={navItems}  />
-        
+        </div>
         <div id='mission and vission' className="mt-28" ref={missionRef}>
         <Missionvission/>
         </div>
  
-        <div  id='Our Company' className="mt-28" ref={ourcompanyRef}>
+        <div  id='Our Company' className="lg:mt-28 mt-[30rem]" ref={ourcompanyRef}>
         <OurCompany/>
         </div>
 
         <div id='Our Strenght' ref={ourstrenghtRef} className="mt-28">
-        <OurStrenght/>
+        <ExpandableCardDemo/>
         </div>
 
         <div id='The Pink City' ref={pinkcityRef} className="mb-10 mt-28 z-10">
         <PinkCity/>
         </div>
         <div className="mt-28" id='Sustainability' ref={sustainableRef}>
-        <SustainableLayout/>
+      <NewSustainability/>
         </div>
 
         <div className="mt-28" id='Featured Projects' ref={featureprojectRef}>

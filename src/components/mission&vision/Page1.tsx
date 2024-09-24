@@ -2,7 +2,7 @@
 import React, { useState, useCallback, memo, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Page1Data } from "../Constants/mission&vision/mission&vision_data";
+import { Page1Data } from "../Constants/mission&vision/mission&vision_data.json";
 import { gsap } from "gsap";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -24,8 +24,9 @@ const Home: React.FC = () => {
         const textElement = document.querySelector(".text-element");
 
         gsap.to(triggerElement, {
-          backgroundColor: "#ffffff",
-          height: "13vh",
+          backdropFilter: "blur(30px)",
+          background: "transparent",
+          height: "4rem",
           paddingLeft: "1vw",
           scrollTrigger: {
             trigger: triggerElement,
@@ -36,8 +37,9 @@ const Home: React.FC = () => {
         });
 
         gsap.to(textElement, {
-          fontSize: "3rem",
-          paddingTop: "3vh",
+          fontSize: "1.8rem",
+          paddingTop: "1.3rem",
+          filter: "invert(100%)",
           scrollTrigger: {
             trigger: triggerElement,
             start: "30% 10%",
@@ -47,8 +49,8 @@ const Home: React.FC = () => {
         });
 
         gsap.to(".text-element span", {
-          color: "#ededed",
-          fontWeight: "600",
+          color: "#424242",
+          fontWeight: "500",
           scrollTrigger: {
             trigger: ".trigger",
             start: "30% 10%",
@@ -57,9 +59,8 @@ const Home: React.FC = () => {
           },
         });
 
-        gsap.to(".text-element .lg\\:text-\\[\\#e12d2c\\]", {
-          color: "#ededed",
-          fontWeight: "600",
+        gsap.to(".text-element .lg\\:text-\\[\\#dc0e2a\\]", {
+          fontWeight: "500",
           scrollTrigger: {
             trigger: ".trigger",
             start: "30% 10%",
@@ -104,18 +105,6 @@ const Home: React.FC = () => {
     );
   };
 
-  const handleMouseEnter = useCallback((index: number) => {
-    setActiveLink(index);
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setActiveLink(-1);
-  }, []);
-
-  const handleClick = (ref: React.RefObject<HTMLDivElement>) => () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -140,11 +129,12 @@ const Home: React.FC = () => {
   const { scrollY } = useScroll();
   const videoWidth = useTransform(scrollY, [0, 300], ["100%", "150%"]);
   const videoX = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
+
   return (
     <div className="relative lg:h-screen flex flex-col items-center overflow-hidden min-h-screen w-full lg:top-3 top-[4vh] ">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
-        <div className="trigger lg:fixed lg:-top-[2vh] absolute z-30 lg:mt-[7vh] lg:w-full w-[13rem] lg:text-left text-center pl-[4vw] lg:left-0 lg:h-[18.5vh] left-[20vw] bottom-[20vh]">
-          <h1 className="text-element font-poppins lg:pt-[6vh] lg:text-[5rem] text-[3.5rem] lg:leading-normal leading-[5.6vh] font-medium">
+        <div className="trigger lg:fixed lg:-top-[1rem] absolute z-30 lg:mt-[3.4rem] lg:w-full w-[13rem] lg:text-left text-center pl-[4vw] lg:left-0 lg:h-[9rem] left-[20vw] bottom-[20vh]">
+          <h1 className="text-element font-poppins lg:pt-[3rem] lg:text-[5rem] text-[3.5rem] lg:leading-normal leading-[5.6vh] font-medium">
             <span className="lg:text-[#9e9c9c] text-white">
               <span className="lg:font-semibold">
                 {Page1Data.title
@@ -157,7 +147,7 @@ const Home: React.FC = () => {
                 .replace(/\s+\S+$/, "")
                 .slice(1)}
             </span>{" "}
-            <span className="lg:text-[#e12d2c] text-white">
+            <span className="lg:text-[#dc0e2a] text-white">
               <span className="lg:font-semibold">
                 {Page1Data.title.trim().match(/\S+$/)?.[0].charAt(0) || ""}
               </span>
@@ -172,7 +162,7 @@ const Home: React.FC = () => {
         >
           {isVideoLoaded ? (
             <>
-              <div className="relative w-full lg:h-[68vh] h-[75vh] lg:top-[17vh]">
+              <div className="relative w-full lg:h-[68vh] h-[75vh] lg:top-[8rem]">
                 <video
                   id="background-video"
                   className="w-full h-full object-cover rounded-2xl"
@@ -185,7 +175,7 @@ const Home: React.FC = () => {
                 >
                   <source src={Page1Data.video} type="video/mp4" />
                 </video>
-                <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-xl"></div>
+                <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black rounded-b-xl"></div>
               </div>
             </>
           ) : (
@@ -201,6 +191,8 @@ const Home: React.FC = () => {
           <Image
             src={Page1Data.leftBorderImg}
             alt="Content"
+            width={100}
+            height={100}
             className="w-[10vw] absolute -left-[1vw] -top-[3vw] hidden lg:block"
           />
           <p className="lg:static absolute bottom-[6vh] lg:w-[95%] lg:mx-[1rem] mx-[1rem] lg:text-[0.9rem] text-[0.7rem] font-poppins text-center">
@@ -213,6 +205,8 @@ const Home: React.FC = () => {
           <Image
             src={Page1Data.mainImg}
             alt="Content"
+            width={100}
+            height={100}
             className="lg:w-[16vw] max-w-[30vw]"
           />
         </div>
@@ -225,6 +219,8 @@ const Home: React.FC = () => {
               <Image
                 src={item.img}
                 alt="Content"
+                width={100}
+                height={100}
                 className="w-[6vw] hidden lg:block"
               />
               <p className="font-medium text-[1.1rem] hidden lg:block">
@@ -235,6 +231,8 @@ const Home: React.FC = () => {
           <Image
             src={Page1Data.rightBorderImg}
             alt="Content"
+            width={100}
+            height={100}
             className="w-[10vw] absolute top-[1vh] -right-[1.5vw] hidden lg:block"
           />
         </div>

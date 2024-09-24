@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useCallback, memo, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Page1Data } from "../Constants/mission&vision/mission&vision_data";
+import { Page1Data } from "../Constants/mission&vision/mission&vision_data.json";
 
 const Home: React.FC = () => {
   const [activeLink, setActiveLink] = useState<number>(0);
@@ -115,9 +115,6 @@ const Home: React.FC = () => {
           <div className="bg-white mt-[1rem] w-[8rem] h-[2rem] rounded-[1rem] relative flex items-center">
             <button className="text-black text-[0.8rem] absolute left-[1rem]">
               {Page1Data.getaQuote}
-            </button>
-            <button className="text-[#483d73] text-[1.6rem] absolute right-[0.1rem]">
-              {Page1Data.icon}
             </button>
           </div>
         )}

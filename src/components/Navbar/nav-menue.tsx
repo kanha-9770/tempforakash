@@ -39,8 +39,8 @@ export const MenuItem = ({
   setActive: (item: string) => void;
   active: string | null;
   item: string;
-  link?:string;
-  
+  link?: string;
+
   setPosition: (position: {
     left: number;
     width: number;
@@ -49,7 +49,7 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     if (!ref.current) return;
 
@@ -78,12 +78,10 @@ export const MenuItem = ({
   const pathname = usePathname() || "";
   const countryCode = pathname.split("/")[1]?.toLowerCase();
   const componentCode = pathname.split("/")[2]?.toLowerCase();
+  const componentCodeourCompany = pathname.split("/")[3]?.toLowerCase();
 
   return (
-    <div
-      ref={ref}
-      className="z-10 cursor-pointer px-3 font-poppins"
-    >
+    <div ref={ref} className="z-10 cursor-pointer px-3 font-poppins">
       <Link
         className="invert-0 text-base font-light"
         href={`/${countryCode}/${link}`}
@@ -95,7 +93,13 @@ export const MenuItem = ({
           <motion.div
             transition={{ duration: 0.3 }}
             layoutId="active"
-            className={`${componentCode==="knowledge-center"?'bg-[#222222]':'bg-white'} dark:bg-black overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl`}
+            className={`${
+              ["knowledge-center", "clientele", "ourcompany"].includes(
+                componentCode
+              ) || ["ourcompany"].includes(componentCodeourCompany)
+                ? "bg-[#222222]"
+                : "bg-white"
+            } dark:bg-black overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl`}
           >
             <motion.div layout className="w-screen mx-auto h-full px-12">
               {children}
@@ -114,6 +118,7 @@ const Cursor = ({
 }) => {
   const pathname = usePathname() || "";
   const countryCode = pathname.split("/")[1]?.toLowerCase();
+  const componentCodeourCompany = pathname.split("/")[3]?.toLowerCase();
   const componentCode = pathname.split("/")[2]?.toLowerCase();
   return (
     <motion.div
@@ -125,9 +130,15 @@ const Cursor = ({
       transition={{
         type: "spring",
         stiffness: 1000,
-        damping: 50, // Lower damping for less resistance
+        damping: 50,
       }}
-      className={`${componentCode==="knowledge-center"?"bg-[#525252]":"bg-[#eaeaea]"} absolute z-0 h-6 rounded-full md:h-6`}
+      className={`${
+        ["knowledge-center", "clientele", "ourcompany"].includes(
+          componentCode
+        ) || ["ourcompany"].includes(componentCodeourCompany)
+          ? "bg-[#525252]"
+          : "bg-[#eaeaea]"
+      } absolute z-0 h-6 rounded-full md:h-6`}
     />
   );
 };

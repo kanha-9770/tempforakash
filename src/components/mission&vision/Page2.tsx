@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Page2Data } from "../Constants/mission&vision/mission&vision_data";
+import { Page2Data } from "../Constants/mission&vision/mission&vision_data.json";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoIosCloseCircle } from "react-icons/io";
 
@@ -117,8 +117,8 @@ const Page2 = () => {
                     <div key={idx} className="flex mx-[0.5vw]">
                       {index === 1 && (
                         <div className="flex">
-                          <p className="text-[#000088] mr-[0.5vw] text-[1.5rem]">
-                            {<item.listImg/>}
+                          <p className="text-[#000088] mr-[0.5vw] font-bold lg:text-[1.2rem]">
+                            {item.listImg}
                           </p>
                           <p>{item.point}</p>
                         </div>
@@ -128,6 +128,8 @@ const Page2 = () => {
                           <Image
                             src={item.listImg}
                             alt={item.point}
+                            width={100}
+                            height={100}
                             className="lg:w-[3vw] lg:h-[6vh] w-[8vw] h-[4vh]"
                           />
                           <p>{item.point}</p>
@@ -142,6 +144,8 @@ const Page2 = () => {
             <Image
               src={card.image}
               alt="Content"
+              width={100}
+              height={100}
               className={`absolute ${
                 expanded === index ? "lg:right-[2rem]" : imageRight[index]
               }  ${imageBottoms[index]} ${

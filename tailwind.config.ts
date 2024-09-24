@@ -125,6 +125,10 @@ const config: Config = {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
+      backgroundImage: {
+        'circular-gradient-red': 'radial-gradient(circle at 50% 50%, #4c0109, #000000)',
+        'circular-gradient-blue': 'radial-gradient(circle at 50% 50%, #24194c, #000000)',
+      },
     },
   },
   plugins: [

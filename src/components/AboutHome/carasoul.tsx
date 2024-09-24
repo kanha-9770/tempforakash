@@ -1,73 +1,74 @@
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import { IoIosArrowBack } from "react-icons/io";
+"use client";
 import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import { StaticImageData } from "next/image";
+import { companyContent } from "../Constants/About/AboutUsPage.json";
 
-export const Carousel = () => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = [
-    { src: '/assets/about/banner3.jpg', alt: 'Image 1' },
-    { src: '/assets/about/nessco-team.webp', alt: 'Image 2' },
-    { src: '/assets/about/oldmen.webp', alt: 'Image 3' },
-    { src: '/assets/about/oldwomen.jpg', alt: 'Image 4' },
-    { src: '/assets/about/banner3.jpg', alt: 'Image 5' },
-    { src: '/assets/about/nessco-team.webp', alt: 'Image 6' },
-    { src: '/assets/about/oldmen.webp', alt: 'Image 7' },
-    { src: '/assets/about/oldwomen.jpg', alt: 'Image 8' }
-  ];
 
-  const imagesWithDupes = [
-    images[images.length - 1], // Duplicate the last image
-    ...images,
-    images[0] // Duplicate the first image
-  ];
 
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (carousel) {
-      gsap.to(carousel, {
-        x: -currentIndex * 90, // Adjusted width for dynamic resizing
+const Page4 = () => {
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: -carouselRef.current.offsetWidth,
+        behavior: "smooth",
       });
     }
-  }, [currentIndex]);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % imagesWithDupes.length);
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + imagesWithDupes.length) % imagesWithDupes.length);
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: carouselRef.current.offsetWidth,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
-    <div className="relative overflow-hidden">
-      <IoIosArrowBack 
-        className="absolute left-1 top-1/2 transform -translate-y-1/2  text-black shadow-md rounded-full bg-white z-10"
-        size={30}
-        onClick={handlePrev}
-      />
-        
-      <IoIosArrowForward
-        className="absolute right-1 top-1/2 transform -translate-y-1/2 text-black rounded-full bg-white shadow-md z-10"
-        size={30}
-        onClick={handleNext}
-      />
+    <div className="lg:w-full ">
+      
+      <div className="flex  pb-[5vh] px-[4vw]">
+      </div>
+      <div className="lg:w-[45%] w-[100%] flex items-center  lg:-ml-[1vh] relative justify-start  ">
+        <div className="bg-gray-200 bg-opacity-45 py-[2.5vh] px-[1vw] rounded-[1rem] overflow-hidden">
+          <button
+            className="border-solid border-2  text-[#3a2a79] p-[0.4rem] text-[1.4rem] rounded-[2rem] bg-white absolute top-[28vh] left-2"
+            onClick={scrollLeft}
+          >
+            <IoIosArrowBack />
+          </button>
+          <button
+            className="border-solid border-2  text-[#3a2a79] p-[0.4rem] text-[1.4rem] rounded-[2rem] bg-white absolute top-[28vh] right-0 hover:backdrop-blur-lg"
+            onClick={scrollRight}
+          >
+            <IoIosArrowForward />
+          </button>
+          <div
+            className="overflow-auto lg:w-full scrollbar-hide "
+            ref={carouselRef}     
 
-      <div ref={carouselRef} className="flex whitespace-nowrap gap-5 transition-transform duration-1000">
-        {imagesWithDupes.map((image, index) => (
-          <Image
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            width={350} // Set width to 0 to make it responsive
-            height={350} // Set height to 0 to make it responsive
-            className="inline-block rounded-2xl w-[80vw] h-[50vh] object-cover transition-transform duration-1000 ease-in-out"
-          />
-        ))}
+          >
+            <div className="flex lg:justify-start  items-center lg:w-max">
+              {companyContent.imageWithDescription.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="mx-[0.6vw]  lg:w-[30vw] w-full h-[50vh] bg-[#f2f2f2] flex flex-col items-center justify-center rounded-[1rem] overflow-hidden"
+                >
+                  <Image className="w-full h-full" width={200} height={200} src={item.img} alt="" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
+
+export default Page4;

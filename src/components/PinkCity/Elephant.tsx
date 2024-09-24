@@ -63,7 +63,7 @@ const DashedLineWithImage = () => {
 }, []);
 
   return (
-    <div className="absolute lg:-mt-80  right-16 flex flex-col items-center z-10 mt-[25rem]">
+    <div className="absolute lg:-mt-80 lg:right-14  flex flex-col items-center z-10 mt-[20rem]">
       <div
         ref={dashedLineRef}
         className="w-0.5 h-0 bg-gray-100 border-dashed border-2 border-black "

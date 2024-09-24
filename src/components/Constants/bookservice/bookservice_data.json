@@ -1,0 +1,16 @@
+{
+    "Page1Data": {
+        "title": "Book a Service Appointment",
+        "paragraph": "Kindly fill the form so that we can process your request further as fast as we can.",
+        "yourName": "YOUR NAME",
+        "yourCompanyName": "YOUR COMPANY NAME",
+        "phone": "PHONE",
+        "yourAddress": "YOUR ADDRESS",
+        "city": "City",
+        "country": "Country",
+        "existingCustomer": "EXISTING NESSCO CUSTOMER",
+        "machineType": "MACHINE TYPE",
+        "serviceType": "SERVICE TYPE",
+        "submit": "Submit"
+    }
+}

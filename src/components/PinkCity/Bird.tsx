@@ -63,7 +63,7 @@ const Bird = () => {
 }, []);
 
   return (
-    <div className="absolute -mt-96 lg:-mt-[30rem] lg:left-10  flex flex-col items-center z-10">
+    <div className="absolute -mt-[80vh] lg:-mt-[30rem] lg:left-10  flex flex-col items-center z-10">
       <div
         ref={dashedLineRef}
         className="w-0.2 h-0 bg-gray-100 border-dashed border-2 border-gray-800 "

@@ -4,12 +4,11 @@ export const branchesData = [
         id: 1,
         country: "Germany",
         office: "Germany Office",
-        address: "Hanauer Landstrasse 477, Hesse 60386, Germany",
+        address: "Hanauer Landstrasse 477, Germany",
         flag: "/assets/contact/germany.png",
         location: "/assets/contact/location.png",
-        className: "bg-white p-6 text-center shadow-lg h-[24rem] rounded-[2rem]",
         image:"/assets/contact/img1.png",
-        imageClass: "w-[20vw] h-[20vh] -mt-7" 
+        
     },
     {
         id: 2,
@@ -18,9 +17,9 @@ export const branchesData = [
         address: "Çarşı Mh., Bodrum, Muğla 48400, Turkey",
         flag: "/assets/contact/turkey.png",
         location: "/assets/contact/location.png",
-        className: "bg-white shadow-lg p-6 text-center h-[24rem] rounded-[2rem]",
+        
         image:"/assets/contact/img2.png",
-        imageClass: "w-[20vw] h-[20vh] " 
+      
     },
     {
         id: 3,
@@ -29,9 +28,9 @@ export const branchesData = [
         address: "Via Laura, 13, Laura Salerno 84047, Italy",
         flag: "/assets/contact/italy.png",
         location: "/assets/contact/location.png",
-        className: "bg-white shadow-lg p-6 text-center h-[24rem] rounded-[2rem]",
+     
          image:"/assets/contact/img3.png",
-         imageClass: "w-[20vw] h-[20vh] rounded-sm" 
+      
     },
     {
         id: 4,
@@ -40,8 +39,17 @@ export const branchesData = [
         address: "Salahuddin Rd Deira, Dubai 57680, UAE",
         flag: "/assets/contact/uae.png",
         location: "/assets/contact/location.png",
-        className: "bg-white shadow-lg p-6 text-center h-[24rem] rounded-[2rem]",
          image:"/assets/contact/img4.png",
-         imageClass: "w-[20vw] h-[20vh] rounded-sm" 
+         
+    },
+    {
+        id: 5,
+        country: "UAE",
+        office: " Japan Office",
+        address: "Salahuddin Rd Deira, Dubai 57680, Japan",
+        flag: "/assets/contact/japan.png",
+        location: "/assets/contact/location.png",
+         image:"/assets/contact/img5.svg",
+         
     }
 ];

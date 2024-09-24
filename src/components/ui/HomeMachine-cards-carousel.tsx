@@ -111,7 +111,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
                 <div
                   className={cn(
-                    "flex flex-row  gap-4 pl-4",
+                    "flex flex-row  gap-4 pl-[5%]",
                     "max-w-7xl mx-auto"
                   )}
                 >
@@ -125,7 +125,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     .map((item, index) => (
                       <div
                         key={"card" + index}
-                        className="last:pr-[5%] md:last:pr-[0%] rounded-3xl"
+                        className="last:pr-[5%] md:last:pr-[5%] rounded-3xl"
                       >
                         {item}
                       </div>
@@ -141,7 +141,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
                 <div
                   className={cn(
-                    "flex flex-row mt-4  gap-4 pl-4",
+                    "flex flex-row mt-4  gap-4 pl-[5%]",
                     "max-w-7xl mx-auto"
                   )}
                 >
@@ -150,7 +150,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     .map((item, index) => (
                       <div
                         key={"card" + index}
-                        className="last:pr-[5%] md:last:pr-[0%]  rounded-3xl"
+                        className="last:pr-[5%] md:last:pr-[5%]  rounded-3xl"
                       >
                         {item}
                       </div>
@@ -173,14 +173,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
                 <div
                   className={cn(
-                    "flex flex-row  gap-4 pl-4",
+                    "flex flex-row  gap-4 pl-[5%]",
                     "max-w-7xl mx-auto"
                   )}
                 >
                   {items.slice(0, items.length).map((item, index) => (
                     <div
                       key={"card" + index}
-                      className="last:pr-[5%] md:last:pr-[0%] rounded-3xl"
+                      className="last:pr-[5%] md:last:pr-[5%] rounded-3xl"
                     >
                       {item}
                     </div>
@@ -208,14 +208,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
                   <div
                     className={cn(
-                      "flex flex-row  gap-4 pl-4",
+                      "flex flex-row  gap-4 pl-[5%]",
                       "max-w-7xl mx-auto"
                     )}
                   >
                     {items.slice(0, items.length / 2).map((item, index) => (
                       <div
                         key={"card" + index}
-                        className="last:pr-[5%] md:last:pr-[0%]  rounded-3xl"
+                        className="last:pr-[5%] md:last:pr-[5%]  rounded-3xl"
                       >
                         {item}
                       </div>
@@ -231,7 +231,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
                   <div
                     className={cn(
-                      "flex flex-row mt-4  gap-4 pl-4",
+                      "flex flex-row mt-4  gap-4 pl-[5%]",
                       "max-w-7xl mx-auto"
                     )}
                   >
@@ -240,7 +240,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                       .map((item, index) => (
                         <div
                           key={"card" + index}
-                          className="last:pr-[5%] md:last:pr-[0%]  rounded-3xl"
+                          className="last:pr-[5%] md:last:pr-[10%]  rounded-3xl"
                         >
                           {item}
                         </div>
@@ -331,7 +331,7 @@ export const Card = ({
 
       <button
         onClick={handleOpen}
-        className=" h-48 rounded-3xl bg-white font-poppins p-1 lg:p-2  w-40 lg:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className=" h-48 rounded-3xl bg-white font-poppins p-1 lg:p-2   w-40 lg:h-[16rem] md:w-56  overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="relative p-2 h-full w-full">
           <div className="absolute flex bg-white h-14 lg:h-16 w-24 lg:w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">

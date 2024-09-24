@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import bg from '../../../public/assets/about/nesscobg.avif'; // Add your background image path here
-import { ourStoryContent } from '../Constants/About/StoryD-page'; // Import the dynamic content
+import { ourStoryContent } from '../Constants/ourCompany/OurcompanyPage.json'; // Import the dynamic content
 import styles from './Story.module.css';
 
 const OurStoryD = () => {
@@ -68,11 +68,11 @@ const OurStoryD = () => {
       <div className="relative min-h-screen text-white px-4 mb-36 lg:mt-20 -mt-24">
       
         <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center">
-          <h1 className="text-5xl font-montserrat text-white mt-20">
+          <h1 className="text-5xl font-poppins font-medium text-white mt-20">
             {title}
             <span> {highlight}</span>
           </h1>
-          <div className="mb-10 max-w-4xl mx-auto mt-6">
+          <div className="mb-10 max-w-4xl mx-auto mt-6 font-poppins text-sm font-regular">
             {paragraphs}
           </div>
           <div className="flex justify-center w-full h-auto mt-14 overflow-x-clip">

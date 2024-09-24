@@ -8,7 +8,7 @@ import Photocolag from "@/components/PinkCity/Photocolag"
 export default function pinkcity () {
 
     return (
-        <main className="bg-gray-100 ">
+        <main className="bg-gray-100 lg:overflow-hidden ">
        <LandingPage/>
         <SecondPage/>
          

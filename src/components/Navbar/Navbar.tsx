@@ -29,6 +29,7 @@ function Navbar({ className }: { className?: string }) {
   const [isVisible, setIsVisible] = useState(true);
   const pathname = usePathname() || "";
   const componentCode = pathname.split("/")[2]?.toLowerCase();
+  const componentCodeourCompany = pathname.split("/")[3]?.toLowerCase();
   const [visibilityState, setVisibilityState] = useState({
     isFlagOpen: false,
     isContactFormVisible: false,
@@ -61,7 +62,7 @@ function Navbar({ className }: { className?: string }) {
 
   return (
     <div
-      className={`fixed flex w-full ${componentCode === "knowledge-center"?'bg-[#222222] text-white':'bg-white'} h-14 font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
+    className={`fixed flex w-full ${["knowledge-center", "clientele"].includes(componentCode) || ["ourcompany"].includes(componentCodeourCompany) ? 'bg-[#222222] text-white' : 'bg-white'} h-14 font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
     >
       {/* Desktop Menu */}
       <div className="hidden px-12 lg:flex w-full">

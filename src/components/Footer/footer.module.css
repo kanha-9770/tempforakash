@@ -6,17 +6,21 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    background-color: white;
   }
   .bgimagefooter {
     position: absolute;
     background: url("https://www.nesscoindia.com/Assets/images/shape/wmap.webp");
-    width: 100%;
+    width: 50%;
+    object-position: right;
     height: 100%;
-    background-repeat: repeat-x;
-    background-size: cover;
-    animation: movingBackground 80s linear infinite;
+    background-size: contain;
+    right: 0;
+    top: 0;
   }
+
+
+
+
   .footercontainer {
     width: 84.5%;
     margin: auto;
@@ -54,13 +58,13 @@
    margin-bottom: -0.10rem;
   }
   .footerlistabout {
-    width: 33%;
+    width: 18%;
     
   }
   
   .footerlist {
     width: 16%;
-    margin: 0 0.5rem;
+ 
     display: flex;
     flex-direction: column;
   }
@@ -74,35 +78,7 @@
     font-size: 1.5rem;
     color: black;
   }
-  .footersocialicon {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-    padding: 1.2rem;
-    margin: 0.6rem;
-    background-color: #f0f0f0; /* Fallback color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black; /* Default text color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-  
-    /* Transition for text color change */
-    transition: color 1s ease;
-  }
-  @keyframes movingBackground {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 1920px 0;
-    }
-  }
+ 
   
   .footersocialicon::before {
     content: "";
@@ -136,10 +112,9 @@
   }
   .footeraddress {
     font-size: 1.4rem;
-    color: black;
+    color: white;
   }
   .footeratags {
-    font-size: 1.1rem;
     color: black;
     margin: 1rem 0;
   }
@@ -156,26 +131,25 @@
   .email {
     font-size: 1.5rem;
     margin-top: 1.5rem;
-    color: black;
+    color: white;
   }
   .footerrights {
     width: 100%;
-    height: 70px;
-    padding: 1rem 0;
-    background-color: #f0f0f0;
+    height: 50px;
+    padding: 1rem ;
+    background-color: white;
   }
   .footercontainerx {
     width: 80%;
     margin: auto;
     height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     align-items: center;
   }
   .footerright {
-    font-size: 1.2rem;
-    color: #483d73;
+  
+    color: black;
     /* width: 90%; */
     /*margin: auto 0; */
   }
@@ -200,6 +174,7 @@
     }
   }
   @media (max-width: 770px) {
+    
     .footercontainer{
       width: 90%;
     }

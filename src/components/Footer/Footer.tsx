@@ -1,151 +1,229 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Subscribe from "../subscriber/subscriber";
-import PolicyHeader from "../Policies/OurPolicies";
+
 import styles from "./footer.module.css";
 import { footerData } from "../Constants/footer/footer";
+import { FaTelegram } from "react-icons/fa";
+import { FaSquareFacebook } from "react-icons/fa6";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaYoutubeSquare } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Footer: React.FC = () => {
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
+  const componentCode = pathname.split("/")[2]?.toLowerCase();
+  const componentCodeourCompany = pathname.split("/")[3]?.toLowerCase();
+
   return (
     <>
-      <Subscribe />
-
-      <PolicyHeader />
-      <footer className={`${styles.footer} max-w-sc mx-auto`}>
-        <div className={styles.bgimagefooter}></div>
-        <div className={styles.footercontainer}>
-          <div className={styles.footercontent}>
-            <div className={styles.footerlistabout}>
-              <h3
-                className={`${styles.footerdesctitle} font-bold text-black text-xl`}
-              >
-                Our Stores
-              </h3>
-              <div className="flex flex-col -space-y-5 font-poppins hover:text-red-600">
-                {footerData.stores.map((store, index) => (
-                  <Link key={index} href="/" passHref>
-                    <p className={styles.footeratags}>{store}</p>
-                  </Link>
-                ))}
-              </div>
-              <h3
-                className={`${styles.footerdesctitle} font-bold text-black text-xl mt-4`}
-              >
-                Business Partners
-              </h3>
-              <p className="mt-3 text-[1.1rem] font-poppins hover:text-red-600 cursor-pointer">
-                {footerData.businessPartners}
-              </p>
-              <h3
-                className={`${styles.footerdesctitle} font-bold text-black text-xl mt-8`}
-              >
-                Awards & Certifications
-              </h3>
-              <div className="flex flex-row  w-[35rem] -ml-2">
-                {footerData.awards.map((award, index) => (
-                  <p aria-label="Footer Icon" key={index}>
-                    <Image
-                      src={award.src}
-                      alt={award.alt}
-                      width={100} // Adjust the size as needed
-                      height={100} // Adjust the size as needed
-                      style={{ height: "7rem", width: "14rem" }}
-                      className="scale-125"
-                    />
+      <div className="h-full">
+        <div className="border "></div>
+        {/* <PolicyHeader /> */}
+        <footer className={`${["knowledge-center", "clientele", "ourcompany"].includes(componentCode)|| ["ourcompany"].includes(componentCodeourCompany) ? 'bg-[#222222] text-white' : 'bg-white'} ${styles.footer}`}>
+        <div className={`${styles.bgimagefooter} `}></div>
+          <div className="w-full relative m-auto mt-6 lg:p-0 p-3">
+            <div className="flex flex-col-reverse  lg:flex-row  justify-evenly items-start w-[100%] lg:px-5  mb-[-0.10rem] ">
+              <div className="flex flex-row-reverse lg:flex-row mt-7 lg:mt-0 ">
+                <div
+                  className={`${styles.footerlistabout} lg:order-none order-last  `}
+                >
+                  <h3
+                    className={`${styles.footerdesctitle} font-poppins text-sm font-semibold invert-0`}
+                  >
+                    OUR STORES
+                  </h3>
+                  <div className="flex flex-col -space-y-6 font-poppins hover:text-red-600 w-[3rem] font-light text-xs">
+                    {footerData.stores.map((store, index) => (
+                      <Link key={index} href="/" passHref>
+                        <p className={styles.footeratags}>{store}</p>
+                      </Link>
+                    ))}
+                  </div>
+                  <h3
+                    className={`${styles.footerdesctitle} font-poppins text-sm font-semibold invert-0 mt-4 lg:w-[10rem]`}
+                  >
+                    BUSINESS PARTNERS
+                  </h3>
+                  <p className="mt-3 font-light text-xs lg:w-[8rem] font-poppins hover:text-red-600 cursor-pointer invert-0">
+                    {footerData.businessPartners}
                   </p>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col -ml-[8rem]">
-              <h3 className="font-bold text-xl text-black">Clientele</h3>
-              <div className={styles.footerlistslink}>
-                <Link href="/" passHref>
-                  <p className="font-poppins text-[1.1rem] mt-4 w-[10rem] hover:text-red-600 cursor-pointer">
-                    {footerData.clients}
+                  <h3
+                    className={`${styles.footerdesctitle} font-poppins text-sm font-semibold invert-0 mt-4 lg:w-[10rem]`}
+                  >
+                    LANGUAGE & REGION
+                  </h3>
+                  <p className="mt-3 font-light text-xs font-poppins hover:text-red-600 cursor-pointer invert-0 lg:w-[5rem]">
+                    India | English
                   </p>
-                </Link>
-              </div>
-            </div>
+                  <h3
+                    className={`${styles.footerdesctitle} font-semibold font-poppins invert-0 text-sm mt-8 lg:w-[14rem]`}
+                  >
+                    AWARDS & CERTIFICATIONS
+                  </h3>
+                  <div className="flex flex-row  lg:w-[35rem] w-[24rem] -ml-2">
+                    {footerData.awards.map((award, index) => (
+                      <p aria-label="Footer Icon" key={index}>
+                        <a
+                          href="https://www.example.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Image
+                            src={award.src}
+                            alt={award.alt}
+                            width={200} // Adjust the size as needed
+                            height={200} // Adjust the size as needed
+                            style={{ height: "7rem", width: "12rem" }}
+                            className="scale-125 transform transition-transform duration-300 hover:scale-150 "
+                          />
+                        </a>
+                      </p>
+                    ))}
+                  </div>
+                </div>
 
-            <div className="flex flex-col mx-10">
-              <h3 className="font-bold text-xl text-black">Careers</h3>
-              <div className="text-[1rem] font-poppins -space-y-7 hover:text-red-600 cursor-pointer">
-                {footerData.careers.map((career, index) => (
-                  <Link key={index} href="/" passHref>
-                    <p className={styles.footeratags}>{career}</p>
-                  </Link>
-                ))}
+                <div className="flex flex-col w-[18%] relative -left-[10rem] lg:left-16 ">
+                  <h3 className="font-semibold font-poppins text-sm  invert-0">
+                    CLIENTELE
+                  </h3>
+                  <div className={styles.footerlistslink}>
+                    <Link href="/" passHref>
+                      <p className="font-poppins text-xs font-light mt-4 w-[5rem] hover:text-red-600 cursor-pointer invert-0">
+                        {footerData.clients}
+                      </p>
+                    </Link>
+                  </div>
+                  <h3 className="font-semibold text-sm invert-0 font-poppins mt-5">
+                    CAREERS
+                  </h3>
+                  <div className="text-xs font-light font-poppins -space-y-7 hover:text-red-600 cursor-pointer invert-0  w-[3rem]">
+                    {footerData.careers.map((career, index) => (
+                      <Link key={index} href="/" passHref>
+                        <p className={styles.footeratags}>{career}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className={styles.footerlist}>
-              <h3 className="font-bold text-xl text-black">Links</h3>
-              <div className="font-poppins text-[1.1rem] space-y-10 hover:text-red-600">
-                {footerData.links.map((link, index) => (
-                  <Link key={index} href="/" passHref>
-                    <p className={styles.footeratags}>{link}</p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <h3 className="font-bold text-xl text-black ml-5">Services</h3>
-              <div className="font-poppins text-[1rem] w-[15rem] hover:text-red-600 cursor-pointer ml-5">
-                {footerData.services.map((service, index) => (
-                  <Link key={index} href="/" passHref>
-                    <p className={styles.footeratags}>{service}</p>
-                  </Link>
-                ))}
-              </div>
-            </div>
+              <div className="flex-row flex lg:flex-none  lg:mt-0 mt-6 lg:-ml-[30vw]">
+                <div className="w-[20%] ">
+                  <h3 className="font-semibold text-sm font-poppins invert-0">
+                    LINKS
+                  </h3>
+                  <div className="font-poppins text-xs font-light space-y-10 hover:text-red-600 invert-0  w-[4rem]">
+                    {footerData.links.map((link, index) => (
+                      <Link key={index} href="/" passHref>
+                        <p className={styles.footeratags}>{link}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
 
-            <div className={styles.footerlistabout}>
-              <h3
-                className={`${styles.footerdesctitle} font-bold text-black text-xl`}
-              >
-                Address
-              </h3>
-              <div className="font-poppins hover:text-red-600 cursor-pointer">
-                <p className="mt-4 w-[14rem]">{footerData.address}</p>
+                <div className="w-[20%]  lg:ml-20 ml-10">
+                  <h3 className="font-semibold text-sm font-poppins invert-0">
+                    LINKS
+                  </h3>
+                  <div className="font-poppins text-xs font-light space-y-10 hover:text-red-600 w-[4rem] invert-0">
+                    {footerData.links.map((link, index) => (
+                      <Link key={index} href="/" passHref>
+                        <p className={styles.footeratags}>{link}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-col  w-[30%] lg:ml-20 ml-10 ">
+                  <h3 className="font-semibold font-poppins text-sm invert-0 ">
+                    SERVICES
+                  </h3>
+                  <div className="font-poppins font-light text-xs w-[8.5rem] hover:text-red-600 cursor-pointer ">
+                    {footerData.services.map((service, index) => (
+                      <Link key={index} href="/" passHref>
+                        <p className={styles.footeratags}>{service}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              <h3
-                className={`${styles.footerdesctitle} font-bold text-black text-xl mt-[1.6rem]`}
-              >
-                Contacts
-              </h3>
-              <div
-                className={`${styles.footerlistslink} hover:text-red-600 cursor-pointer`}
-              >
-                {footerData.contacts.map((contact, index) => (
-                  <Link key={index} href={contact.href} passHref>
-                    <p className={styles.footeratags}>{contact.name}</p>
-                  </Link>
-                ))}
-              </div>
+              <div className="lg:w-[20%] ">
+                <h3
+                  className={`${styles.footerdesctitle} font-poppins invert-0 text-sm font-semibold text-center lg:text-left`}
+                >
+                  SUBSCRIBE TO NEWSLETTER
+                </h3>
+                <div className="flex">
+                  <input
+                    placeholder="Enter your email address"
+                    className=" lg:w-[20rem] w-[22rem] mt-2 h-[2.5rem] rounded-xl border p-2 border-black font-poppins font-light text-xs"
+                  />
+                  <FaTelegram
+                    size={30}
+                    className="relative top-3 lg:-left-8 -left-10 hover:scale-80 hover:transition-shadow transition-transform duration-300 "
+                  />
+                </div>
 
-              <div className="flex flex-row space-x-2 mt-10 ">
-                {footerData.socialIcons.map((icon, index) => (
-                  <p aria-label="Footer Icon" key={index}>
-                    <Image
-                      src={icon.src}
-                      alt={icon.alt}
-                      width={70} // Adjust the size as needed
-                      height={70} // Adjust the size as needed
-                    />
-                  </p>
-                ))}
+                <div className="flex lg:flex-col ">
+                  <div className="  ">
+                    <h3
+                      className={`${styles.footerdesctitle} font-semibold  invert-0 text-sm font-poppins mt-[1.6rem]`}
+                    >
+                      CONTACT US
+                    </h3>
+                    <div
+                      className={`${styles.footerlistslink} hover:text-red-600 cursor-pointer font-poppins text-xs font-light invert-0 w-[7rem] `}
+                    >
+                      {footerData.contacts.map((contact, index) => (
+                        <Link key={index} href={contact.href} passHref>
+                          <p className={styles.footeratags}>{contact.name}</p>
+                        </Link>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-row space-x-2 mt-5  ">
+                      <FaSquareFacebook size={30} />
+                      <FaSquareXTwitter size={30} />
+                      <FaYoutubeSquare size={30} />
+                      <FaSquareInstagram size={30} />
+                      <FaLinkedin size={30} />
+                    </div>
+                  </div>
+                  <div>
+                    <h3
+                      className={`${styles.footerdesctitle} font-poppins invert-0 text-sm font-semibold lg:mt-5 mt-7`}
+                    >
+                      ADDRESS
+                    </h3>
+                    <div className="font-poppins hover:text-red-600 cursor-pointer text-xs font-light mt-2  invert-0 ">
+                      <p className=" lg:w-[14rem] w-[12rem]">
+                        {footerData.address}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </footer>
-      <div className={`${styles.footerrights}`}>
-        <div className={styles.footercontainerx}>
-          <p className={styles.footerright}>{footerData.copyright}</p>
-          <Link href="/privacy-policy/" passHref>
-            <p className={styles.footerright}>{footerData.privacyPolicy}</p>
-          </Link>
+        </footer>
+        <div className={`${styles.footerrights}  `}>
+          <div className={`${styles.footercontainerx} `}>
+            <p
+              className={`${styles.footerright} lg:-ml-10 font-poppins text-sm font-light`}
+            >
+              {footerData.copyright}
+            </p>
+            <div className="border h-[2rem] border-gray-400 ml-5"></div>
+            <Link href="/privacy-policy/" passHref>
+              <p className="font-poppins text-sm font-light ml-5 invert-0">
+                {footerData.privacyPolicy}
+              </p>
+            </Link>
+          </div>
         </div>
       </div>
     </>

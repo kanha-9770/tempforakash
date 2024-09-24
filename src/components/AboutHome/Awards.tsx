@@ -1,272 +1,82 @@
-// import React from "react";
-// import { FC } from "react";
-// import Image from "next/image";
-
-// const Awards: FC = () => {
-//   return (
-//     <div className="relative max-h-screen w-full  bg-white mx-auto ">
-//       <h1 className="text-5xl font-bold p-5 font-montserrat text-[#33246e] ml-10 -mt-12">
-//         Awards
-//       </h1>
-//       <div className=" ml-16 mt-10 ">
-//         <p className="text-lg -mt-5 text-black font-montserrat">
-//           Recognition affirms our purpose, and shows us we’re on the right
-//           track. <br />
-//           Look through the awards we’ve accumulated, and the certifications that
-//           mark the checkpoints ensuring our progress.
-//         </p>
-//       </div>
-
-//       <div className=" flex text-white  bg-red-400 ">
-//         <div className="flex flex-col items-center z-20 text-white ml-14 transform transition-transform duration-300 hover:scale-110 bg-yellow-500">
-//           <div
-//             className=" flex items-center justify-center font-bold  -mt-[2vh]
-//           "
-//           >
-//             <Image
-//               src="/assets/about/award/icon6.svg" // Replace with the path to your image
-//               alt="Icon"
-//               width={500} // Adjust the width according to your design
-//               height={500} // Adjust the height according to your design
-//               className="object-cover "
-//               style={{ height: "18vh", width: "18vw" }}
-//             />
-//           </div>
-//           <p className="w-[6vw] text-center mt-7 font-bold">
-//             ISO 9001 Certified
-//           </p>
-//         </div>
-
-//         <div className="flex flex-col items-center mt-32 transform transition-transform duration-300 hover:scale-110 z-20  ml-7">
-//           <div className="flex items-center justify-center font-bold  -mt-[8vh] ">
-//             <Image
-//               src="/assets/about/award/icon5.svg" // Replace with the path to your image
-//               alt="Icon"
-//               width={450} // Adjust the width according to your design
-//               height={450} // Adjust the height according to your design
-//               className="object-cover  "
-//               style={{ height: "18vh", width: "18vw" }}
-//             />
-//           </div>
-//           <p className="w-[6vw] text-center font-bold">
-//             RoHS Certified
-//           </p>
-//         </div>
-
-//         <div className="flex flex-col items-center mt-32 z-20  ml-14  transform transition-transform duration-300 hover:scale-110">
-//           <div className="flex items-center justify-center font-bold  -mt-[12vh]">
-//             <Image
-//               src="/assets/about/award/icon4.svg" // Replace with the path to your image
-//               alt="Icon"
-//               width={450} // Adjust the width according to your design
-//               height={450} // Adjust the height according to your design
-//               className="object-cover"
-//               style={{ height: "15vh", width: "20vw" }}
-//             />
-//           </div>
-//           <p className="w-[10vw] text-center font-bold  ">
-//             Child Labour Free
-//           </p>
-//         </div>
-
-//         <div className="flex flex-col items-center mt-32 z-20 ml-10 transform transition-transform duration-300 hover:scale-110">
-//           <div className=" text-white flex items-center justify-center font-bold -mt-[7vh] ">
-//             <Image
-//               src="/assets/about/award/icon1.svg"
-//               // Replace with the path to your image
-//               alt="Icon"
-//               width={450} // Adjust the width according to your design
-//               height={450} // Adjust the height according to your design
-//               className="object-cover"
-//               style={{ height: "15vh", width: "17vw" }}
-//             />
-//           </div>
-//           <p className="w-[7vw] text-center font-bold ">
-//             Star Export House{" "}
-//           </p>
-//         </div>
-
-//         <div className="flex flex-col items-center mt-32 ml-7 transform transition-transform duration-300 hover:scale-110 z-20">
-//           <div className=" text-white flex items-center justify-center font-bold -mt-[20vh] ">
-//             <Image
-//               src="/assets/about/award/icon3.svg" // Replace with the path to your image
-//               alt="Icon"
-//               width={450}
-//               height={450} // Adjust the height according to your design
-//               className="object-cover"
-//               style={{ height: "17vh", width: "15vw" }}
-//             />
-//           </div>
-//           <p className="w-[6vw] text-center font-bold  ml-5 ">
-//             CE Certified
-//           </p>
-//         </div>
-
-//         <div className="flex flex-col items-center mt-10 z-20  ml-7 transform transition-transform duration-300 hover:scale-110">
-//           <div className=" text-white flex items-center justify-center font-bold -mt-[14vh] ">
-//             <Image
-//               src="/assets/about/award/icon2.svg" // Replace with the path to your image
-//               alt="Icon"
-//               width={400} // Adjust the width according to your design
-//               height={400} // Adjust the height according to your design
-//               className=""
-//               style={{ height: "18vh", width: "20vw" }}
-//             />
-//           </div>
-//           <p className="w-[5vw] text-center font-bold">Taxpayers Award</p>
-//         </div>
-//       </div>
-
-//       {/* <div className="absolute bottom-0 w-full  ">
-//         <Image
-//           src="/assets/about/bluelayer.svg"
-//           alt="Machine 3"
-//           width={400}
-//           height={100}
-//           className=" object-cover w-full min-h-full md:h-[46rem] lg:h-[42rem] sm:h-[48rem]"
-//         />
-//       </div> */}
-//       <div className="absolute bottom-0 w-full h-[90vh]">
-//   <Image
-//     src="/assets/about/bluelayer.svg"
-//     alt="Background Layer"
-//     layout="fill"
-//     objectFit="cover"
-//     className="w-full h-full"
-//   />
-// </div>
-//     </div>
-//   );
-// };
-
-// export default Awards;
-
-import React from "react";
-import { FC } from "react";
-import Image from "next/image";
-
-const Awards: FC = () => {
-  return(
-   <div className="relative w-full  bg-white min-h-svh ">
-<h1 className="text-5xl font-bold p-5 font-montserrat text-[#33246e] ml-10 -mt-12">
-        Awards
-     </h1>
-     <div className=" ml-16 mt-10 ">
-         <p className="text-lg -mt-5 text-black font-montserrat">
-           Recognition affirms our purpose, and shows us we’re on the right
-           track. <br />
-           Look through the awards we’ve accumulated, and the certifications that
-           mark the checkpoints ensuring our progress.
-         </p>
-       </div>
+import { Card, CardContent } from "@/components/ui/card"
+import React from "react"
+import { SlBadge } from "react-icons/sl"
+import Image from "next/image"
+import { FiAward } from "react-icons/fi"
 
 
- <div className="flex   mt-20 p-2 ">
 
-  <div className="flex flex-col items-center transform transition-transform duration-300 hover:scale-110 hover:text-red-500 -mt-2 ">
-    <div className="flex items-center justify-center font-bold ">
-      <Image
-        src="/assets/about/award/icon6.svg"
-        alt="Icon"
-        width={500}
-        height={500}
-        className="object-cover "
-        style={{ height: "20vh", width: "20vw" }}
-      />
+const awards = [
+  { 
+    title: "ISO 9001 Certified", 
+    image: "/assets/about/award/icon6.svg", 
+    description: "International standard for quality management systems" 
+  },
+  { 
+    title: "Taxpayers Award", 
+    image: "/assets/about/award/icon2.svg", 
+    description: "Recognition for outstanding tax compliance" 
+  },
+  { 
+    title: "Child Labour Free", 
+    image: "/assets/about/award/icon4.svg", 
+    description: "Commitment to ethical labor practices" 
+  },
+  { 
+    title: "Star Export House", 
+    image: "/assets/about/award/icon1.svg" ,
+    description: "Government recognition for export excellence" 
+  },
+  { 
+    title: "CE Certified", 
+    image: "/assets/about/award/icon3.svg",
+    description: "Compliance with EU health." 
+  },
+  { 
+    title: "RoHS Certified", 
+    image: "/assets/about/award/icon5.svg", 
+    description: "Restriction of Hazardous Substances compliance" 
+  },
+]
+
+const Awards:React.FC=()=> {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-5xl font-medium text-left font-poppins pl-8 text-[#33246e] mb-4 text-">Awards</h1>
+        <p className="text-left text-gray-600 mb-12 max-w-5xl pl-8 font-poppins text-sm font-regular">
+          Recognition affirms our purpose, and shows us we're on the right track. 
+          Look through the awards we've accumulated, and the certifications that mark the 
+          checkpoints ensuring our progress.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 ">
+          {awards.map((award, index) => (
+            <Card key={index} className="overflow-hidden transition-shadow hover:shadow-lg hover:border-indigo-300  border h-[17rem] rounded-xl">
+              <CardContent className="p- flex flex-col items-center text-center">
+                <div className=" mb-4">
+                 <Image
+                 src={award.image}
+                 alt="certificate"
+                 width={150}
+                 height={150}
+                 className=""
+                 />
+                </div>
+                <h3 className="font-medium text-base font-poppins mb-2">{award.title}</h3>
+                <p className="text-sm font-poppins font-regular text-gray-500 mb-4">{award.description}</p>
+                <div className="flex bg-indigo-50 rounded-full w-[6rem] border justify-center p-1 hover:bg-indigo-100">
+                <FiAward  className=" text-indigo-600"/>
+                <p className="text-xs font-poppins font-regular ">Certified</p>
+                </div>
+                 
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
     </div>
-    <p className="w-[10vw]  mt-4 text-center font-bold">
-      ISO 9001 Certified
-    </p>
-  </div>
-
-  <div className="flex flex-col items-center  transform transition-transform duration-300 hover:scale-110 -mt-5 hover:text-red-500 ">
-    <div className="text-white flex items-center justify-center font-bold ">
-      <Image
-        src="/assets/about/award/icon2.svg"
-        alt="Icon"
-        width={450}
-        height={450}
-        className="object-cover rounded-md"
-        style={{ height: "25vh", width: "20vw" }}
-      />
-    </div>
-    <p className="w-[20vw] md:w-[10vw] lg:w-[5vw] text-center font-bold">
-      Taxpayers Award
-    </p>
-  </div>
-
-  
-
-  <div className="flex flex-col items-center  transform transition-transform duration-300 hover:scale-110 hover:text-red-500 -mt-1">
-    <div className="flex items-center justify-center font-bold  ">
-      <Image
-        src="/assets/about/award/icon4.svg"
-        alt="Icon"
-        width={450}
-        height={450}
-        className="object-cover"
-        style={{ height: "17vh", width: "20vw" }}
-      />
-    </div>
-    <p className="w-[20vw] md:w-[10vw] lg:w-[8vw] mt-9 text-center font-bold ">
-      Child Labour Free
-    </p>
-  </div>
-
-  <div className="flex flex-col items-center transform transition-transform duration-300 hover:scale-110 hover:text-red-500 -mt-2">
-    <div className="text-white flex items-center justify-center font-bold ">
-      <Image
-        src="/assets/about/award/icon1.svg"
-        alt="Icon"
-        width={450}
-        height={450}
-        className="object-cover "
-        style={{ height: "19vh", width: "18vw" }}
-      />
-    </div>
-    <p className="w-[20vw] md:w-[10vw] lg:w-[7vw] mt-5 text-center font-bold ">
-      Star Export House
-    </p>
-  </div>
-
-
-  <div className="flex flex-col items-center  transform transition-transform duration-300 hover:scale-110 -mt-6 hover:text-red-500 ">
-    <div className="text-white flex items-center justify-center font-bold  ">
-      <Image
-        src="/assets/about/award/icon3.svg"
-        alt="Icon"
-        width={450}
-        height={450}
-        className="object-cover "
-        style={{ height: "19vh", width: "16vw" }}
-      />
-    </div>
-    <p className="w-[5rem]  mt-8 text-center font-bold ">
-      CE Certified
-    </p>
-  </div>
-
-  <div className="flex flex-col items-center  transform transition-transform duration-300 hover:scale-110 hover:text-red-500 -mt-7">
-    <div className="flex items-center justify-center font-bold ">
-      <Image
-        src="/assets/about/award/icon5.svg"
-        alt="Icon"
-        width={450}
-        height={450}
-        className="object-cover"
-        style={{ height: "18vh", width: "18vw" }}
-      />
-    </div>
-    <p className="w-[20vw] md:w-[10vw] lg:w-[7vw] mt-10 text-center font-bold">
-      RoHS Certified
-    </p>
-  </div>
-</div>
-
-
-
-
-  </div>
   )
-};
+}
+
 export default Awards;

@@ -10,6 +10,8 @@ import { events } from "@/components/Constants";
 import AboutD from "@/components/Aboutdemo/AboutD";
 import SustainableD from "@/components/Aboutdemo/SustainableD";
 import OurStoryD from "@/components/Aboutdemo/OurstoryD";
+import AboutOurcompany from "@/components/Aboutdemo/AboutOurcompany";
+import { TimelineDemo } from "@/components/Aboutdemo/Timeline";
 
 export default function about() {
 
@@ -17,11 +19,14 @@ export default function about() {
   return (
     <main className="bg-black  ">
       
-<AboutD />
+
+      
+
+<AboutOurcompany/>
 <SustainableD/>
 <OurStoryD/>
 <Founders/>
-{/* <OurHistory/> */}
+<TimelineDemo/>
 <section id="our-story" className="relative z-20">
         <Grid/>
       </section> 
