@@ -94,7 +94,7 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
                 className="text-[#cccaca] lg:text-[2rem] text-[1.8rem]  hover:text-black"
                 onClick={scrollbarLeft}
               >
-                <IoIosArrowDropleftCircle/>
+                <IoIosArrowDropleftCircle />
               </button>
               <button
                 className="text-[#cccaca] lg:text-[2rem] text-[1.8rem]  hover:text-black"
@@ -181,8 +181,6 @@ const FeatureProjects: React.FC<Page4Props> = ({ page4product }) => {
                         />
                       </div>
                     </div>
-
-                   
                   </div>
                 ))}
               </div>

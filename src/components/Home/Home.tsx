@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 import PositionAwareButton from "../ui/PositionAwareButton";
 import ImageSlider from "../ui/ImageSlider";
-import RelatedProduct from "../Products/RelatedProducts";
 import relatedProductData from "./Feature.json";
 import FeatureProducts from "./FeatureProjects";
 const imgs = [
@@ -87,7 +86,6 @@ const Home: React.FC = () => {
         <div className="absolute flex flex-col w-1/2  lg:w-[20rem] lg:h-[5rem] lg:rounded-tl-[2rem] rounded-tl-[1.5rem] right-0 bg-[#f2f2f2] lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
           <motion.div
             className="-mt-4 lg:-mt-6 flex mr-2 lg:mr-8 justify-end"
-            style={{ x: svgTransform }} // SVG moves to the right
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

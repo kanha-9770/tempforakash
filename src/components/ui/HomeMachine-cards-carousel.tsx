@@ -125,7 +125,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     .map((item, index) => (
                       <div
                         key={"card" + index}
-                        className="last:pr-[5%] md:last:pr-[5%] rounded-3xl"
+                        className="last:pr-[5%] md:last:pr-[4%] rounded-3xl"
                       >
                         {item}
                       </div>
@@ -150,7 +150,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     .map((item, index) => (
                       <div
                         key={"card" + index}
-                        className="last:pr-[5%] md:last:pr-[5%]  rounded-3xl"
+                        className="last:pr-[5%] md:last:pr-[4%]  rounded-3xl"
                       >
                         {item}
                       </div>
@@ -180,7 +180,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   {items.slice(0, items.length).map((item, index) => (
                     <div
                       key={"card" + index}
-                      className="last:pr-[5%] md:last:pr-[5%] rounded-3xl"
+                      className="last:pr-[5%] md:last:pr-[4%] rounded-3xl"
                     >
                       {item}
                     </div>
@@ -215,7 +215,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     {items.slice(0, items.length / 2).map((item, index) => (
                       <div
                         key={"card" + index}
-                        className="last:pr-[5%] md:last:pr-[5%]  rounded-3xl"
+                        className="last:pr-[5%] md:last:pr-[4%]  rounded-3xl"
                       >
                         {item}
                       </div>

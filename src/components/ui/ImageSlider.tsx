@@ -51,7 +51,6 @@ export default function ImageSlider() {
        ref={containerRef}
        style={{
          width: videoWidth,
-         x: videoTransform,
          originX: 0.5,
        }}
         className="w-full bg-white h-full rounded-3xl bg-center "
