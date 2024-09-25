@@ -39,20 +39,13 @@ export default function ImageSlider() {
     return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
   const { scrollY } = useScroll();
-  const defaultVideoTransform = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
-  const defaultVideoWidth = useTransform(scrollY, [0, 300], ["100%", "150%"]);
 
-  const videoTransform = isLargeScreen ? defaultVideoTransform : "0%";
-  const videoWidth = isLargeScreen ? defaultVideoWidth : "100%";
 
   return (
     <div className="relative w-full  mx-auto h-full group">
       <motion.div
        ref={containerRef}
-       style={{
-         width: videoWidth,
-         originX: 0.5,
-       }}
+      
         className="w-full bg-white h-full rounded-3xl bg-center "
       >
         <Image

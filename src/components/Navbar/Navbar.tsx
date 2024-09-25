@@ -86,6 +86,7 @@ function Navbar({ className }: { className?: string }) {
                 active={active}
                 item={item.name}
                 setPosition={() => {}}
+                link={item.link}
               >
                 {item.component}
               </MenuItem>

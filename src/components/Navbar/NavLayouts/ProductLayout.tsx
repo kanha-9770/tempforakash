@@ -178,7 +178,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
       >
         <a
           className="flex w-full gap-2 flex-row"
-          href={`${countryCode}/products/${link.name}`}
+          href={`/${countryCode}/product/${link.name}`}
         >
           <div className="flex items-center justify-center cursor-pointer">
             <BlurImage

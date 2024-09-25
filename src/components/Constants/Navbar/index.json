@@ -7,33 +7,25 @@
           "title": "Featured Projects",
           "description": "Showcasing innovative projects in paper production and recycling.",
           "textcolor": "text-yellow-500",
-          "icon": "https://i.pinimg.com/564x/bf/0b/bc/bf0bbc113db9ab88699fa6eab029b35d.jpg"
+          "icon": "https://i.pinimg.com/564x/bf/0b/bc/bf0bbc113db9ab88699fa6eab029b35d.jpg",
+          "link":"projects"
         },
-        {
-          "title": "Customer Reviews",
-          "description": "New technologies in paper manufacturing increase efficiency.",
-          "textcolor": "text-pink-500",
-          "icon": "https://assets.nesscoindustries.com/public/assets/nav_machine_icon/paperbag.png"
-        },
+     
         {
           "title": "Sustainability",
           "description": "Paper industry adopts biodegradable materials and enhances recycling efforts.",
           "textcolor": "text-green-500",
-          "icon": "https://i.pinimg.com/564x/39/e4/26/39e426741c29f67274c8d23734f19aea.jpg"
-        },
-
-        {
-          "title": "Recycling",
-          "description": "Recycling initiatives in the paper industry have grown significantly.",
-          "textcolor": "text-blue-500",
-          "icon":"https://assets.nesscoindustries.com/public/assets/nav_machine_icon/paperlid.png"
+          "icon": "https://i.pinimg.com/564x/39/e4/26/39e426741c29f67274c8d23734f19aea.jpg",
+          "link":"sustainibility"
         }
+
+      
       ],
       "navRightData": [
         {
           "title": "Mission & Vision",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_about/mission_v1.png",
-          "link": "mission-vision"
+          "link": "vision"
         },
         {
           "title": "Our Company",

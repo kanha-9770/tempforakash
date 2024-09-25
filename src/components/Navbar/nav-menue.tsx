@@ -83,7 +83,7 @@ export const MenuItem = ({
   return (
     <div ref={ref} className="z-10 cursor-pointer px-3 font-poppins">
       <Link
-        className="invert-0 text-base font-light"
+        className="invert-0 text-base font-light"   
         href={`/${countryCode}/${link}`}
       >
         {item}

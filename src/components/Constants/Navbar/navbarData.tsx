@@ -28,7 +28,7 @@ export const navbarItems: NavbarItem[] = [
   },
   {
     name: "Products",
-    link: "Products",
+    link: "product",
     component: (
       <ProductLayout
         setHoveredItem={() => {}}

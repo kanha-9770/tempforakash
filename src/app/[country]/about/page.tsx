@@ -1,15 +1,11 @@
 "use client";
 import { useEffect, useState} from "react";
-import Loader from "@/components/Loader"; // Your loader component
 
-import Home from "@/components/AboutHome/Home";
 import NavLinksDemo from "@/components/AboutHome/NavLink";
 import { useRef } from "react";
 import Missionvission from "@/components/AboutHome/MissionVission";
 import OurCompany from "@/components/AboutHome/OurCompany";
-import OurStrenght from "@/components/AboutHome/OurStrenght";
 import PinkCity from "@/components/AboutHome/PinkCity";
-import SustainableLayout from "@/components/AboutHome/Sustainable";
 import FeatureProject from "@/components/AboutHome/FeatureProject";
 import Awards from "@/components/AboutHome/Awards";
 import Homenew from "@/components/AboutHome/Homenew";

@@ -115,7 +115,7 @@ const AboutLayout: React.FC<AboutData> = () => {
           {navLeftData
             .slice(currentIndex, currentIndex + 2)
             .map((item: NavItem, index: number) => (
-              <a key={index} href={`/${countryCode}/about/${item.title}`}>
+              <a key={index} href={`/${countryCode}/about/${item.link}`}>
                 <div
                   className={`hidden lg:flex border-t-2 h-[6.5rem] lg:border-none lg:hover:scale-80 transition-transform duration-200 items-center lg:p-4 lg:rounded-3xl lg:mb-2 ${
                     bgColors[index % bgColors.length]
