@@ -151,7 +151,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
                   <MdPlayCircleOutline className="absolute top-0 right-2 text-3xl text-white" />
                 </div>
               </motion.div>
-              <p className="relative font-poppins text-center mt-4 text-black font-normal hover:text-[#483d78] hover:font-semibold text-base">
+              <p className="relative font-poppins text-center mt-4 invert-0 font-normal hover:text-[#483d78] hover:font-semibold text-base">
                 {item.title}
               </p>
             </Link>
@@ -191,7 +191,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
                       />
                       <MdPlayCircleOutline className="absolute top-0 right-0 text-3xl text-gray-200" />
                     </div>
-                    <p className="relative font-poppins text-center mt-4 text-black font-medium hover:text-[#483d78] hover:font-bold text-16">
+                    <p className="relative font-poppins text-center mt-4 invert-0 font-medium hover:text-[#483d78] hover:font-bold text-16">
                       {item.title}
                     </p>
                   </motion.div>

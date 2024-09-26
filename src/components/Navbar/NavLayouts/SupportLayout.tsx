@@ -118,7 +118,7 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
               ></LottieAnimation>
             </motion.div>
 
-            <p className="relative font-poppins text-center mt-4 text-black font-normal hover:text-[#483d78] hover:font-semibold text-base">
+            <p className="relative font-poppins text-center mt-4 invert-0 font-normal hover:text-[#483d78] hover:font-semibold text-base">
               {item.title}
             </p>
           </Link>
@@ -157,7 +157,7 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
                     variants={imageVariants}
                   >
                     <div className="relative w-32 bg-white rounded-xl border-[1px] h-16 flex justify-center items-center"></div>
-                    <p className="relative font-poppins text-center mt-4 text-black font-medium hover:text-[#483d78] hover:font-bold text-16">
+                    <p className="relative font-poppins text-center mt-4 invert-0 font-medium hover:text-[#483d78] hover:font-bold text-16">
                       {item.title}
                     </p>
                   </motion.div>
@@ -185,12 +185,12 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
           </div>
         )}
         <div className="flex lg:hidden h-[50%] flex-col w-full mt-4">
-          <p className="text-black pl-4 text-lg font-poppins font-medium">
+          <p className="invert-0 pl-4 text-lg font-poppins font-medium">
             Give us a Call:
           </p>
           <div className="flex justify-between items-center border-b-2 h-28 flex-row pt-6">
             <p
-              className="text-black text-lg flex flex-row gap-2 items-center"
+              className="invert-0 text-lg flex flex-row gap-2 items-center"
               style={{
                 backgroundImage:
                   "url('https://i.pinimg.com/236x/76/c8/c0/76c8c0172ba662b6fb6d0c095c1158fe.jpg')",
@@ -205,7 +205,7 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
             </p>
             <div className="w-1 h-20 border-l-2"></div>
             <p
-              className="text-black text-lg flex flex-row gap-2 items-center"
+              className="invert-0 text-lg flex flex-row gap-2 items-center"
               style={{
                 backgroundImage:
                   "url('https://i.pinimg.com/236x/76/c8/c0/76c8c0172ba662b6fb6d0c095c1158fe.jpg')",

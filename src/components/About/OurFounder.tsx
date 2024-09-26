@@ -36,7 +36,7 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
     </div>
 
     {/* Content */}
-    <div className="relative justify-center p-1 ">
+    <div className="relative justify-center pt-[4vh] ">
       <h3 className={`${styles.nameTitle}  lg:mt-20 mt-3  lg:right-0`}>
         {name}
         <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className={styles.linkedinIcon}>

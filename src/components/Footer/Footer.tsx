@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
       <div className="h-full">
         <div className="border "></div>
         {/* <PolicyHeader /> */}
-        <footer className={`${["knowledge-center", "clientele", "ourcompany"].includes(componentCode)|| ["ourcompany"].includes(componentCodeourCompany) ? 'bg-[#222222] text-white' : 'bg-white'} ${styles.footer}`}>
+        <footer className={`${["knowledge-center", "clientele", "our-company"].includes(componentCode)|| ["our-company"].includes(componentCodeourCompany) ? 'bg-[#222222] text-white' : 'bg-white'} ${styles.footer}`}>
         <div className={`${styles.bgimagefooter} `}></div>
           <div className="w-full relative m-auto mt-6 lg:p-0 p-3">
             <div className="flex flex-col-reverse  lg:flex-row  justify-evenly items-start w-[100%] lg:px-5  mb-[-0.10rem] ">

@@ -62,7 +62,7 @@ function Navbar({ className }: { className?: string }) {
 
   return (
     <div
-    className={`fixed flex w-full ${["knowledge-center", "clientele"].includes(componentCode) || ["ourcompany"].includes(componentCodeourCompany) ? 'bg-[#222222] text-white' : 'bg-white'} h-14 font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
+    className={`fixed flex w-full ${["knowledge-center", "clientele"].includes(componentCode) || ["our-company"].includes(componentCodeourCompany) ? 'bg-[#222222] text-white' : 'bg-white'} h-14 font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className}`}
     >
       {/* Desktop Menu */}
       <div className="hidden px-12 lg:flex w-full">
@@ -95,7 +95,7 @@ function Navbar({ className }: { className?: string }) {
         </div>
 
         <div className="w-1/5 flex justify-end items-center gap-4">
-          <div className={`${componentCode==="knowledge-center"?'bg-[#525252]':'bg-[#f2f2f2]'} gap-2 px-2 h-[1.80rem]  flex items-center justify-center rounded-3xl`}>
+          <div className={` ${["knowledge-center", "clientele"].includes(componentCode) || ["our-company"].includes(componentCodeourCompany) ? 'bg-[#525252]' : 'bg-[#f2f2f2]'} h-14 font-poppins lg:mt-0 items-center inset-x-0 mx-auto z-[99999] ${className} gap-2 px-2 h-[1.80rem]  flex items-center justify-center rounded-3xl`}>
             <CountryLayout />
           </div>
           <ContactForm

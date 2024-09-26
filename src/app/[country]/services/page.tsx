@@ -1,4 +1,4 @@
-import Pages from '@/components/bookservice/Pages';
+import Pages from '@/components/sevices/Pages';
 import React from 'react';
 
 const page = () => {

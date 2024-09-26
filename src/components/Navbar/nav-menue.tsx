@@ -83,7 +83,7 @@ export const MenuItem = ({
   return (
     <div ref={ref} className="z-10 cursor-pointer px-3 font-poppins">
       <Link
-        className="invert-0 text-base font-light"   
+        className="invert-0 text-base font-light"
         href={`/${countryCode}/${link}`}
       >
         {item}
@@ -94,9 +94,9 @@ export const MenuItem = ({
             transition={{ duration: 0.3 }}
             layoutId="active"
             className={`${
-              ["knowledge-center", "clientele", "ourcompany"].includes(
+              ["knowledge-center", "clientele"].includes(
                 componentCode
-              ) || ["ourcompany"].includes(componentCodeourCompany)
+              ) || ["our-company"].includes(componentCodeourCompany)
                 ? "bg-[#222222]"
                 : "bg-white"
             } dark:bg-black overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl`}
