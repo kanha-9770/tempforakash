@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 type SupportItem = {
   title: string;
-  link:string;
+  link: string;
   image: string;
   bgPic: string; // Corrected property name
 };
