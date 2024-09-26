@@ -6,6 +6,7 @@ import { MdPlayCircleOutline } from "react-icons/md";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import data from "../../Constants/Navbar/index.json";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type SupportItem = {
   title: string;
@@ -18,7 +19,8 @@ const ITEMS_PER_PAGE = 4;
 const VideoGrid: React.FC = ({}) => {
   const videoData = data.find((item) => item.category === "Video")?.data;
   console.log("videoData", videoData);
-
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
   const videoDataItem = videoData?.videoDataItem || [];
 
   const carouselRef = useRef<HTMLDivElement>(null);

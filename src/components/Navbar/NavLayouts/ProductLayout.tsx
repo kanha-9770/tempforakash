@@ -138,7 +138,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           <Image
             src={machine.image}
             alt={machine.name}
-            className="object-contain transform transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
+            className="object-contain lg:hover:scale-80 transform transition-transform duration-200 rounded-3xl relative z-10 h-32 w-[80%]"
             width={200}
             height={150}
           />
@@ -218,7 +218,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
 
-          <div className="flex flex-wrap justify-start items-start overflow-hidden w-full">
+          <div className="flex flex-wrap justify-start pl-14 items-start overflow-hidden w-full">
             {filteredMachines.length <= totalVisible
               ? filteredMachines.map(renderMachineItem)
               : filteredMachines

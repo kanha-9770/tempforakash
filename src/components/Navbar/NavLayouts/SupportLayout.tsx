@@ -4,9 +4,12 @@ import { FaArrowLeft, FaArrowRight, FaPhone } from "react-icons/fa";
 import bgPick from "../../../../public/assets/nav_support/BgMapImage.png";
 import LottieAnimation from "../../ui/LottieAnimation";
 import data from "../../Constants/Navbar/index.json";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type SupportItem = {
   title: string;
+  link:string;
   image: string;
 };
 type SupportMobile = {
@@ -73,7 +76,8 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
   };
 
   const shouldShowArrows = supportItems.length > 4;
-
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
   const chunkItems = (arr: SupportItem[], size: number): SupportItem[][] =>
     arr.length ? [arr.slice(0, size), ...chunkItems(arr.slice(size), size)] : [];
 
@@ -99,7 +103,7 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
         onScroll={checkScrollability}
       >
         {supportItems.map((item, index) => (
-          <div key={index} className="flex flex-col space-y-4">
+          <Link key={index} className="flex flex-col space-y-4" href={`/${countryCode}/${item.link}`}>
             <motion.div
               className="flex-shrink-0 w-72 h-40 rounded-3xl p-4 flex flex-col justify-center items-center bg-cover bg-center"
               style={{ backgroundImage: `url(${bgPick.src})` }}
@@ -117,7 +121,7 @@ const SupportGrid: React.FC<SupportGridProps> = () => {
             <p className="relative font-poppins text-center mt-4 text-black font-normal hover:text-[#483d78] hover:font-semibold text-base">
               {item.title}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
       {shouldShowArrows && (

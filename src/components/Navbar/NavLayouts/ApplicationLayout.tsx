@@ -14,6 +14,8 @@ import PopcornTub from "../../Icons/PopcornTub";
 import PositionAwareButton from "../../ui/PositionAwareButton";
 import { Button } from "../../ui/button";
 import { ArrowRightIcon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface Product {
   id: string;
@@ -113,34 +115,36 @@ const products: Product[] = [
 
 export default function ApplicationLayout() {
   const [activeProduct, setActiveProduct] = useState<Product>(products[0]);
-
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
   return (
     <div className="flex flex-col md:flex-row w-full h-full p-4">
       <div className="relative md:w-[70%] grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 mb-4 md:mb-0 md:mr-4">
         {products.map((product, index) => {
           const IconComponent = componentList[index];
           return (
-            <div
+            <Link
               key={product.id}
-              className="flex flex-col items-center justify-center p-2 invert-0 hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+              className="flex flex-col items-center justify-center p-2 invert-0  transition-shadow duration-300 cursor-pointer"
               onMouseEnter={() => setActiveProduct(product)}
+              href={`/${countryCode}/application/${product.name}`}
             >
-              <IconComponent />
+              <IconComponent />{" "}
               <span className="text-xs text-center invert-0">
                 {product.name}
               </span>
-            </div>
+            </Link>
           );
         })}
 
-        <div className="absolute bottom-4 right-4">
+        <Link className="absolute bottom-4 right-4" href={`/${countryCode}/application`}>
           <Button className="rounded-full flex items-center bg-primary text-primary-foreground hover:bg-primary/90 px-1 py-2 text-base font-regular group">
             <span className="flex-grow ml-2 text-center">View All</span>
             <span className="ml-2 bg-white rounded-full p-1 transition-colors duration-200 group-hover:bg-black">
               <ArrowRightIcon className="h-5 w-5 text-primary transition-colors duration-200 group-hover:text-white" />
             </span>
           </Button>
-        </div>
+        </Link>
       </div>
 
       <div className="md:w-[30%] border-l p-6 flex flex-col  relative">

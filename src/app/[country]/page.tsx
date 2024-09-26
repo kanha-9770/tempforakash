@@ -47,7 +47,6 @@ export default function Home() {
   const knowMoreRef = useRef<HTMLDivElement>(null);
   const homeMachineRef = useRef<HTMLDivElement>(null);
   const newsFeatureRef = useRef<HTMLDivElement>(null);
-  const knowMachineRef = useRef<HTMLDivElement>(null);
   const homeTestimonialRef = useRef<HTMLDivElement>(null);
   const iotRef = useRef<HTMLDivElement>(null);
 

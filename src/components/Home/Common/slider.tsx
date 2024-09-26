@@ -5,9 +5,30 @@ import { IoClose } from "react-icons/io5";
 import styles from "../Styles/SwipeCarousel.module.css";
 
 const videos = [
-  { src: "/video/bg.mp4", youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0" },
-  { src: "/video/Homebg.mp4", youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0" },
-  { src: "/video/iotvideo.mp4", youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0" },
+  {
+    src: "/video/bg.mp4",
+    youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0",
+  },
+  {
+    src: "/video/Homebg.mp4",
+    youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0",
+  },
+  {
+    src: "/video/iotvideo.mp4",
+    youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0",
+  },
+  {
+    src: "/video/bg.mp4",
+    youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0",
+  },
+  {
+    src: "/video/Homebg.mp4",
+    youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0",
+  },
+  {
+    src: "/video/iotvideo.mp4",
+    youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0",
+  },
 ];
 
 const ONE_SECOND = 1000;
@@ -107,7 +128,6 @@ export const SwipeCarousel: React.FC = () => {
               <iframe
                 src={currentVideoLink}
                 className={styles.iframe}
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="YouTube Video"
@@ -132,7 +152,9 @@ const Dots: React.FC<DotsProps> = ({ videoIndex, setVideoIndex }) => {
         <button
           key={idx}
           onClick={() => setVideoIndex(idx)}
-          className={`${styles.indicator} ${idx === videoIndex ? styles.activeIndicator : ""}`}
+          className={`${styles.indicator} ${
+            idx === videoIndex ? styles.activeIndicator : ""
+          }`}
         >
           <span
             className={`${styles.progress} ${

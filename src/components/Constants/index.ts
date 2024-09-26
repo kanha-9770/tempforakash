@@ -1,4 +1,3 @@
-
 import { AiOutlineProduct } from "react-icons/ai";
 import { LiaToolsSolid } from "react-icons/lia";
 import { IoBarChartOutline } from "react-icons/io5";
@@ -13,12 +12,12 @@ import {
   fullyAutomaticBagMachineImage,
   PCM110WithPLC,
   paperStrawMachine,
-    paperLunchBoxMachine,
-    paperbag1,
+  paperLunchBoxMachine,
+  paperbag1,
 } from "../../../public/assets";
-import KnowYourMachine from "../../../public/assets/Lottiimages/know_your_machine.json"
-import KnowYouProduct from "../../../public/assets/Lottiimages/know_your_product.json"
-import KnowYoubusiness from "../../../public/assets/Lottiimages/know_your_business.json"
+import KnowYourMachine from "../../../public/assets/Lottiimages/know_your_machine.json";
+import KnowYouProduct from "../../../public/assets/Lottiimages/know_your_product.json";
+import KnowYoubusiness from "../../../public/assets/Lottiimages/know_your_business.json";
 import { StaticImageData } from "next/image";
 import KnowMore from "../../../public/assets/KnowMore1.png";
 import KnowMore1 from "../../../public/assets/KnowMore2.png";
@@ -58,20 +57,20 @@ export interface Item {
 
 export const item: Item[] = [
   {
-    src:"https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
+    src: "https://i.pinimg.com/236x/89/09/12/890912f6a1ab514810a94ba215e34d61.jpg",
     alt: "Cups",
     name: "Paper Bowl",
     description:
       "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
-    bgpic:papercup,
+    bgpic: papercup,
   },
   {
-    src:"https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
+    src: "https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
     alt: "Item 2",
     name: "Paper Cups",
     description:
       "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs. ",
-    bgpic:papercup,
+    bgpic: papercup,
   },
   {
     src: "https://i.pinimg.com/564x/48/5d/c4/485dc4b8ff2f0cc046124e4ca7ac2353.jpg",
@@ -79,7 +78,7 @@ export const item: Item[] = [
     name: "Paper Bag",
     description:
       "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
-    bgpic:papercup,
+    bgpic: papercup,
   },
   {
     src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
@@ -87,7 +86,7 @@ export const item: Item[] = [
     name: "Paper Spoon",
     description:
       "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for be",
-    bgpic:paperbowl,
+    bgpic: paperbowl,
   },
   {
     src: "https://i.pinimg.com/564x/4b/15/60/4b1560c84ec801ebd70b01ac50e2a8b0.jpg",
@@ -95,7 +94,7 @@ export const item: Item[] = [
     name: "Paper lid",
     description:
       "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
-    bgpic:paperbag1,
+    bgpic: paperbag1,
   },
   {
     src: "https://i.pinimg.com/236x/36/24/fa/3624fa6c472029bc35861f90d7443583.jpg",
@@ -111,7 +110,7 @@ export const item: Item[] = [
     name: "Paper Straw",
     description:
       "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
-    bgpic:  paperbowl,
+    bgpic: paperbowl,
   },
   {
     src: "https://i.pinimg.com/236x/9f/70/51/9f7051df7290097a7b9442fd3b25a533.jpg",
@@ -167,7 +166,7 @@ export const item: Item[] = [
     name: "Paper Cup",
     description:
       "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
-    bgpic:  paperbowl,
+    bgpic: paperbowl,
   },
   {
     src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
@@ -175,7 +174,7 @@ export const item: Item[] = [
     name: "Paper Bowl",
     description:
       "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
-    bgpic:  paperbowl,
+    bgpic: paperbowl,
   },
   {
     src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
@@ -191,7 +190,7 @@ export const item: Item[] = [
     name: "Paper Plate",
     description:
       "Paper cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
-    bgpic:  paperbowl,
+    bgpic: paperbowl,
   },
   {
     src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
@@ -291,7 +290,7 @@ export const Items: item[] = [
   {
     id: 5,
     name: "Paper Straw Plant Setup",
-    img:paperStrawMachine,
+    img: paperStrawMachine,
     description:
       "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs. Invest in advanced technology for sustainable, high-volume output.",
   },
@@ -350,7 +349,6 @@ interface CardContent {
   lottieAnimation: any; // Adjust the type if you want to be more specific
 }
 
-
 export const cardContents: CardContent[] = [
   {
     title: "Know Your Product",
@@ -365,7 +363,7 @@ export const cardContents: CardContent[] = [
   {
     title: "Know Your Business",
     image: teamunity,
-    lottieAnimation:KnowYoubusiness,
+    lottieAnimation: KnowYoubusiness,
   },
 ];
 export const CARDS_DATA = [
@@ -392,12 +390,11 @@ export const CARDS_DATA = [
   },
   {
     title: "Know Your Business",
-    icon:IoBarChartOutline,
+    icon: IoBarChartOutline,
     animationSpeed: 3,
     containerClassName: "bg-sky-600",
     colors: [[125, 211, 252]],
     dotSize: undefined,
     image: teamunity,
-
   },
 ];

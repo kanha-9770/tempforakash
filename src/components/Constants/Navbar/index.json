@@ -422,18 +422,22 @@
       "supportItem": [
         {
           "title": "Book a Service",
+          "link":"sevices",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_support/user-guide.json"
         },
         {
           "title": "Genuine Parts",
+          "link":"genuine-parts",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_support/geniune-animation.json"
         },
         {
           "title": "User Guide",
+          "link":"user-guide",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_support/user-guide.json"
         },
         {
           "title": "Machine Warranty",
+          "link":"warranty",
           "image": "https://assets.nesscoindustries.com/public/assets/nav_support/warantee.json"
         }
       ],
@@ -449,26 +453,31 @@
       "DataBankItem": [
         {
           "title": "FAQ",
+          "link":"faq",
           "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/tp1roenkfl9i7oqa8jbn.png",
           "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         },
         {
           "title": "knowledge Center",
+          "link":"knowledge-Center",
           "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/hzyjkxanmoewqydiqrhf.png",
           "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         },
         {
           "title": "Media Rooms",
+          "link":"media-rooms",
           "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/gbtsuvpwuzhz6jnqcpea.png",
           "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         },
         {
           "title": "Blogs",
+          "link":"blogs",
           "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/nvfu0wu7vm2z2vfhiie2.png",
           "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         },
         {
           "title": "clientel",
+          "link":"clientele",
           "image": "https://res.cloudinary.com/dlavoml67/image/upload/v1726729266/snifsvmdtl5pjmv7lwyf.png",
           "bgPic":"https://res.cloudinary.com/dlavoml67/image/upload/v1726729997/ulprlkuweecmrindl9jd.png"
         }

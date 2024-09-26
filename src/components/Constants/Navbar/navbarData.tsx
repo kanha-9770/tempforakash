@@ -63,7 +63,7 @@ export const navbarItems: NavbarItem[] = [
   },
   {
     name: "Video",
-    link: "video",
+    link: "videos",
     component: <VideoGrid />,
   },
   {

@@ -96,17 +96,17 @@ export const data = {
     {
       title: "Vision & Mission",
       image: HomeAbout1.src,
-      link: "#",
+      link: "vission",
     },
     {
       title: "Our Strength",
       image: HomeAbout2.src,
-      link: "#",
+      link: "our-strength",
     },
     {
       title: "People & Culture",
       image: HomeAbout3.src,
-      link: "#",
+      link: "culture",
     },
   ],
 };

@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedText from "../ui/AnimatedText";
 import styles from "../ui/AnimatedText.module.css";
+import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,7 +65,8 @@ const AboutUs: React.FC<AboutUsProps> = ({
     animateCount(machinesSoldRef.current, stats.machinesSold);
     animateCount(readyStockMachinesRef.current, stats.readyStockMachines);
   }, [stats]);
-
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
   return (
     <div className="flex mt-12 h-full max-w-screen-2xl mx-auto flex-col items-center  md:px-6 lg:px-8">
       <h1 className="text-3xl font-regular text-[#483d78]">
@@ -114,7 +116,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
         </div>
 
         <Link
-          href="/products"
+          href={`/${countryCode}/about`}
           className="text-[#483d73] text-center font-poppins text-base hover:font-semibold mt-4 "
         >
           Read more
@@ -123,12 +125,10 @@ const AboutUs: React.FC<AboutUsProps> = ({
 
       <div className="flex flex-col md:flex-row w-full items-end gap-4 mt-8">
         {cards.map((card, index) => (
-          <div
+          <Link
             key={index}
-            className={`relative w-full lg:w-1/3 group flex flex-col items-center ${
-              index === 1 ? "z-10 lg:w-[40%]" : ""
-            }`}
-          >
+            className={`relative w-full lg:w-1/3 group flex flex-col items-center ${index === 1 ? "z-10 lg:w-[40%]" : ""}`}
+             href={`/${countryCode}/about/${card.link}`}          >
             <div className="w-full">
               <div
                 className={`relative overflow-hidden rounded-md transition-transform transform group-hover:scale-80 ${
@@ -147,7 +147,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
                   }`}
                 />
                 <div className="absolute bottom-0 left-0 p-4 flex justify-between items-end w-full">
-                  <a
+                  <Link
                     href={card.link}
                     className="text-white flex items-end text-base font-regular"
                   >
@@ -159,12 +159,12 @@ const AboutUs: React.FC<AboutUsProps> = ({
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                   <BsBoxArrowUpRight className="text-2xl text-white font-extrabold text-bold" />
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

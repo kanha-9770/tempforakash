@@ -6,9 +6,11 @@ import { MdPlayCircleOutline } from "react-icons/md";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import data from "../../Constants/Navbar/index.json";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type SupportItem = {
   title: string;
+  link:string;
   image: string;
   bgPic: string; // Corrected property name
 };
@@ -25,7 +27,8 @@ const ITEMS_PER_PAGE = 4;
 const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
   const supportData = data.find((item) => item.category === "Resources")?.data;
   console.log("supportData", supportData);
-
+  const pathname = usePathname() || "";
+  const countryCode = pathname.split("/")[1]?.toLowerCase();
   const DataBankItem = supportData?.DataBankItem || [];
 
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -118,7 +121,7 @@ const ResourceGrid: React.FC<ResourceGridProps> = ({}) => {
       >
         {DataBankItem.map((item, index) => (
           <div key={index} className="flex flex-col space-y-4">
-            <Link href={`$`}>
+            <Link href={`/${countryCode}/${item.link}`}>
               <motion.div
                 className="relative flex-shrink-0 w-56 h-32 rounded-3xl p-4 flex flex-col justify-center items-center"
                 initial="hidden"
