@@ -111,7 +111,7 @@ const Timeline = () => {
       <div className="absolute inset-0 bg-cover bg-center opacity-10 bg-black" />
       <div className="sticky z-50 bg-black -mt-[2rem] w-full text-center mr-5">
         <h2 className="text-white text-6xl font-montserrat ml-10  ">
-          Our <span className="text-red-500"> History</span>
+          Our <span className="text-red-700"> History</span>
         </h2>
       </div>
       <div

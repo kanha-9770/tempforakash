@@ -37,7 +37,7 @@ export const cardsData = [
       },
       {
         icon: FaCircleNotch,
-        className: "text-red-500 text-3xl",
+        className: "text-red-700 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
@@ -71,7 +71,7 @@ export const cardsData = [
       },
       {
         icon: FaCircleNotch,
-        className: "text-red-500 text-3xl",
+        className: "text-red-700 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
@@ -105,7 +105,7 @@ export const cardsData = [
       },
       {
         icon: FaCircleNotch,
-        className: "text-red-500 text-3xl",
+        className: "text-red-700 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
@@ -139,7 +139,7 @@ export const cardsData = [
       },
       {
         icon: FaCircleNotch,
-        className: "text-red-500 text-3xl",
+        className: "text-red-700 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
@@ -173,7 +173,7 @@ export const cardsData = [
       },
       {
         icon: FaCircleNotch,
-        className: "text-red-500 text-3xl",
+        className: "text-red-700 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
@@ -207,7 +207,7 @@ export const cardsData = [
       },
       {
         icon: FaCircleNotch,
-        className: "text-red-500 text-3xl",
+        className: "text-red-700 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
@@ -241,7 +241,7 @@ export const cardsData = [
       },
       {
         icon: FaCircleNotch,
-        className: "text-red-500 text-3xl",
+        className: "text-red-700 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
@@ -275,7 +275,7 @@ export const cardsData = [
       },
       {
         icon: FaCircleNotch,
-        className: "text-red-500 text-3xl",
+        className: "text-red-700 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
@@ -309,7 +309,7 @@ export const cardsData = [
       },
       {
         icon: FaCircleNotch,
-        className: "text-red-500 text-3xl",
+        className: "text-red-700 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],

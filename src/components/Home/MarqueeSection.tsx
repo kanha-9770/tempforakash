@@ -66,7 +66,7 @@ export default function MarqueeSection() {
       <motion.div className="relative flex flex-col h-[20%] items-center  text-center">
         <p className="text-sm lg:text-2xl mx-4 w-full lg:w-[62%] font-poppins font-regular leading-8">
           Empowering sustainable packaging with advanced paper-based solutions.
-          Our innovative machines drive global <span className="text-red-500">CO2</span> reduction, paving the way for
+          Our innovative machines drive global <span className="text-red-700">CO2</span> reduction, paving the way for
           a greener earth and elevating your packaging capabilities.
         </p>
       </motion.div>

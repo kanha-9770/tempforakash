@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import { FC } from "react";
-import { FaBookDead, FaClock } from "react-icons/fa";
-import Bowl from "../../../public/assets/bowl.png";
 import watch from "../../../public/assets/product/watch.svg";
 import { GiGlassShot } from "react-icons/gi";
 import { SlSpeedometer } from "react-icons/sl";

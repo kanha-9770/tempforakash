@@ -361,7 +361,7 @@ export const Card = ({
               <div className="flex  items-center  justify-center">
                 <div className="relative h-8 w-8 lg:h-12 lg:w-12 -mr-4 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
                   <div className="absolute inset-0 flex  flex-col items-center justify-center">
-                    <div className="text-5 lg:text-base font-bold text-red-500">
+                    <div className="text-5 lg:text-base font-bold text-red-700">
                       70
                     </div>
                     <div className="text-5  lg:-mt-1 text-[#483d78]">

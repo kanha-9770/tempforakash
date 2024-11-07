@@ -70,7 +70,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
   return (
     <div className="flex mt-12 h-full max-w-screen-2xl mx-auto flex-col items-center  md:px-6 lg:px-8">
       <h1 className="text-3xl font-regular text-[#483d78]">
-        About <span className="text-red-500 font-semibold">US</span>
+        About <span className="text-red-700 font-semibold">US</span>
       </h1>
       <h1 className="text-lg lg:text-4xl w-full text-center font-poppins lg:px-72 py-3">
         {heading.split(" ").map((word, index) =>

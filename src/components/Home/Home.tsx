@@ -84,9 +84,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="absolute flex flex-col w-1/2  lg:w-[20rem] lg:h-[5rem] lg:rounded-tl-[2rem] rounded-tl-[1.5rem] right-0 bg-[#f2f2f2] lg:bottom-0 bottom-0 text-3xl font-poppins text-white text-center">
-          <motion.div
-            className="-mt-4 lg:-mt-6 flex mr-2 lg:mr-8 justify-end"
-          >
+          <motion.div className="-mt-4 lg:-mt-6 flex mr-2 lg:mr-8 justify-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="100%"

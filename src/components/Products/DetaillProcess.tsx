@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Bowl from "../../../public/assets/bowl.png";
 import { FlexoPrintingMachine } from "../../../public/assets/machine";
 import { RollDieCuttingMachine } from "../../../public/assets/machine";
 import { PCM110WithPLC } from "../../../public/assets";
@@ -13,7 +12,7 @@ export default function DetaillProcess() {
           <div className="z-20 font-poppins">
             
             <span className="z-20">Process of</span>{" "}
-            <span className="text-red-500 font-semibold ">Cup Formation</span>
+            <span className="text-red-700 font-semibold ">Cup Formation</span>
           </div>
 
           <div className="mb-4">

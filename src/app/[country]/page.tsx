@@ -77,7 +77,7 @@ export default function Home() {
             className="text-2xl lg:text-3xl font-regular
            text-[#483d78] text-center"
           >
-            Our <span className="text-red-500 font-semibold">Products</span>
+            Our <span className="text-red-700 font-semibold">Products</span>
           </h1>
           <div className="text-sm w-full lg:w-full flex items-center justify-center">
             <p className="lg:w-[50%] text-sm lg:px-0 px-2 lg:text-base font-regular text-center">

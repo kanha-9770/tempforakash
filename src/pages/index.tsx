@@ -10,7 +10,6 @@ const HomePage = () => {
         const response = await fetch("https://ipapi.co/json/");
         const data = await response.json();
         const countryCode = data.country_code.toLowerCase();
-        const languageCode = data.languages.split(",")[0].toLowerCase();
         console.log(response);
         router.push(`/${countryCode}`);
       } catch (error) {

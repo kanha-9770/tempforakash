@@ -7,7 +7,7 @@ const HomeTestimonial: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row py-4 h-screen z-20 max-w-7xl mx-auto relative overflow-hidden">
       <div className="px-2 w-full h-[45%] lg:h-full lg:w-1/3 lg:flex lg:flex-col lg:items-end lg:justify-end  flex flex-col">
-        <h6 className="text-xl text-red-500 text-center lg:text-justify border-white pb-3 lg:pb-0 border-b-[1px] lg:border-none lg:ml-6 lg:text-2xl font-montserrat lg:leading-tight font-bold">
+        <h6 className="text-xl text-red-700 text-center lg:text-justify border-white pb-3 lg:pb-0 border-b-[1px] lg:border-none lg:ml-6 lg:text-2xl font-montserrat lg:leading-tight font-bold">
           Testimonials
         </h6>
         <div className="hidden lg:flex flex-col">
@@ -34,7 +34,7 @@ const HomeTestimonial: React.FC = () => {
             <div className="flex text-[#483d78] text-lg items-center justify-center flex-row">
               {" "}
               <AnimatedText text={"1000"}></AnimatedText>
-              <span className="text-red-500">+</span>
+              <span className="text-red-700">+</span>
             </div>
             Satisfied Customers
           </div>

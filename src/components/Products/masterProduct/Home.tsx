@@ -7,7 +7,7 @@ const Home = () => {
       <div className="h-1/2 flex flex-row w-full">
         {/* fixed content */}
         <div className="1/3 h-full">
-        <h1 className="text-red-500 font-poppins text-5xl ">
+        <h1 className="text-red-700 font-poppins text-5xl ">
             <div className="text-gray-700">Our</div>
              Products
         </h1>

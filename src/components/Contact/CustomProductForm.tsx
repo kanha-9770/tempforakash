@@ -42,16 +42,16 @@ const SignupFormDemoProduct = () => {
 
   return (
     <motion.div
-      className="flex w-full sticky top-[6.4rem] h-full   mx-auto  justify-center"
+      className="flex w-full sticky top-[6.4rem] h-full   mx-auto  justify-center font-poppins"
       animate={{ y: 0, height: "33rem", opacity: 1 }}
     >
       <div className="w-full h-screen  gap-2 flex flex-col ">
         {/* part-one-contact-page */}
         <form
-          className="w-full h-[29.2vh]  bg-white p-4 rounded-xl"
+          className="w-full h-[29.2vh] bg-white p-4 rounded-xl"
           onSubmit={handleSubmit}
         >
-          <div className="flex px-1 flex-col md:flex-row  md:space-y-0 mb-2 ">
+          <div className="flex px-1 flex-col md:flex-row  mb-2 ">
             <LabelInputContainer>
               <Input
                 className="h-8"
@@ -92,7 +92,7 @@ const SignupFormDemoProduct = () => {
         </form>
         {/* second-part-of right side */}
         <div className="h-[41vh] bg-white p-4 font-regular rounded-xl">
-          <h2 className="font-semibold text-gray-700 mb-4">
+          <h2 className="font-semibold text-gray-700 mb-2">
             <span className="text-gray-400">Related</span> Products
           </h2>
 
@@ -126,7 +126,7 @@ const SignupFormDemoProduct = () => {
                     {/* Product Info */}
                     <div className="ml-4 flex-1">
                       <h3 className="font-semibold text-sm">{product.title}</h3>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-gray-600">
                         {product.description}
                       </p>
                     </div>
@@ -138,9 +138,9 @@ const SignupFormDemoProduct = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
-                          strokeWidth={1.5}
+                          strokeWidth={2}
                           stroke="currentColor"
-                          className="w-6 h-6 text-gray-500"
+                          className="w-6 h-6 text-gray-700"
                         >
                           <path
                             strokeLinecap="round"
@@ -180,8 +180,8 @@ const SignupFormDemoProduct = () => {
             </button>
           </div>
         </div>
-        <div className="w-full flex flex-row h-[10vh] bg-white rounded-xl p-4 items-center justify-between">
-          <div className="w-2/3 flex flex-col items-start justify-center space-y-0">
+        <div className="w-full flex  h-[10vh] bg-white rounded-xl p-4 items-center font-poppins">
+          <div className="w-2/3 flex flex-col items-start justify-center">
             <h2 className="font-semibold text-gray-700">
               <span className="text-gray-400">Download</span> Brochure
             </h2>
@@ -204,8 +204,8 @@ const SignupFormDemoProduct = () => {
 const BottomGradient = () => {
   return (
     <>
-      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+      <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-[#483d73] to-transparent" />
+      <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-[#483d73] to-transparent" />
     </>
   );
 };

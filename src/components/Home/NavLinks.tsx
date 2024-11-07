@@ -137,7 +137,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ type, navItems }) => {
         scrolling
           ? "bg-white"
           : type === "product"
-          ? "bg-white border-none"
+          ? "bg-[#f5f5f5] border-none"
           : "bg-[#f2f2f2] border-none"
       }`}
     >

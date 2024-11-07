@@ -238,7 +238,7 @@
 //             ))}
 //             {visibleCount < filteredCountries.length && (
 //               <p
-//                 className="text-red-500 cursor-pointer pl-4 p-2 flex"
+//                 className="text-red-700 cursor-pointer pl-4 p-2 flex"
 //                 onClick={handleShowMore}
 //               >
 //                 more...
@@ -592,7 +592,7 @@ const CountryLayout: React.FC = () => {
             ))}
             {visibleCount < filteredCountries.length && (
               <p
-                className="text-red-500 cursor-pointer pl-4 p-2"
+                className="text-red-700 cursor-pointer pl-4 p-2"
                 onClick={handleShowMore}
               >
                 more...

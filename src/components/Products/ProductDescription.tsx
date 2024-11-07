@@ -13,6 +13,8 @@ interface MachineData {
   product_heading: string;
   first_name: string;
   second_name: string;
+  descriptionHeading:string;
+  descriptionSubHeading:string;
   product_description: string;
   specification_image: Array<{
     first?: string;
@@ -46,19 +48,19 @@ interface ProductDescriptionProps {
 
 const ProductDescription: React.FC<ProductDescriptionProps> = ({ machine }) => {
   return (
-    <div className="h-full bg-white rounded-xl p-4 gap-4">
-      <div className="h-[75vh] p-4 rounded-xl flex flex-col">
+    <div className="h-full bg-white rounded-xl">
+      <div className="h-full p-4 rounded-xl flex flex-col">
         {/* heading */}
-        <div className="w-full h-auto justify-start">
-          <span className="text-gray-400 font-semibold text-3xl">Product</span>
-          <span className="text-red-500 ml-2 font-bold text-3xl">
-            Description
+        <div className="w-full h-auto justify-start mb-2">
+          <span className="text-[#483d73] font-semibold text-3xl">{machine?.descriptionHeading}</span>
+          <span className="text-red-700 ml-2 font-bold text-3xl">
+            {machine?.descriptionSubHeading}
           </span>
-          <div className="text-sm text-black py-8 font-poppins">
+          <div className="text-sm text-black  p-4 font-poppins">
             {machine.product_description}
           </div>
         </div>
-        <div className="relative items-center h-auto flex flex-row justify-center">
+        <div className="relative items-center p-4 h-auto flex flex-row justify-center">
           <div className="h-48 flex flex-col w-64">
             <LottieAnimation className="h-20 w-20" animationData={speed} />
             <p className="text-[#483d78] text-center text-2xl">Speed</p>
@@ -66,7 +68,7 @@ const ProductDescription: React.FC<ProductDescriptionProps> = ({ machine }) => {
               {machine.technicalSpecifications.specifications[0]}
             </p>
           </div>
-          <div className="h-48 w-64 flex flex-col border-l-2 border-gray-400 border-r-2">
+          <div className="h-48 w-64 flex flex-col border-l-2 border-gray-300 border-r-2">
             <LottieAnimation
               className="h-20 -rotate-45 w-20"
               animationData={size}

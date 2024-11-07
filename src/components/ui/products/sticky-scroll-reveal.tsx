@@ -114,7 +114,7 @@ export const StickyScroll = ({
       {hasRightContent && (
         <div
           className={cn(
-            "flex-1 h-[80%] w-1/3 rounded-lg bg-white sticky top-0 overflow-hidden p-10",
+            "flex-1 h-[80%] w-1/3 rounded-lg sticky top-0 overflow-hidden p-10",
             contentClassName
           )}
         >

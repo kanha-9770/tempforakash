@@ -5,21 +5,21 @@ const SpecificationTable: React.FC = () => {
     <div className="w-[60%] flex justify-center items-center">
       <table className="w-full border-collapse">
         <thead>
-          <tr className="bg-[#a6a6a6] text-black">
-            <th className="border border-gray-400 p-1 text-base font-semibold text-center">FEATURE</th>
-            <th className="border border-gray-400 p-1 text-base font-semibold text-center">SPECIFICATION</th>
+          <tr className="bg-[#b3b3b3] text-black">
+            <th className="border border-gray-500 p-1 text-base font-semibold text-center">FEATURE</th>
+            <th className="border border-gray-500 p-1 text-base font-semibold text-center">SPECIFICATION</th>
           </tr>
         </thead>
         <tbody>
           {data.map((row, key) => (
             <tr key={key} className="hover:bg-gray-300">
               {/* Left column (Feature) with a specific background color */}
-              <td className="border border-gray-400 p-1 text-sm font-regular text-center bg-[#f5f5f5] hover:bg-gray-300">
+              <td className="border border-gray-500 p-1 text-sm font-regular text-center bg-[#f5f5f5] hover:bg-gray-300">
                 {row.feature}
               </td>
 
               {/* Right column (Specification) with a different background color */}
-              <td className="border border-gray-400 p-1 text-sm font-regular text-center bg-[#d7d7d7] hover:bg-gray-300">
+              <td className="border border-gray-500 p-1 text-sm font-regular text-center bg-[#d7d7d7] hover:bg-gray-300">
                 {row.spec}
               </td>
             </tr>

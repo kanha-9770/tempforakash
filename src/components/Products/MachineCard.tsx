@@ -76,7 +76,7 @@ const MachineCard: React.FC<{ machine: (typeof machineData)[0] }> = ({
             />
           </div>
           <div className="flex flex-col items-center justify-center w-[40%] h-[2.5rem] p-6 bg-white rounded-full">
-            <div className="text-sm font-bold text-red-500">
+            <div className="text-sm font-bold text-red-700">
               {machine.speed}
             </div>
             <div className="text-txs text-[#483d78] -mt-1">
@@ -109,10 +109,10 @@ const MachineCard: React.FC<{ machine: (typeof machineData)[0] }> = ({
 
 const MachineGrid: React.FC = () => {
   return (
-    <div className="bg-white rounded-3xl p-6">
+    <div className="bg-black rounded-3xl p-6">
       <h1 className="font-poppins text-xl ">
         Related
-        <span className="text-red-600 font-extrabold ml-2">Products</span>
+        <span className="text-red-700 font-extrabold ml-2">Products</span>
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 h-full">
         {machineData.map((machine, index) => (

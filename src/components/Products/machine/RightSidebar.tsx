@@ -77,10 +77,10 @@ const RightSidebar: React.FC<RightSidebarProps> = ({
       {/* Product Title */}
       <div className="mb-4 flex flex-row justify-between">
         <div>
-          <span className="text-gray-500 text-3xl font-medium">
+          <span className="text-[#483d73] text-3xl font-medium">
             {first_name}
           </span>
-          <h2 className="text-red-600 text-3xl font-medium leading-tight">
+          <h2 className="text-red-700 text-3xl font-medium leading-tight">
             {second_name}
           </h2>
         </div>

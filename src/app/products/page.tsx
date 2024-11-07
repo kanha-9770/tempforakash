@@ -43,7 +43,7 @@ const page: React.FC = () => {
           text: "Two-Step Curling Process",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Comprehensive Control System with PLC + HMI",
         },
       ],
@@ -72,7 +72,7 @@ const page: React.FC = () => {
           text: "Two-Step Curling Process",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Comprehensive Control System with PLC + HMI",
         },
       ],
@@ -101,7 +101,7 @@ const page: React.FC = () => {
           text: "Two-Step Curling Process",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Comprehensive Control System with PLC + HMI",
         },
       ],
@@ -118,19 +118,19 @@ const page: React.FC = () => {
       icon: paperbowl,
       items: [
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "High-Speed Synchronized",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Advanced Sealing Technology",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Two-Step Curling Process",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Comprehensive Control System",
         },
       ],
@@ -158,7 +158,7 @@ const page: React.FC = () => {
           text: "Two-Step Curling Process",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Comprehensive Control System with PLC + HMI",
         },
       ],
@@ -186,7 +186,7 @@ const page: React.FC = () => {
           text: "Two-Step Curling Process",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Comprehensive Control System with PLC + HMI",
         },
       ],
@@ -214,7 +214,7 @@ const page: React.FC = () => {
           text: "Two-Step Curling Process",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Comprehensive Control System with PLC + HMI",
         },
       ],
@@ -242,7 +242,7 @@ const page: React.FC = () => {
           text: "Two-Step Curling Process",
         },
         {
-          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          icon: <FaCircleNotch className="text-red-700 text-3xl" />,
           text: "Comprehensive Control System with PLC + HMI",
         },
       ],

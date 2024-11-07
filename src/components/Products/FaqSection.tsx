@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import { FaQuestionCircle, FaArrowRight } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./style.css";
@@ -71,7 +70,7 @@ const FaqSection: React.FC = () => {
             {Page5Data.questions.map((item, idx) => (
               <div
                 key={idx}
-                className="h-max py-[1rem] border-b-2 border-solid border-[#e8e5e5] flex items-center hover:text-[#e12d2c] hover:font-semibold active:text-[#e12d2c] active:font-semibold text-[#575555]"
+                className="h-max py-[1rem] border-b-2 border-solid border-[#e8e5e5] flex items-center hover:text-red-700 hover:font-semibold active:text-red-700 active:font-semibold text-[#575555]"
               >
                 <p className="text-[1.2rem] font-poppins w-[75%] mx-[1.5rem] ">
                   {item.title}

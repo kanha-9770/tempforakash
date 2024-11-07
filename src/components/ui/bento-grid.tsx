@@ -48,7 +48,7 @@ export const BentoGridItem = ({
             className
           )}
         >
-          <div className="top-0 text-red-500 mt-4 text-5xl font-poppins text-justify font-bold">
+          <div className="top-0 text-red-700 mt-4 text-5xl font-poppins text-justify font-bold">
             {title}
             <p className="text-[#483d78]"> {description}</p>
           </div>

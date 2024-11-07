@@ -62,13 +62,13 @@ const FaqProducts: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-[82vh] bg-white rounded-2xl  font-poppins">
+    <div className="w-full h-full bg-white rounded-2xl  font-poppins">
       <div className="flex p-6">
-        <h1 className="font-poppins font-semibold text-3xl">
-          <span className="text-[#9e9c9c]">
+        <h1 className="font-poppins  text-3xl">
+          <span className="text-[#483d73] font-semibold">
             {FaqProductsData.title.split(" ").slice(0, -1).join(" ")}
           </span>{" "}
-          <span className="text-[#dc0e2a]">
+          <span className="text-red-700 font-bold">
             {FaqProductsData.title.split(" ").slice(-1)}
           </span>
         </h1>
@@ -84,7 +84,7 @@ const FaqProducts: React.FC = () => {
             </h2>
             <div className="lg:border-t-[2px] border-t-2 border-solid border-[#dc0e2a] lg:w-[6vw] w-[18vw] mt-[0.6rem]"></div>
           </div>
-          <div className="h-[55vh] w-full overflow-hidden">
+          <div className="h-[22.5rem] my-6 w-full overflow-hidden">
             <div className="h-full overflow-auto scrollbar-hide">
               {FaqProductsData.questions.map((item, idx) => (
                 <div key={idx} className="w-full lg:pt-[3vh] pt-[1vh]">

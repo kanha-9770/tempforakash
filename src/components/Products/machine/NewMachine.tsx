@@ -172,7 +172,7 @@ const NewMachine: React.FC<MachineProps> = ({
                         <div key={index} className="flex flex-col space-y-4">
                           <motion.div
                             className={`relative flex-shrink-0 w-[11rem] h-28 border-2 rounded-2xl p-1 flex flex-col justify-center items-center ${
-                              selectedImage === image ? "border-red-500" : ""
+                              selectedImage === image ? "border-red-700" : ""
                             }`}
                             initial="hidden"
                             animate="visible"

@@ -7,13 +7,13 @@ import AboutUs from '../../../public/assets/AboutUs.png';
 const CupFormactionProcess = () => {
   return (
     <div className="h-auto ">
-      <div className="h-[80vh] p-4 flex rounded-xl flex-col bg-white shadow-lg w-full">
+      <div className="h-full p-4 flex rounded-xl flex-col bg-white w-full">
         <div className="z-20 text-3xl font-poppins">
-          <span className="z-20">Process of</span>{' '}
-          <span className="text-red-500 font-semibold">Cup Formation</span>
+          <span className="z-20 text-[#483d73] font-semibold">Machine</span>{' '}
+          <span className="text-red-700 font-bold">Drawing</span>
         </div>
 
-        <div className="relative w-full h-full -mt-12 rounded-2xl overflow-hidden">
+        <div className="relative w-full h-full rounded-2xl">
           <Zoom>
             <Image
               className="w-full h-full rounded-2xl"
@@ -21,7 +21,7 @@ const CupFormactionProcess = () => {
               width={800}
               src={AboutUs}
               alt="Cup Formation"
-              layout="responsive"
+              
             />
           </Zoom>
         </div>

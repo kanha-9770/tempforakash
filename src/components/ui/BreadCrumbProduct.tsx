@@ -1,4 +1,6 @@
 import React from "react";
+import Arrow from "../../../public/assets/product/Arrow.png";
+import Image from "next/image";
 
 interface BreadcrumbItem {
   label: string;
@@ -19,7 +21,7 @@ const BreadcrumbProduct: React.FC<BreadcrumbProps> = ({ items }) => {
             {item.href ? (
               <a
                 href={item.href}
-                className={`inline-flex items-center md:text-2xl font-semibold ${
+                className={`inline-flex items-center md:text-lg font-bold ${
                   item.current
                     ? "text-gray-500"
                     : "text-gray-700 hover:text-[#483d78] dark:text-gray-400 dark:hover:text-white"
@@ -29,18 +31,32 @@ const BreadcrumbProduct: React.FC<BreadcrumbProps> = ({ items }) => {
                   <>{item.label}</>
                 ) : (
                   <>
-                    {" > "}
+                    <Image
+                      src={Arrow}
+                      height={800}
+                      width={400}
+                      alt="Arrow"
+                      className="h-6 w-max pr-2"
+                    />
                     {item.label}
                   </>
                 )}
               </a>
             ) : (
               <span
-                className={`inline-flex items-center font-poppins font-regular md:text-2xl ${
-                  item.current ? "text-gray-400" : "text-gray-400"
+                className={`inline-flex items-center font-poppins font-medium md:text-lg ${
+                  item.current ? "text-gray-500" : "text-gray-500"
                 }`}
               >
-                {index !== 0 && " > "}
+                {index !== 0 && (
+                  <Image
+                    src={Arrow}
+                    height={800}
+                    width={400}
+                    alt="Arrow"
+                    className="h-6 w-max pr-2"
+                  />
+                )}
                 {item.label}
               </span>
             )}

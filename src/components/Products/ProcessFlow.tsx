@@ -95,9 +95,13 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
   }, []);
 
   return (
-    <div className="h-auto w-full">
+    <div className="h-full w-full bg-white rounded-xl">
+      <div className="z-20 text-3xl font-poppins mt-10 pt-4 pl-4">
+        <span className="z-20 text-[#483d73] font-semibold">Process of</span>{" "}
+        <span className="text-red-700 font-bold">Cup Formation</span>
+      </div>
       <div
-        className="rounded-xl h-ful bg-white mt-[6vh] p-6 font-poppins"
+        className="rounded-xl h-full bg-white  p-6 font-poppins"
         ref={carouselRef}
       >
         <div className="lg:px-[1rem]">
@@ -105,15 +109,15 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
         </div>
 
         <div className="relative">
-          <div className="lg:w-[1.7rem] w-[1.2rem] lg:h-[1.7rem] z-20 h-[1.2rem] bg-white border-2 border-solid border-[#dc0e2a] absolute left-[5.7rem] lg:-top-[7vh] -top-[3vh] rounded-full"></div>
+          <div className="lg:w-[1.7rem] w-[1.2rem] lg:h-[1.7rem] z-20 h-[1.2rem] bg-white border-2 border-solid border-red-700 absolute left-[5.5rem] lg:-top-[3rem] -top-[3vh] rounded-full"></div>
           <div
-            className="border-solid lg:border-r-[0.2rem] border-r-2 border-[#dc0e2a] absolute lg:-top-[4vh] -top-[2vh] left-[6.5rem] z-10"
+            className="border-solid lg:border-r-[0.2rem] border-r-2 border-red-700 absolute lg:-top-[2rem] -top-[2vh] left-[6.25rem] z-10"
             ref={borderImgRef}
           ></div>
 
           {page4Data.container.map((item, idx) => (
-            <div key={idx} className="flex lg:my-[8vh] my-[2vh] items-center">
-              <div className="lg:w-[25%] w-[40%] relative flex justify-center">
+            <div key={idx} className="flex lg:my-[3rem] my-[2vh] items-center">
+              <div className="lg:w-[25%] w-[40%] relative flex pl-[2rem]">
                 <div className="absolute bottom-0 left-0 right-0 z-30 flex justify-center">
                   <h3
                     className="text-black text-xs font-semibold bg-white p-2 rounded-xl"
@@ -125,56 +129,34 @@ const ProcessFlow: React.FC<ProcessFlowProps> = ({ page4Data }) => {
                   </h3>
                 </div>
                 <div
-                  className="lg:w-[7rem] w-[4rem] bg-[#f5f5f5] rounded-xl z-20 h-[4rem] lg:h-[9rem] border-[1px] overflow-hidden cursor-pointer"
+                  className="lg:w-[9rem] w-[4rem] bg-[#f5f5f5] rounded-xl z-20 h-[4rem] lg:h-[9rem] border-[1px] overflow-hidden cursor-pointer"
                   onClick={() => openModal(item.img, item.title2)}
                   ref={(el) => {
                     imageRefs.current[idx] = el;
                   }}
                 >
                   <Image
-                    className="object-fill h-full w-full"
-                    width={300}
-                    height={300}
+                    className="h-full w-full"
+                    width={400}
+                    height={400}
                     src={item.img}
                     alt={item.title1}
                   />
                 </div>
               </div>
 
-              <div className="lg:w-[70%] w-[60%] pl-[1vw]">
-                <h2 className="lg:text-base font-semibold text-[#483d73] lg:mb-[2vh] mb-[0.8vh]">
+              <div className="lg:w-[70%] w-[60%] pl-[1rem] font-poppins">
+                <h2 className="lg:text-base font-semibold text-[#483d73] lg:mb-[0.6rem] mb-[0.8vh]">
                   {item.title1}
                 </h2>
-                <p className="lg:text-sm text-sm font-regular">{item.description}</p>
+                <p className="lg:text-sm text-sm font-regular">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {isModalOpen && selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 lg:hidden flex items-center justify-center z-50">
-          <div className="bg-white p-6 mx-4 rounded-lg max-w-lg w-full">
-            <h2 className="text-xl font-bold mb-4 text-[#483d73]">
-              {selectedImage.title2}
-            </h2>
-            <div className="relative w-full h-64">
-              <Image
-                className="object-cover w-full h-full rounded-lg"
-                src={selectedImage.img}
-                alt={selectedImage.title2}
-                fill
-              />
-            </div>
-            <button
-              className="mt-4 py-1 px-2 rounded float-right bg-[#483d73] text-white"
-              onClick={closeModal}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

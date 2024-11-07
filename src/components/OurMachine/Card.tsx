@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = ({
           <div className="ml-2">
             <div className="relative h-14 w-14 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="text-base font-bold text-red-500">{speed}</div>
+                <div className="text-base font-bold text-red-700">{speed}</div>
                 <div className="text-txs mt-1 text-gray-500">{unit}</div>
               </div>
             </div>

@@ -72,22 +72,7 @@ export default function Home() {
         related_product={""}
       />
       <NavLinksDemo type="product" navItems={navLinks} />
-      {/* <NewMachine
-        name={machine.name}
-        status={machine.status}
-        rating={machine.rating}
-        technicalSpecifications={machine.technicalSpecifications}
-        advantages={machine.advantages}
-        paperTypes={machine.paperTypes}
-        application={machine.application}
-        image={machine.image}
-        mimage={machine.mimage}
-        product_heading={machine.product_heading}
-        first_name={machine.first_name}
-        second_name={machine.second_name}
-        description={machine.product_description}
-        specification_image={machine.specification_image}
-      /> */}
+
       <div className="h-full px-10 mt-24 gap-4 flex flex-row w-full">
         <div className="w-[66.2%] ">
           <div className=" " ref={productDescriptionRef}>
@@ -100,7 +85,6 @@ export default function Home() {
           <div className="mt-12" ref={applicationRef}>
             <ProductApplication />
           </div>
-
           <div className="mt-12" ref={technicalSpecificationsRef}>
             <TechnicalSpecifications />
           </div>
@@ -109,13 +93,11 @@ export default function Home() {
           </div>
         </div>
         <div className="w-[33%] sticky">
-          <SignupFormDemoProduct />
+          <SignupFormDemoProduct/>
         </div>
       </div>
       <div className="mt-32" ref={relatedProductsRef}>
-        <RelatedProducts
-          page4product={machine.related_product}
-        />
+        <RelatedProducts page4product={machine.related_product} />
       </div>
     </main>
   );
